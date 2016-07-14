@@ -62,13 +62,59 @@ typedef enum
   * @brief    PH_Debug Error Code
   * @{
   */
-#define PH_Debug_ERROR_NONE     ((uint32_t)0x00000000U)   /*!< No error       */
-#define PH_Debug_ERROR_TIMEOUT  ((uint32_t)0x00000002U)   /*!< Timeout error  */
-#define PH_Debug_ERROR_INIT     ((uint32_t)0x00000004U)   /*!< Initial error  */
+#define PH_Debug_ERROR_NONE     ((uint32_t)0x00000000U)    /*!< No error       */
+#define PH_Debug_ERROR_TIMEOUT  ((uint32_t)0x00000002U)    /*!< Timeout error  */
+#define PH_Debug_ERROR_INIT     ((uint32_t)0x00000004U)    /*!< Initial error  */
 /**
   * @}
   */
 
+/** @defgroup UART-Control Field of Services to UART
+  * @brief    Services to UART
+  * @{
+  */
+#define U_Reset_request                 ((uint8_t)0x01U)    /*!< Reset request  */
+#define U_State_request                 ((uint8_t)0x02U)    /*!< State request  */
+#define U_ActivateBusmon                ((uint8_t)0x05U)    /*!< Activate monitor mode  */
+#define U_AckInformation_Addressed      ((uint8_t)0x11U)    /*!< Acknowledgment addressed  */
+#define U_AckInformation_NotAddressed   ((uint8_t)0x11U)    /*!< Acknowledgment not addressed  */
+
+#define U_ProductID_request             ((uint8_t)0x20U)    /*!< Product ID request  */
+#define U_ActivateBusyMode              ((uint8_t)0x21U)    /*!< Activate busy mode  */
+#define U_ResetBusyMode                 ((uint8_t)0x22U)    /*!< Reset busy mode  */
+#define U_MxRstCnt                      ((uint8_t)0x24U)    /*!< Adjust the max number of repetition  */
+#define U_ActivateCRC                   ((uint8_t)0x25U)    /*!< Activate CRC  */
+#define U_SetAddress                    ((uint8_t)0x28U)    /*!< Set address  */
+
+#define U_L_DataStart                   ((uint8_t)0x80U)    /*!< Activate CRC  */
+/**
+  * @}
+  */
+
+/** @defgroup UART-Control Field of Services from UART
+  * @brief    Services from UART
+  * @{
+  */
+#define Reset_indication                ((uint8_t)0x03U)    /*!< Reset indication   */
+#define State_indication                ((uint8_t)0x07U)    /*!< State request  */
+#define State_indication_mask           ((uint8_t)0x07U)    /*!< State request  */
+#define L_Data_confirm_success          ((uint8_t)0x8BU)    /*!< Transmission succeed   */
+#define L_Data_confirm_failed           ((uint8_t)0x0BU)    /*!< Transmission failed    */
+/**
+  * @}
+  */
+
+/** @defgroup Mask for STATE INDICATION service
+  * @{
+  */
+#define TPUART_STATE_INDICATION_SLAVE_COLLISION_MASK  0x80
+#define TPUART_STATE_INDICATION_RECEIVE_ERROR_MASK    0x40
+#define TPUART_STATE_INDICATION_TRANSMIT_ERROR_MASK   0x20
+#define TPUART_STATE_INDICATION_PROTOCOL_ERROR_MASK   0x10
+#define TPUART_STATE_INDICATION_TEMP_WARNING_MASK     0x08
+/**
+  * @}
+  */
 
 /* Exported functions --------------------------------------------------------*/
 uint32_t KNX_Ph_Init(void);

@@ -19,8 +19,13 @@
 #include "stm32f4xx_hal.h"
 
 /* Private variables ---------------------------------------------------------*/
+static PH_StatusTypeDef KNX_PH_STATE;
 static char KNX_PH_STATE_DEBUGMSG[] = "KNX_PH_STATE changed to XX\n";
 
 /* Private function prototypes -----------------------------------------------*/
-static uint32_t KNX_Ph_Debug_Send(uint8_tdata);
-static void KNX_Ph_SetState(PH_StatusTypeDef state);
+static void     KNX_Ph_SetState(PH_StatusTypeDef state);
+static uint32_t KNX_Ph_GetTick(void);
+static uint32_t KNX_Ph_WaitOnUntilTimeOut(uint32_t Tickstart, uint32_t Timeout);
+static uint32_t KNX_Ph_DebugMessage(uint8_t data);
+
+/* Exported functions --------------------------------------------------------*/
