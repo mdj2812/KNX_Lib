@@ -1,0 +1,66 @@
+\hypertarget{group___cola___exported___functions___group2}{}\section{Save and Read Cola Functions}
+\label{group___cola___exported___functions___group2}\index{Save and Read Cola Functions@{Save and Read Cola Functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \hyperlink{group___cola___exported___functions___group2_gaa639dba8be8eec5d19259aeb8de2cd7a}{cola\+\_\+guardar} (\hyperlink{structt__cola}{t\+\_\+cola} $\ast$p, unsigned char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Save the message into the end of cola\textquotesingle{}s buffer. If at the end, restart form and cover the head of it. \end{DoxyCompactList}\item 
+int16\+\_\+t \hyperlink{group___cola___exported___functions___group2_ga12fe948f259d8c9d7a390a76c416b55c}{cola\+\_\+leer} (\hyperlink{structt__cola}{t\+\_\+cola} $\ast$p, unsigned char $\ast$msg, uint32\+\_\+t l)
+\begin{DoxyCompactList}\small\item\em Read the message from the cola. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\index{Save and Read Cola Functions@{Save and Read Cola Functions}!cola\+\_\+guardar@{cola\+\_\+guardar}}
+\index{cola\+\_\+guardar@{cola\+\_\+guardar}!Save and Read Cola Functions@{Save and Read Cola Functions}}
+\subsubsection[{\texorpdfstring{cola\+\_\+guardar(t\+\_\+cola $\ast$p, unsigned char $\ast$msg)}{cola_guardar(t_cola *p, unsigned char *msg)}}]{\setlength{\rightskip}{0pt plus 5cm}int16\+\_\+t cola\+\_\+guardar (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+cola} $\ast$}]{p, }
+\item[{unsigned char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{group___cola___exported___functions___group2_gaa639dba8be8eec5d19259aeb8de2cd7a}{}\label{group___cola___exported___functions___group2_gaa639dba8be8eec5d19259aeb8de2cd7a}
+
+
+Save the message into the end of cola\textquotesingle{}s buffer. If at the end, restart form and cover the head of it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pointer to a \hyperlink{structt__cola}{t\+\_\+cola} in which we will stroe the message. \\
+\hline
+{\em msg} & pointer to the message buffer. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & for success, 0 for error \\
+\hline
+\end{DoxyRetVals}
+\index{Save and Read Cola Functions@{Save and Read Cola Functions}!cola\+\_\+leer@{cola\+\_\+leer}}
+\index{cola\+\_\+leer@{cola\+\_\+leer}!Save and Read Cola Functions@{Save and Read Cola Functions}}
+\subsubsection[{\texorpdfstring{cola\+\_\+leer(t\+\_\+cola $\ast$p, unsigned char $\ast$msg, uint32\+\_\+t l)}{cola_leer(t_cola *p, unsigned char *msg, uint32_t l)}}]{\setlength{\rightskip}{0pt plus 5cm}int16\+\_\+t cola\+\_\+leer (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+cola} $\ast$}]{p, }
+\item[{unsigned char $\ast$}]{msg, }
+\item[{uint32\+\_\+t}]{l}
+\end{DoxyParamCaption}
+)}\hypertarget{group___cola___exported___functions___group2_ga12fe948f259d8c9d7a390a76c416b55c}{}\label{group___cola___exported___functions___group2_ga12fe948f259d8c9d7a390a76c416b55c}
+
+
+Read the message from the cola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pointer to the \hyperlink{structt__cola}{t\+\_\+cola} from where we will read the message. \\
+\hline
+{\em msg} & pointer to the buffer to take the message. \\
+\hline
+{\em l} & the max size of the buffer msg. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/1} & if the message length from p depass the max size of msg. 0\+: if p doesn\textquotesingle{}t contain any message. $>$0\+: the length of the message successfully stored into msg. \\
+\hline
+\end{DoxyRetVals}

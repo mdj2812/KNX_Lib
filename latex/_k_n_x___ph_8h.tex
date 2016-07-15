@@ -1,0 +1,58 @@
+\hypertarget{_k_n_x___ph_8h}{}\section{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph.h File Reference}
+\label{_k_n_x___ph_8h}\index{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph.\+h@{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph.\+h}}
+
+
+This file contains K\+NX physical layer common defines, enumerations, macros, structures definitions and all the functions prototypes.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}~((uint32\+\_\+t)0x00000000\+U)
+\item 
+\#define \hyperlink{group___p_h___error___code_ga1ab3aa44f2a85855b44408e5b697667b}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+O\+R\+M\+AT}~((uint32\+\_\+t)0x00000001\+U)
+\item 
+\#define \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}~((uint32\+\_\+t)0x00000002\+U)
+\item 
+\#define \hyperlink{group___p_h___error___code_ga15fbdf4edfc98283ef0f1b7c2fc0a47b}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}~((uint32\+\_\+t)0x00000004\+U)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} \{ \\*
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a329f30393c5729b777643b93478de68c}{P\+H\+\_\+\+N\+O\+I\+N\+IT} = 0x00U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a69a4299f68e66ea3fbe9477582ac02cd}{P\+H\+\_\+\+R\+E\+S\+ET} = 0x01U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a4be7dd56ae47b708c6f4751714efe930}{P\+H\+\_\+\+N\+O\+R\+M\+AL} = 0x02U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a0cd2cf806d22fe2f69ac027782ddbf15}{P\+H\+\_\+\+M\+O\+N\+I\+T\+OR} = 0x03U, 
+\\*
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49ae9fe73aeee988939ec19ed18c57250dc}{P\+H\+\_\+\+S\+T\+OP} = 0x04U
+ \}\begin{DoxyCompactList}\small\item\em PH Status Enumeration definition. State machine\+: \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Init} (void)
+\item 
+uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Send} (uint8\+\_\+t data)
+\item 
+uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Receive} (uint8\+\_\+t $\ast$data)
+\item 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Get\+State} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains K\+NX physical layer common defines, enumerations, macros, structures definitions and all the functions prototypes. 
+
+\begin{DoxyAuthor}{Author}
+MA Dingjie 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V0.\+0.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+15-\/\+July-\/2016 
+\end{DoxyDate}

@@ -1,0 +1,27 @@
+\hypertarget{group___debug___external___functions}{}\section{Debug External U\+A\+RT I\+SR Functions}
+\label{group___debug___external___functions}\index{Debug External U\+A\+R\+T I\+S\+R Functions@{Debug External U\+A\+R\+T I\+S\+R Functions}}
+
+
+External functions from \hyperlink{group___debug___uart}{Debug U\+A\+RT} module.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___debug___external___functions_ga9d19c0e57b2d37c01bd781338322f682}{debug\+\_\+uart\+\_\+isr\+\_\+begin} (void)\hypertarget{group___debug___external___functions_ga9d19c0e57b2d37c01bd781338322f682}{}\label{group___debug___external___functions_ga9d19c0e57b2d37c01bd781338322f682}
+
+\begin{DoxyCompactList}\small\item\em At the begin of interrupt, set \hyperlink{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{x\+Higher\+Priority\+Task\+Woken} to pd\+False. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___external___functions_ga3f4c952ea2b6368ccbb0572addd76601}{debug\+\_\+uart\+\_\+isr\+\_\+end} (void)\hypertarget{group___debug___external___functions_ga3f4c952ea2b6368ccbb0572addd76601}{}\label{group___debug___external___functions_ga3f4c952ea2b6368ccbb0572addd76601}
+
+\begin{DoxyCompactList}\small\item\em At the end of interrupt, yield from the U\+A\+RT interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___external___functions_gaee765dd75f3414ade869071798ff33f4}{debug\+\_\+uart\+\_\+isr\+\_\+tx} (void)\hypertarget{group___debug___external___functions_gaee765dd75f3414ade869071798ff33f4}{}\label{group___debug___external___functions_gaee765dd75f3414ade869071798ff33f4}
+
+\begin{DoxyCompactList}\small\item\em Send the buffer character by character. If all sent, give the semaphore in order to enter the next cycle of \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___external___functions_ga2e1878be0250daf30f0a286af6e683e9}{debug\+\_\+uart\+\_\+isr\+\_\+rx} (void)\hypertarget{group___debug___external___functions_ga2e1878be0250daf30f0a286af6e683e9}{}\label{group___debug___external___functions_ga2e1878be0250daf30f0a286af6e683e9}
+
+\begin{DoxyCompactList}\small\item\em U\+A\+RT RX interrupt routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+External functions from \hyperlink{group___debug___uart}{Debug U\+A\+RT} module. 
+
