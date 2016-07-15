@@ -1,0 +1,43 @@
+\hypertarget{cola_8h}{}\section{debug/\+Inc/cola.h File Reference}
+\label{cola_8h}\index{debug/\+Inc/cola.\+h@{debug/\+Inc/cola.\+h}}
+
+
+Cola module.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}semphr.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__cola}{t\+\_\+cola}
+\begin{DoxyCompactList}\small\item\em Cola Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___cola___private___define_gad5b7f14b39751409f4090d7c2d45f915}{C\+O\+L\+A\+\_\+\+S\+I\+ZE}~4$\ast$1024
+\begin{DoxyCompactList}\small\item\em Max size of the \hyperlink{structt__cola_a61215b1ae633a2a4463e0abf0a796f41}{t\+\_\+cola.\+datos}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___cola___exported___functions___group1_gaaf1ad319dc8ef912efc06858c933386b}{cola\+\_\+init} (\hyperlink{structt__cola}{t\+\_\+cola} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Initialize the value of p. \end{DoxyCompactList}\item 
+int16\+\_\+t \hyperlink{group___cola___exported___functions___group2_gaa639dba8be8eec5d19259aeb8de2cd7a}{cola\+\_\+guardar} (\hyperlink{structt__cola}{t\+\_\+cola} $\ast$p, unsigned char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Save the message into the end of cola\textquotesingle{}s buffer. If at the end, restart form and cover the head of it. \end{DoxyCompactList}\item 
+int16\+\_\+t \hyperlink{group___cola___exported___functions___group2_ga12fe948f259d8c9d7a390a76c416b55c}{cola\+\_\+leer} (\hyperlink{structt__cola}{t\+\_\+cola} $\ast$p, unsigned char $\ast$msg, uint32\+\_\+t l)
+\begin{DoxyCompactList}\small\item\em Read the message from the cola. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cola module. 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/\+July-\/2016 
+\end{DoxyDate}

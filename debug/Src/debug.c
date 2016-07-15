@@ -1,13 +1,14 @@
-/*******************************************************************************
+/**
+  *****************************************************************************
   * @file       debug.c
-  * @author  
-  * @version    V3.0.0 
+  * @author
+  * @version    V3.0.0
   * @date       14-July-2016
   * @brief      Debug tasks
   *             This file provides functions to manage following functionalities:
   *              + Initialization functions and tasks
   *              + Perform DebugTask
-  *              + Perform 2 testing tasks based on time        
+  *              + Perform 2 testing tasks based on time
   ******************************************************************************
   */
 
@@ -76,14 +77,14 @@ __IO uint16_t counter_2s = 1001;
   */
 
 /**
-  * @brief      At the begin of interrupt, set ::xHigherPriorityTaskWoken to pdFalse. 
+  * @brief      At the begin of interrupt, set ::xHigherPriorityTaskWoken to pdFalse.
   */
 void debug_uart_isr_begin (void){
   xHigherPriorityTaskWoken = pdFALSE;
 }
 
 /**
-  * @brief      At the end of interrupt, yield from the UART interrupt. 
+  * @brief      At the end of interrupt, yield from the UART interrupt.
   */
 void debug_uart_isr_end (void)
 {
@@ -95,7 +96,7 @@ void debug_uart_isr_end (void)
   *             semaphore in order to enter the next cycle of ::DebugTask.
   */
 void debug_uart_isr_tx(void)
-{  
+{
   buffer_indice++;
   if(buffer_indice > buffer_indice_max)
   {
@@ -108,7 +109,7 @@ void debug_uart_isr_tx(void)
 }
 
 /**
-  * @brief      UART RX interrupt routine. 
+  * @brief      UART RX interrupt routine.
   */
 void debug_uart_isr_rx(void)
 {
@@ -128,10 +129,10 @@ void debug_uart_isr_rx(void)
   */
 
 /**
-  * @brief      Initialize the \ref Debug module. 
+  * @brief      Initialize the \ref Debug module.
   */
 void DebugInit(void)
-{  
+{
   //inicializar cola+mutex para almacenar mensajes
   cola_init(&colaDebug);
   //inicializar semaforo compartido entre tarea debuj y la isr de la UART
@@ -187,7 +188,7 @@ void DebugTask(void * argument)
 
   /* USER CODE BEGIN DebugTask */
   int i, res_leer;
-  
+
   /* Infinite loop */
   cola_guardar(&colaDebug, "\r\n");
   //cola_guardar(&colaDebug, "Mensaje desde DebugTask ... inicializando\r\n");
@@ -205,13 +206,13 @@ void DebugTask(void * argument)
       }
       res_leer = i;
     }
-        
-    //Activar transmisión de la UART para transmitir el mensaje 
+
+    //Activar transmisión de la UART para transmitir el mensaje
     //almacenado en buffer que es de res_leer caracteres
     buffer_indice=0;
     buffer_indice_max = res_leer-1;
     debug_uart_send(&buffer[buffer_indice], 1);
-      
+
     //Esperar a que la UART nos de permiso para continuar ..
     //Significa que el mensaje del buffer ya se ha enviado completamente
     xSemaphoreTake( semaforo_debug_isruart, portMAX_DELAY /* (TickType_t)10 */ );
@@ -225,7 +226,7 @@ void DebugTask(void * argument)
 void DebugGuardar1sTask(void * argument)
 {
   unsigned char buffer_1s[20], Task_name[20];
-  
+
   strcpy((char*) Task_name, pcTaskGetName(xGuardar1sTaskHandle));
   for(;;)
   {
@@ -244,7 +245,7 @@ void DebugGuardar1sTask(void * argument)
 void DebugGuardar2sTask(void * argument)
 {
   unsigned char buffer_2s[20], Task_name[20];
-  
+
   strcpy((char*) Task_name, pcTaskGetName(xGuardar2sTaskHandle));
   for(;;)
   {
@@ -264,7 +265,7 @@ void DebugGuardar2sTask(void * argument)
   */
 
 /**
-  * @brief      At the begin of interrupt, set ::xGuardarSomeTaskWoken to pdFalse. 
+  * @brief      At the begin of interrupt, set ::xGuardarSomeTaskWoken to pdFalse.
   */
 void debug_systick_isr_begin(void)
 {
@@ -273,7 +274,7 @@ void debug_systick_isr_begin(void)
 
 /**
   * @brief      Every 1 second, give the semaphore to give ::DebugGuardar1sTask to
-  *             store a message in ::colaDebug. 
+  *             store a message in ::colaDebug.
   */
 void debug_systick_isr_1s(void)
 {
@@ -282,7 +283,7 @@ void debug_systick_isr_1s(void)
 
 /**
   * @brief      Every 2 second, give the semaphore to give ::DebugGuardar2sTask to
-  *             store a message in ::colaDebug. 
+  *             store a message in ::colaDebug.
   */
 void debug_systick_isr_2s(void)
 {
@@ -290,7 +291,7 @@ void debug_systick_isr_2s(void)
 }
 
 /**
-  * @brief      At the end of interrupt, yield from the Systick interrupt. 
+  * @brief      At the end of interrupt, yield from the Systick interrupt.
   */
 void debug_systick_isr_end(void)
 {
@@ -300,7 +301,7 @@ void debug_systick_isr_end(void)
   * @}
   */
 
- 
+
 /**
   * @}
   */

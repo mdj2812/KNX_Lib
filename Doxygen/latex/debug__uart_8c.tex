@@ -1,0 +1,52 @@
+\hypertarget{debug__uart_8c}{}\section{debug/\+Src/debug\+\_\+uart.c File Reference}
+\label{debug__uart_8c}\index{debug/\+Src/debug\+\_\+uart.\+c@{debug/\+Src/debug\+\_\+uart.\+c}}
+
+
+Debug U\+A\+RT adaptation module This file provides functions to manage following functionalities\+:  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}debug\+\_\+uart.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___debug___u_a_r_t___external___functions_ga2e1878be0250daf30f0a286af6e683e9}{debug\+\_\+uart\+\_\+isr\+\_\+rx} (void)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT RX interrupt routine. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___u_a_r_t___external___functions_gaee765dd75f3414ade869071798ff33f4}{debug\+\_\+uart\+\_\+isr\+\_\+tx} (void)
+\begin{DoxyCompactList}\small\item\em Send the buffer character by character. If all sent, give the semaphore in order to enter the next cycle of \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___u_a_r_t___external___functions_ga9d19c0e57b2d37c01bd781338322f682}{debug\+\_\+uart\+\_\+isr\+\_\+begin} (void)
+\begin{DoxyCompactList}\small\item\em At the begin of interrupt, set \hyperlink{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{x\+Higher\+Priority\+Task\+Woken} to pd\+False. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___u_a_r_t___external___functions_ga3f4c952ea2b6368ccbb0572addd76601}{debug\+\_\+uart\+\_\+isr\+\_\+end} (void)
+\begin{DoxyCompactList}\small\item\em At the end of interrupt, yield from the U\+A\+RT interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___uart___exported___functions___group1_gac5743e072f3f4b6a6c935611f51bbb47}{debug\+\_\+uart\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Initialization the uart handler \hyperlink{group___debug___u_a_r_t___external___variables_ga988a2019125e3bb8e49b1f9195646bc6}{huartx}. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___uart___exported___functions___group2_ga3709c73faee84b7b9d4b9699a6035dfa}{debug\+\_\+uart\+\_\+send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send the data through U\+A\+RT. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___uart___exported___functions___group2_ga7a880511e4fc8f2c3cad647324136dd3}{debug\+\_\+uart\+\_\+isr} (void)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \hyperlink{group___debug___u_a_r_t___external___variables_ga988a2019125e3bb8e49b1f9195646bc6}{huartx}
+\begin{DoxyCompactList}\small\item\em U\+A\+RT Handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Debug U\+A\+RT adaptation module This file provides functions to manage following functionalities\+: 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/\+July-\/2016
+\begin{DoxyItemize}
+\item Initialization ports to adapt to the board
+\item Perform U\+A\+RT send functions
+\item U\+A\+RT interrupt routine functions 
+\end{DoxyItemize}
+\end{DoxyDate}

@@ -1,7 +1,8 @@
-/*******************************************************************************
-  * @file       debug_uart 
-  * @author     
-  * @version    V3.0.0 
+/**
+  *****************************************************************************
+  * @file       debug_uart.c
+  * @author
+  * @version    V3.0.0
   * @date       14-July-2016
   * @brief      Debug UART adaptation module
   *             This file provides functions to manage following functionalities:
@@ -58,7 +59,7 @@ extern void debug_uart_isr_end (void);
   */
 
 /**
-  * @brief      Initialization the uart handler ::huartx. 
+  * @brief      Initialization the uart handler ::huartx.
   */
 void debug_uart_init(void) {
   huartx.Instance = USART2;
@@ -95,7 +96,7 @@ void debug_uart_send (uint8_t *data, uint16_t size) {
 
   (&huartx)->ErrorCode = HAL_UART_ERROR_NONE;
   (&huartx)->gState = HAL_UART_STATE_BUSY_TX;
-  
+
   /* Enable the UART Transmit data register empty Interrupt */
   SET_BIT((&huartx)->Instance->CR1, USART_CR1_TXEIE);
 }
@@ -104,21 +105,21 @@ void debug_uart_send (uint8_t *data, uint16_t size) {
   * @brief      UART interrupt routines.
   */
 void debug_uart_isr(void)
-{  
+{
   debug_uart_isr_begin ();
-    
+
   /* UART in mode Receiver -------------------------------------------------*/
   if(HAL_UART_GetState(&huartx) == HAL_UART_STATE_BUSY_RX)
   {
     debug_uart_isr_rx();
   }
-  
+
   /* UART in mode Transmitter ------------------------------------------------*/
   if(HAL_UART_GetState(&huartx) == HAL_UART_STATE_BUSY_TX)
   {
     debug_uart_isr_tx();
   }
-  
+
   debug_uart_isr_end();
 }
 /**

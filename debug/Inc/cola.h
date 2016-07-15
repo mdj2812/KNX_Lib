@@ -1,7 +1,8 @@
-/*******************************************************************************
-  * @file       cola.h 
-  * @author  
-  * @version    V3.0.0 
+/**
+  ****************************************************************************
+  * @file       cola.h
+  * @author
+  * @version    V3.0.0
   * @date       14-July-2016
   * @brief      Cola module.
   ******************************************************************************
@@ -15,7 +16,7 @@
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include <stdint.h> 
+#include <stdint.h>
 #include "FreeRTOS.h"
 #include "semphr.h"
 
@@ -26,7 +27,7 @@
 /** @addtogroup Cola
   * @{
   */
-    
+
 /* Private define ------------------------------------------------------------*/
 /** @defgroup Cola_Private_Define Cola Private Define
   * @{
@@ -42,8 +43,8 @@
   * @{
   */
 
-/** 
-  * @brief       Cola Structure definition 
+/**
+  * @brief       Cola Structure definition
   */
 typedef struct
 {
@@ -52,10 +53,10 @@ typedef struct
   uint32_t cabeza;              /*!< The beginning indice of the new message  */
   uint32_t cola;                /*!< The end indice of the new message        */
   uint32_t items;               /*!< Items in the #datos                      */
-  
-  SemaphoreHandle_t mutex;      /*!< The mutex to prevent the colision of 
+
+  SemaphoreHandle_t mutex;      /*!< The mutex to prevent the colision of
                                       #cola_leer and #cola_guardar            */
-  
+
   uint8_t datos[COLA_SIZE];     /*!< The buffer who stroes all messages       */
 }t_cola;
 /**
@@ -102,4 +103,4 @@ int16_t cola_leer (t_cola *p, unsigned char *msg, uint32_t l);
 }
 #endif
 
-#endif 
+#endif

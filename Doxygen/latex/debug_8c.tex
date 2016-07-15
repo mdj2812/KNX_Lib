@@ -1,0 +1,93 @@
+\hypertarget{debug_8c}{}\section{debug/\+Src/debug.c File Reference}
+\label{debug_8c}\index{debug/\+Src/debug.\+c@{debug/\+Src/debug.\+c}}
+
+
+Debug tasks This file provides functions to manage following functionalities\+:  
+
+
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}semphr.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cola.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}debug\+\_\+\+U\+A\+R\+T.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___debug___external___functions_ga9d19c0e57b2d37c01bd781338322f682}{debug\+\_\+uart\+\_\+isr\+\_\+begin} (void)
+\begin{DoxyCompactList}\small\item\em At the begin of interrupt, set \hyperlink{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{x\+Higher\+Priority\+Task\+Woken} to pd\+False. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___external___functions_ga3f4c952ea2b6368ccbb0572addd76601}{debug\+\_\+uart\+\_\+isr\+\_\+end} (void)
+\begin{DoxyCompactList}\small\item\em At the end of interrupt, yield from the U\+A\+RT interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___external___functions_gaee765dd75f3414ade869071798ff33f4}{debug\+\_\+uart\+\_\+isr\+\_\+tx} (void)
+\begin{DoxyCompactList}\small\item\em Send the buffer character by character. If all sent, give the semaphore in order to enter the next cycle of \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___external___functions_ga2e1878be0250daf30f0a286af6e683e9}{debug\+\_\+uart\+\_\+isr\+\_\+rx} (void)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT RX interrupt routine. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group1_gaba4ba4d9ae40dd8249c35d07ed2a523a}{Debug\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___debug}{Debug} module. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task} (void $\ast$argument)
+\begin{DoxyCompactList}\small\item\em Debug task. Check whether new messages are stored in \hyperlink{group___cola_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. If yes, send the new message through U\+A\+RT. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group2_ga5e54537eed1694dae3ea8e6cce3f9b3a}{Debug\+Guardar1s\+Task} (void $\ast$argument)
+\begin{DoxyCompactList}\small\item\em Testing task. Store a buffer into \hyperlink{group___cola_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug} every 1 second. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group2_gadc8fe8277ada7992dddff220a145eb5f}{Debug\+Guardar2s\+Task} (void $\ast$argument)
+\begin{DoxyCompactList}\small\item\em Testing task. Store a buffer into \hyperlink{group___cola_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug} every 2 second. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group3_ga91fbb6e1bddf4466bb5517b7f85175ed}{debug\+\_\+systick\+\_\+isr\+\_\+begin} (void)
+\begin{DoxyCompactList}\small\item\em At the begin of interrupt, set \hyperlink{group___debug___private___variables_ga5ab62a235f978d6271ac56aa61c477dd}{x\+Guardar\+Some\+Task\+Woken} to pd\+False. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group3_ga3fbeeb6f202ea5a58378bad352f15cf8}{debug\+\_\+systick\+\_\+isr\+\_\+1s} (void)
+\begin{DoxyCompactList}\small\item\em Every 1 second, give the semaphore to give \hyperlink{group___debug___exported___functions___group2_ga5e54537eed1694dae3ea8e6cce3f9b3a}{Debug\+Guardar1s\+Task} to store a message in \hyperlink{group___cola_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group3_gafbcfc8eb9fcaa7fc213a6853d6a9f0e9}{debug\+\_\+systick\+\_\+isr\+\_\+2s} (void)
+\begin{DoxyCompactList}\small\item\em Every 2 second, give the semaphore to give \hyperlink{group___debug___exported___functions___group2_gadc8fe8277ada7992dddff220a145eb5f}{Debug\+Guardar2s\+Task} to store a message in \hyperlink{group___cola_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group3_ga90fc436c03b0762c7f071168e53ef0de}{debug\+\_\+systick\+\_\+isr\+\_\+end} (void)
+\begin{DoxyCompactList}\small\item\em At the end of interrupt, yield from the Systick interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ \hyperlink{group___debug___private___variables_ga57ad017acd4535fe089f54ed903b3e9e}{msg\+\_\+error} = \char`\"{}$\ast$$\ast$$\ast$E\+R\+R\+OR$\ast$$\ast$$\ast$ \hyperlink{group___cola___exported___functions___group2_ga12fe948f259d8c9d7a390a76c416b55c}{cola\+\_\+leer}() = -\/1 ????? \textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Error message put in \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
+static unsigned char \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer} \mbox{[}\hyperlink{group___debug___private___define_ga6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer} to store the message. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_gacd3f15a092421e9fa47f50d4f95f212b}{buffer\+\_\+indice}
+\begin{DoxyCompactList}\small\item\em The indice of the \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_ga2dc364897dd645d7f940223559bcb511}{buffer\+\_\+indice\+\_\+max}
+\begin{DoxyCompactList}\small\item\em The maximum value of the \hyperlink{group___debug___private___variables_gacd3f15a092421e9fa47f50d4f95f212b}{buffer\+\_\+indice}. \end{DoxyCompactList}\item 
+static Task\+Handle\+\_\+t \hyperlink{group___debug___private___variables_gab492c12c83b7838e793b80c291ed58aa}{x\+Debug\+Task\+Handle}
+\begin{DoxyCompactList}\small\item\em Handler of the \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
+static Task\+Handle\+\_\+t \hyperlink{group___debug___private___variables_ga1e9cef73620770920a7396cec6be253f}{x\+Guardar1s\+Task\+Handle}
+\begin{DoxyCompactList}\small\item\em Handler of the \hyperlink{group___debug___exported___functions___group2_ga5e54537eed1694dae3ea8e6cce3f9b3a}{Debug\+Guardar1s\+Task}. \end{DoxyCompactList}\item 
+static Task\+Handle\+\_\+t \hyperlink{group___debug___private___variables_ga2063a7cc6b93a56520b39428a1a23625}{x\+Guardar2s\+Task\+Handle}
+\begin{DoxyCompactList}\small\item\em Handler of the \hyperlink{group___debug___exported___functions___group2_gadc8fe8277ada7992dddff220a145eb5f}{Debug\+Guardar2s\+Task}. \end{DoxyCompactList}\item 
+static Semaphore\+Handle\+\_\+t \hyperlink{group___debug___private___variables_ga4c5de14a4644bf21d004fd0d61f1fa98}{semaforo\+\_\+debug\+\_\+isruart}
+\begin{DoxyCompactList}\small\item\em Semaphore to permit the new cycle of \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
+static Semaphore\+Handle\+\_\+t \hyperlink{group___debug___private___variables_ga17f83b33b67472e6575133f5e20c6a18}{semaforo\+\_\+debug\+\_\+isrsystick\+\_\+1s}
+\begin{DoxyCompactList}\small\item\em Semaphore to permit the write in of \hyperlink{group___debug___exported___functions___group2_ga5e54537eed1694dae3ea8e6cce3f9b3a}{Debug\+Guardar1s\+Task}. \end{DoxyCompactList}\item 
+static Semaphore\+Handle\+\_\+t \hyperlink{group___debug___private___variables_ga34f75f527643bf2ef69331154700b7f0}{semaforo\+\_\+debug\+\_\+isrsystick\+\_\+2s}
+\begin{DoxyCompactList}\small\item\em Semaphore to permit the write in of \hyperlink{group___debug___exported___functions___group2_gadc8fe8277ada7992dddff220a145eb5f}{Debug\+Guardar2s\+Task}. \end{DoxyCompactList}\item 
+static Base\+Type\+\_\+t \hyperlink{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{x\+Higher\+Priority\+Task\+Woken}
+\begin{DoxyCompactList}\small\item\em Used for yield the U\+A\+RT interrupt. \end{DoxyCompactList}\item 
+static Base\+Type\+\_\+t \hyperlink{group___debug___private___variables_ga5ab62a235f978d6271ac56aa61c477dd}{x\+Guardar\+Some\+Task\+Woken}
+\begin{DoxyCompactList}\small\item\em Used for yield the Systick interrupt. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_ga141b0389ff1db82e53a437f466e70ed5}{counter\+\_\+1s} = 1
+\begin{DoxyCompactList}\small\item\em The counter of \hyperlink{group___debug___exported___functions___group2_ga5e54537eed1694dae3ea8e6cce3f9b3a}{Debug\+Guardar1s\+Task}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_gace66769896763a0b6444579cc34c8aaf}{counter\+\_\+2s} = 1001
+\begin{DoxyCompactList}\small\item\em The counter of \hyperlink{group___debug___exported___functions___group2_gadc8fe8277ada7992dddff220a145eb5f}{Debug\+Guardar2s\+Task}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Debug tasks This file provides functions to manage following functionalities\+: 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/\+July-\/2016
+\begin{DoxyItemize}
+\item Initialization functions and tasks
+\item Perform Debug\+Task
+\item Perform 2 testing tasks based on time 
+\end{DoxyItemize}
+\end{DoxyDate}
