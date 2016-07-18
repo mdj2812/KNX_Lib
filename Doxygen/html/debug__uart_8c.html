@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -119,10 +119,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___u_a_r_t___external___functions.html#ga3f4c952ea2b6368ccbb0572addd76601">debug_uart_isr_end</a> (void)</td></tr>
 <tr class="memdesc:ga3f4c952ea2b6368ccbb0572addd76601"><td class="mdescLeft">&#160;</td><td class="mdescRight">At the end of interrupt, yield from the UART interrupt. <br /></td></tr>
 <tr class="separator:ga3f4c952ea2b6368ccbb0572addd76601"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac5743e072f3f4b6a6c935611f51bbb47"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___uart___exported___functions___group1.html#gac5743e072f3f4b6a6c935611f51bbb47">debug_uart_init</a> (void)</td></tr>
-<tr class="memdesc:gac5743e072f3f4b6a6c935611f51bbb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization the uart handler <a class="el" href="group___debug___u_a_r_t___external___variables.html#ga988a2019125e3bb8e49b1f9195646bc6" title="UART Handler. ">huartx</a>. <br /></td></tr>
-<tr class="separator:gac5743e072f3f4b6a6c935611f51bbb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga385c8827ad6a560236a77f6ab11adcc2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___uart___exported___functions___group1.html#ga385c8827ad6a560236a77f6ab11adcc2">debug_uart_init</a> (void)</td></tr>
+<tr class="memdesc:ga385c8827ad6a560236a77f6ab11adcc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of the uart handler <a class="el" href="group___debug___u_a_r_t___external___variables.html#gaa020232170a049fcc321246bd778a49f" title="UART Handler. ">debug_huart</a>.  <a href="group___debug___uart___exported___functions___group1.html#ga385c8827ad6a560236a77f6ab11adcc2">More...</a><br /></td></tr>
+<tr class="separator:ga385c8827ad6a560236a77f6ab11adcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3709c73faee84b7b9d4b9699a6035dfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___uart___exported___functions___group2.html#ga3709c73faee84b7b9d4b9699a6035dfa">debug_uart_send</a> (uint8_t *data, uint16_t size)</td></tr>
 <tr class="memdesc:ga3709c73faee84b7b9d4b9699a6035dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the data through UART.  <a href="group___debug___uart___exported___functions___group2.html#ga3709c73faee84b7b9d4b9699a6035dfa">More...</a><br /></td></tr>
 <tr class="separator:ga3709c73faee84b7b9d4b9699a6035dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,15 +132,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga988a2019125e3bb8e49b1f9195646bc6"><td class="memItemLeft" align="right" valign="top">
-UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___u_a_r_t___external___variables.html#ga988a2019125e3bb8e49b1f9195646bc6">huartx</a></td></tr>
-<tr class="memdesc:ga988a2019125e3bb8e49b1f9195646bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART Handler. <br /></td></tr>
-<tr class="separator:ga988a2019125e3bb8e49b1f9195646bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa020232170a049fcc321246bd778a49f"><td class="memItemLeft" align="right" valign="top">
+static UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___u_a_r_t___external___variables.html#gaa020232170a049fcc321246bd778a49f">debug_huart</a></td></tr>
+<tr class="memdesc:gaa020232170a049fcc321246bd778a49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART Handler. <br /></td></tr>
+<tr class="separator:gaa020232170a049fcc321246bd778a49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Debug UART adaptation module This file provides functions to manage following functionalities: </p>
 <dl class="section author"><dt>Author</dt><dd></dd></dl>
-<dl class="section version"><dt>Version</dt><dd>V3.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>V3.0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14-July-2016<ul>
 <li>Initialization ports to adapt to the board</li>
 <li>Perform UART send functions</li>

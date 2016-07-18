@@ -2,9 +2,9 @@
   ******************************************************************************
   * @file       KNX_Ph.c
   * @author     MA Dingjie
-  * @version    V0.0.2
-  * @date       15-July-2016
-  * @brief      KNX Physical Layer communication via TP-UART.
+  * @version    V0.0.3
+  * @date       18-July-2016
+  * @brief      KNX Physical Layer supervisor.
   *             This file provides functions to manage following functionalities:
   *              + Initialization functions
   *              + Send and Receive messages functions

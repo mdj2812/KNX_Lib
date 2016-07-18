@@ -2,9 +2,9 @@
   *****************************************************************************
   * @file       cola.c
   * @author
-  * @version    V3.0.0
-  * @date       14-July-2016
-  * @brief      Cola module
+  * @version    V3.0.1 
+  * @date       18-July-2016
+  * @brief      Cola module.
   *             This file provides functions to manage following functionalities:
   *              + Initialization function
   *              + Save and read cola

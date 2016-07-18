@@ -1,14 +1,63 @@
-\hypertarget{group___k_n_x___p_h___t_p_uart___exported___functions___group2}{}\section{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Exported\+\_\+\+Functions\+\_\+\+Group2}
-\label{group___k_n_x___p_h___t_p_uart___exported___functions___group2}\index{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Exported\+\_\+\+Functions\+\_\+\+Group2@{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Exported\+\_\+\+Functions\+\_\+\+Group2}}
+\hypertarget{group___k_n_x___p_h___t_p_uart___exported___functions___group2}{}\section{K\+NX T\+P\+Uart Send/\+Receive Functions}
+\label{group___k_n_x___p_h___t_p_uart___exported___functions___group2}\index{K\+N\+X T\+P\+Uart Send/\+Receive Functions@{K\+N\+X T\+P\+Uart Send/\+Receive Functions}}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send} (uint8\+\_\+t data)\hypertarget{group___k_n_x___p_h___t_p_uart___exported___functions___group2_ga81caae82b83fd5d8384df4ce7284ca73}{}\label{group___k_n_x___p_h___t_p_uart___exported___functions___group2_ga81caae82b83fd5d8384df4ce7284ca73}
-
-\item 
-uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive} (uint8\+\_\+t $\ast$data)\hypertarget{group___k_n_x___p_h___t_p_uart___exported___functions___group2_gaed5fc58a2bd18234f214c895c02b0a02}{}\label{group___k_n_x___p_h___t_p_uart___exported___functions___group2_gaed5fc58a2bd18234f214c895c02b0a02}
-
-\end{DoxyCompactItemize}
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___t_p_uart___exported___functions___group2_ga03bb9beec6389f866c95a482303c23e3}{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send the data through U\+A\+RT. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___t_p_uart___exported___functions___group2_gaa5e10cfbb87008f0375132601fbbfa87}{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Receive the data through U\+A\+RT. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\index{K\+N\+X T\+P\+Uart Send/\+Receive Functions@{K\+N\+X T\+P\+Uart Send/\+Receive Functions}!K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive@{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive}}
+\index{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive@{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive}!K\+N\+X T\+P\+Uart Send/\+Receive Functions@{K\+N\+X T\+P\+Uart Send/\+Receive Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive(uint8\+\_\+t $\ast$data, uint16\+\_\+t size)}{KNX_PH_TPUart_Receive(uint8_t *data, uint16_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___p_h___t_p_uart___exported___functions___group2_gaa5e10cfbb87008f0375132601fbbfa87}{}\label{group___k_n_x___p_h___t_p_uart___exported___functions___group2_gaa5e10cfbb87008f0375132601fbbfa87}
+
+
+Receive the data through U\+A\+RT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to the data buffer. \\
+\hline
+{\em size} & amount of data to be received. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group___k_n_x___t_p_uart___exported___types_ga75271248dbdd8cec608012ca76739f36}{T\+P\+Uart\+\_\+\+Status\+\_\+t}} & according to the status \\
+\hline
+\end{DoxyRetVals}
+\index{K\+N\+X T\+P\+Uart Send/\+Receive Functions@{K\+N\+X T\+P\+Uart Send/\+Receive Functions}!K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send@{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send}}
+\index{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send@{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send}!K\+N\+X T\+P\+Uart Send/\+Receive Functions@{K\+N\+X T\+P\+Uart Send/\+Receive Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send(uint8\+\_\+t $\ast$data, uint16\+\_\+t size)}{KNX_PH_TPUart_Send(uint8_t *data, uint16_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___p_h___t_p_uart___exported___functions___group2_ga03bb9beec6389f866c95a482303c23e3}{}\label{group___k_n_x___p_h___t_p_uart___exported___functions___group2_ga03bb9beec6389f866c95a482303c23e3}
+
+
+Send the data through U\+A\+RT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to the data buffer. \\
+\hline
+{\em size} & amount of data to be sent. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group___k_n_x___t_p_uart___exported___types_ga75271248dbdd8cec608012ca76739f36}{T\+P\+Uart\+\_\+\+Status\+\_\+t}} & according to the status \\
+\hline
+\end{DoxyRetVals}

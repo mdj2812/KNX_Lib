@@ -2,9 +2,9 @@
   *****************************************************************************
   * @file       debug.c
   * @author
-  * @version    V3.0.0
-  * @date       14-July-2016
-  * @brief      Debug tasks
+  * @version    V3.0.1
+  * @date       18-July-2016
+  * @brief      Debug tasks.
   *             This file provides functions to manage following functionalities:
   *              + Initialization functions and tasks
   *              + Perform DebugTask
@@ -23,7 +23,8 @@
 #include <stdio.h>
 #include <string.h>
 
-/** @defgroup Cola_Debug Cola Debug
+/** @defgroup   Cola_Debug Cola Debug
+  * @brief      The Debug module to send messages to the monitor.
   * @{
   */
 
@@ -35,6 +36,9 @@
 /** @defgroup Debug_Private_Variables Debug Private Variables
   * @{
   */
+/** \brief Current state of debug RX. */
+static RX_DEBUG_Status_t KNX_PH_STATE;
+
 /** \brief Error message put in ::DebugTask */
 static const char *msg_error = "***ERROR*** cola_leer() = -1 ????? \r\n" ;
 
@@ -131,8 +135,10 @@ void debug_uart_isr_rx(void)
 /**
   * @brief      Initialize the \ref Debug module.
   */
-void DebugInit(void)
+uint32_t DebugInit(void)
 {
+  KNX_PH_STATE = RX_DEBUG_IDLE;
+  
   //inicializar cola+mutex para almacenar mensajes
   cola_init(&colaDebug);
   //inicializar semaforo compartido entre tarea debuj y la isr de la UART
@@ -168,7 +174,16 @@ void DebugInit(void)
                 &xGuardar2sTaskHandle );      /* Used to pass out the created task's handle. */
 
   //inicializar la UART de depuracion
-  debug_uart_init();
+  if(debug_uart_init())
+  {
+    KNX_PH_STATE = RX_DEBUG_KNX;
+    return PH_Debug_ERROR_NONE;
+  }
+  else
+  {
+    KNX_PH_STATE = RX_DEBUG_IDLE;
+    return PH_Debug_ERROR_INIT;
+  }
 }
 /**
   * @}

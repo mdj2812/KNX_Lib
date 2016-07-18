@@ -5,12 +5,13 @@
 Functions perform the debug uart services.  
 
 
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{group___debug___uart___exported___functions___group1_gac5743e072f3f4b6a6c935611f51bbb47}{debug\+\_\+uart\+\_\+init} (void)
-\begin{DoxyCompactList}\small\item\em Initialization the uart handler \hyperlink{group___debug___u_a_r_t___external___variables_ga988a2019125e3bb8e49b1f9195646bc6}{huartx}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___debug___uart___exported___functions___group1_ga385c8827ad6a560236a77f6ab11adcc2}{debug\+\_\+uart\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of the uart handler \hyperlink{group___debug___u_a_r_t___external___variables_gaa020232170a049fcc321246bd778a49f}{debug\+\_\+huart}. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___uart___exported___functions___group2_ga3709c73faee84b7b9d4b9699a6035dfa}{debug\+\_\+uart\+\_\+send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Send the data through U\+A\+RT. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___uart___exported___functions___group2_ga7a880511e4fc8f2c3cad647324136dd3}{debug\+\_\+uart\+\_\+isr} (void)
@@ -24,7 +25,7 @@ Functions perform the debug uart services.
 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-V3.\+0.\+0 
+V3.\+0.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 14-\/\+July-\/2016 

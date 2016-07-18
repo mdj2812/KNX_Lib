@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Debug tasks This file provides functions to manage following functionalities:  
+<p>Debug tasks. This file provides functions to manage following functionalities:  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;FreeRTOS.h&quot;</code><br />
 <code>#include &quot;task.h&quot;</code><br />
@@ -124,10 +124,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___external___functions.html#ga2e1878be0250daf30f0a286af6e683e9">debug_uart_isr_rx</a> (void)</td></tr>
 <tr class="memdesc:ga2e1878be0250daf30f0a286af6e683e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART RX interrupt routine. <br /></td></tr>
 <tr class="separator:ga2e1878be0250daf30f0a286af6e683e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaba4ba4d9ae40dd8249c35d07ed2a523a"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group1.html#gaba4ba4d9ae40dd8249c35d07ed2a523a">DebugInit</a> (void)</td></tr>
-<tr class="memdesc:gaba4ba4d9ae40dd8249c35d07ed2a523a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="group___debug.html">Debug</a> module. <br /></td></tr>
-<tr class="separator:gaba4ba4d9ae40dd8249c35d07ed2a523a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd3262925f11ab443ccc41951f84f471"><td class="memItemLeft" align="right" valign="top">
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group1.html#gadd3262925f11ab443ccc41951f84f471">DebugInit</a> (void)</td></tr>
+<tr class="memdesc:gadd3262925f11ab443ccc41951f84f471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="group___debug.html">Debug</a> module. <br /></td></tr>
+<tr class="separator:gadd3262925f11ab443ccc41951f84f471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">DebugTask</a> (void *argument)</td></tr>
 <tr class="memdesc:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug task. Check whether new messages are stored in <a class="el" href="group___cola.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola declared in Debug UART. ">colaDebug</a>. If yes, send the new message through UART.  <a href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">More...</a><br /></td></tr>
 <tr class="separator:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +156,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:ga65a0aa461c7b3901566170f888d0004c"><td class="memItemLeft" align="right" valign="top">
+static <a class="el" href="group___debug___exported___types.html#gabcec3ea567663bbefa0b9f7a88dd68f2">RX_DEBUG_Status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga65a0aa461c7b3901566170f888d0004c">KNX_PH_STATE</a></td></tr>
+<tr class="memdesc:ga65a0aa461c7b3901566170f888d0004c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current state of debug RX. <br /></td></tr>
+<tr class="separator:ga65a0aa461c7b3901566170f888d0004c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga57ad017acd4535fe089f54ed903b3e9e"><td class="memItemLeft" align="right" valign="top">
 static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga57ad017acd4535fe089f54ed903b3e9e">msg_error</a> = &quot;***ERROR*** <a class="el" href="group___cola___exported___functions___group2.html#ga12fe948f259d8c9d7a390a76c416b55c">cola_leer</a>() = -1 ????? \r\n&quot;</td></tr>
 <tr class="memdesc:ga57ad017acd4535fe089f54ed903b3e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error message put in <a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44" title="Debug task. Check whether new messages are stored in colaDebug. If yes, send the new message through ...">DebugTask</a>. <br /></td></tr>
@@ -214,7 +218,7 @@ __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <tr class="separator:gace66769896763a0b6444579cc34c8aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Debug tasks This file provides functions to manage following functionalities: </p>
+<div class="textblock"><p>Debug tasks. This file provides functions to manage following functionalities: </p>
 <dl class="section author"><dt>Author</dt><dd></dd></dl>
 <dl class="section version"><dt>Version</dt><dd>V3.0.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14-July-2016<ul>

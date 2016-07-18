@@ -20,8 +20,8 @@ void \hyperlink{group___debug___u_a_r_t___external___functions_ga9d19c0e57b2d37c
 \begin{DoxyCompactList}\small\item\em At the begin of interrupt, set \hyperlink{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{x\+Higher\+Priority\+Task\+Woken} to pd\+False. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___u_a_r_t___external___functions_ga3f4c952ea2b6368ccbb0572addd76601}{debug\+\_\+uart\+\_\+isr\+\_\+end} (void)
 \begin{DoxyCompactList}\small\item\em At the end of interrupt, yield from the U\+A\+RT interrupt. \end{DoxyCompactList}\item 
-void \hyperlink{group___debug___uart___exported___functions___group1_gac5743e072f3f4b6a6c935611f51bbb47}{debug\+\_\+uart\+\_\+init} (void)
-\begin{DoxyCompactList}\small\item\em Initialization the uart handler \hyperlink{group___debug___u_a_r_t___external___variables_ga988a2019125e3bb8e49b1f9195646bc6}{huartx}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___debug___uart___exported___functions___group1_ga385c8827ad6a560236a77f6ab11adcc2}{debug\+\_\+uart\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of the uart handler \hyperlink{group___debug___u_a_r_t___external___variables_gaa020232170a049fcc321246bd778a49f}{debug\+\_\+huart}. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___uart___exported___functions___group2_ga3709c73faee84b7b9d4b9699a6035dfa}{debug\+\_\+uart\+\_\+send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Send the data through U\+A\+RT. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___uart___exported___functions___group2_ga7a880511e4fc8f2c3cad647324136dd3}{debug\+\_\+uart\+\_\+isr} (void)
@@ -29,7 +29,7 @@ void \hyperlink{group___debug___uart___exported___functions___group2_ga7a880511e
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \hyperlink{group___debug___u_a_r_t___external___variables_ga988a2019125e3bb8e49b1f9195646bc6}{huartx}
+static U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \hyperlink{group___debug___u_a_r_t___external___variables_gaa020232170a049fcc321246bd778a49f}{debug\+\_\+huart}
 \begin{DoxyCompactList}\small\item\em U\+A\+RT Handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -40,7 +40,7 @@ Debug U\+A\+RT adaptation module This file provides functions to manage followin
 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-V3.\+0.\+0 
+V3.\+0.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 14-\/\+July-\/2016

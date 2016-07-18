@@ -1,9 +1,9 @@
 /**
   *****************************************************************************
-  * @file       debug_uart.h
-  * @author
-  * @version    V3.0.0
-  * @date       14-July-2016
+  * @file       debug_uart.h 
+  * @author     
+  * @version    V3.0.1 
+  * @date       18-July-2016
   * @brief      Functions perform the debug uart services.
   ******************************************************************************
   */
@@ -16,6 +16,7 @@
 #endif
 
 /* Includes ------------------------------------------------------------------*/
+#include <stdint.h>
 #include "stm32f4xx_hal.h"
 
 /** @addtogroup Cola_Debug
@@ -36,7 +37,7 @@
   */
 
 /* Initialization functions ***************************************************/
-void debug_uart_init(void);
+uint8_t debug_uart_init(void);
 /**
   * @}
   */

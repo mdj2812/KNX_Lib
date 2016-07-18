@@ -2,8 +2,8 @@
   *****************************************************************************
   * @file       debug.h
   * @author
-  * @version    V3.0.0
-  * @date       14-July-2016
+  * @version    V3.0.1
+  * @date       18-July-2016
   * @brief      Debug tasks.
   ******************************************************************************
   */
@@ -85,7 +85,7 @@ extern t_cola colaDebug;
   */
 
 /* Initialization functions ***************************************************/
-void DebugInit(void);
+uint32_t DebugInit(void);
 /**
   * @}
   */

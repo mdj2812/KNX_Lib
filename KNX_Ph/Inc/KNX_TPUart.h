@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file       KNX_TPUart.h
   * @author     MA Dingjie
-  * @version    V0.0.2
-  * @date       1-July-2016
+  * @version    V0.0.3
+  * @date       18-July-2016
   * @brief      This file contains definitions and prototypes of functions for
   *             TP-UART.
   ******************************************************************************
@@ -83,6 +83,26 @@
   * @}
   */
 
+/* Exported types ------------------------------------------------------------*/
+/** @defgroup KNX_TPUart_Exported_Types KNX TPUart Exported Types
+  * @brief    TPUart Status Enumeration
+  * @{
+  */
+
+/** 
+  * @brief  HAL Status structures definition  
+  */  
+typedef enum 
+{
+  TPUart_OK       = 0x00U,      /*!< OK                                       */
+  TPUart_ERROR    = 0x01U,      /*!< Error                                    */
+  TPUart_BUSY     = 0x02U,      /*!< Busy                                     */
+  TPUart_TIMEOUT  = 0x03U       /*!< Timeout                                  */
+} TPUart_Status_t;
+/**
+  * @}
+  */
+
 /* Exported functions --------------------------------------------------------*/
 /** @addtogroup KNX_PH_TPUart_Exported_Functions
   * @{
@@ -93,7 +113,7 @@
   */
 
 /* Initialization functions ***************************************************/
-void KNX_PH_TPUart_init(void);
+uint8_t KNX_PH_TPUart_init(void);
 /**
   * @}
   */
@@ -103,8 +123,17 @@ void KNX_PH_TPUart_init(void);
   */
 
 /* Send/Receive functions  ***************************************************/
-uint32_t KNX_PH_TPUart_Send(uint8_t data);
-uint32_t KNX_PH_TPUart_Receive(uint8_t *data);
+uint8_t KNX_PH_TPUart_Send(uint8_t *data, uint16_t size);
+uint8_t KNX_PH_TPUart_Receive(uint8_t *data, uint16_t size);
+/**
+  * @}
+  */
+
+/** @addtogroup KNX_PH_TPUart_Exported_Functions_Group3
+  * @{
+  */
+/* UART Interrupt function  ***************************************************/
+void TPUart_isr(void);
 /**
   * @}
   */

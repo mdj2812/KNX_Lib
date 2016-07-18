@@ -53,15 +53,26 @@ This file contains definitions and prototypes of functions for T\+P-\/\+U\+A\+RT
 \item 
 \#define \hyperlink{group___u_a_r_t___control___mask_ga08fadbb4584563c93631852bd718f1e2}{T\+P\+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+D\+I\+C\+A\+T\+I\+O\+N\+\_\+\+T\+E\+M\+P\+\_\+\+W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+A\+SK}~0x08
 \end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___k_n_x___t_p_uart___exported___types_ga75271248dbdd8cec608012ca76739f36}{T\+P\+Uart\+\_\+\+Status\+\_\+t} \{ \hyperlink{group___k_n_x___t_p_uart___exported___types_gga75271248dbdd8cec608012ca76739f36aa8bc181a8cd20f68faf0314359f58a25}{T\+P\+Uart\+\_\+\+OK} = 0x00U, 
+\hyperlink{group___k_n_x___t_p_uart___exported___types_gga75271248dbdd8cec608012ca76739f36add998069d703bc6f9b5aea74aa1e501e}{T\+P\+Uart\+\_\+\+E\+R\+R\+OR} = 0x01U, 
+\hyperlink{group___k_n_x___t_p_uart___exported___types_gga75271248dbdd8cec608012ca76739f36a21db4f39de08b0f35eb903cde75a2ed9}{T\+P\+Uart\+\_\+\+B\+U\+SY} = 0x02U, 
+\hyperlink{group___k_n_x___t_p_uart___exported___types_gga75271248dbdd8cec608012ca76739f36aed34d4c8572d86d169518aae6d2e8730}{T\+P\+Uart\+\_\+\+T\+I\+M\+E\+O\+UT} = 0x03U
+ \}\begin{DoxyCompactList}\small\item\em H\+AL Status structures definition. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+init} (void)
-\item 
-uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send} (uint8\+\_\+t data)
-\item 
-uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive} (uint8\+\_\+t $\ast$data)
-\end{DoxyCompactItemize}
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___t_p_uart___exported___functions___group1_ga4e0a0b154e929046769fa7df80f5c6ce}{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of the uart handler \hyperlink{group___k_n_x___p_h___t_p_u_a_r_t___private___variables_ga9308eecc1a4f261fab20bd754fd5d5fc}{knx\+\_\+huart}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___t_p_uart___exported___functions___group2_ga03bb9beec6389f866c95a482303c23e3}{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send the data through U\+A\+RT. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___t_p_uart___exported___functions___group2_gaa5e10cfbb87008f0375132601fbbfa87}{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+Uart\+\_\+\+Receive} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Receive the data through U\+A\+RT. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___p_h___t_p_uart___exported___functions___group3_gad51a61eaadc78ba1bc04231611c8ee60}{T\+P\+Uart\+\_\+isr} (void)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

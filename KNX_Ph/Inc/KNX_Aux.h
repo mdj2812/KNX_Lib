@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file       KNX_Aux.h
   * @author     MA Dingjie
-  * @version    V0.0.2
-  * @date       15-July-2016
+  * @version    V0.0.3
+  * @date       18-July-2016
   * @brief      This file contains auxiliary functions for the project.
   ******************************************************************************
   */
