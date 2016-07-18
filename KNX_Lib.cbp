@@ -40,6 +40,9 @@
 		<Unit filename="KNX_Ph/Src/KNX_Ph.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="KNX_Ph/Src/KNX_TPUart.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="debug/Inc/cola.h" />
 		<Unit filename="debug/Inc/debug.h" />
 		<Unit filename="debug/Inc/debug_uart.h" />
