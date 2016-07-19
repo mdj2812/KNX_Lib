@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['knx_5faux_2ec',['KNX_Aux.c',['../_k_n_x___aux_8c.html',1,'']]],
   ['knx_5faux_2eh',['KNX_Aux.h',['../_k_n_x___aux_8h.html',1,'']]],
   ['knx_5fph_2ec',['KNX_Ph.c',['../_k_n_x___ph_8c.html',1,'']]],
   ['knx_5fph_2eh',['KNX_Ph.h',['../_k_n_x___ph_8h.html',1,'']]],

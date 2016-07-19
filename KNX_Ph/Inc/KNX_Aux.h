@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file       KNX_Aux.h
   * @author     MA Dingjie
-  * @version    V0.0.3
-  * @date       18-July-2016
+  * @version    V0.0.4
+  * @date       19-July-2016
   * @brief      This file contains auxiliary functions for the project.
   ******************************************************************************
   */
@@ -24,6 +24,18 @@
 
 /** @addtogroup KNX_PH_Aux
   * @{
+  */
+	
+/* Exported constants --------------------------------------------------------*/
+/** @defgroup KNX_Aux_Error_Code Auxiliary Functions' Error Code
+  * @brief    Auxiliary Functions' Error Code
+  * @{
+  */
+#define AUX_ERROR_NONE          ((uint8_t)0x00U)   /*!< No error              */
+#define AUX_ERROR_BIN           ((uint8_t)0x01U)   /*!< Binary value error    */
+#define AUX_ERROR_MSG           ((uint8_t)0x02U)   /*!< Message buffer error  */
+/**
+  * @}
   */
 
 /* Exported functions --------------------------------------------------------*/

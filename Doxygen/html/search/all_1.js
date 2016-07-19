@@ -1,19 +1,7 @@
 var searchData=
 [
-  ['cabeza',['cabeza',['../structt__cola.html#aa60b2d7a3752db97b7f9d9163fb48afa',1,'t_cola']]],
-  ['cola',['cola',['../structt__cola.html#ae6eec6efa2dd9d70da13b2a435c3de27',1,'t_cola::cola()'],['../group___cola.html',1,'(Global Namespace)']]],
-  ['cola_2ec',['cola.c',['../cola_8c.html',1,'']]],
-  ['cola_2eh',['cola.h',['../cola_8h.html',1,'']]],
-  ['cola_20debug',['Cola Debug',['../group___cola___debug.html',1,'']]],
-  ['cola_20exported_20functions',['Cola Exported Functions',['../group___cola___exported___functions.html',1,'']]],
-  ['cola_20initialization_20functions',['Cola Initialization Functions',['../group___cola___exported___functions___group1.html',1,'']]],
-  ['cola_20exported_20types',['Cola Exported Types',['../group___cola___exported___types.html',1,'']]],
-  ['cola_5fguardar',['cola_guardar',['../group___cola___exported___functions___group2.html#gaa639dba8be8eec5d19259aeb8de2cd7a',1,'cola.c']]],
-  ['cola_5finit',['cola_init',['../group___cola___exported___functions___group1.html#gaaf1ad319dc8ef912efc06858c933386b',1,'cola.c']]],
-  ['cola_5fleer',['cola_leer',['../group___cola___exported___functions___group2.html#ga12fe948f259d8c9d7a390a76c416b55c',1,'cola.c']]],
-  ['cola_20private_20define',['Cola Private Define',['../group___cola___private___define.html',1,'']]],
-  ['cola_5fsize',['COLA_SIZE',['../group___cola___private___define.html#gad5b7f14b39751409f4090d7c2d45f915',1,'cola.h']]],
-  ['coladebug',['colaDebug',['../group___debug___external___variables.html#ga314fd637d927bd6a2551e119de623aa5',1,'colaDebug():&#160;cola.c'],['../group___cola.html#ga314fd637d927bd6a2551e119de623aa5',1,'colaDebug():&#160;cola.c']]],
-  ['counter_5f1s',['counter_1s',['../group___debug___private___variables.html#ga141b0389ff1db82e53a437f466e70ed5',1,'debug.c']]],
-  ['counter_5f2s',['counter_2s',['../group___debug___private___variables.html#gace66769896763a0b6444579cc34c8aaf',1,'debug.c']]]
+  ['buffer',['buffer',['../group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e',1,'debug.c']]],
+  ['buffer_5findice',['buffer_indice',['../group___debug___private___variables.html#gacd3f15a092421e9fa47f50d4f95f212b',1,'debug.c']]],
+  ['buffer_5findice_5fmax',['buffer_indice_max',['../group___debug___private___variables.html#ga2dc364897dd645d7f940223559bcb511',1,'debug.c']]],
+  ['buffer_5fsize',['BUFFER_SIZE',['../group___debug___private___define.html#ga6b20d41d6252e9871430c242cb1a56e7',1,'debug.h']]]
 ];
