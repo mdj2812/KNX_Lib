@@ -62,6 +62,16 @@ typedef enum
   RX_DEBUG_KNX  = 0x01U,        /*!< KNX Debug Mode                           */
   RX_DEBUG_OTHER= 0x02U         /*!< Other Modes                              */
 } RX_DEBUG_Status_t;
+
+/**
+  * @brief  RX Debug Message Type Enumeration definition
+  */
+typedef enum
+{
+  STATE_DEBUG   = 0x00U,        /*!< State Debug Message                      */
+  SEND_DEBUG    = 0x01U,        /*!< Request Sending Debug Message            */
+  RECEIVE_DEBUG = 0x02U         /*!< Receiving Debug Message                  */
+} DEBUG_Type_t;
 /**
   * @}
   */
@@ -96,21 +106,6 @@ uint32_t DebugInit(void);
 
 /* Debug tasks functions  *****************************************************/
 void DebugTask(void * argument);
-void DebugGuardar1sTask(void * argument);
-void DebugGuardar2sTask(void * argument);
-/**
-  * @}
-  */
-
-/** @addtogroup Debug_Exported_Functions_Group3
-  * @{
-  */
-
-/* Systick test isr functions  ************************************************/
-void debug_systick_isr_begin(void);
-void debug_systick_isr_1s(void);
-void debug_systick_isr_2s(void);
-void debug_systick_isr_end(void);
 /**
   * @}
   */

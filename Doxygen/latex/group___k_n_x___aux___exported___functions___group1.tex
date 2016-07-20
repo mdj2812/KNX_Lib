@@ -1,0 +1,59 @@
+\hypertarget{group___k_n_x___aux___exported___functions___group1}{}\section{K\+NX int/text conversion functions}
+\label{group___k_n_x___aux___exported___functions___group1}\index{K\+N\+X int/text conversion functions@{K\+N\+X int/text conversion functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group1_gab453e2971ca45bd5e63b995dfedffe20}{int2text} (uint8\+\_\+t value, char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Convert an {\ttfamily uint8\+\_\+t} value into a {\ttfamily char} message. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group1_ga8fdc34a6aa7b88b181080462511acac7}{text2int} (char $\ast$msg, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Convert a {\ttfamily char} message into an {\ttfamily uint8\+\_\+t} value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\index{K\+N\+X int/text conversion functions@{K\+N\+X int/text conversion functions}!int2text@{int2text}}
+\index{int2text@{int2text}!K\+N\+X int/text conversion functions@{K\+N\+X int/text conversion functions}}
+\subsubsection[{\texorpdfstring{int2text(uint8\+\_\+t value, char $\ast$msg)}{int2text(uint8_t value, char *msg)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t int2text (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{value, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___aux___exported___functions___group1_gab453e2971ca45bd5e63b995dfedffe20}{}\label{group___k_n_x___aux___exported___functions___group1_gab453e2971ca45bd5e63b995dfedffe20}
+
+
+Convert an {\ttfamily uint8\+\_\+t} value into a {\ttfamily char} message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & an 8 bits unsigned value. \\
+\hline
+{\em msg} & pointer to a buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code, see \hyperlink{group___k_n_x___aux___error___code}{Auxiliary Functions\textquotesingle{} Error Code} 
+\end{DoxyReturn}
+\index{K\+N\+X int/text conversion functions@{K\+N\+X int/text conversion functions}!text2int@{text2int}}
+\index{text2int@{text2int}!K\+N\+X int/text conversion functions@{K\+N\+X int/text conversion functions}}
+\subsubsection[{\texorpdfstring{text2int(char $\ast$msg, uint8\+\_\+t $\ast$value)}{text2int(char *msg, uint8_t *value)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t text2int (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{msg, }
+\item[{uint8\+\_\+t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___aux___exported___functions___group1_ga8fdc34a6aa7b88b181080462511acac7}{}\label{group___k_n_x___aux___exported___functions___group1_ga8fdc34a6aa7b88b181080462511acac7}
+
+
+Convert a {\ttfamily char} message into an {\ttfamily uint8\+\_\+t} value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & pointer to a buffer of 2 digits. \\
+\hline
+{\em value} & pointer to ouput as an 8 bits unsigned value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code, see \hyperlink{group___k_n_x___aux___error___code}{Auxiliary Functions\textquotesingle{} Error Code} 
+\end{DoxyReturn}

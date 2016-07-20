@@ -51,25 +51,10 @@ __IO uint16_t buffer_indice_max;
 
 /** \brief Handler of the ::DebugTask */
 static TaskHandle_t xDebugTaskHandle;
-/** \brief Handler of the ::DebugGuardar1sTask */
-static TaskHandle_t xGuardar1sTaskHandle;
-/** \brief Handler of the ::DebugGuardar2sTask */
-static TaskHandle_t xGuardar2sTaskHandle;
 /** \brief Semaphore to permit the new cycle of ::DebugTask */
 static SemaphoreHandle_t semaforo_debug_isruart;
-/** \brief Semaphore to permit the write in of ::DebugGuardar1sTask */
-static SemaphoreHandle_t semaforo_debug_isrsystick_1s;
-/** \brief Semaphore to permit the write in of ::DebugGuardar2sTask */
-static SemaphoreHandle_t semaforo_debug_isrsystick_2s;
 /** \brief Used for yield the UART interrupt */
 static BaseType_t xHigherPriorityTaskWoken;
-/** \brief Used for yield the Systick interrupt */
-static BaseType_t xGuardarSomeTaskWoken;
-
-/** \brief The counter of ::DebugGuardar1sTask */
-__IO uint16_t counter_1s = 1;
-/** \brief The counter of ::DebugGuardar2sTask */
-__IO uint16_t counter_2s = 1001;
 /**
   * @}
   */
@@ -152,27 +137,6 @@ uint32_t DebugInit(void)
                 tskIDLE_PRIORITY,/* Priority at which the task is created. */
                 &xDebugTaskHandle );      /* Used to pass out the created task's handle. */
 
-  /* definition and creation of semaforo_debug_isrsystick */
-  semaforo_debug_isrsystick_1s = xSemaphoreCreateBinary();
-  semaforo_debug_isrsystick_2s = xSemaphoreCreateBinary();
-
-  /* definition and creation of DebugGuardarTask */
-  xTaskCreate(
-                DebugGuardar1sTask,       /* Function that implements the task. */
-                "Guardar_1s",          /* Text name for the task. */
-                configMINIMAL_STACK_SIZE + 16, /* Stack size in words, not bytes. */
-                ( void * ) 0,    /* Parameter passed into the task. */
-                tskIDLE_PRIORITY+1,/* Priority at which the task is created. */
-                &xGuardar1sTaskHandle );      /* Used to pass out the created task's handle. */
-
-  xTaskCreate(
-                DebugGuardar2sTask,       /* Function that implements the task. */
-                "Guardar_2s",          /* Text name for the task. */
-                configMINIMAL_STACK_SIZE + 16, /* Stack size in words, not bytes. */
-                ( void * ) 0,    /* Parameter passed into the task. */
-                tskIDLE_PRIORITY+2,/* Priority at which the task is created. */
-                &xGuardar2sTaskHandle );      /* Used to pass out the created task's handle. */
-
   //inicializar la UART de depuracion
   if(debug_uart_init())
   {
@@ -235,87 +199,8 @@ void DebugTask(void * argument)
 }
 
 /**
-  * @brief      Testing task. Store a buffer into ::colaDebug every 1 second.
-  * @param      argument:  argument of the task.
-  */
-void DebugGuardar1sTask(void * argument)
-{
-  unsigned char buffer_1s[20], Task_name[20];
-
-  strcpy((char*) Task_name, pcTaskGetName(xGuardar1sTaskHandle));
-  for(;;)
-  {
-    if(xSemaphoreTake(semaforo_debug_isrsystick_1s, portMAX_DELAY))
-    {
-      sprintf((char*) buffer_1s, "[%d\t]%s\t: %d\r\n", xTaskGetTickCount(), Task_name, counter_1s++);
-      cola_guardar(&colaDebug, buffer_1s);
-    }
-  }
-}
-
-/**
-  * @brief      Testing task. Store a buffer into ::colaDebug every 2 second.
-  * @param      argument:  argument of the task.
-  */
-void DebugGuardar2sTask(void * argument)
-{
-  unsigned char buffer_2s[20], Task_name[20];
-
-  strcpy((char*) Task_name, pcTaskGetName(xGuardar2sTaskHandle));
-  for(;;)
-  {
-    if(xSemaphoreTake(semaforo_debug_isrsystick_2s, portMAX_DELAY))
-    {
-      sprintf((char*) buffer_2s, "[%d\t]%s\t: %d\r\n", xTaskGetTickCount(), Task_name, counter_2s++);
-      cola_guardar(&colaDebug, buffer_2s);
-    }
-  }
-}
-/**
   * @}
   */
-
-/** @defgroup Debug_Exported_Functions_Group3 Debug Systic Test ISR Functions
-  * @{
-  */
-
-/**
-  * @brief      At the begin of interrupt, set ::xGuardarSomeTaskWoken to pdFalse.
-  */
-void debug_systick_isr_begin(void)
-{
-  xGuardarSomeTaskWoken = pdFALSE;
-}
-
-/**
-  * @brief      Every 1 second, give the semaphore to give ::DebugGuardar1sTask to
-  *             store a message in ::colaDebug.
-  */
-void debug_systick_isr_1s(void)
-{
-  xSemaphoreGiveFromISR( semaforo_debug_isrsystick_1s, &xGuardarSomeTaskWoken );
-}
-
-/**
-  * @brief      Every 2 second, give the semaphore to give ::DebugGuardar2sTask to
-  *             store a message in ::colaDebug.
-  */
-void debug_systick_isr_2s(void)
-{
-  xSemaphoreGiveFromISR( semaforo_debug_isrsystick_2s, &xGuardarSomeTaskWoken );
-}
-
-/**
-  * @brief      At the end of interrupt, yield from the Systick interrupt.
-  */
-void debug_systick_isr_end(void)
-{
-  portYIELD_FROM_ISR( xGuardarSomeTaskWoken );
-}
-/**
-  * @}
-  */
-
 
 /**
   * @}

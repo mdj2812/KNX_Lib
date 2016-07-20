@@ -5,28 +5,42 @@
 K\+NX Physical Layer supervisor. This file provides functions to manage following functionalities\+:  
 
 
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Ph.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Aux.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+T\+P\+Uart.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cola.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Set\+State} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} state)
-\item 
-static uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Get\+Tick} (void)
-\item 
-static uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+On\+Until\+Time\+Out} (uint32\+\_\+t Tickstart, uint32\+\_\+t Timeout)
-\item 
-static uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Debug\+Message} (uint8\+\_\+t data)
-\end{DoxyCompactItemize}
+static uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___private___functions_gaa1d7c7761cb6971931395ef1fb9dfe59}{request2data} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} request)
+\begin{DoxyCompactList}\small\item\em Convert a request to a data. \end{DoxyCompactList}\item 
+static void \hyperlink{group___k_n_x___p_h___sup___private___functions_ga8253bed4aa2e3d7bfa9c1de3604668e0}{K\+N\+X\+\_\+\+Ph\+\_\+\+Set\+State} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} state)
+\begin{DoxyCompactList}\small\item\em Set the status of Physical layer. \end{DoxyCompactList}\item 
+static void \hyperlink{group___k_n_x___p_h___sup___private___functions_gaad432d8797e22b886ab169401decc3dd}{K\+N\+X\+\_\+\+Ph\+\_\+\+Debug\+Message} (uint8\+\_\+t data, \hyperlink{group___debug___exported___types_gacb1775677105967978fae4d9155cca26}{D\+E\+B\+U\+G\+\_\+\+Type\+\_\+t} type)
+\begin{DoxyCompactList}\small\item\em Send the debug message to indicate the change of the state. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group1_ga2139e336141090cdd97ecb0c5e55499f}{K\+N\+X\+\_\+\+Ph\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_gad47b9ae30f2704001cf07d31da372fe2}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} request, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Send a request. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga83fe8c9d421ec9c32662b66ec2dc1aeb}{K\+N\+X\+\_\+\+Ph\+\_\+\+Receive} (uint8\+\_\+t response, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Receive a response. \end{DoxyCompactList}\item 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_ga8f380db7e1c156190263c4860f2d3ded}{K\+N\+X\+\_\+\+Ph\+\_\+\+Get\+State} (void)
+\begin{DoxyCompactList}\small\item\em Get the status. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___p_h___sup___private___variables_gaed45956ede9586539568adc9994c6dfb}{K\+N\+X\+\_\+\+P\+H\+\_\+\+S\+T\+A\+TE}
 \begin{DoxyCompactList}\small\item\em Current state of K\+NX physical layer. \end{DoxyCompactList}\item 
-static char \hyperlink{group___k_n_x___p_h___sup___private___variables_ga00420d0a4e21ce2fc7f88cee0f6000b0}{K\+N\+X\+\_\+\+P\+H\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+B\+U\+G\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}K\+N\+X\+\_\+\+P\+H\+\_\+\+S\+T\+A\+TE changed to X\+X\textbackslash{}n\char`\"{}
-\begin{DoxyCompactList}\small\item\em Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static char \hyperlink{group___k_n_x___p_h___sup___private___variables_ga00420d0a4e21ce2fc7f88cee0f6000b0}{K\+N\+X\+\_\+\+P\+H\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+B\+U\+G\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}K\+N\+X\+\_\+\+P\+H\+\_\+\+S\+T\+A\+TE changed to X\+X.\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em State Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\item 
+static char \hyperlink{group___k_n_x___p_h___sup___private___variables_gabe6619ffb844e6d6e976f3706e829cd0}{K\+N\+X\+\_\+\+P\+H\+\_\+\+S\+E\+N\+D\+\_\+\+D\+E\+B\+U\+G\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}Message sent\+: /XX/\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Sending Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\item 
+static char \hyperlink{group___k_n_x___p_h___sup___private___variables_gaaaf9f7e0d7886d2e5d3fa1680ec09a00}{K\+N\+X\+\_\+\+P\+H\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+D\+E\+B\+U\+G\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}Message received\+: \mbox{[}XX\mbox{]}\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Receiving Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\item 
+\hyperlink{structt__cola}{t\+\_\+cola} \hyperlink{group___k_n_x___p_h___sup___private___variables_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}
+\begin{DoxyCompactList}\small\item\em Cola defined in \hyperlink{group___debug}{Debug}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -43,7 +57,6 @@ V0.\+0.\+3
 \begin{DoxyItemize}
 \item Initialization functions
 \item Send and Receive messages functions
-\item Timeout detection function
 \item State functions 
 \end{DoxyItemize}
 \end{DoxyDate}

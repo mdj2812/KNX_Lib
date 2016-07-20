@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>My Project: KNX_PH_Sup_Exported_Functions_Group2</title>
+<title>My Project: Send/Receive Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -79,20 +79,112 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">KNX_PH_Sup_Exported_Functions_Group2<div class="ingroups"><a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup.html">KNX Physical Layer Supervisor</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup___exported___functions.html">KNX_PH_Sup_Exported_Functions</a></div></div>  </div>
+<div class="title">Send/Receive Functions<div class="ingroups"><a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup.html">KNX Physical Layer Supervisor</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup___exported___functions.html">KNX Physical Layer Supervisor Exported Functions</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga0c09176ded85af78b4fcb11f766bc8a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0c09176ded85af78b4fcb11f766bc8a5"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>KNX_Ph_Send</b> (uint8_t data)</td></tr>
-<tr class="separator:ga0c09176ded85af78b4fcb11f766bc8a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3c39f6d20c7af25ec34aa9567ceefa5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad3c39f6d20c7af25ec34aa9567ceefa5"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>KNX_Ph_Receive</b> (uint8_t *data)</td></tr>
-<tr class="separator:gad3c39f6d20c7af25ec34aa9567ceefa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad47b9ae30f2704001cf07d31da372fe2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#gad47b9ae30f2704001cf07d31da372fe2">KNX_Ph_Send</a> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a> request, uint32_t timeout)</td></tr>
+<tr class="memdesc:gad47b9ae30f2704001cf07d31da372fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a request.  <a href="#gad47b9ae30f2704001cf07d31da372fe2">More...</a><br /></td></tr>
+<tr class="separator:gad47b9ae30f2704001cf07d31da372fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#ga83fe8c9d421ec9c32662b66ec2dc1aeb">KNX_Ph_Receive</a> (uint8_t response, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a response.  <a href="#ga83fe8c9d421ec9c32662b66ec2dc1aeb">More...</a><br /></td></tr>
+<tr class="separator:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga83fe8c9d421ec9c32662b66ec2dc1aeb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t KNX_Ph_Receive </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>response</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive a response. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>response expected. </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout duration. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Try to receive the data</p>
+<p><b>If</b> data received is the response expected.</p>
+<p>Return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
+<p><b>If</b> timeout, return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="gad47b9ae30f2704001cf07d31da372fe2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t KNX_Ph_Send </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a>&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send a request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>a request, see <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e" title="PH Request Enumeration definition. ">PH_Request_t</a>. </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout duration. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Convert the request to <code>uint8_t</code> data.</p>
+<p><b>If</b> the request is not valid, return <a class="el" href="group___p_h___error___code.html#ga76393e5665e76130e95c73aab378c53d">PH_ERROR_REQUEST</a>.</p>
+<p>Try to send the data</p>
+<p><b>If</b> succeeded, return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
+<p><b>If</b> timeout, return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

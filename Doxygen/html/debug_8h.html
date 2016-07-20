@@ -123,6 +123,12 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:gabcec3ea567663bbefa0b9f7a88dd68f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX Debug Status Enumeration definition.  <a href="group___debug___exported___types.html#gabcec3ea567663bbefa0b9f7a88dd68f2">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:gabcec3ea567663bbefa0b9f7a88dd68f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb1775677105967978fae4d9155cca26"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___types.html#gacb1775677105967978fae4d9155cca26">DEBUG_Type_t</a> { <a class="el" href="group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26a0cad8d390f2e4ac93049277fd291a95e">STATE_DEBUG</a> = 0x00U, 
+<a class="el" href="group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26aa8996ee795e2d49fb83539a0ac88342e">SEND_DEBUG</a> = 0x01U, 
+<a class="el" href="group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26a6ae1781bce3c10f579294c10c005648b">RECEIVE_DEBUG</a> = 0x02U
+ }<tr class="memdesc:gacb1775677105967978fae4d9155cca26"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX Debug Message Type Enumeration definition.  <a href="group___debug___exported___types.html#gacb1775677105967978fae4d9155cca26">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:gacb1775677105967978fae4d9155cca26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -131,36 +137,14 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memdesc:gadd3262925f11ab443ccc41951f84f471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="group___debug.html">Debug</a> module. <br /></td></tr>
 <tr class="separator:gadd3262925f11ab443ccc41951f84f471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">DebugTask</a> (void *argument)</td></tr>
-<tr class="memdesc:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug task. Check whether new messages are stored in <a class="el" href="group___cola.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola declared in Debug UART. ">colaDebug</a>. If yes, send the new message through UART.  <a href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">More...</a><br /></td></tr>
+<tr class="memdesc:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug task. Check whether new messages are stored in <a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola defined in Debug. ">colaDebug</a>. If yes, send the new message through UART.  <a href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">More...</a><br /></td></tr>
 <tr class="separator:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e54537eed1694dae3ea8e6cce3f9b3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga5e54537eed1694dae3ea8e6cce3f9b3a">DebugGuardar1sTask</a> (void *argument)</td></tr>
-<tr class="memdesc:ga5e54537eed1694dae3ea8e6cce3f9b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Testing task. Store a buffer into <a class="el" href="group___cola.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola declared in Debug UART. ">colaDebug</a> every 1 second.  <a href="group___debug___exported___functions___group2.html#ga5e54537eed1694dae3ea8e6cce3f9b3a">More...</a><br /></td></tr>
-<tr class="separator:ga5e54537eed1694dae3ea8e6cce3f9b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadc8fe8277ada7992dddff220a145eb5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#gadc8fe8277ada7992dddff220a145eb5f">DebugGuardar2sTask</a> (void *argument)</td></tr>
-<tr class="memdesc:gadc8fe8277ada7992dddff220a145eb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Testing task. Store a buffer into <a class="el" href="group___cola.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola declared in Debug UART. ">colaDebug</a> every 2 second.  <a href="group___debug___exported___functions___group2.html#gadc8fe8277ada7992dddff220a145eb5f">More...</a><br /></td></tr>
-<tr class="separator:gadc8fe8277ada7992dddff220a145eb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga91fbb6e1bddf4466bb5517b7f85175ed"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group3.html#ga91fbb6e1bddf4466bb5517b7f85175ed">debug_systick_isr_begin</a> (void)</td></tr>
-<tr class="memdesc:ga91fbb6e1bddf4466bb5517b7f85175ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">At the begin of interrupt, set <a class="el" href="group___debug___private___variables.html#ga5ab62a235f978d6271ac56aa61c477dd" title="Used for yield the Systick interrupt. ">xGuardarSomeTaskWoken</a> to pdFalse. <br /></td></tr>
-<tr class="separator:ga91fbb6e1bddf4466bb5517b7f85175ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3fbeeb6f202ea5a58378bad352f15cf8"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group3.html#ga3fbeeb6f202ea5a58378bad352f15cf8">debug_systick_isr_1s</a> (void)</td></tr>
-<tr class="memdesc:ga3fbeeb6f202ea5a58378bad352f15cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every 1 second, give the semaphore to give <a class="el" href="group___debug___exported___functions___group2.html#ga5e54537eed1694dae3ea8e6cce3f9b3a" title="Testing task. Store a buffer into colaDebug every 1 second. ">DebugGuardar1sTask</a> to store a message in <a class="el" href="group___cola.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola declared in Debug UART. ">colaDebug</a>. <br /></td></tr>
-<tr class="separator:ga3fbeeb6f202ea5a58378bad352f15cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafbcfc8eb9fcaa7fc213a6853d6a9f0e9"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group3.html#gafbcfc8eb9fcaa7fc213a6853d6a9f0e9">debug_systick_isr_2s</a> (void)</td></tr>
-<tr class="memdesc:gafbcfc8eb9fcaa7fc213a6853d6a9f0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every 2 second, give the semaphore to give <a class="el" href="group___debug___exported___functions___group2.html#gadc8fe8277ada7992dddff220a145eb5f" title="Testing task. Store a buffer into colaDebug every 2 second. ">DebugGuardar2sTask</a> to store a message in <a class="el" href="group___cola.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola declared in Debug UART. ">colaDebug</a>. <br /></td></tr>
-<tr class="separator:gafbcfc8eb9fcaa7fc213a6853d6a9f0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga90fc436c03b0762c7f071168e53ef0de"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group3.html#ga90fc436c03b0762c7f071168e53ef0de">debug_systick_isr_end</a> (void)</td></tr>
-<tr class="memdesc:ga90fc436c03b0762c7f071168e53ef0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">At the end of interrupt, yield from the Systick interrupt. <br /></td></tr>
-<tr class="separator:ga90fc436c03b0762c7f071168e53ef0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ga314fd637d927bd6a2551e119de623aa5"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="structt__cola.html">t_cola</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___external___variables.html#ga314fd637d927bd6a2551e119de623aa5">colaDebug</a></td></tr>
-<tr class="memdesc:ga314fd637d927bd6a2551e119de623aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cola declared in <a class="el" href="group___debug___uart.html">Debug UART</a>. <br /></td></tr>
+<tr class="memdesc:ga314fd637d927bd6a2551e119de623aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cola defined in <a class="el" href="group___debug.html">Debug</a>. <br /></td></tr>
 <tr class="separator:ga314fd637d927bd6a2551e119de623aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

@@ -1,59 +1,12 @@
-\hypertarget{group___k_n_x___aux___exported___functions}{}\section{K\+NX Physical Layer Auxiliary Exported Functions}
-\label{group___k_n_x___aux___exported___functions}\index{K\+N\+X Physical Layer Auxiliary Exported Functions@{K\+N\+X Physical Layer Auxiliary Exported Functions}}
-\subsection*{Functions}
+\hypertarget{group___k_n_x___aux___exported___functions}{}\section{K\+N\+X\+\_\+\+Aux\+\_\+\+Exported\+\_\+\+Functions}
+\label{group___k_n_x___aux___exported___functions}\index{K\+N\+X\+\_\+\+Aux\+\_\+\+Exported\+\_\+\+Functions@{K\+N\+X\+\_\+\+Aux\+\_\+\+Exported\+\_\+\+Functions}}
+\subsection*{Modules}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions_gab453e2971ca45bd5e63b995dfedffe20}{int2text} (uint8\+\_\+t value, char $\ast$msg)
-\begin{DoxyCompactList}\small\item\em Convert an uint8\+\_\+t value into a char message. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions_ga8fdc34a6aa7b88b181080462511acac7}{text2int} (char $\ast$msg, uint8\+\_\+t $\ast$value)
-\begin{DoxyCompactList}\small\item\em Convert a char message into an uint8\+\_\+t value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{group___k_n_x___aux___exported___functions___group1}{K\+N\+X int/text conversion functions}
+\item 
+\hyperlink{group___k_n_x___aux___exported___functions___group2}{K\+N\+X Auxiliary Timer Functions}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-
-
-\subsection{Function Documentation}
-\index{K\+N\+X Physical Layer Auxiliary Exported Functions@{K\+N\+X Physical Layer Auxiliary Exported Functions}!int2text@{int2text}}
-\index{int2text@{int2text}!K\+N\+X Physical Layer Auxiliary Exported Functions@{K\+N\+X Physical Layer Auxiliary Exported Functions}}
-\subsubsection[{\texorpdfstring{int2text(uint8\+\_\+t value, char $\ast$msg)}{int2text(uint8_t value, char *msg)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t int2text (
-\begin{DoxyParamCaption}
-\item[{uint8\+\_\+t}]{value, }
-\item[{char $\ast$}]{msg}
-\end{DoxyParamCaption}
-)}\hypertarget{group___k_n_x___aux___exported___functions_gab453e2971ca45bd5e63b995dfedffe20}{}\label{group___k_n_x___aux___exported___functions_gab453e2971ca45bd5e63b995dfedffe20}
-
-
-Convert an uint8\+\_\+t value into a char message. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em value} & an 8 bits unsigned value. \\
-\hline
-{\em msg} & pointer to a buffer. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Error code, see \hyperlink{group___k_n_x___aux___error___code}{Auxiliary Functions\textquotesingle{} Error Code} 
-\end{DoxyReturn}
-\index{K\+N\+X Physical Layer Auxiliary Exported Functions@{K\+N\+X Physical Layer Auxiliary Exported Functions}!text2int@{text2int}}
-\index{text2int@{text2int}!K\+N\+X Physical Layer Auxiliary Exported Functions@{K\+N\+X Physical Layer Auxiliary Exported Functions}}
-\subsubsection[{\texorpdfstring{text2int(char $\ast$msg, uint8\+\_\+t $\ast$value)}{text2int(char *msg, uint8_t *value)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t text2int (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{msg, }
-\item[{uint8\+\_\+t $\ast$}]{value}
-\end{DoxyParamCaption}
-)}\hypertarget{group___k_n_x___aux___exported___functions_ga8fdc34a6aa7b88b181080462511acac7}{}\label{group___k_n_x___aux___exported___functions_ga8fdc34a6aa7b88b181080462511acac7}
-
-
-Convert a char message into an uint8\+\_\+t value. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em msg} & pointer to a buffer of 2 digits. \\
-\hline
-{\em value} & pointer to ouput as an 8 bits unsigned value. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Error code, see \hyperlink{group___k_n_x___aux___error___code}{Auxiliary Functions\textquotesingle{} Error Code} 
-\end{DoxyReturn}

@@ -11,13 +11,15 @@ This file contains K\+NX physical layer common defines, enumerations, macros, st
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}~((uint32\+\_\+t)0x00000000\+U)
+\#define \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}~((uint8\+\_\+t)0x00\+U)
 \item 
-\#define \hyperlink{group___p_h___error___code_ga1ab3aa44f2a85855b44408e5b697667b}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+O\+R\+M\+AT}~((uint32\+\_\+t)0x00000001\+U)
+\#define \hyperlink{group___p_h___error___code_ga15fbdf4edfc98283ef0f1b7c2fc0a47b}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}~((uint8\+\_\+t)0x01\+U)
 \item 
-\#define \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}~((uint32\+\_\+t)0x00000002\+U)
+\#define \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}~((uint8\+\_\+t)0x02\+U)
 \item 
-\#define \hyperlink{group___p_h___error___code_ga15fbdf4edfc98283ef0f1b7c2fc0a47b}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}~((uint32\+\_\+t)0x00000004\+U)
+\#define \hyperlink{group___p_h___error___code_ga76393e5665e76130e95c73aab378c53d}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+Q\+U\+E\+ST}~((uint8\+\_\+t)0x03\+U)
+\item 
+\#define \hyperlink{group___p_h___error___code_ga104872de885107db19b579c81a62f563}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+S\+P\+O\+N\+SE}~((uint8\+\_\+t)0x03\+U)
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -30,18 +32,30 @@ enum \hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbf
 \\*
 \hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49ae9fe73aeee988939ec19ed18c57250dc}{P\+H\+\_\+\+S\+T\+OP} = 0x04U
  \}\begin{DoxyCompactList}\small\item\em PH Status Enumeration definition. State machine\+: \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} \{ \\*
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3eaf0efc940702df223316668e6712b5ba4}{Ph\+\_\+\+Reset} = 0x00U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3eae26a34f7945078eabc251ea8570136ef}{Ph\+\_\+\+State} = 0x01U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3eaaab6813d086f4fee2279e47bd9f474f1}{Ph\+\_\+\+Activate\+Busmon} = 0x02U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3eab570f51bc280e629f45421a3d1f8240f}{Ph\+\_\+\+Product\+ID} = 0x03U, 
+\\*
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3eabeba2b32d6d52cd78e0fcc0a2893fe55}{Ph\+\_\+\+Activate\+Busy\+Mode} = 0x04U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3ea1d8679556ec07170396cbe6b50b2b1d3}{Ph\+\_\+\+Reset\+Busy\+Mode} = 0x05U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3eab5991f81f2614188770e51ca5623de44}{Ph\+\_\+\+Set\+Address} = 0x06U, 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3ea1e5d3927d90dd27ee5bfa4c20e6a3e46}{Ph\+\_\+\+Ack\+Information} = 0x07U
+ \}\begin{DoxyCompactList}\small\item\em PH Request Enumeration definition. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Init} (void)
-\item 
-uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Send} (uint8\+\_\+t data)
-\item 
-uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Receive} (uint8\+\_\+t $\ast$data)
-\item 
-\hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Get\+State} (void)
-\end{DoxyCompactItemize}
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group1_ga2139e336141090cdd97ecb0c5e55499f}{K\+N\+X\+\_\+\+Ph\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_gad47b9ae30f2704001cf07d31da372fe2}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} request, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Send a request. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga83fe8c9d421ec9c32662b66ec2dc1aeb}{K\+N\+X\+\_\+\+Ph\+\_\+\+Receive} (uint8\+\_\+t response, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Receive a response. \end{DoxyCompactList}\item 
+\hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_ga8f380db7e1c156190263c4860f2d3ded}{K\+N\+X\+\_\+\+Ph\+\_\+\+Get\+State} (void)
+\begin{DoxyCompactList}\small\item\em Get the status. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

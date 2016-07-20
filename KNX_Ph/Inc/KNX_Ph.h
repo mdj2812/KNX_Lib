@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file       KNX_Ph.h
   * @author     MA Dingjie
-  * @version    V0.0.3
-  * @date       18-July-2016
+  * @version    V0.0.5
+  * @date       20-July-2016
   * @brief      This file contains KNX physical layer common defines,
   *             enumerations, macros, structures definitions and all the
   *             functions prototypes.
@@ -31,14 +31,24 @@
   */
 
 /* Exported constants --------------------------------------------------------*/
+/** @defgroup PH_Exported_Constants Physical Layer Exported Constants
+  * @brief    PH Exported Constants
+  * @{
+  */
+
 /** @defgroup PH_Error_Code Physical Layer Error Code
   * @brief    PH Error Code
   * @{
   */
-#define PH_ERROR_NONE           ((uint32_t)0x00000000U)   /*!< No error       */
-#define PH_ERROR_FORMAT         ((uint32_t)0x00000001U)   /*!< Format error   */
-#define PH_ERROR_TIMEOUT        ((uint32_t)0x00000002U)   /*!< Timeout error  */
-#define PH_ERROR_INIT           ((uint32_t)0x00000004U)   /*!< Initial error  */
+#define PH_ERROR_NONE           ((uint8_t)0x00U)   /*!< No error              */
+#define PH_ERROR_INIT           ((uint8_t)0x01U)   /*!< Initialization error  */
+#define PH_ERROR_TIMEOUT        ((uint8_t)0x02U)   /*!< Timeout error         */
+#define PH_ERROR_REQUEST        ((uint8_t)0x03U)   /*!< Invalid request error */
+#define PH_ERROR_RESPONSE       ((uint8_t)0x03U)   /*!< No response error     */
+/**
+  * @}
+  */
+
 /**
   * @}
   */
@@ -61,6 +71,22 @@ typedef enum
   PH_MONITOR    = 0x03U,        /*!< Monitor Mode                             */
   PH_STOP       = 0x04U         /*!< Stop Mode                                */
 } PH_Status_t;
+
+/**
+  * @brief  PH Request Enumeration definition.
+  */
+typedef enum
+{
+  Ph_Reset              = 0x00U,        /*!< Reset Request                    */
+  Ph_State              = 0x01U,        /*!< State Request                    */
+  Ph_ActivateBusmon     = 0x02U,        /*!< Activate the Busmonitormode      */
+  Ph_ProductID          = 0x03U,        /*!< Product ID Request               */
+  Ph_ActivateBusyMode   = 0x04U,        /*!< Activate the Busy Mode           */
+  Ph_ResetBusyMode      = 0x05U,        /*!< Deactivate the Busy Mode         */
+  Ph_SetAddress         = 0x06U,        /*!< Set Address Request              */
+  Ph_AckInformation     = 0x07U         /*!< Acknowledgement Information Request:
+                                              Nack, Busy, Addressed           */
+} PH_Request_t;
 /**
   * @}
   */
@@ -75,7 +101,7 @@ typedef enum
   */
 
 /* Initialization functions  **************************************************/
-uint32_t KNX_Ph_Init(void);
+uint8_t KNX_Ph_Init(void);
 /**
   * @}
   */
@@ -85,8 +111,8 @@ uint32_t KNX_Ph_Init(void);
 */
 
 /* Send/Receive functions  ***************************************************/
-uint32_t KNX_Ph_Send(uint8_t data);
-uint32_t KNX_Ph_Receive(uint8_t *data);
+uint8_t KNX_Ph_Send(PH_Request_t request, uint32_t timeout);
+uint8_t KNX_Ph_Receive(uint8_t response, uint32_t timeout);
 /**
   * @}
   */

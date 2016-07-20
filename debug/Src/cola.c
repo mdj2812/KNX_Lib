@@ -28,10 +28,6 @@
   * @{
   */
 
-/* External variables --------------------------------------------------------*/
-/** \brief Cola declared in \ref Debug_Uart */
-t_cola colaDebug;
-
 /* Exported functions --------------------------------------------------------*/
 /** @defgroup Cola_Exported_Functions Cola Exported Functions
   * @{

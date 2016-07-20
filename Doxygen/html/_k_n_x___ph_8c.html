@@ -96,25 +96,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>KNX Physical Layer supervisor. This file provides functions to manage following functionalities:  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_k_n_x___ph_8h_source.html">KNX_Ph.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_k_n_x___ph_8h_source.html">KNX_Ph.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_k_n_x___aux_8h_source.html">KNX_Aux.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_k_n_x___t_p_uart_8h_source.html">KNX_TPUart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cola_8h_source.html">cola.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="debug_8h_source.html">debug.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga8253bed4aa2e3d7bfa9c1de3604668e0"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>KNX_Ph_SetState</b> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga5b665a94bef912fbfbea7cc949ed0e49">PH_Status_t</a> state)</td></tr>
+<tr class="memitem:gaa1d7c7761cb6971931395ef1fb9dfe59"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___functions.html#gaa1d7c7761cb6971931395ef1fb9dfe59">request2data</a> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a> request)</td></tr>
+<tr class="memdesc:gaa1d7c7761cb6971931395ef1fb9dfe59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a request to a data.  <a href="group___k_n_x___p_h___sup___private___functions.html#gaa1d7c7761cb6971931395ef1fb9dfe59">More...</a><br /></td></tr>
+<tr class="separator:gaa1d7c7761cb6971931395ef1fb9dfe59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8253bed4aa2e3d7bfa9c1de3604668e0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___functions.html#ga8253bed4aa2e3d7bfa9c1de3604668e0">KNX_Ph_SetState</a> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga5b665a94bef912fbfbea7cc949ed0e49">PH_Status_t</a> state)</td></tr>
+<tr class="memdesc:ga8253bed4aa2e3d7bfa9c1de3604668e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the status of Physical layer.  <a href="group___k_n_x___p_h___sup___private___functions.html#ga8253bed4aa2e3d7bfa9c1de3604668e0">More...</a><br /></td></tr>
 <tr class="separator:ga8253bed4aa2e3d7bfa9c1de3604668e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga751f52d340ebaafe0b07f4dad46170aa"><td class="memItemLeft" align="right" valign="top">
-static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>KNX_Ph_GetTick</b> (void)</td></tr>
-<tr class="separator:ga751f52d340ebaafe0b07f4dad46170aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga41c5c8a01972669cc3007945505e81f9"><td class="memItemLeft" align="right" valign="top">
-static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>KNX_Ph_WaitOnUntilTimeOut</b> (uint32_t Tickstart, uint32_t Timeout)</td></tr>
-<tr class="separator:ga41c5c8a01972669cc3007945505e81f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaab2dd89c41e07570f7fd6e8e46e504b8"><td class="memItemLeft" align="right" valign="top">
-static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>KNX_Ph_DebugMessage</b> (uint8_t data)</td></tr>
-<tr class="separator:gaab2dd89c41e07570f7fd6e8e46e504b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad432d8797e22b886ab169401decc3dd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___functions.html#gaad432d8797e22b886ab169401decc3dd">KNX_Ph_DebugMessage</a> (uint8_t data, <a class="el" href="group___debug___exported___types.html#gacb1775677105967978fae4d9155cca26">DEBUG_Type_t</a> type)</td></tr>
+<tr class="memdesc:gaad432d8797e22b886ab169401decc3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the debug message to indicate the change of the state.  <a href="group___k_n_x___p_h___sup___private___functions.html#gaad432d8797e22b886ab169401decc3dd">More...</a><br /></td></tr>
+<tr class="separator:gaad432d8797e22b886ab169401decc3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2139e336141090cdd97ecb0c5e55499f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group1.html#ga2139e336141090cdd97ecb0c5e55499f">KNX_Ph_Init</a> (void)</td></tr>
+<tr class="memdesc:ga2139e336141090cdd97ecb0c5e55499f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> module.  <a href="group___k_n_x___p_h___sup___exported___functions___group1.html#ga2139e336141090cdd97ecb0c5e55499f">More...</a><br /></td></tr>
+<tr class="separator:ga2139e336141090cdd97ecb0c5e55499f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad47b9ae30f2704001cf07d31da372fe2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#gad47b9ae30f2704001cf07d31da372fe2">KNX_Ph_Send</a> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a> request, uint32_t timeout)</td></tr>
+<tr class="memdesc:gad47b9ae30f2704001cf07d31da372fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a request.  <a href="group___k_n_x___p_h___sup___exported___functions___group2.html#gad47b9ae30f2704001cf07d31da372fe2">More...</a><br /></td></tr>
+<tr class="separator:gad47b9ae30f2704001cf07d31da372fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#ga83fe8c9d421ec9c32662b66ec2dc1aeb">KNX_Ph_Receive</a> (uint8_t response, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a response.  <a href="group___k_n_x___p_h___sup___exported___functions___group2.html#ga83fe8c9d421ec9c32662b66ec2dc1aeb">More...</a><br /></td></tr>
+<tr class="separator:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f380db7e1c156190263c4860f2d3ded"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga5b665a94bef912fbfbea7cc949ed0e49">PH_Status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group3.html#ga8f380db7e1c156190263c4860f2d3ded">KNX_Ph_GetState</a> (void)</td></tr>
+<tr class="memdesc:ga8f380db7e1c156190263c4860f2d3ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the status.  <a href="group___k_n_x___p_h___sup___exported___functions___group3.html#ga8f380db7e1c156190263c4860f2d3ded">More...</a><br /></td></tr>
+<tr class="separator:ga8f380db7e1c156190263c4860f2d3ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -123,9 +134,21 @@ static <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga5
 <tr class="memdesc:gaed45956ede9586539568adc9994c6dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current state of KNX physical layer. <br /></td></tr>
 <tr class="separator:gaed45956ede9586539568adc9994c6dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga00420d0a4e21ce2fc7f88cee0f6000b0"><td class="memItemLeft" align="right" valign="top">
-static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga00420d0a4e21ce2fc7f88cee0f6000b0">KNX_PH_STATE_DEBUGMSG</a> [] = &quot;KNX_PH_STATE changed to XX\n&quot;</td></tr>
-<tr class="memdesc:ga00420d0a4e21ce2fc7f88cee0f6000b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
+static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga00420d0a4e21ce2fc7f88cee0f6000b0">KNX_PH_STATE_DEBUGMSG</a> [] = &quot;KNX_PH_STATE changed to XX.\r\n&quot;</td></tr>
+<tr class="memdesc:ga00420d0a4e21ce2fc7f88cee0f6000b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">State Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
 <tr class="separator:ga00420d0a4e21ce2fc7f88cee0f6000b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe6619ffb844e6d6e976f3706e829cd0"><td class="memItemLeft" align="right" valign="top">
+static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#gabe6619ffb844e6d6e976f3706e829cd0">KNX_PH_SEND_DEBUGMSG</a> [] = &quot;Message sent: /XX/\r\n&quot;</td></tr>
+<tr class="memdesc:gabe6619ffb844e6d6e976f3706e829cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sending Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
+<tr class="separator:gabe6619ffb844e6d6e976f3706e829cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaaf9f7e0d7886d2e5d3fa1680ec09a00"><td class="memItemLeft" align="right" valign="top">
+static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#gaaaf9f7e0d7886d2e5d3fa1680ec09a00">KNX_PH_RECEIVE_DEBUGMSG</a> [] = &quot;Message received: [XX]\r\n&quot;</td></tr>
+<tr class="memdesc:gaaaf9f7e0d7886d2e5d3fa1680ec09a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
+<tr class="separator:gaaaf9f7e0d7886d2e5d3fa1680ec09a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga314fd637d927bd6a2551e119de623aa5"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="structt__cola.html">t_cola</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga314fd637d927bd6a2551e119de623aa5">colaDebug</a></td></tr>
+<tr class="memdesc:ga314fd637d927bd6a2551e119de623aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cola defined in <a class="el" href="group___debug.html">Debug</a>. <br /></td></tr>
+<tr class="separator:ga314fd637d927bd6a2551e119de623aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>KNX Physical Layer supervisor. This file provides functions to manage following functionalities: </p>
@@ -134,7 +157,6 @@ static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <dl class="section date"><dt>Date</dt><dd>18-July-2016<ul>
 <li>Initialization functions</li>
 <li>Send and Receive messages functions</li>
-<li>Timeout detection function</li>
 <li>State functions </li>
 </ul>
 </dd></dl>

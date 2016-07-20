@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>My Project: KNX_PH_Sup_Exported_Functions_Group1</title>
+<title>My Project: Initialization Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -79,17 +79,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">KNX_PH_Sup_Exported_Functions_Group1<div class="ingroups"><a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup.html">KNX Physical Layer Supervisor</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup___exported___functions.html">KNX_PH_Sup_Exported_Functions</a></div></div>  </div>
+<div class="title">Initialization Functions<div class="ingroups"><a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup.html">KNX Physical Layer Supervisor</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup___exported___functions.html">KNX Physical Layer Supervisor Exported Functions</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gac778d1760235bafd711b75b73e664595"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac778d1760235bafd711b75b73e664595"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>KNX_Ph_Init</b> (void)</td></tr>
-<tr class="separator:gac778d1760235bafd711b75b73e664595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2139e336141090cdd97ecb0c5e55499f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group1.html#ga2139e336141090cdd97ecb0c5e55499f">KNX_Ph_Init</a> (void)</td></tr>
+<tr class="memdesc:ga2139e336141090cdd97ecb0c5e55499f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> module.  <a href="#ga2139e336141090cdd97ecb0c5e55499f">More...</a><br /></td></tr>
+<tr class="separator:ga2139e336141090cdd97ecb0c5e55499f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga2139e336141090cdd97ecb0c5e55499f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t KNX_Ph_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> module. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Set state to <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a329f30393c5729b777643b93478de68c">PH_NOINIT</a></p>
+<p>Initialize the timer.</p>
+<p>Initialize TPUart.</p>
+<p><b>If</b> TPUart initialization failed, return <a class="el" href="group___p_h___error___code.html#ga15fbdf4edfc98283ef0f1b7c2fc0a47b">PH_ERROR_INIT</a></p>
+<p>Set state to <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a69a4299f68e66ea3fbe9477582ac02cd">PH_RESET</a>.</p>
+<p>Send <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga78f5bed722457f025cbc6786d5730d3eaf0efc940702df223316668e6712b5ba4">Ph_Reset</a> request.</p>
+<p><b>If</b> encounter a problem, return <a class="el" href="group___p_h___error___code.html#ga76393e5665e76130e95c73aab378c53d">PH_ERROR_REQUEST</a></p>
+<p>Waiting for the <a class="el" href="group___u_a_r_t___control___from.html#gade9c58399a01abdaa03bbecbf63879c3">Reset_indication</a>.</p>
+<p><b>If</b> receive the response, set state to <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a4be7dd56ae47b708c6f4751714efe930">PH_NORMAL</a>.</p>
+<p>Return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
+<p><b>If</b> times out, set state to <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a329f30393c5729b777643b93478de68c">PH_NOINIT</a>.</p>
+<p>Return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

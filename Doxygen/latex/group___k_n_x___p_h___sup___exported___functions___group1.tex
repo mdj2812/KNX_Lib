@@ -1,11 +1,52 @@
-\hypertarget{group___k_n_x___p_h___sup___exported___functions___group1}{}\section{K\+N\+X\+\_\+\+P\+H\+\_\+\+Sup\+\_\+\+Exported\+\_\+\+Functions\+\_\+\+Group1}
-\label{group___k_n_x___p_h___sup___exported___functions___group1}\index{K\+N\+X\+\_\+\+P\+H\+\_\+\+Sup\+\_\+\+Exported\+\_\+\+Functions\+\_\+\+Group1@{K\+N\+X\+\_\+\+P\+H\+\_\+\+Sup\+\_\+\+Exported\+\_\+\+Functions\+\_\+\+Group1}}
+\hypertarget{group___k_n_x___p_h___sup___exported___functions___group1}{}\section{Initialization Functions}
+\label{group___k_n_x___p_h___sup___exported___functions___group1}\index{Initialization Functions@{Initialization Functions}}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-uint32\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Init} (void)\hypertarget{group___k_n_x___p_h___sup___exported___functions___group1_gac778d1760235bafd711b75b73e664595}{}\label{group___k_n_x___p_h___sup___exported___functions___group1_gac778d1760235bafd711b75b73e664595}
-
-\end{DoxyCompactItemize}
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group1_ga2139e336141090cdd97ecb0c5e55499f}{K\+N\+X\+\_\+\+Ph\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\index{Initialization Functions@{Initialization Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Init@{K\+N\+X\+\_\+\+Ph\+\_\+\+Init}}
+\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Init@{K\+N\+X\+\_\+\+Ph\+\_\+\+Init}!Initialization Functions@{Initialization Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Init(void)}{KNX_Ph_Init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group1_ga2139e336141090cdd97ecb0c5e55499f}{}\label{group___k_n_x___p_h___sup___exported___functions___group1_ga2139e336141090cdd97ecb0c5e55499f}
+
+
+Initialize the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & code, See \hyperlink{group___p_h___error___code}{Physical Layer Error Code}. \\
+\hline
+\end{DoxyRetVals}
+Set state to \hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a329f30393c5729b777643b93478de68c}{P\+H\+\_\+\+N\+O\+I\+N\+IT}
+
+Initialize the timer.
+
+Initialize T\+P\+Uart.
+
+{\bfseries If} T\+P\+Uart initialization failed, return \hyperlink{group___p_h___error___code_ga15fbdf4edfc98283ef0f1b7c2fc0a47b}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}
+
+Set state to \hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a69a4299f68e66ea3fbe9477582ac02cd}{P\+H\+\_\+\+R\+E\+S\+ET}.
+
+Send \hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3eaf0efc940702df223316668e6712b5ba4}{Ph\+\_\+\+Reset} request.
+
+{\bfseries If} encounter a problem, return \hyperlink{group___p_h___error___code_ga76393e5665e76130e95c73aab378c53d}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+Q\+U\+E\+ST}
+
+Waiting for the \hyperlink{group___u_a_r_t___control___from_gade9c58399a01abdaa03bbecbf63879c3}{Reset\+\_\+indication}.
+
+{\bfseries If} receive the response, set state to \hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a4be7dd56ae47b708c6f4751714efe930}{P\+H\+\_\+\+N\+O\+R\+M\+AL}.
+
+Return \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}.
+
+{\bfseries If} times out, set state to \hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a329f30393c5729b777643b93478de68c}{P\+H\+\_\+\+N\+O\+I\+N\+IT}.
+
+Return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}. 

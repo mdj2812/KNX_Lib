@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file       KNX_TPUart.c
   * @author     MA Dingjie
-  * @version    V0.0.3
-  * @date       18-July-2016
+  * @version    V0.0.5
+  * @date       20-July-2016
   * @brief      KNX Physical Layer communication via TP-UART.
   *             This file provides functions to manage following functionalities:
   *              + Initialization functions
@@ -13,7 +13,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
-#include "KNX_Ph.h"
 #include "KNX_Aux.h"
 #include "KNX_TPUart.h"
 #include "stm32f4xx_hal.h"

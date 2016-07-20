@@ -4,7 +4,6 @@ var searchData=
   ['debug_20exported_20functions',['Debug Exported Functions',['../group___debug___exported___functions.html',1,'']]],
   ['debug_20initialization_20functions',['Debug Initialization Functions',['../group___debug___exported___functions___group1.html',1,'']]],
   ['debug_20tasks_20functions',['Debug tasks functions',['../group___debug___exported___functions___group2.html',1,'']]],
-  ['debug_20systic_20test_20isr_20functions',['Debug Systic Test ISR Functions',['../group___debug___exported___functions___group3.html',1,'']]],
   ['debug_20exported_20types',['Debug Exported Types',['../group___debug___exported___types.html',1,'']]],
   ['debug_20external_20uart_20isr_20functions',['Debug External UART ISR Functions',['../group___debug___external___functions.html',1,'']]],
   ['debug_20external_20variables',['Debug External Variables',['../group___debug___external___variables.html',1,'']]],

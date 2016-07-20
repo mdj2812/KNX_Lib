@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file       KNX_TPUart.h
   * @author     MA Dingjie
-  * @version    V0.0.3
-  * @date       18-July-2016
+  * @version    V0.0.5
+  * @date       20-July-2016
   * @brief      This file contains definitions and prototypes of functions for
   *             TP-UART.
   ******************************************************************************
@@ -36,6 +36,7 @@
   * @brief    Services to UART
   * @{
   */
+#define U_None                          ((uint8_t)0x00U)    /*!< None request   */
 #define U_Reset_request                 ((uint8_t)0x01U)    /*!< Reset request  */
 #define U_State_request                 ((uint8_t)0x02U)    /*!< State request  */
 #define U_ActivateBusmon                ((uint8_t)0x05U)    /*!< Activate monitor mode  */
@@ -59,8 +60,8 @@
   * @{
   */
 #define Reset_indication                ((uint8_t)0x03U)    /*!< Reset indication   */
-#define State_indication                ((uint8_t)0x07U)    /*!< State request  */
-#define State_indication_mask           ((uint8_t)0x07U)    /*!< State request  */
+#define State_indication                ((uint8_t)0x07U)    /*!< State indication  */
+#define State_indication_mask           ((uint8_t)0x07U)    /*!< State indication mask  */
 #define L_Data_confirm_success          ((uint8_t)0x8BU)    /*!< Transmission succeed   */
 #define L_Data_confirm_failed           ((uint8_t)0x0BU)    /*!< Transmission failed    */
 /**
@@ -97,7 +98,6 @@ typedef enum
   TPUart_OK       = 0x00U,      /*!< OK                                       */
   TPUart_ERROR    = 0x01U,      /*!< Error                                    */
   TPUart_BUSY     = 0x02U,      /*!< Busy                                     */
-  TPUart_TIMEOUT  = 0x03U       /*!< Timeout                                  */
 } TPUart_Status_t;
 /**
   * @}

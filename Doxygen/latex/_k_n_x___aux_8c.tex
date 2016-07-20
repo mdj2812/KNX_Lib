@@ -10,15 +10,35 @@ Auxiliary functions for K\+NX Physical Layer. This file provides functions to ma
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions_gab453e2971ca45bd5e63b995dfedffe20}{int2text} (uint8\+\_\+t value, char $\ast$msg)
-\begin{DoxyCompactList}\small\item\em Convert an uint8\+\_\+t value into a char message. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions_ga8fdc34a6aa7b88b181080462511acac7}{text2int} (char $\ast$msg, uint8\+\_\+t $\ast$value)
-\begin{DoxyCompactList}\small\item\em Convert a char message into an uint8\+\_\+t value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group1_gab453e2971ca45bd5e63b995dfedffe20}{int2text} (uint8\+\_\+t value, char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Convert an {\ttfamily uint8\+\_\+t} value into a {\ttfamily char} message. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group1_ga8fdc34a6aa7b88b181080462511acac7}{text2int} (char $\ast$msg, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Convert a {\ttfamily char} message into an {\ttfamily uint8\+\_\+t} value. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga21f8fee0433331a8a98b552d934d7fa9}{K\+N\+X\+\_\+\+Init\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Initilize the timer. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga2d2be4d767e87be2cfab3a33c051c9b8}{K\+N\+X\+\_\+\+Start\+Timer} (uint32\+\_\+t Timeout)
+\begin{DoxyCompactList}\small\item\em Start a timer of a timeout duration given. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_gab95ee459c86b8b8a0045ab24d45d617b}{K\+N\+X\+\_\+\+Get\+Time} (void)
+\begin{DoxyCompactList}\small\item\em Get the timer. \end{DoxyCompactList}\item 
+\hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___aux___exported___functions___group2_ga34d3da57b9d1757a9724693c9e6bbe45}{K\+N\+X\+\_\+\+Get\+Timer\+State} (void)
+\begin{DoxyCompactList}\small\item\em Get the timer\textquotesingle{}s status. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga44b5f88a0f2b0590924627b428107e97}{K\+N\+X\+\_\+\+Stop\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Stop the timer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga4a1fd53320eeed9eb08d09ec720f3d42}{K\+N\+X\+\_\+\+Reset\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Reset the timer. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___aux___exported___functions___group2_gad9635bb60f2ba98f58874ef46e65c36d}{K\+N\+X\+\_\+systick\+\_\+isr} (void)
+\begin{DoxyCompactList}\small\item\em Systick interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 static const char \hyperlink{group___k_n_x___aux___private___consts_ga938e545954f0ddfa9a048c6fc3f30776}{hex\+\_\+num} \mbox{[}$\,$\mbox{]}
-\begin{DoxyCompactList}\small\item\em Table of hexadecimal numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Table of hexadecimal numbers. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+IO \hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___aux___private___consts_ga40717ccc77c582d2b542fab145329422}{timer\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Status of the timer. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \hyperlink{group___k_n_x___aux___private___consts_gac31eb4f5e9b0e6b3ba455a8040ee5f64}{timer\+\_\+timeout}
+\begin{DoxyCompactList}\small\item\em Timeout duration of the timer. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \hyperlink{group___k_n_x___aux___private___consts_gae2d429094fb9f4b65f422ecc37864377}{timer\+\_\+tick}
+\begin{DoxyCompactList}\small\item\em Counter of the timer, the unit is ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -28,11 +48,12 @@ Auxiliary functions for K\+NX Physical Layer. This file provides functions to ma
 MA Dingjie 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-V0.\+0.\+4 
+V0.\+0.\+5 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-19-\/\+July-\/2016
+20-\/\+July-\/2016
 \begin{DoxyItemize}
-\item Conversion functions from int to text and from text to int 
+\item Conversion functions from int to text and from text to int
+\item A basic timer 
 \end{DoxyItemize}
 \end{DoxyDate}
