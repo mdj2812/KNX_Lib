@@ -2,8 +2,8 @@
   *****************************************************************************
   * @file       debug.h
   * @author
-  * @version    V3.0.1
-  * @date       18-July-2016
+  * @version    V3.1.0
+  * @date       26-July-2016
   * @brief      Debug tasks.
   ******************************************************************************
   */
@@ -32,6 +32,8 @@
   */
 /** \brief Max size of the ::buffer */
 #define BUFFER_SIZE 1024
+/** \brief Max size of the ::RX_buffer */
+#define RX_BUFFER_SIZE 2
 
 /**
   * @}
@@ -106,6 +108,7 @@ uint32_t DebugInit(void);
 
 /* Debug tasks functions  *****************************************************/
 void DebugTask(void * argument);
+void DebugRXTask(void * argument);
 /**
   * @}
   */

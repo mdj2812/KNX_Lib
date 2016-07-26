@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['data2request',['data2request',['../group___debug___private___functions.html#ga7f180885ced466ae7c46e86c7c372b1f',1,'debug.c']]],
   ['datos',['datos',['../structt__cola.html#a8eaaf6d0a3ebef35b2d6c94e9a63bf3d',1,'t_cola']]],
   ['debug',['Debug',['../group___debug.html',1,'']]],
   ['debug_2ec',['debug.c',['../debug_8c.html',1,'']]],
@@ -12,6 +13,7 @@ var searchData=
   ['debug_20external_20variables',['Debug External Variables',['../group___debug___external___variables.html',1,'']]],
   ['debug_5fhuart',['debug_huart',['../group___debug___u_a_r_t___external___variables.html#gaa020232170a049fcc321246bd778a49f',1,'debug_uart.c']]],
   ['debug_20private_20define',['Debug Private Define',['../group___debug___private___define.html',1,'']]],
+  ['debug_20private_20functions',['Debug Private Functions',['../group___debug___private___functions.html',1,'']]],
   ['debug_20private_20variables',['Debug Private Variables',['../group___debug___private___variables.html',1,'']]],
   ['debug_5ftype_5ft',['DEBUG_Type_t',['../group___debug___exported___types.html#gacb1775677105967978fae4d9155cca26',1,'debug.h']]],
   ['debug_20uart',['Debug UART',['../group___debug___uart.html',1,'']]],
@@ -28,6 +30,7 @@ var searchData=
   ['debug_5fuart_5fisr_5fend',['debug_uart_isr_end',['../group___debug___external___functions.html#ga3f4c952ea2b6368ccbb0572addd76601',1,'debug_uart_isr_end(void):&#160;debug.c'],['../group___debug___u_a_r_t___external___functions.html#ga3f4c952ea2b6368ccbb0572addd76601',1,'debug_uart_isr_end(void):&#160;debug.c']]],
   ['debug_5fuart_5fisr_5frx',['debug_uart_isr_rx',['../group___debug___external___functions.html#ga2e1878be0250daf30f0a286af6e683e9',1,'debug_uart_isr_rx(void):&#160;debug.c'],['../group___debug___u_a_r_t___external___functions.html#ga2e1878be0250daf30f0a286af6e683e9',1,'debug_uart_isr_rx(void):&#160;debug.c']]],
   ['debug_5fuart_5fisr_5ftx',['debug_uart_isr_tx',['../group___debug___external___functions.html#gaee765dd75f3414ade869071798ff33f4',1,'debug_uart_isr_tx(void):&#160;debug.c'],['../group___debug___u_a_r_t___external___functions.html#gaee765dd75f3414ade869071798ff33f4',1,'debug_uart_isr_tx(void):&#160;debug.c']]],
+  ['debug_5fuart_5freceive',['debug_uart_receive',['../group___debug___uart___exported___functions___group2.html#gae5a08803ab0c9fcbddfd2f8fbddb8a7e',1,'debug_uart.c']]],
   ['debug_5fuart_5fsend',['debug_uart_send',['../group___debug___uart___exported___functions___group2.html#ga3709c73faee84b7b9d4b9699a6035dfa',1,'debug_uart.c']]],
   ['debuginit',['DebugInit',['../group___debug___exported___functions___group1.html#gadd3262925f11ab443ccc41951f84f471',1,'debug.c']]],
   ['debugtask',['DebugTask',['../group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44',1,'debug.c']]]

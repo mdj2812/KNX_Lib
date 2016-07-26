@@ -2,13 +2,12 @@
   *****************************************************************************
   * @file       debug.c
   * @author
-  * @version    V3.0.1
-  * @date       18-July-2016
+  * @version    V3.1.0
+  * @date       26-July-2016
   * @brief      Debug tasks.
   *             This file provides functions to manage following functionalities:
   *              + Initialization functions and tasks
   *              + Perform DebugTask
-  *              + Perform 2 testing tasks based on time
   ******************************************************************************
   */
 
@@ -49,12 +48,26 @@ __IO uint16_t buffer_indice;
 /** \brief The maximum value of the ::buffer_indice */
 __IO uint16_t buffer_indice_max;
 
+/** \brief The ::buffer to store the message received */
+static unsigned char RX_buffer[RX_BUFFER_SIZE];
+/** \brief The indice of the ::RX_buffer */
+__IO uint16_t   RX_buffer_indice = 0;
+
 /** \brief Handler of the ::DebugTask */
 static TaskHandle_t xDebugTaskHandle;
 /** \brief Semaphore to permit the new cycle of ::DebugTask */
 static SemaphoreHandle_t semaforo_debug_isruart;
 /** \brief Used for yield the UART interrupt */
 static BaseType_t xHigherPriorityTaskWoken;
+/**
+  * @}
+  */
+
+/* Private function prototypes -----------------------------------------------*/
+/** @defgroup Debug_Private_Functions Debug Private Functions
+  * @{
+  */
+static PH_Request_t  data2request(uint8_t data);
 /**
   * @}
   */
@@ -98,11 +111,48 @@ void debug_uart_isr_tx(void)
 }
 
 /**
-  * @brief      UART RX interrupt routine.
+  * @brief      Receive the buffer character by character. If the buffer fits in
+  *             the format as "/XX/" (XX: two digits of hexadecimal), then transmit
+  *             it to TPUart.
   */
 void debug_uart_isr_rx(void)
 {
-	// No hacer nada
+  unsigned char temp;
+  uint8_t byte;
+  
+  debug_uart_receive (&temp, 1);
+  
+  if(temp == '/')
+  {
+    if(RX_buffer_indice != 3)
+    {
+      RX_buffer_indice = 0;
+      
+      RX_buffer[RX_buffer_indice] = temp;
+      RX_buffer_indice++;
+    }
+    else
+    {
+      RX_buffer[RX_buffer_indice] = temp;
+      KNX_Ph_Send(data2request(byte), KNX_DEFAULT_TIMEOUT);
+      RX_buffer_indice = 0;
+    }
+  }
+  else
+  {
+    if(RX_buffer_indice == 1)
+    {
+      RX_buffer[RX_buffer_indice] = temp;
+      RX_buffer_indice++;
+    }
+    else if(RX_buffer_indice == 2)
+    {
+      RX_buffer[RX_buffer_indice] = temp;
+      RX_buffer_indice++;
+      
+      text2int(&RX_buffer[1], &byte);
+    }
+  }
 }
 /**
   * @}
@@ -197,6 +247,43 @@ void DebugTask(void * argument)
     xSemaphoreTake( semaforo_debug_isruart, portMAX_DELAY /* (TickType_t)10 */ );
   }
 }
+
+/* Private function ----------------------------------------------------------*/
+/** @addtogroup KNX_PH_Sup_Private_Functions
+  * @{
+  */
+
+/**
+ *  @brief      Convert a request to a data. 
+ *  @param      request: the request in ::PH_Request_t.
+ *  @retval     The 8 bits data.
+ */
+static PH_Request_t  data2request(uint8_t data)
+{
+  switch(data)
+  {
+    case 0x01U:
+      return Ph_Reset;
+    case 0x02U:
+      return Ph_State;
+    case 0x05U:
+      return Ph_ActivateBusmon;
+    case 0x20U:
+      return Ph_ProductID;
+    case 0x21U:
+      return Ph_ActivateBusyMode;
+    case 0x22U:
+      return Ph_ResetBusyMode;
+    case 0x28U:
+      return Ph_SetAddress;
+    default:
+      return Ph_None;
+  }
+}
+
+/**
+  * @}
+  */
 
 /**
   * @}

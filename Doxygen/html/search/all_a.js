@@ -16,6 +16,7 @@ var searchData=
   ['physical_20layer_20exported_20constants',['Physical Layer Exported Constants',['../group___p_h___exported___constants.html',1,'']]],
   ['ph_5fmonitor',['PH_MONITOR',['../group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a0cd2cf806d22fe2f69ac027782ddbf15',1,'KNX_Ph.h']]],
   ['ph_5fnoinit',['PH_NOINIT',['../group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a329f30393c5729b777643b93478de68c',1,'KNX_Ph.h']]],
+  ['ph_5fnone',['Ph_None',['../group___k_n_x___p_h___sup___exported___types.html#gga78f5bed722457f025cbc6786d5730d3ea1d51205765884a81bd849f93602fa811',1,'KNX_Ph.h']]],
   ['ph_5fnormal',['PH_NORMAL',['../group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a4be7dd56ae47b708c6f4751714efe930',1,'KNX_Ph.h']]],
   ['ph_5fproductid',['Ph_ProductID',['../group___k_n_x___p_h___sup___exported___types.html#gga78f5bed722457f025cbc6786d5730d3eab570f51bc280e629f45421a3d1f8240f',1,'KNX_Ph.h']]],
   ['ph_5frequest_5ft',['PH_Request_t',['../group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e',1,'KNX_Ph.h']]],

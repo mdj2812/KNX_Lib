@@ -11,6 +11,8 @@ Debug tasks.
 \item 
 \#define \hyperlink{group___debug___private___define_ga6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}~1024
 \begin{DoxyCompactList}\small\item\em Max size of the \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer}. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___debug___private___define_ga739a2a1a0047c98ac1b18ecd25dac092}{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}~2
+\begin{DoxyCompactList}\small\item\em Max size of the \hyperlink{group___debug___private___variables_ga17916f59674854b82e55fe3d39a36d81}{R\+X\+\_\+buffer}. \end{DoxyCompactList}\item 
 \#define \hyperlink{group___p_h___debug___error___code_ga25e714b84859b15002f51ca15a810102}{P\+H\+\_\+\+Debug\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}~((uint32\+\_\+t)0x00000000\+U)
 \item 
 \#define \hyperlink{group___p_h___debug___error___code_ga2404c547f870b71cff749676950a322f}{P\+H\+\_\+\+Debug\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}~((uint32\+\_\+t)0x00000002\+U)
@@ -36,7 +38,9 @@ enum \hyperlink{group___debug___exported___types_gacb1775677105967978fae4d9155cc
 uint32\+\_\+t \hyperlink{group___debug___exported___functions___group1_gadd3262925f11ab443ccc41951f84f471}{Debug\+Init} (void)
 \begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___debug}{Debug} module. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task} (void $\ast$argument)
-\begin{DoxyCompactList}\small\item\em Debug task. Check whether new messages are stored in \hyperlink{group___k_n_x___p_h___sup___private___variables_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. If yes, send the new message through U\+A\+RT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Debug task. Check whether new messages are stored in \hyperlink{group___k_n_x___p_h___sup___private___variables_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. If yes, send the new message through U\+A\+RT. \end{DoxyCompactList}\item 
+void {\bfseries Debug\+R\+X\+Task} (void $\ast$argument)
+\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,8 +55,8 @@ Debug tasks.
 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-V3.\+0.\+1 
+V3.\+1.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-18-\/\+July-\/2016 
+26-\/\+July-\/2016 
 \end{DoxyDate}

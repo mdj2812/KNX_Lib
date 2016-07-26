@@ -8,8 +8,8 @@
   ******************************************************************************
   */
 
-#ifndef __KNX_Ph
-#define __KNX_Ph
+#ifndef __KNX_Aux
+#define __KNX_Aux
 
 #ifdef __cplusplus
  extern "C" {
@@ -97,6 +97,7 @@ uint8_t text2int(char *msg, uint8_t *value);
 void     KNX_InitTimer(void);
 void     KNX_StartTimer(uint32_t Timeout);
 uint32_t KNX_GetTime(void);
+TIMER_Status_t KNX_GetTimerState(void);
 uint32_t KNX_StopTimer(void);
 uint32_t KNX_ResetTimer(void);
 void     KNX_systick_isr(void);
@@ -120,4 +121,4 @@ void     KNX_systick_isr(void);
 }
 #endif
 
-#endif /* __KNX_Ph */
+#endif /* __KNX_Aux */

@@ -8,6 +8,7 @@ var searchData=
   ['debug_20external_20uart_20isr_20functions',['Debug External UART ISR Functions',['../group___debug___external___functions.html',1,'']]],
   ['debug_20external_20variables',['Debug External Variables',['../group___debug___external___variables.html',1,'']]],
   ['debug_20private_20define',['Debug Private Define',['../group___debug___private___define.html',1,'']]],
+  ['debug_20private_20functions',['Debug Private Functions',['../group___debug___private___functions.html',1,'']]],
   ['debug_20private_20variables',['Debug Private Variables',['../group___debug___private___variables.html',1,'']]],
   ['debug_20uart',['Debug UART',['../group___debug___uart.html',1,'']]],
   ['debug_20uart_20exported_20functions',['Debug UART Exported Functions',['../group___debug___uart___exported___functions.html',1,'']]],

@@ -84,8 +84,9 @@ typedef enum
   Ph_ActivateBusyMode   = 0x04U,        /*!< Activate the Busy Mode           */
   Ph_ResetBusyMode      = 0x05U,        /*!< Deactivate the Busy Mode         */
   Ph_SetAddress         = 0x06U,        /*!< Set Address Request              */
-  Ph_AckInformation     = 0x07U         /*!< Acknowledgement Information Request:
+  Ph_AckInformation     = 0x07U,        /*!< Acknowledgement Information Request:
                                               Nack, Busy, Addressed           */
+  Ph_None               = 0xffU         /*!< None request                     */
 } PH_Request_t;
 /**
   * @}
@@ -102,6 +103,7 @@ typedef enum
 
 /* Initialization functions  **************************************************/
 uint8_t KNX_Ph_Init(void);
+uint8_t KNX_Ph_Reset(void);
 /**
   * @}
   */

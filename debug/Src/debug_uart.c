@@ -2,12 +2,12 @@
   *****************************************************************************
   * @file       debug_uart.c 
   * @author     
-  * @version    V3.0.1 
-  * @date       18-July-2016
+  * @version    V3.1.0 
+  * @date       26-July-2016
   * @brief      Debug UART adaptation module
   *             This file provides functions to manage following functionalities:
   *              + Initialization ports to adapt to the board
-  *              + Perform UART send functions
+  *              + Perform UART send/receive functions
   *              + UART interrupt routine functions
   ******************************************************************************
   */
@@ -111,6 +111,30 @@ void debug_uart_send (uint8_t *data, uint16_t size)
 }
 
 /**
+  * @brief      Receive the data through UART.
+  * @param      data:  pointer to the data buffer.
+  * @param      size:  lenghth of the buffer.
+  */
+void debug_uart_receive (uint8_t *data, uint16_t size)
+{
+  (&debug_huart)->pRxBuffPtr = data;
+  (&debug_huart)->RxXferSize = size;
+  (&debug_huart)->RxXferCount = size;
+
+  (&debug_huart)->ErrorCode = HAL_UART_ERROR_NONE;
+  (&debug_huart)->RxState = HAL_UART_STATE_BUSY_RX;
+
+  /* Enable the UART Parity Error Interrupt */
+  SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_PEIE);
+
+  /* Enable the UART Error Interrupt: (Frame error, noise error, overrun error) */
+  SET_BIT((&debug_huart)->Instance->CR3, USART_CR3_EIE);
+
+  /* Enable the UART Data Register not empty Interrupt */
+  SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_RXNEIE);
+}
+
+/**
   * @brief      UART interrupt routines.
   */
 void debug_uart_isr(void)
@@ -120,7 +144,7 @@ void debug_uart_isr(void)
 
   debug_uart_isr_begin ();
     
-  /* UART in mode Receiver -------------------------------------------------*/
+  /* UART in mode Receiver ---------------------------------------------------*/
   if(HAL_UART_GetState(&debug_huart) == HAL_UART_STATE_BUSY_RX)
   {
     debug_uart_isr_rx();

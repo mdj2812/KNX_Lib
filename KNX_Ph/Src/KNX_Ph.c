@@ -177,6 +177,8 @@ uint8_t KNX_Ph_Receive(uint8_t response, uint32_t timeout)
   {
     if(KNX_PH_TPUart_Receive(data, 1) == TPUart_OK)
     {
+      KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
+      
       /** \b If data received is the response expected. */
       if(*data == response)
       {
@@ -184,7 +186,6 @@ uint8_t KNX_Ph_Receive(uint8_t response, uint32_t timeout)
        return PH_ERROR_NONE;
       }
     }
-    KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
   }
   
   KNX_ResetTimer();

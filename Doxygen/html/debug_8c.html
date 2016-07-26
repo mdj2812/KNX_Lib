@@ -108,6 +108,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga7f180885ced466ae7c46e86c7c372b1f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___functions.html#ga7f180885ced466ae7c46e86c7c372b1f">data2request</a> (uint8_t data)</td></tr>
+<tr class="memdesc:ga7f180885ced466ae7c46e86c7c372b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a request to a data.  <a href="group___debug___private___functions.html#ga7f180885ced466ae7c46e86c7c372b1f">More...</a><br /></td></tr>
+<tr class="separator:ga7f180885ced466ae7c46e86c7c372b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9d19c0e57b2d37c01bd781338322f682"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___external___functions.html#ga9d19c0e57b2d37c01bd781338322f682">debug_uart_isr_begin</a> (void)</td></tr>
 <tr class="memdesc:ga9d19c0e57b2d37c01bd781338322f682"><td class="mdescLeft">&#160;</td><td class="mdescRight">At the begin of interrupt, set <a class="el" href="group___debug___private___variables.html#ga9d9a749ad99ec3d4a6886d5277b9ba87" title="Used for yield the UART interrupt. ">xHigherPriorityTaskWoken</a> to pdFalse. <br /></td></tr>
@@ -122,7 +125,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="separator:gaee765dd75f3414ade869071798ff33f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2e1878be0250daf30f0a286af6e683e9"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___external___functions.html#ga2e1878be0250daf30f0a286af6e683e9">debug_uart_isr_rx</a> (void)</td></tr>
-<tr class="memdesc:ga2e1878be0250daf30f0a286af6e683e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART RX interrupt routine. <br /></td></tr>
+<tr class="memdesc:ga2e1878be0250daf30f0a286af6e683e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive the buffer character by character. If the buffer fits in the format as "/XX/" (XX: two digits of hexadecimal), then transmit it to TPUart. <br /></td></tr>
 <tr class="separator:ga2e1878be0250daf30f0a286af6e683e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadd3262925f11ab443ccc41951f84f471"><td class="memItemLeft" align="right" valign="top">
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group1.html#gadd3262925f11ab443ccc41951f84f471">DebugInit</a> (void)</td></tr>
@@ -154,6 +157,14 @@ __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga2dc364897dd645d7f940223559bcb511">buffer_indice_max</a></td></tr>
 <tr class="memdesc:ga2dc364897dd645d7f940223559bcb511"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum value of the <a class="el" href="group___debug___private___variables.html#gacd3f15a092421e9fa47f50d4f95f212b" title="The indice of the buffer. ">buffer_indice</a>. <br /></td></tr>
 <tr class="separator:ga2dc364897dd645d7f940223559bcb511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17916f59674854b82e55fe3d39a36d81"><td class="memItemLeft" align="right" valign="top">
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga17916f59674854b82e55fe3d39a36d81">RX_buffer</a> [<a class="el" href="group___debug___private___define.html#ga739a2a1a0047c98ac1b18ecd25dac092">RX_BUFFER_SIZE</a>]</td></tr>
+<tr class="memdesc:ga17916f59674854b82e55fe3d39a36d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e" title="The buffer to store the message. ">buffer</a> to store the message received. <br /></td></tr>
+<tr class="separator:ga17916f59674854b82e55fe3d39a36d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80104a302efa6d0ffad06f30349fc37a"><td class="memItemLeft" align="right" valign="top">
+__IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga80104a302efa6d0ffad06f30349fc37a">RX_buffer_indice</a> = 0</td></tr>
+<tr class="memdesc:ga80104a302efa6d0ffad06f30349fc37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indice of the <a class="el" href="group___debug___private___variables.html#ga17916f59674854b82e55fe3d39a36d81" title="The buffer to store the message received. ">RX_buffer</a>. <br /></td></tr>
+<tr class="separator:ga80104a302efa6d0ffad06f30349fc37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab492c12c83b7838e793b80c291ed58aa"><td class="memItemLeft" align="right" valign="top">
 static TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gab492c12c83b7838e793b80c291ed58aa">xDebugTaskHandle</a></td></tr>
 <tr class="memdesc:gab492c12c83b7838e793b80c291ed58aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler of the <a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44" title="Debug task. Check whether new messages are stored in colaDebug. If yes, send the new message through ...">DebugTask</a>. <br /></td></tr>
@@ -170,11 +181,10 @@ static BaseType_t&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Debug tasks. This file provides functions to manage following functionalities: </p>
 <dl class="section author"><dt>Author</dt><dd></dd></dl>
-<dl class="section version"><dt>Version</dt><dd>V3.0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>18-July-2016<ul>
+<dl class="section version"><dt>Version</dt><dd>V3.1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>26-July-2016<ul>
 <li>Initialization functions and tasks</li>
-<li>Perform DebugTask</li>
-<li>Perform 2 testing tasks based on time </li>
+<li>Perform DebugTask </li>
 </ul>
 </dd></dl>
 </div></div><!-- contents -->

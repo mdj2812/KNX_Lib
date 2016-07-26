@@ -2,8 +2,8 @@
   *****************************************************************************
   * @file       debug_uart.h 
   * @author     
-  * @version    V3.0.1 
-  * @date       18-July-2016
+  * @version    V3.1.0 
+  * @date       26-July-2016
   * @brief      Functions perform the debug uart services.
   ******************************************************************************
   */
@@ -47,7 +47,8 @@ uint8_t debug_uart_init(void);
   */
 
 /* UART utilities functions ***************************************************/
-void debug_uart_send (uint8_t *data, uint16_t size);
+HAL_StatusTypeDef debug_uart_send (uint8_t *data, uint16_t size);
+HAL_StatusTypeDef debug_uart_receive (uint8_t *data, uint16_t size);
 void debug_uart_isr(void);
 /**
   * @}

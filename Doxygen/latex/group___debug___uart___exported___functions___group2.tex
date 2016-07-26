@@ -3,8 +3,10 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{group___debug___uart___exported___functions___group2_ga3709c73faee84b7b9d4b9699a6035dfa}{debug\+\_\+uart\+\_\+send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+H\+A\+L\+\_\+\+Status\+Type\+Def \hyperlink{group___debug___uart___exported___functions___group2_ga3709c73faee84b7b9d4b9699a6035dfa}{debug\+\_\+uart\+\_\+send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Send the data through U\+A\+RT. \end{DoxyCompactList}\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \hyperlink{group___debug___uart___exported___functions___group2_gae5a08803ab0c9fcbddfd2f8fbddb8a7e}{debug\+\_\+uart\+\_\+receive} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Receive the data through U\+A\+RT. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___uart___exported___functions___group2_ga7a880511e4fc8f2c3cad647324136dd3}{debug\+\_\+uart\+\_\+isr} (void)\hypertarget{group___debug___uart___exported___functions___group2_ga7a880511e4fc8f2c3cad647324136dd3}{}\label{group___debug___uart___exported___functions___group2_ga7a880511e4fc8f2c3cad647324136dd3}
 
 \begin{DoxyCompactList}\small\item\em U\+A\+RT interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -14,6 +16,25 @@ void \hyperlink{group___debug___uart___exported___functions___group2_ga7a880511e
 
 
 \subsection{Function Documentation}
+\index{Debug U\+A\+R\+T utilities functions@{Debug U\+A\+R\+T utilities functions}!debug\+\_\+uart\+\_\+receive@{debug\+\_\+uart\+\_\+receive}}
+\index{debug\+\_\+uart\+\_\+receive@{debug\+\_\+uart\+\_\+receive}!Debug U\+A\+R\+T utilities functions@{Debug U\+A\+R\+T utilities functions}}
+\subsubsection[{\texorpdfstring{debug\+\_\+uart\+\_\+receive(uint8\+\_\+t $\ast$data, uint16\+\_\+t size)}{debug_uart_receive(uint8_t *data, uint16_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}void debug\+\_\+uart\+\_\+receive (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{group___debug___uart___exported___functions___group2_gae5a08803ab0c9fcbddfd2f8fbddb8a7e}{}\label{group___debug___uart___exported___functions___group2_gae5a08803ab0c9fcbddfd2f8fbddb8a7e}
+
+
+Receive the data through U\+A\+RT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to the data buffer. \\
+\hline
+{\em size} & lenghth of the buffer. \\
+\hline
+\end{DoxyParams}
 \index{Debug U\+A\+R\+T utilities functions@{Debug U\+A\+R\+T utilities functions}!debug\+\_\+uart\+\_\+send@{debug\+\_\+uart\+\_\+send}}
 \index{debug\+\_\+uart\+\_\+send@{debug\+\_\+uart\+\_\+send}!Debug U\+A\+R\+T utilities functions@{Debug U\+A\+R\+T utilities functions}}
 \subsubsection[{\texorpdfstring{debug\+\_\+uart\+\_\+send(uint8\+\_\+t $\ast$data, uint16\+\_\+t size)}{debug_uart_send(uint8_t *data, uint16_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}void debug\+\_\+uart\+\_\+send (
