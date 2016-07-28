@@ -102,15 +102,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="cola_8h_source.html">cola.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="debug_8h_source.html">debug.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="debug__uart_8h_source.html">debug_UART.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_k_n_x___t_p_uart_8h_source.html">KNX_TPUart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_k_n_x___aux_8h_source.html">KNX_Aux.h</a>&quot;</code><br />
 <code>#include &quot;stm32f4xx_hal.h&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga7f180885ced466ae7c46e86c7c372b1f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___functions.html#ga7f180885ced466ae7c46e86c7c372b1f">data2request</a> (uint8_t data)</td></tr>
-<tr class="memdesc:ga7f180885ced466ae7c46e86c7c372b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a request to a data.  <a href="group___debug___private___functions.html#ga7f180885ced466ae7c46e86c7c372b1f">More...</a><br /></td></tr>
-<tr class="separator:ga7f180885ced466ae7c46e86c7c372b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9d19c0e57b2d37c01bd781338322f682"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___external___functions.html#ga9d19c0e57b2d37c01bd781338322f682">debug_uart_isr_begin</a> (void)</td></tr>
 <tr class="memdesc:ga9d19c0e57b2d37c01bd781338322f682"><td class="mdescLeft">&#160;</td><td class="mdescRight">At the begin of interrupt, set <a class="el" href="group___debug___private___variables.html#ga9d9a749ad99ec3d4a6886d5277b9ba87" title="Used for yield the UART interrupt. ">xHigherPriorityTaskWoken</a> to pdFalse. <br /></td></tr>
@@ -134,6 +133,9 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memitem:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">DebugTask</a> (void *argument)</td></tr>
 <tr class="memdesc:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug task. Check whether new messages are stored in <a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola defined in Debug. ">colaDebug</a>. If yes, send the new message through UART.  <a href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">More...</a><br /></td></tr>
 <tr class="separator:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8013ff117a9e96e630d30771cf9b0199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">DebugRXTask</a> (void *argument)</td></tr>
+<tr class="memdesc:ga8013ff117a9e96e630d30771cf9b0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug RX task. Transmit what received from debug uart towards KNX uart.  <a href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">More...</a><br /></td></tr>
+<tr class="separator:ga8013ff117a9e96e630d30771cf9b0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -147,7 +149,7 @@ static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <tr class="separator:ga57ad017acd4535fe089f54ed903b3e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacab2203504e72e5e674d3174e0bd7d5e"><td class="memItemLeft" align="right" valign="top">
 static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e">buffer</a> [<a class="el" href="group___debug___private___define.html#ga6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]</td></tr>
-<tr class="memdesc:gacab2203504e72e5e674d3174e0bd7d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e" title="The buffer to store the message. ">buffer</a> to store the message. <br /></td></tr>
+<tr class="memdesc:gacab2203504e72e5e674d3174e0bd7d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer to store the message. <br /></td></tr>
 <tr class="separator:gacab2203504e72e5e674d3174e0bd7d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd3f15a092421e9fa47f50d4f95f212b"><td class="memItemLeft" align="right" valign="top">
 __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gacd3f15a092421e9fa47f50d4f95f212b">buffer_indice</a></td></tr>
@@ -159,12 +161,16 @@ __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <tr class="separator:ga2dc364897dd645d7f940223559bcb511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga17916f59674854b82e55fe3d39a36d81"><td class="memItemLeft" align="right" valign="top">
 static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga17916f59674854b82e55fe3d39a36d81">RX_buffer</a> [<a class="el" href="group___debug___private___define.html#ga739a2a1a0047c98ac1b18ecd25dac092">RX_BUFFER_SIZE</a>]</td></tr>
-<tr class="memdesc:ga17916f59674854b82e55fe3d39a36d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e" title="The buffer to store the message. ">buffer</a> to store the message received. <br /></td></tr>
+<tr class="memdesc:ga17916f59674854b82e55fe3d39a36d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer to store the message received. <br /></td></tr>
 <tr class="separator:ga17916f59674854b82e55fe3d39a36d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga80104a302efa6d0ffad06f30349fc37a"><td class="memItemLeft" align="right" valign="top">
 __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga80104a302efa6d0ffad06f30349fc37a">RX_buffer_indice</a> = 0</td></tr>
 <tr class="memdesc:ga80104a302efa6d0ffad06f30349fc37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indice of the <a class="el" href="group___debug___private___variables.html#ga17916f59674854b82e55fe3d39a36d81" title="The buffer to store the message received. ">RX_buffer</a>. <br /></td></tr>
 <tr class="separator:ga80104a302efa6d0ffad06f30349fc37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe413cb96d839cbe31417aa52d920f21"><td class="memItemLeft" align="right" valign="top">
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gabe413cb96d839cbe31417aa52d920f21">temp</a></td></tr>
+<tr class="memdesc:gabe413cb96d839cbe31417aa52d920f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">The temporary <code>unsigned</code> <code>char</code> to store the message received. <br /></td></tr>
+<tr class="separator:gabe413cb96d839cbe31417aa52d920f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab492c12c83b7838e793b80c291ed58aa"><td class="memItemLeft" align="right" valign="top">
 static TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gab492c12c83b7838e793b80c291ed58aa">xDebugTaskHandle</a></td></tr>
 <tr class="memdesc:gab492c12c83b7838e793b80c291ed58aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler of the <a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44" title="Debug task. Check whether new messages are stored in colaDebug. If yes, send the new message through ...">DebugTask</a>. <br /></td></tr>

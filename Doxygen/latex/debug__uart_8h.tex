@@ -7,14 +7,22 @@ Functions perform the debug uart services.
 
 {\ttfamily \#include $<$stdint.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___debug___uart___exported___types_ga334c43797179106e55aa97a2d7fe2e78}{Debug\+\_\+\+Uart\+\_\+\+Status\+\_\+t} \{ \hyperlink{group___debug___uart___exported___types_gga334c43797179106e55aa97a2d7fe2e78a1a32bb6432c88773706b326ddffc1e43}{Debug\+\_\+\+Uart\+\_\+\+OK} = 0x00U, 
+\hyperlink{group___debug___uart___exported___types_gga334c43797179106e55aa97a2d7fe2e78ab7f4dcc76b19a0c456252cbbd966306f}{Debug\+\_\+\+Uart\+\_\+\+E\+R\+R\+OR} = 0x01U, 
+\hyperlink{group___debug___uart___exported___types_gga334c43797179106e55aa97a2d7fe2e78aa9cf293e9c97e3d47b8ac37ae438ea1c}{Debug\+\_\+\+Uart\+\_\+\+B\+U\+SY} = 0x02U
+ \}\begin{DoxyCompactList}\small\item\em Debug Uart Status structures definition. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 uint8\+\_\+t \hyperlink{group___debug___uart___exported___functions___group1_ga385c8827ad6a560236a77f6ab11adcc2}{debug\+\_\+uart\+\_\+init} (void)
 \begin{DoxyCompactList}\small\item\em Initialization of the uart handler \hyperlink{group___debug___u_a_r_t___external___variables_gaa020232170a049fcc321246bd778a49f}{debug\+\_\+huart}. \end{DoxyCompactList}\item 
-H\+A\+L\+\_\+\+Status\+Type\+Def \hyperlink{group___debug___uart___exported___functions___group2_ga3709c73faee84b7b9d4b9699a6035dfa}{debug\+\_\+uart\+\_\+send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+\hyperlink{group___debug___uart___exported___types_ga334c43797179106e55aa97a2d7fe2e78}{Debug\+\_\+\+Uart\+\_\+\+Status\+\_\+t} \hyperlink{group___debug___uart___exported___functions___group2_ga971b3b5273865312295e9f9c484236ae}{debug\+\_\+uart\+\_\+send} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Send the data through U\+A\+RT. \end{DoxyCompactList}\item 
-H\+A\+L\+\_\+\+Status\+Type\+Def \hyperlink{group___debug___uart___exported___functions___group2_gae5a08803ab0c9fcbddfd2f8fbddb8a7e}{debug\+\_\+uart\+\_\+receive} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
+\hyperlink{group___debug___uart___exported___types_ga334c43797179106e55aa97a2d7fe2e78}{Debug\+\_\+\+Uart\+\_\+\+Status\+\_\+t} \hyperlink{group___debug___uart___exported___functions___group2_gae9dce37ed6c148c17bd2dc67c9f28fc9}{debug\+\_\+uart\+\_\+receive} (uint8\+\_\+t $\ast$data, uint16\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Receive the data through U\+A\+RT. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___uart___exported___functions___group2_ga7a880511e4fc8f2c3cad647324136dd3}{debug\+\_\+uart\+\_\+isr} (void)
 \begin{DoxyCompactList}\small\item\em U\+A\+RT interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}

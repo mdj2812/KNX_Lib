@@ -7,6 +7,7 @@ var searchData=
   ['knx_5fph_5fgetstate',['KNX_Ph_GetState',['../group___k_n_x___p_h___sup___exported___functions___group3.html#ga8f380db7e1c156190263c4860f2d3ded',1,'KNX_Ph.c']]],
   ['knx_5fph_5finit',['KNX_Ph_Init',['../group___k_n_x___p_h___sup___exported___functions___group1.html#ga2139e336141090cdd97ecb0c5e55499f',1,'KNX_Ph.c']]],
   ['knx_5fph_5freceive',['KNX_Ph_Receive',['../group___k_n_x___p_h___sup___exported___functions___group2.html#ga83fe8c9d421ec9c32662b66ec2dc1aeb',1,'KNX_Ph.c']]],
+  ['knx_5fph_5freset',['KNX_Ph_Reset',['../group___k_n_x___p_h___sup___exported___functions___group1.html#ga5e5cc508d8f5528f85a275fa9dcb0b25',1,'KNX_Ph.c']]],
   ['knx_5fph_5fsend',['KNX_Ph_Send',['../group___k_n_x___p_h___sup___exported___functions___group2.html#gad47b9ae30f2704001cf07d31da372fe2',1,'KNX_Ph.c']]],
   ['knx_5fph_5fsetstate',['KNX_Ph_SetState',['../group___k_n_x___p_h___sup___private___functions.html#ga8253bed4aa2e3d7bfa9c1de3604668e0',1,'KNX_Ph.c']]],
   ['knx_5fph_5ftpuart_5finit',['KNX_PH_TPUart_init',['../group___k_n_x___p_h___t_p_uart___exported___functions___group1.html#ga4e0a0b154e929046769fa7df80f5c6ce',1,'KNX_TPUart.c']]],

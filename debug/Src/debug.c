@@ -18,6 +18,8 @@
 #include "cola.h"
 #include "debug.h"
 #include "debug_UART.h"
+#include "KNX_TPUart.h"
+#include "KNX_Aux.h"
 #include "stm32f4xx_hal.h"
 #include <stdio.h>
 #include <string.h>
@@ -41,17 +43,19 @@ static RX_DEBUG_Status_t KNX_PH_STATE;
 /** \brief Error message put in ::DebugTask */
 static const char *msg_error = "***ERROR*** cola_leer() = -1 ????? \r\n" ;
 
-/** \brief The ::buffer to store the message */
+/** \brief The buffer to store the message */
 static unsigned char buffer[BUFFER_SIZE];
 /** \brief The indice of the ::buffer */
 __IO uint16_t buffer_indice;
 /** \brief The maximum value of the ::buffer_indice */
 __IO uint16_t buffer_indice_max;
 
-/** \brief The ::buffer to store the message received */
+/** \brief The buffer to store the message received */
 static unsigned char RX_buffer[RX_BUFFER_SIZE];
 /** \brief The indice of the ::RX_buffer */
 __IO uint16_t   RX_buffer_indice = 0;
+/** \brief The temporary \c unsigned \c char to store the message received */
+static unsigned char temp;
 
 /** \brief Handler of the ::DebugTask */
 static TaskHandle_t xDebugTaskHandle;
@@ -59,15 +63,6 @@ static TaskHandle_t xDebugTaskHandle;
 static SemaphoreHandle_t semaforo_debug_isruart;
 /** \brief Used for yield the UART interrupt */
 static BaseType_t xHigherPriorityTaskWoken;
-/**
-  * @}
-  */
-
-/* Private function prototypes -----------------------------------------------*/
-/** @defgroup Debug_Private_Functions Debug Private Functions
-  * @{
-  */
-static PH_Request_t  data2request(uint8_t data);
 /**
   * @}
   */
@@ -117,14 +112,11 @@ void debug_uart_isr_tx(void)
   */
 void debug_uart_isr_rx(void)
 {
-  unsigned char temp;
   uint8_t byte;
-  
-  debug_uart_receive (&temp, 1);
-  
+
   if(temp == '/')
   {
-    if(RX_buffer_indice != 3)
+    if(RX_buffer_indice != 2)
     {
       RX_buffer_indice = 0;
       
@@ -134,7 +126,7 @@ void debug_uart_isr_rx(void)
     else
     {
       RX_buffer[RX_buffer_indice] = temp;
-      KNX_Ph_Send(data2request(byte), KNX_DEFAULT_TIMEOUT);
+      KNX_PH_TPUart_Send(&byte, 1);
       RX_buffer_indice = 0;
     }
   }
@@ -150,7 +142,10 @@ void debug_uart_isr_rx(void)
       RX_buffer[RX_buffer_indice] = temp;
       RX_buffer_indice++;
       
-      text2int(&RX_buffer[1], &byte);
+      if(text2int(&RX_buffer[1], &byte) == AUX_ERROR_MSG)
+      {
+        RX_buffer_indice=0;
+      }
     }
   }
 }
@@ -187,6 +182,14 @@ uint32_t DebugInit(void)
                 tskIDLE_PRIORITY,/* Priority at which the task is created. */
                 &xDebugTaskHandle );      /* Used to pass out the created task's handle. */
 
+  xTaskCreate(
+                DebugRXTask,       /* Function that implements the task. */
+                "debugRX",          /* Text name for the task. */
+                configMINIMAL_STACK_SIZE + 16, /* Stack size in words, not bytes. */
+                ( void * ) 0,    /* Parameter passed into the task. */
+                tskIDLE_PRIORITY,/* Priority at which the task is created. */
+                &xDebugTaskHandle );      /* Used to pass out the created task's handle. */
+                
   //inicializar la UART de depuracion
   if(debug_uart_init())
   {
@@ -214,7 +217,6 @@ uint32_t DebugInit(void)
   */
 void DebugTask(void * argument)
 {
-
   /* USER CODE BEGIN DebugTask */
   int i, res_leer;
 
@@ -248,43 +250,20 @@ void DebugTask(void * argument)
   }
 }
 
-/* Private function ----------------------------------------------------------*/
-/** @addtogroup KNX_PH_Sup_Private_Functions
-  * @{
-  */
-
 /**
- *  @brief      Convert a request to a data. 
- *  @param      request: the request in ::PH_Request_t.
- *  @retval     The 8 bits data.
- */
-static PH_Request_t  data2request(uint8_t data)
-{
-  switch(data)
-  {
-    case 0x01U:
-      return Ph_Reset;
-    case 0x02U:
-      return Ph_State;
-    case 0x05U:
-      return Ph_ActivateBusmon;
-    case 0x20U:
-      return Ph_ProductID;
-    case 0x21U:
-      return Ph_ActivateBusyMode;
-    case 0x22U:
-      return Ph_ResetBusyMode;
-    case 0x28U:
-      return Ph_SetAddress;
-    default:
-      return Ph_None;
+  * @brief      Debug RX task. Transmit what received from debug uart towards
+  *             KNX uart.
+  * @param      argument:  argument of the task.
+  */
+void DebugRXTask(void * argument)
+{  
+  vTaskDelay( 200 );
+
+  for(;;)
+  {  
+    debug_uart_receive (&temp, 1);
   }
 }
-
-/**
-  * @}
-  */
-
 /**
   * @}
   */

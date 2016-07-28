@@ -91,7 +91,7 @@
   */
 
 /** 
-  * @brief  HAL Status structures definition  
+  * @brief  TPUart Status structures definition  
   */  
 typedef enum 
 {

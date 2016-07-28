@@ -97,16 +97,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Auxiliary functions for KNX Physical Layer. This file provides functions to manage following functionalities:  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_k_n_x___aux_8h_source.html">KNX_Aux.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gab453e2971ca45bd5e63b995dfedffe20"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___exported___functions___group1.html#gab453e2971ca45bd5e63b995dfedffe20">int2text</a> (uint8_t value, char *msg)</td></tr>
-<tr class="memdesc:gab453e2971ca45bd5e63b995dfedffe20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <code>uint8_t</code> value into a <code>char</code> message.  <a href="group___k_n_x___aux___exported___functions___group1.html#gab453e2971ca45bd5e63b995dfedffe20">More...</a><br /></td></tr>
-<tr class="separator:gab453e2971ca45bd5e63b995dfedffe20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8fdc34a6aa7b88b181080462511acac7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___exported___functions___group1.html#ga8fdc34a6aa7b88b181080462511acac7">text2int</a> (char *msg, uint8_t *value)</td></tr>
-<tr class="memdesc:ga8fdc34a6aa7b88b181080462511acac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <code>char</code> message into an <code>uint8_t</code> value.  <a href="group___k_n_x___aux___exported___functions___group1.html#ga8fdc34a6aa7b88b181080462511acac7">More...</a><br /></td></tr>
-<tr class="separator:ga8fdc34a6aa7b88b181080462511acac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8eb309aea5e19bf8a9f5e36313b7608"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___exported___functions___group1.html#gac8eb309aea5e19bf8a9f5e36313b7608">int2text</a> (uint8_t value, unsigned char *msg)</td></tr>
+<tr class="memdesc:gac8eb309aea5e19bf8a9f5e36313b7608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <code>uint8_t</code> value into a <code>char</code> message.  <a href="group___k_n_x___aux___exported___functions___group1.html#gac8eb309aea5e19bf8a9f5e36313b7608">More...</a><br /></td></tr>
+<tr class="separator:gac8eb309aea5e19bf8a9f5e36313b7608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e05f7ec0e47a6bab34c7567846490dd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___exported___functions___group1.html#ga2e05f7ec0e47a6bab34c7567846490dd">text2int</a> (unsigned char *msg, uint8_t *value)</td></tr>
+<tr class="memdesc:ga2e05f7ec0e47a6bab34c7567846490dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <code>char</code> message into an <code>uint8_t</code> value.  <a href="group___k_n_x___aux___exported___functions___group1.html#ga2e05f7ec0e47a6bab34c7567846490dd">More...</a><br /></td></tr>
+<tr class="separator:ga2e05f7ec0e47a6bab34c7567846490dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga21f8fee0433331a8a98b552d934d7fa9"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___exported___functions___group2.html#ga21f8fee0433331a8a98b552d934d7fa9">KNX_InitTimer</a> (void)</td></tr>
 <tr class="memdesc:ga21f8fee0433331a8a98b552d934d7fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initilize the timer. <br /></td></tr>
@@ -136,18 +137,18 @@ Variables</h2></td></tr>
 <tr class="memitem:ga938e545954f0ddfa9a048c6fc3f30776"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___private___consts.html#ga938e545954f0ddfa9a048c6fc3f30776">hex_num</a> []</td></tr>
 <tr class="memdesc:ga938e545954f0ddfa9a048c6fc3f30776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table of hexadecimal numbers.  <a href="group___k_n_x___aux___private___consts.html#ga938e545954f0ddfa9a048c6fc3f30776">More...</a><br /></td></tr>
 <tr class="separator:ga938e545954f0ddfa9a048c6fc3f30776"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga40717ccc77c582d2b542fab145329422"><td class="memItemLeft" align="right" valign="top">
-__IO <a class="el" href="group___k_n_x___aux___exported___types.html#ga6ed3d972c6c5995cb3fe41995f121b41">TIMER_Status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___private___consts.html#ga40717ccc77c582d2b542fab145329422">timer_state</a></td></tr>
-<tr class="memdesc:ga40717ccc77c582d2b542fab145329422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status of the timer. <br /></td></tr>
-<tr class="separator:ga40717ccc77c582d2b542fab145329422"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac31eb4f5e9b0e6b3ba455a8040ee5f64"><td class="memItemLeft" align="right" valign="top">
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___private___consts.html#gac31eb4f5e9b0e6b3ba455a8040ee5f64">timer_timeout</a></td></tr>
-<tr class="memdesc:gac31eb4f5e9b0e6b3ba455a8040ee5f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout duration of the timer. <br /></td></tr>
-<tr class="separator:gac31eb4f5e9b0e6b3ba455a8040ee5f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae2d429094fb9f4b65f422ecc37864377"><td class="memItemLeft" align="right" valign="top">
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___private___consts.html#gae2d429094fb9f4b65f422ecc37864377">timer_tick</a></td></tr>
-<tr class="memdesc:gae2d429094fb9f4b65f422ecc37864377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter of the timer, the unit is ms. <br /></td></tr>
-<tr class="separator:gae2d429094fb9f4b65f422ecc37864377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23c914a3038b7651aeb6bc1f444fe805"><td class="memItemLeft" align="right" valign="top">
+volatile <a class="el" href="group___k_n_x___aux___exported___types.html#ga6ed3d972c6c5995cb3fe41995f121b41">TIMER_Status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___private___consts.html#ga23c914a3038b7651aeb6bc1f444fe805">timer_state</a></td></tr>
+<tr class="memdesc:ga23c914a3038b7651aeb6bc1f444fe805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status of the timer. <br /></td></tr>
+<tr class="separator:ga23c914a3038b7651aeb6bc1f444fe805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9425be3f8a3c77c3e1f30e8759fc65e8"><td class="memItemLeft" align="right" valign="top">
+static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___private___consts.html#ga9425be3f8a3c77c3e1f30e8759fc65e8">timer_timeout</a></td></tr>
+<tr class="memdesc:ga9425be3f8a3c77c3e1f30e8759fc65e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout duration of the timer. <br /></td></tr>
+<tr class="separator:ga9425be3f8a3c77c3e1f30e8759fc65e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c702713be164664bf7d3c5f9cc9002d"><td class="memItemLeft" align="right" valign="top">
+volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___aux___private___consts.html#ga8c702713be164664bf7d3c5f9cc9002d">timer_tick</a></td></tr>
+<tr class="memdesc:ga8c702713be164664bf7d3c5f9cc9002d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter of the timer, the unit is ms. <br /></td></tr>
+<tr class="separator:ga8c702713be164664bf7d3c5f9cc9002d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Auxiliary functions for KNX Physical Layer. This file provides functions to manage following functionalities: </p>

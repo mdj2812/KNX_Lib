@@ -11,14 +11,14 @@ Debug tasks. This file provides functions to manage following functionalities\+:
 {\ttfamily \#include \char`\"{}cola.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}debug\+\_\+\+U\+A\+R\+T.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+T\+P\+Uart.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Aux.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$string.\+h$>$}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} \hyperlink{group___debug___private___functions_ga7f180885ced466ae7c46e86c7c372b1f}{data2request} (uint8\+\_\+t data)
-\begin{DoxyCompactList}\small\item\em Convert a request to a data. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___external___functions_ga9d19c0e57b2d37c01bd781338322f682}{debug\+\_\+uart\+\_\+isr\+\_\+begin} (void)
 \begin{DoxyCompactList}\small\item\em At the begin of interrupt, set \hyperlink{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{x\+Higher\+Priority\+Task\+Woken} to pd\+False. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___external___functions_ga3f4c952ea2b6368ccbb0572addd76601}{debug\+\_\+uart\+\_\+isr\+\_\+end} (void)
@@ -30,7 +30,9 @@ void \hyperlink{group___debug___external___functions_ga2e1878be0250daf30f0a286af
 uint32\+\_\+t \hyperlink{group___debug___exported___functions___group1_gadd3262925f11ab443ccc41951f84f471}{Debug\+Init} (void)
 \begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___debug}{Debug} module. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task} (void $\ast$argument)
-\begin{DoxyCompactList}\small\item\em Debug task. Check whether new messages are stored in \hyperlink{group___k_n_x___p_h___sup___private___variables_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. If yes, send the new message through U\+A\+RT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Debug task. Check whether new messages are stored in \hyperlink{group___k_n_x___p_h___sup___private___variables_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. If yes, send the new message through U\+A\+RT. \end{DoxyCompactList}\item 
+void \hyperlink{group___debug___exported___functions___group2_ga8013ff117a9e96e630d30771cf9b0199}{Debug\+R\+X\+Task} (void $\ast$argument)
+\begin{DoxyCompactList}\small\item\em Debug RX task. Transmit what received from debug uart towards K\+NX uart. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,15 +41,17 @@ static \hyperlink{group___debug___exported___types_gabcec3ea567663bbefa0b9f7a88d
 static const char $\ast$ \hyperlink{group___debug___private___variables_ga57ad017acd4535fe089f54ed903b3e9e}{msg\+\_\+error} = \char`\"{}$\ast$$\ast$$\ast$E\+R\+R\+OR$\ast$$\ast$$\ast$ \hyperlink{group___cola___exported___functions___group2_ga12fe948f259d8c9d7a390a76c416b55c}{cola\+\_\+leer}() = -\/1 ????? \textbackslash{}r\textbackslash{}n\char`\"{}
 \begin{DoxyCompactList}\small\item\em Error message put in \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
 static unsigned char \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer} \mbox{[}\hyperlink{group___debug___private___define_ga6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}\mbox{]}
-\begin{DoxyCompactList}\small\item\em The \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer} to store the message. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The buffer to store the message. \end{DoxyCompactList}\item 
 \+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_gacd3f15a092421e9fa47f50d4f95f212b}{buffer\+\_\+indice}
 \begin{DoxyCompactList}\small\item\em The indice of the \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer}. \end{DoxyCompactList}\item 
 \+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_ga2dc364897dd645d7f940223559bcb511}{buffer\+\_\+indice\+\_\+max}
 \begin{DoxyCompactList}\small\item\em The maximum value of the \hyperlink{group___debug___private___variables_gacd3f15a092421e9fa47f50d4f95f212b}{buffer\+\_\+indice}. \end{DoxyCompactList}\item 
 static unsigned char \hyperlink{group___debug___private___variables_ga17916f59674854b82e55fe3d39a36d81}{R\+X\+\_\+buffer} \mbox{[}\hyperlink{group___debug___private___define_ga739a2a1a0047c98ac1b18ecd25dac092}{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}\mbox{]}
-\begin{DoxyCompactList}\small\item\em The \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer} to store the message received. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The buffer to store the message received. \end{DoxyCompactList}\item 
 \+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_ga80104a302efa6d0ffad06f30349fc37a}{R\+X\+\_\+buffer\+\_\+indice} = 0
 \begin{DoxyCompactList}\small\item\em The indice of the \hyperlink{group___debug___private___variables_ga17916f59674854b82e55fe3d39a36d81}{R\+X\+\_\+buffer}. \end{DoxyCompactList}\item 
+static unsigned char \hyperlink{group___debug___private___variables_gabe413cb96d839cbe31417aa52d920f21}{temp}
+\begin{DoxyCompactList}\small\item\em The temporary {\ttfamily unsigned} {\ttfamily char} to store the message received. \end{DoxyCompactList}\item 
 static Task\+Handle\+\_\+t \hyperlink{group___debug___private___variables_gab492c12c83b7838e793b80c291ed58aa}{x\+Debug\+Task\+Handle}
 \begin{DoxyCompactList}\small\item\em Handler of the \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
 static Semaphore\+Handle\+\_\+t \hyperlink{group___debug___private___variables_ga4c5de14a4644bf21d004fd0d61f1fa98}{semaforo\+\_\+debug\+\_\+isruart}

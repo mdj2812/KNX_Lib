@@ -26,6 +26,25 @@
 /** @addtogroup Debug_Uart
   * @{
   */
+   
+/* Exported types ------------------------------------------------------------*/
+/** @defgroup Debug_Uart_Exported_Types Debug Uart Exported Types
+  * @brief    Debug Uart Status Enumeration
+  * @{
+  */
+
+/** 
+  * @brief  Debug Uart Status structures definition  
+  */  
+typedef enum 
+{
+  Debug_Uart_OK       = 0x00U,  /*!< OK                                       */
+  Debug_Uart_ERROR    = 0x01U,  /*!< Error                                    */
+  Debug_Uart_BUSY     = 0x02U,  /*!< Busy                                     */
+} Debug_Uart_Status_t;
+/**
+  * @}
+  */
 
 /* Exported functions --------------------------------------------------------*/
 /** @addtogroup Debug_Uart_Exported_Functions
@@ -47,8 +66,8 @@ uint8_t debug_uart_init(void);
   */
 
 /* UART utilities functions ***************************************************/
-HAL_StatusTypeDef debug_uart_send (uint8_t *data, uint16_t size);
-HAL_StatusTypeDef debug_uart_receive (uint8_t *data, uint16_t size);
+Debug_Uart_Status_t debug_uart_send (uint8_t *data, uint16_t size);
+Debug_Uart_Status_t debug_uart_receive (uint8_t *data, uint16_t size);
 void debug_uart_isr(void);
 /**
   * @}

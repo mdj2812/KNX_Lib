@@ -109,7 +109,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga6b20d41d6252e9871430c242cb1a56e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max size of the <a class="el" href="group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e" title="The buffer to store the message. ">buffer</a>. <br /></td></tr>
 <tr class="separator:ga6b20d41d6252e9871430c242cb1a56e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga739a2a1a0047c98ac1b18ecd25dac092"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___define.html#ga739a2a1a0047c98ac1b18ecd25dac092">RX_BUFFER_SIZE</a>&#160;&#160;&#160;2</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___define.html#ga739a2a1a0047c98ac1b18ecd25dac092">RX_BUFFER_SIZE</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:ga739a2a1a0047c98ac1b18ecd25dac092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max size of the <a class="el" href="group___debug___private___variables.html#ga17916f59674854b82e55fe3d39a36d81" title="The buffer to store the message received. ">RX_buffer</a>. <br /></td></tr>
 <tr class="separator:ga739a2a1a0047c98ac1b18ecd25dac092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25e714b84859b15002f51ca15a810102"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_h___debug___error___code.html#ga25e714b84859b15002f51ca15a810102">PH_Debug_ERROR_NONE</a>&#160;&#160;&#160;((uint32_t)0x00000000U)</td></tr>
@@ -143,8 +143,8 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memitem:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">DebugTask</a> (void *argument)</td></tr>
 <tr class="memdesc:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug task. Check whether new messages are stored in <a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola defined in Debug. ">colaDebug</a>. If yes, send the new message through UART.  <a href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">More...</a><br /></td></tr>
 <tr class="separator:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8013ff117a9e96e630d30771cf9b0199"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DebugRXTask</b> (void *argument)</td></tr>
+<tr class="memitem:ga8013ff117a9e96e630d30771cf9b0199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">DebugRXTask</a> (void *argument)</td></tr>
+<tr class="memdesc:ga8013ff117a9e96e630d30771cf9b0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug RX task. Transmit what received from debug uart towards KNX uart.  <a href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">More...</a><br /></td></tr>
 <tr class="separator:ga8013ff117a9e96e630d30771cf9b0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>

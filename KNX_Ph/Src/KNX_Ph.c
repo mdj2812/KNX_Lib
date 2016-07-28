@@ -35,11 +35,13 @@
 /** \brief Current state of KNX physical layer. */
 static PH_Status_t KNX_PH_STATE;
 /** \brief State Debug message sent in \ref Cola_Debug. */
-static char KNX_PH_STATE_DEBUGMSG[] = "KNX_PH_STATE changed to XX.\r\n";
+static unsigned char KNX_PH_STATE_DEBUGMSG[] = "KNX_PH_STATE changed to XX.\r\n";
 /** \brief Sending Debug message sent in \ref Cola_Debug. */
-static char KNX_PH_SEND_DEBUGMSG[] = "Message sent: /XX/\r\n";
+static unsigned char KNX_PH_SEND_DEBUGMSG[] = "Message sent: /XX/\r\n";
 /** \brief Receiving Debug message sent in \ref Cola_Debug. */
-static char KNX_PH_RECEIVE_DEBUGMSG[] = "Message received: [XX]\r\n";
+static unsigned char KNX_PH_RECEIVE_DEBUGMSG[] = "Message received: [XX]\r\n";
+/** \brief Error Debug message sent in \ref Cola_Debug. */
+static unsigned char KNX_PH_ERROR_DEBUGMSG[] = "Error!\r\n";
 
 /** \brief Cola defined in \ref Debug */
 t_cola colaDebug;
@@ -72,9 +74,7 @@ static void     KNX_Ph_DebugMessage(uint8_t data, DEBUG_Type_t type);
   * @retval     Error code, See \ref PH_Error_Code.
   */
 uint8_t KNX_Ph_Init(void)
-{
-  uint8_t data_received;        /* data received */
-  
+{  
   /** Set state to ::PH_NOINIT */
   KNX_Ph_SetState(PH_NOINIT);
   
@@ -86,7 +86,15 @@ uint8_t KNX_Ph_Init(void)
     /** \b If TPUart initialization failed, return ::PH_ERROR_INIT */
     return PH_ERROR_INIT;
   }
-  
+  return PH_ERROR_NONE;
+}
+
+/**
+  * @brief      Reset the \ref KNX_PH module.
+  * @retval     Error code, See \ref PH_Error_Code.
+  */
+uint8_t KNX_Ph_Reset(void)
+{
   /** Set state to ::PH_RESET. */
   KNX_Ph_SetState(PH_RESET);
 
@@ -98,7 +106,7 @@ uint8_t KNX_Ph_Init(void)
   }
     
   /** Waiting for the ::Reset_indication. */
-  if(KNX_Ph_Receive(&data_received, KNX_DEFAULT_TIMEOUT) == PH_ERROR_NONE)
+  if(KNX_Ph_Receive(Reset_indication, KNX_DEFAULT_TIMEOUT) == PH_ERROR_NONE)
   {
     /** \b If receive the response, set state to ::PH_NORMAL. */
     KNX_Ph_SetState(PH_NORMAL);
@@ -177,7 +185,7 @@ uint8_t KNX_Ph_Receive(uint8_t response, uint32_t timeout)
   {
     if(KNX_PH_TPUart_Receive(data, 1) == TPUart_OK)
     {
-      KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
+      KNX_Ph_DebugMessage(*data, RECEIVE_DEBUG);
       
       /** \b If data received is the response expected. */
       if(*data == response)
@@ -276,14 +284,15 @@ static void KNX_Ph_DebugMessage(uint8_t data, DEBUG_Type_t type)
       cola_guardar(&colaDebug, KNX_PH_STATE_DEBUGMSG);
       break;
     case SEND_DEBUG:
-      int2text(data, &KNX_PH_SEND_DEBUGMSG[14]);
+      int2text(data, &KNX_PH_SEND_DEBUGMSG[15]);
       cola_guardar(&colaDebug, KNX_PH_SEND_DEBUGMSG);
       break;
-    case SEND_DEBUG:
-      int2text(data, &KNX_PH_SEND_DEBUGMSG[14]);
-      cola_guardar(&colaDebug, KNX_PH_SEND_DEBUGMSG);
+    case RECEIVE_DEBUG:
+      int2text(data, &KNX_PH_SEND_DEBUGMSG[15]);
+      cola_guardar(&colaDebug, KNX_PH_RECEIVE_DEBUGMSG);
       break;
     default:
+      cola_guardar(&colaDebug, KNX_PH_ERROR_DEBUGMSG);
   }
 }
 /**

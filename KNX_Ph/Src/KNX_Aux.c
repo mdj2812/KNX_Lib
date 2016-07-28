@@ -13,6 +13,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
+#include <string.h>
 #include "KNX_Aux.h"
 
 /** @addtogroup KNX_PH KNX Physical Layer
@@ -31,11 +32,11 @@
 static const char hex_num[] = {'0', '1', '2', '3', '4', '5', '6', '7' , '8', '9',
                                 'A', 'B', 'C', 'D', 'E', 'F'};
 /** \brief Status of the timer */
-__IO TIMER_Status_t timer_state;
+volatile TIMER_Status_t timer_state;
 /** \brief Timeout duration of the timer */
-__IO uint32_t timer_timeout;
+static uint32_t timer_timeout;
 /** \brief Counter of the timer, the unit is ms */
-__IO uint32_t timer_tick;
+volatile uint32_t timer_tick;
 /**
   * @}
   */
@@ -51,7 +52,7 @@ __IO uint32_t timer_tick;
  *  @param      msg: pointer to a buffer.
  *  @return     Error code, see \ref KNX_Aux_Error_Code
  */
-uint8_t int2text(uint8_t value, char *msg)
+uint8_t int2text(uint8_t value, unsigned char *msg)
 {
   if(msg == NULL)
   {
@@ -70,7 +71,7 @@ uint8_t int2text(uint8_t value, char *msg)
  *  @param      value: pointer to ouput as an 8 bits unsigned value.
  *  @return     Error code, see \ref KNX_Aux_Error_Code
  */
-uint8_t text2int(char *msg, uint8_t *value)
+uint8_t text2int(unsigned char *msg, uint8_t *value)
 {
   uint8_t i;	/* indice */
   uint8_t value_0, value_1;	/* values on 2 digits */

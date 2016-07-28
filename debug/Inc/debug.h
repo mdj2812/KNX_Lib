@@ -33,7 +33,7 @@
 /** \brief Max size of the ::buffer */
 #define BUFFER_SIZE 1024
 /** \brief Max size of the ::RX_buffer */
-#define RX_BUFFER_SIZE 2
+#define RX_BUFFER_SIZE 4
 
 /**
   * @}

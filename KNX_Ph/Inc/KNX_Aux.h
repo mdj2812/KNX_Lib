@@ -85,8 +85,8 @@ typedef enum
 /** @addtogroup KNX_Aux_Exported_Functions_Group1
   * @{
   */
-uint8_t int2text(uint8_t value, char *msg);
-uint8_t text2int(char *msg, uint8_t *value);
+uint8_t int2text(uint8_t value, unsigned char *msg);
+uint8_t text2int(unsigned char *msg, uint8_t *value);
 /**
   * @}
   */

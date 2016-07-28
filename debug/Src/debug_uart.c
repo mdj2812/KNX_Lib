@@ -97,17 +97,24 @@ uint8_t debug_uart_init(void)
   * @param      data:  pointer to the data buffer.
   * @param      size:  lenghth of the buffer.
   */
-void debug_uart_send (uint8_t *data, uint16_t size)
+Debug_Uart_Status_t debug_uart_send (uint8_t *data, uint16_t size)
 {
+  if((data == NULL ) || (size == 0U)) 
+  {
+    return Debug_Uart_ERROR;
+  }
+
   (&debug_huart)->pTxBuffPtr = data;
   (&debug_huart)->TxXferSize = size;
   (&debug_huart)->TxXferCount = size;
 
   (&debug_huart)->ErrorCode = HAL_UART_ERROR_NONE;
   (&debug_huart)->gState = HAL_UART_STATE_BUSY_TX;
-  
+
   /* Enable the UART Transmit data register empty Interrupt */
   SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_TXEIE);
+
+  return Debug_Uart_OK;
 }
 
 /**
@@ -115,8 +122,13 @@ void debug_uart_send (uint8_t *data, uint16_t size)
   * @param      data:  pointer to the data buffer.
   * @param      size:  lenghth of the buffer.
   */
-void debug_uart_receive (uint8_t *data, uint16_t size)
+Debug_Uart_Status_t debug_uart_receive (uint8_t *data, uint16_t size)
 {
+  if((data == NULL ) || (size == 0U)) 
+  {
+    return Debug_Uart_ERROR;
+  }
+
   (&debug_huart)->pRxBuffPtr = data;
   (&debug_huart)->RxXferSize = size;
   (&debug_huart)->RxXferCount = size;
@@ -132,6 +144,8 @@ void debug_uart_receive (uint8_t *data, uint16_t size)
 
   /* Enable the UART Data Register not empty Interrupt */
   SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_RXNEIE);
+  
+  return Debug_Uart_OK;
 }
 
 /**
@@ -141,17 +155,17 @@ void debug_uart_isr(void)
 {  
   /* UART IRQ Handler function provided by driver. */
   HAL_UART_IRQHandler(&debug_huart);
-
+  
   debug_uart_isr_begin ();
     
   /* UART in mode Receiver ---------------------------------------------------*/
-  if(HAL_UART_GetState(&debug_huart) == HAL_UART_STATE_BUSY_RX)
+  if((HAL_UART_GetState(&debug_huart) & HAL_UART_STATE_BUSY_RX) == HAL_UART_STATE_BUSY_RX)
   {
     debug_uart_isr_rx();
   }
   
   /* UART in mode Transmitter ------------------------------------------------*/
-  if(HAL_UART_GetState(&debug_huart) == HAL_UART_STATE_BUSY_TX)
+  if((HAL_UART_GetState(&debug_huart) & HAL_UART_STATE_BUSY_TX) == HAL_UART_STATE_BUSY_TX)
   {
     debug_uart_isr_tx();
   }

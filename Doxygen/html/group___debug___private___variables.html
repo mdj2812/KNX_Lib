@@ -95,7 +95,7 @@ static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <tr class="separator:ga57ad017acd4535fe089f54ed903b3e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacab2203504e72e5e674d3174e0bd7d5e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gacab2203504e72e5e674d3174e0bd7d5e"></a>
 static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e">buffer</a> [<a class="el" href="group___debug___private___define.html#ga6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]</td></tr>
-<tr class="memdesc:gacab2203504e72e5e674d3174e0bd7d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e" title="The buffer to store the message. ">buffer</a> to store the message. <br /></td></tr>
+<tr class="memdesc:gacab2203504e72e5e674d3174e0bd7d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer to store the message. <br /></td></tr>
 <tr class="separator:gacab2203504e72e5e674d3174e0bd7d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd3f15a092421e9fa47f50d4f95f212b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gacd3f15a092421e9fa47f50d4f95f212b"></a>
 __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gacd3f15a092421e9fa47f50d4f95f212b">buffer_indice</a></td></tr>
@@ -107,12 +107,16 @@ __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <tr class="separator:ga2dc364897dd645d7f940223559bcb511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga17916f59674854b82e55fe3d39a36d81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga17916f59674854b82e55fe3d39a36d81"></a>
 static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga17916f59674854b82e55fe3d39a36d81">RX_buffer</a> [<a class="el" href="group___debug___private___define.html#ga739a2a1a0047c98ac1b18ecd25dac092">RX_BUFFER_SIZE</a>]</td></tr>
-<tr class="memdesc:ga17916f59674854b82e55fe3d39a36d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e" title="The buffer to store the message. ">buffer</a> to store the message received. <br /></td></tr>
+<tr class="memdesc:ga17916f59674854b82e55fe3d39a36d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer to store the message received. <br /></td></tr>
 <tr class="separator:ga17916f59674854b82e55fe3d39a36d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga80104a302efa6d0ffad06f30349fc37a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga80104a302efa6d0ffad06f30349fc37a"></a>
 __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga80104a302efa6d0ffad06f30349fc37a">RX_buffer_indice</a> = 0</td></tr>
 <tr class="memdesc:ga80104a302efa6d0ffad06f30349fc37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indice of the <a class="el" href="group___debug___private___variables.html#ga17916f59674854b82e55fe3d39a36d81" title="The buffer to store the message received. ">RX_buffer</a>. <br /></td></tr>
 <tr class="separator:ga80104a302efa6d0ffad06f30349fc37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe413cb96d839cbe31417aa52d920f21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabe413cb96d839cbe31417aa52d920f21"></a>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gabe413cb96d839cbe31417aa52d920f21">temp</a></td></tr>
+<tr class="memdesc:gabe413cb96d839cbe31417aa52d920f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">The temporary <code>unsigned</code> <code>char</code> to store the message received. <br /></td></tr>
+<tr class="separator:gabe413cb96d839cbe31417aa52d920f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab492c12c83b7838e793b80c291ed58aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab492c12c83b7838e793b80c291ed58aa"></a>
 static TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gab492c12c83b7838e793b80c291ed58aa">xDebugTaskHandle</a></td></tr>
 <tr class="memdesc:gab492c12c83b7838e793b80c291ed58aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler of the <a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44" title="Debug task. Check whether new messages are stored in colaDebug. If yes, send the new message through ...">DebugTask</a>. <br /></td></tr>

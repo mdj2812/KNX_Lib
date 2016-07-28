@@ -11,7 +11,7 @@ Debug tasks.
 \item 
 \#define \hyperlink{group___debug___private___define_ga6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}~1024
 \begin{DoxyCompactList}\small\item\em Max size of the \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer}. \end{DoxyCompactList}\item 
-\#define \hyperlink{group___debug___private___define_ga739a2a1a0047c98ac1b18ecd25dac092}{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}~2
+\#define \hyperlink{group___debug___private___define_ga739a2a1a0047c98ac1b18ecd25dac092}{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}~4
 \begin{DoxyCompactList}\small\item\em Max size of the \hyperlink{group___debug___private___variables_ga17916f59674854b82e55fe3d39a36d81}{R\+X\+\_\+buffer}. \end{DoxyCompactList}\item 
 \#define \hyperlink{group___p_h___debug___error___code_ga25e714b84859b15002f51ca15a810102}{P\+H\+\_\+\+Debug\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}~((uint32\+\_\+t)0x00000000\+U)
 \item 
@@ -39,8 +39,8 @@ uint32\+\_\+t \hyperlink{group___debug___exported___functions___group1_gadd32629
 \begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___debug}{Debug} module. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task} (void $\ast$argument)
 \begin{DoxyCompactList}\small\item\em Debug task. Check whether new messages are stored in \hyperlink{group___k_n_x___p_h___sup___private___variables_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. If yes, send the new message through U\+A\+RT. \end{DoxyCompactList}\item 
-void {\bfseries Debug\+R\+X\+Task} (void $\ast$argument)
-\end{DoxyCompactItemize}
+void \hyperlink{group___debug___exported___functions___group2_ga8013ff117a9e96e630d30771cf9b0199}{Debug\+R\+X\+Task} (void $\ast$argument)
+\begin{DoxyCompactList}\small\item\em Debug RX task. Transmit what received from debug uart towards K\+NX uart. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 

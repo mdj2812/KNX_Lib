@@ -5,9 +5,8 @@
 \item 
 uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group1_ga2139e336141090cdd97ecb0c5e55499f}{K\+N\+X\+\_\+\+Ph\+\_\+\+Init} (void)
 \begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module. \end{DoxyCompactList}\item 
-uint8\+\_\+t {\bfseries K\+N\+X\+\_\+\+Ph\+\_\+\+Reset} (void)\hypertarget{group___k_n_x___p_h___sup___exported___functions___group1_ga5e5cc508d8f5528f85a275fa9dcb0b25}{}\label{group___k_n_x___p_h___sup___exported___functions___group1_ga5e5cc508d8f5528f85a275fa9dcb0b25}
-
-\end{DoxyCompactItemize}
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group1_ga5e5cc508d8f5528f85a275fa9dcb0b25}{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset} (void)
+\begin{DoxyCompactList}\small\item\em Reset the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -36,8 +35,22 @@ Initialize the timer.
 
 Initialize T\+P\+Uart.
 
-{\bfseries If} T\+P\+Uart initialization failed, return \hyperlink{group___p_h___error___code_ga15fbdf4edfc98283ef0f1b7c2fc0a47b}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}
+{\bfseries If} T\+P\+Uart initialization failed, return \hyperlink{group___p_h___error___code_ga15fbdf4edfc98283ef0f1b7c2fc0a47b}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT} \index{Initialization Functions@{Initialization Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Reset@{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset}}
+\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset@{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset}!Initialization Functions@{Initialization Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset(void)}{KNX_Ph_Reset(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group1_ga5e5cc508d8f5528f85a275fa9dcb0b25}{}\label{group___k_n_x___p_h___sup___exported___functions___group1_ga5e5cc508d8f5528f85a275fa9dcb0b25}
 
+
+Reset the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & code, See \hyperlink{group___p_h___error___code}{Physical Layer Error Code}. \\
+\hline
+\end{DoxyRetVals}
 Set state to \hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a69a4299f68e66ea3fbe9477582ac02cd}{P\+H\+\_\+\+R\+E\+S\+ET}.
 
 Send \hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f025cbc6786d5730d3eaf0efc940702df223316668e6712b5ba4}{Ph\+\_\+\+Reset} request.

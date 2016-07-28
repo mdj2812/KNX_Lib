@@ -85,9 +85,9 @@ uint8_t KNX_PH_TPUart_init(void)
   */
 uint8_t KNX_PH_TPUart_Send(uint8_t *data, uint16_t size)
 {
-  if(huart->gState == HAL_UART_STATE_READY)
+  if((&knx_huart)->gState == HAL_UART_STATE_READY)
   {
-    if((data == NULL ) || (Size == 0U)) 
+    if((data == NULL ) || (size == 0U)) 
     {
       return TPUart_ERROR;
     }
@@ -101,7 +101,7 @@ uint8_t KNX_PH_TPUart_Send(uint8_t *data, uint16_t size)
     
     /* Enable the UART Transmit data register empty Interrupt */
     SET_BIT((&knx_huart)->Instance->CR1, USART_CR1_TXEIE);
-       
+    
     return TPUart_OK;
   }
   else
@@ -120,7 +120,7 @@ uint8_t KNX_PH_TPUart_Send(uint8_t *data, uint16_t size)
 uint8_t KNX_PH_TPUart_Receive(uint8_t *data, uint16_t size)
 {
   /* Check that a Rx process is not already ongoing */ 
-  if(huart->RxState == HAL_UART_STATE_READY)
+  if((&knx_huart)->RxState == HAL_UART_STATE_READY)
   {
     if((data == NULL ) || (size == 0U)) 
     {
