@@ -67,6 +67,9 @@ uint8_t KNX_PH_TPUart_init(void)
     return TPUart_ERROR;
   }
   
+  __HAL_UART_ENABLE_IT(&knx_huart, UART_IT_RXNE);  /** Activate Flag Receptie */
+  __HAL_UART_ENABLE_IT(&knx_huart, UART_IT_TC);    /** Activate Flag TX       */
+
   return TPUart_OK;
 }
 /**
@@ -91,13 +94,26 @@ uint8_t KNX_PH_TPUart_Send(uint8_t *data, uint16_t size)
     {
       return TPUart_ERROR;
     }
-
+  
+    /* Process Locked */
+    if((&knx_huart)->Lock == HAL_LOCKED)
+    {
+      return TPUart_BUSY;
+    }
+    else
+    {
+      (&knx_huart)->Lock = HAL_LOCKED;
+    }
+    
     (&knx_huart)->pTxBuffPtr = data;
     (&knx_huart)->TxXferSize = size;
     (&knx_huart)->TxXferCount = size;
 
     (&knx_huart)->ErrorCode = HAL_UART_ERROR_NONE;
     (&knx_huart)->gState = HAL_UART_STATE_BUSY_TX;
+    
+    /* Process Unlocked */
+    (&knx_huart)->Lock = HAL_UNLOCKED;
     
     /* Enable the UART Transmit data register empty Interrupt */
     SET_BIT((&knx_huart)->Instance->CR1, USART_CR1_TXEIE);
@@ -126,14 +142,27 @@ uint8_t KNX_PH_TPUart_Receive(uint8_t *data, uint16_t size)
     {
       return TPUart_ERROR;
     }
-        
+    
+    /* Process Locked */
+    if((&knx_huart)->Lock == HAL_LOCKED)
+    {
+      return TPUart_BUSY;
+    }
+    else
+    {
+      (&knx_huart)->Lock = HAL_LOCKED;
+    }
+    
     (&knx_huart)->pRxBuffPtr = data;
     (&knx_huart)->RxXferSize = size;
     (&knx_huart)->RxXferCount = size;
     
     (&knx_huart)->ErrorCode = HAL_UART_ERROR_NONE;
     (&knx_huart)->RxState = HAL_UART_STATE_BUSY_RX;
-            
+    
+    /* Process Unlocked */
+    (&knx_huart)->Lock = HAL_UNLOCKED;
+    
     /* Enable the UART Parity Error Interrupt */
     SET_BIT((&knx_huart)->Instance->CR1, USART_CR1_PEIE);
     

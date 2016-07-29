@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,10 +113,6 @@ static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class
 __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga80104a302efa6d0ffad06f30349fc37a">RX_buffer_indice</a> = 0</td></tr>
 <tr class="memdesc:ga80104a302efa6d0ffad06f30349fc37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indice of the <a class="el" href="group___debug___private___variables.html#ga17916f59674854b82e55fe3d39a36d81" title="The buffer to store the message received. ">RX_buffer</a>. <br /></td></tr>
 <tr class="separator:ga80104a302efa6d0ffad06f30349fc37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabe413cb96d839cbe31417aa52d920f21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabe413cb96d839cbe31417aa52d920f21"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gabe413cb96d839cbe31417aa52d920f21">temp</a></td></tr>
-<tr class="memdesc:gabe413cb96d839cbe31417aa52d920f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">The temporary <code>unsigned</code> <code>char</code> to store the message received. <br /></td></tr>
-<tr class="separator:gabe413cb96d839cbe31417aa52d920f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab492c12c83b7838e793b80c291ed58aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab492c12c83b7838e793b80c291ed58aa"></a>
 static TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gab492c12c83b7838e793b80c291ed58aa">xDebugTaskHandle</a></td></tr>
 <tr class="memdesc:gab492c12c83b7838e793b80c291ed58aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler of the <a class="el" href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44" title="Debug task. Check whether new messages are stored in colaDebug. If yes, send the new message through ...">DebugTask</a>. <br /></td></tr>
@@ -129,6 +125,14 @@ static SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a c
 static BaseType_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga9d9a749ad99ec3d4a6886d5277b9ba87">xHigherPriorityTaskWoken</a></td></tr>
 <tr class="memdesc:ga9d9a749ad99ec3d4a6886d5277b9ba87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for yield the UART interrupt. <br /></td></tr>
 <tr class="separator:ga9d9a749ad99ec3d4a6886d5277b9ba87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4dc10f75da531ef466aa8765f6d0648"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab4dc10f75da531ef466aa8765f6d0648"></a>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gab4dc10f75da531ef466aa8765f6d0648">DEBUG_SEND_MSG</a> [] = &quot;Message sent: /XX/\r\n&quot;</td></tr>
+<tr class="memdesc:gab4dc10f75da531ef466aa8765f6d0648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sending Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
+<tr class="separator:gab4dc10f75da531ef466aa8765f6d0648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace1b5e15e6bd4952d64ba900c84f517b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gace1b5e15e6bd4952d64ba900c84f517b"></a>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gace1b5e15e6bd4952d64ba900c84f517b">DEBUG_ERROR_MSG</a> [] = &quot;Error!\r\n&quot;</td></tr>
+<tr class="memdesc:gace1b5e15e6bd4952d64ba900c84f517b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
+<tr class="separator:gace1b5e15e6bd4952d64ba900c84f517b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 </div><!-- contents -->

@@ -2,8 +2,8 @@
   *****************************************************************************
   * @file       debug.c
   * @author
-  * @version    V3.1.0
-  * @date       26-July-2016
+  * @version    V3.1.1
+  * @date       29-July-2016
   * @brief      Debug tasks.
   *             This file provides functions to manage following functionalities:
   *              + Initialization functions and tasks
@@ -54,8 +54,6 @@ __IO uint16_t buffer_indice_max;
 static unsigned char RX_buffer[RX_BUFFER_SIZE];
 /** \brief The indice of the ::RX_buffer */
 __IO uint16_t   RX_buffer_indice = 0;
-/** \brief The temporary \c unsigned \c char to store the message received */
-static unsigned char temp;
 
 /** \brief Handler of the ::DebugTask */
 static TaskHandle_t xDebugTaskHandle;
@@ -63,6 +61,11 @@ static TaskHandle_t xDebugTaskHandle;
 static SemaphoreHandle_t semaforo_debug_isruart;
 /** \brief Used for yield the UART interrupt */
 static BaseType_t xHigherPriorityTaskWoken;
+
+/** \brief Sending Debug message sent in \ref Cola_Debug. */
+static unsigned char DEBUG_SEND_MSG[] = "Message sent: /XX/\r\n";
+/** \brief Error Debug message sent in \ref Cola_Debug. */
+static unsigned char DEBUG_ERROR_MSG[] = "Error!\r\n";
 /**
   * @}
   */
@@ -112,42 +115,6 @@ void debug_uart_isr_tx(void)
   */
 void debug_uart_isr_rx(void)
 {
-  uint8_t byte;
-
-  if(temp == '/')
-  {
-    if(RX_buffer_indice != 2)
-    {
-      RX_buffer_indice = 0;
-      
-      RX_buffer[RX_buffer_indice] = temp;
-      RX_buffer_indice++;
-    }
-    else
-    {
-      RX_buffer[RX_buffer_indice] = temp;
-      KNX_PH_TPUart_Send(&byte, 1);
-      RX_buffer_indice = 0;
-    }
-  }
-  else
-  {
-    if(RX_buffer_indice == 1)
-    {
-      RX_buffer[RX_buffer_indice] = temp;
-      RX_buffer_indice++;
-    }
-    else if(RX_buffer_indice == 2)
-    {
-      RX_buffer[RX_buffer_indice] = temp;
-      RX_buffer_indice++;
-      
-      if(text2int(&RX_buffer[1], &byte) == AUX_ERROR_MSG)
-      {
-        RX_buffer_indice=0;
-      }
-    }
-  }
 }
 /**
   * @}
@@ -256,12 +223,61 @@ void DebugTask(void * argument)
   * @param      argument:  argument of the task.
   */
 void DebugRXTask(void * argument)
-{  
+{
+  uint8_t byte;
+  unsigned char temp;
+  
   vTaskDelay( 200 );
 
   for(;;)
   {  
-    debug_uart_receive (&temp, 1);
+    while(debug_uart_receive (&temp, 1) != Debug_Uart_OK)
+    {
+      vTaskDelay( 10 );
+    }
+    
+    if(temp == '/')
+    {
+      if(RX_buffer_indice != 3)
+      {
+        RX_buffer_indice = 0;
+        
+        RX_buffer[RX_buffer_indice] = temp;
+        RX_buffer_indice++;
+      }
+      else
+      {
+        RX_buffer[RX_buffer_indice] = temp;
+        if(KNX_PH_TPUart_Send(&byte, 1) == TPUart_OK)
+        {
+          int2text(byte, &DEBUG_SEND_MSG[15]);
+          cola_guardar(&colaDebug, DEBUG_SEND_MSG);
+        }
+        else
+        {
+          cola_guardar(&colaDebug, DEBUG_ERROR_MSG);
+        }
+        RX_buffer_indice = 0;
+      }
+    }
+    else
+    {
+      if(RX_buffer_indice == 1)
+      {
+        RX_buffer[RX_buffer_indice] = temp;
+        RX_buffer_indice++;
+      }
+      else if(RX_buffer_indice == 2)
+      {
+        RX_buffer[RX_buffer_indice] = temp;
+        RX_buffer_indice++;
+        
+        if(text2int(&RX_buffer[1], &byte) == AUX_ERROR_MSG)
+        {
+          RX_buffer_indice=0;
+        }
+      }
+    }
   }
 }
 /**

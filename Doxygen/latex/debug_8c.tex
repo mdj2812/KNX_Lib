@@ -50,14 +50,16 @@ static unsigned char \hyperlink{group___debug___private___variables_ga17916f5967
 \begin{DoxyCompactList}\small\item\em The buffer to store the message received. \end{DoxyCompactList}\item 
 \+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_ga80104a302efa6d0ffad06f30349fc37a}{R\+X\+\_\+buffer\+\_\+indice} = 0
 \begin{DoxyCompactList}\small\item\em The indice of the \hyperlink{group___debug___private___variables_ga17916f59674854b82e55fe3d39a36d81}{R\+X\+\_\+buffer}. \end{DoxyCompactList}\item 
-static unsigned char \hyperlink{group___debug___private___variables_gabe413cb96d839cbe31417aa52d920f21}{temp}
-\begin{DoxyCompactList}\small\item\em The temporary {\ttfamily unsigned} {\ttfamily char} to store the message received. \end{DoxyCompactList}\item 
 static Task\+Handle\+\_\+t \hyperlink{group___debug___private___variables_gab492c12c83b7838e793b80c291ed58aa}{x\+Debug\+Task\+Handle}
 \begin{DoxyCompactList}\small\item\em Handler of the \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
 static Semaphore\+Handle\+\_\+t \hyperlink{group___debug___private___variables_ga4c5de14a4644bf21d004fd0d61f1fa98}{semaforo\+\_\+debug\+\_\+isruart}
 \begin{DoxyCompactList}\small\item\em Semaphore to permit the new cycle of \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
 static Base\+Type\+\_\+t \hyperlink{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{x\+Higher\+Priority\+Task\+Woken}
-\begin{DoxyCompactList}\small\item\em Used for yield the U\+A\+RT interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used for yield the U\+A\+RT interrupt. \end{DoxyCompactList}\item 
+static unsigned char \hyperlink{group___debug___private___variables_gab4dc10f75da531ef466aa8765f6d0648}{D\+E\+B\+U\+G\+\_\+\+S\+E\+N\+D\+\_\+\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}Message sent\+: /XX/\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Sending Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\item 
+static unsigned char \hyperlink{group___debug___private___variables_gace1b5e15e6bd4952d64ba900c84f517b}{D\+E\+B\+U\+G\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}Error!\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Error Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -67,10 +69,10 @@ Debug tasks. This file provides functions to manage following functionalities\+:
 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-V3.\+1.\+0 
+V3.\+1.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-26-\/\+July-\/2016
+29-\/\+July-\/2016
 \begin{DoxyItemize}
 \item Initialization functions and tasks
 \item Perform Debug\+Task 

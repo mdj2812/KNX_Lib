@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['datos',['datos',['../structt__cola.html#a8eaaf6d0a3ebef35b2d6c94e9a63bf3d',1,'t_cola']]],
+  ['datos',['datos',['../structt__cola.html#a61215b1ae633a2a4463e0abf0a796f41',1,'t_cola']]],
   ['debug',['Debug',['../group___debug.html',1,'']]],
   ['debug_2ec',['debug.c',['../debug_8c.html',1,'']]],
   ['debug_2eh',['debug.h',['../debug_8h.html',1,'']]],
+  ['debug_5ferror_5fmsg',['DEBUG_ERROR_MSG',['../group___debug___private___variables.html#gace1b5e15e6bd4952d64ba900c84f517b',1,'debug.c']]],
   ['debug_20exported_20functions',['Debug Exported Functions',['../group___debug___exported___functions.html',1,'']]],
   ['debug_20initialization_20functions',['Debug Initialization Functions',['../group___debug___exported___functions___group1.html',1,'']]],
   ['debug_20tasks_20functions',['Debug tasks functions',['../group___debug___exported___functions___group2.html',1,'']]],
@@ -13,6 +14,7 @@ var searchData=
   ['debug_5fhuart',['debug_huart',['../group___debug___u_a_r_t___external___variables.html#gaa020232170a049fcc321246bd778a49f',1,'debug_uart.c']]],
   ['debug_20private_20define',['Debug Private Define',['../group___debug___private___define.html',1,'']]],
   ['debug_20private_20variables',['Debug Private Variables',['../group___debug___private___variables.html',1,'']]],
+  ['debug_5fsend_5fmsg',['DEBUG_SEND_MSG',['../group___debug___private___variables.html#gab4dc10f75da531ef466aa8765f6d0648',1,'debug.c']]],
   ['debug_5ftype_5ft',['DEBUG_Type_t',['../group___debug___exported___types.html#gacb1775677105967978fae4d9155cca26',1,'debug.h']]],
   ['debug_20uart',['Debug UART',['../group___debug___uart.html',1,'']]],
   ['debug_5fuart_2ec',['debug_uart.c',['../debug__uart_8c.html',1,'']]],

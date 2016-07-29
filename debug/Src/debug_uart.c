@@ -2,8 +2,8 @@
   *****************************************************************************
   * @file       debug_uart.c 
   * @author     
-  * @version    V3.1.0 
-  * @date       26-July-2016
+  * @version    V3.1.1 
+  * @date       29-July-2016
   * @brief      Debug UART adaptation module
   *             This file provides functions to manage following functionalities:
   *              + Initialization ports to adapt to the board
@@ -78,6 +78,9 @@ uint8_t debug_uart_init(void)
     return 0;
   }
   
+  __HAL_UART_ENABLE_IT(&debug_huart, UART_IT_RXNE);/** Activate Flag Receptie */
+  __HAL_UART_ENABLE_IT(&debug_huart, UART_IT_TC);  /** Activate Flag TX       */
+  
   return 1;
 }
 /**
@@ -103,13 +106,26 @@ Debug_Uart_Status_t debug_uart_send (uint8_t *data, uint16_t size)
   {
     return Debug_Uart_ERROR;
   }
-
+  
+  /* Process Locked */
+  if((&debug_huart)->Lock == HAL_LOCKED)
+  {
+    return Debug_Uart_BUSY;
+  }
+  else
+  {
+    (&debug_huart)->Lock = HAL_LOCKED;
+  }
+  
   (&debug_huart)->pTxBuffPtr = data;
   (&debug_huart)->TxXferSize = size;
   (&debug_huart)->TxXferCount = size;
 
   (&debug_huart)->ErrorCode = HAL_UART_ERROR_NONE;
   (&debug_huart)->gState = HAL_UART_STATE_BUSY_TX;
+  
+  /* Process Unlocked */
+  (&debug_huart)->Lock = HAL_UNLOCKED;
 
   /* Enable the UART Transmit data register empty Interrupt */
   SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_TXEIE);
@@ -124,28 +140,49 @@ Debug_Uart_Status_t debug_uart_send (uint8_t *data, uint16_t size)
   */
 Debug_Uart_Status_t debug_uart_receive (uint8_t *data, uint16_t size)
 {
-  if((data == NULL ) || (size == 0U)) 
+  /* Check that a Rx process is not already ongoing */ 
+  if((&debug_huart)->RxState == HAL_UART_STATE_READY)
   {
-    return Debug_Uart_ERROR;
-  }
+    if((data == NULL ) || (size == 0U)) 
+    {
+      return Debug_Uart_ERROR;
+    }
+    
+    /* Process Locked */
+    if((&debug_huart)->Lock == HAL_LOCKED)
+    {
+      return Debug_Uart_BUSY;
+    }
+    else
+    {
+      (&debug_huart)->Lock = HAL_LOCKED;
+    }
+    
+    (&debug_huart)->pRxBuffPtr = data;
+    (&debug_huart)->RxXferSize = size;
+    (&debug_huart)->RxXferCount = size;
 
-  (&debug_huart)->pRxBuffPtr = data;
-  (&debug_huart)->RxXferSize = size;
-  (&debug_huart)->RxXferCount = size;
-
-  (&debug_huart)->ErrorCode = HAL_UART_ERROR_NONE;
-  (&debug_huart)->RxState = HAL_UART_STATE_BUSY_RX;
-
-  /* Enable the UART Parity Error Interrupt */
-  SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_PEIE);
-
-  /* Enable the UART Error Interrupt: (Frame error, noise error, overrun error) */
-  SET_BIT((&debug_huart)->Instance->CR3, USART_CR3_EIE);
-
-  /* Enable the UART Data Register not empty Interrupt */
-  SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_RXNEIE);
+    (&debug_huart)->ErrorCode = HAL_UART_ERROR_NONE;
+    (&debug_huart)->RxState = HAL_UART_STATE_BUSY_RX;
+    
+    /* Process Unlocked */
+    (&debug_huart)->Lock = HAL_UNLOCKED;
   
-  return Debug_Uart_OK;
+    /* Enable the UART Parity Error Interrupt */
+    SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_PEIE);
+
+    /* Enable the UART Error Interrupt: (Frame error, noise error, overrun error) */
+    SET_BIT((&debug_huart)->Instance->CR3, USART_CR3_EIE);
+
+    /* Enable the UART Data Register not empty Interrupt */
+    SET_BIT((&debug_huart)->Instance->CR1, USART_CR1_RXNEIE);
+    
+    return Debug_Uart_OK;
+  }
+  else
+  {
+    return Debug_Uart_BUSY; 
+  }
 }
 
 /**

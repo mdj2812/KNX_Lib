@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['cabeza',['cabeza',['../structt__cola.html#aa60b2d7a3752db97b7f9d9163fb48afa',1,'t_cola']]],
-  ['cola',['cola',['../structt__cola.html#ae6eec6efa2dd9d70da13b2a435c3de27',1,'t_cola::cola()'],['../group___cola.html',1,'(Global Namespace)']]],
+  ['cabeza',['cabeza',['../structt__cola.html#a082fff65fd0192c1b1bb3bd952e47127',1,'t_cola']]],
+  ['cola',['cola',['../structt__cola.html#a8b818616f62d19293390150f6c05b0c4',1,'t_cola::cola()'],['../group___cola.html',1,'(Global Namespace)']]],
   ['cola_2ec',['cola.c',['../cola_8c.html',1,'']]],
   ['cola_2eh',['cola.h',['../cola_8h.html',1,'']]],
   ['cola_20debug',['Cola Debug',['../group___cola___debug.html',1,'']]],
