@@ -20,6 +20,7 @@
 #include "debug_UART.h"
 #include "KNX_TPUart.h"
 #include "KNX_Aux.h"
+#include "KNX_Ph.h"
 #include "stm32f4xx_hal.h"
 #include <stdio.h>
 #include <string.h>

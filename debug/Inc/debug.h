@@ -72,7 +72,8 @@ typedef enum
 {
   STATE_DEBUG   = 0x00U,        /*!< State Debug Message                      */
   SEND_DEBUG    = 0x01U,        /*!< Request Sending Debug Message            */
-  RECEIVE_DEBUG = 0x02U         /*!< Receiving Debug Message                  */
+  RECEIVE_DEBUG = 0x02U,        /*!< Receiving Debug Message                  */
+  ERROR_DEBUG   = 0x03U         /*!< Error Debug Message                      */
 } DEBUG_Type_t;
 /**
   * @}
