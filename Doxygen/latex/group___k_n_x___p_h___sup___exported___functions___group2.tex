@@ -5,45 +5,17 @@
 \item 
 uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_gad47b9ae30f2704001cf07d31da372fe2}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} request, uint32\+\_\+t timeout)
 \begin{DoxyCompactList}\small\item\em Send a request. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga83fe8c9d421ec9c32662b66ec2dc1aeb}{K\+N\+X\+\_\+\+Ph\+\_\+\+Receive} (uint8\+\_\+t response, uint32\+\_\+t timeout)
-\begin{DoxyCompactList}\small\item\em Receive a response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga5c5b1af8b0ba06771d5b16fee4547f87}{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For} (uint8\+\_\+t res, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Wait for a response with timeout. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga4bede9df3610d29290973ac067ac93ae}{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For\+With\+Mask} (uint8\+\_\+t $\ast$res, uint8\+\_\+t res\+Mask, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Wait for a type of response with mask and timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
 \subsection{Function Documentation}
-\index{Send/\+Receive Functions@{Send/\+Receive Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Receive@{K\+N\+X\+\_\+\+Ph\+\_\+\+Receive}}
-\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Receive@{K\+N\+X\+\_\+\+Ph\+\_\+\+Receive}!Send/\+Receive Functions@{Send/\+Receive Functions}}
-\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Receive(uint8\+\_\+t response, uint32\+\_\+t timeout)}{KNX_Ph_Receive(uint8_t response, uint32_t timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Receive (
-\begin{DoxyParamCaption}
-\item[{uint8\+\_\+t}]{response, }
-\item[{uint32\+\_\+t}]{timeout}
-\end{DoxyParamCaption}
-)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group2_ga83fe8c9d421ec9c32662b66ec2dc1aeb}{}\label{group___k_n_x___p_h___sup___exported___functions___group2_ga83fe8c9d421ec9c32662b66ec2dc1aeb}
-
-
-Receive a response. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em response} & response expected. \\
-\hline
-{\em timeout} & timeout duration. \\
-\hline
-\end{DoxyParams}
-
-\begin{DoxyRetVals}{Return values}
-{\em Error} & code, See \hyperlink{group___p_h___error___code}{Physical Layer Error Code}. \\
-\hline
-\end{DoxyRetVals}
-Try to receive the data
-
-{\bfseries If} data received is the response expected.
-
-Return \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}.
-
-{\bfseries If} timeout, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}. \index{Send/\+Receive Functions@{Send/\+Receive Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Send@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send}}
+\index{Send/\+Receive Functions@{Send/\+Receive Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Send@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send}}
 \index{K\+N\+X\+\_\+\+Ph\+\_\+\+Send@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send}!Send/\+Receive Functions@{Send/\+Receive Functions}}
 \subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Send(\+P\+H\+\_\+\+Request\+\_\+t request, uint32\+\_\+t timeout)}{KNX_Ph_Send(PH_Request_t request, uint32_t timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Send (
 \begin{DoxyParamCaption}
@@ -74,5 +46,68 @@ Convert the request to {\ttfamily uint8\+\_\+t} data.
 Try to send the data
 
 {\bfseries If} succeeded, return \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}.
+
+{\bfseries If} timeout, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}. \index{Send/\+Receive Functions@{Send/\+Receive Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For@{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For}}
+\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For@{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For}!Send/\+Receive Functions@{Send/\+Receive Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For(uint8\+\_\+t res, uint32\+\_\+t timeout)}{KNX_Ph_WaitFor(uint8_t res, uint32_t timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{res, }
+\item[{uint32\+\_\+t}]{timeout}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group2_ga5c5b1af8b0ba06771d5b16fee4547f87}{}\label{group___k_n_x___p_h___sup___exported___functions___group2_ga5c5b1af8b0ba06771d5b16fee4547f87}
+
+
+Wait for a response with timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & response got. \\
+\hline
+{\em timeout} & timeout duration. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & code, See \hyperlink{group___p_h___error___code}{Physical Layer Error Code}. \\
+\hline
+\end{DoxyRetVals}
+Try to receive the data
+
+{\bfseries If} data received is the response expected.
+
+Return \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}.
+
+{\bfseries If} timeout, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}. \index{Send/\+Receive Functions@{Send/\+Receive Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For\+With\+Mask@{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For\+With\+Mask}}
+\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For\+With\+Mask@{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For\+With\+Mask}!Send/\+Receive Functions@{Send/\+Receive Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For\+With\+Mask(uint8\+\_\+t $\ast$res, uint8\+\_\+t res\+Mask, uint32\+\_\+t timeout)}{KNX_Ph_WaitForWithMask(uint8_t *res, uint8_t resMask, uint32_t timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For\+With\+Mask (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{res, }
+\item[{uint8\+\_\+t}]{res\+Mask, }
+\item[{uint32\+\_\+t}]{timeout}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group2_ga4bede9df3610d29290973ac067ac93ae}{}\label{group___k_n_x___p_h___sup___exported___functions___group2_ga4bede9df3610d29290973ac067ac93ae}
+
+
+Wait for a type of response with mask and timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & response got. \\
+\hline
+{\em res\+Mask} & mask of the response expected. \\
+\hline
+{\em timeout} & timeout duration. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & code, See \hyperlink{group___p_h___error___code}{Physical Layer Error Code}. \\
+\hline
+\end{DoxyRetVals}
+Try to receive the data
+
+{\bfseries If} data received is the type of response expected.
+
+Return \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}.
 
 {\bfseries If} timeout, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}. 

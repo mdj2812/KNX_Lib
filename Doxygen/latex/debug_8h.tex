@@ -1,5 +1,5 @@
-\hypertarget{debug_8h}{}\section{debug/\+Inc/debug.h File Reference}
-\label{debug_8h}\index{debug/\+Inc/debug.\+h@{debug/\+Inc/debug.\+h}}
+\hypertarget{debug_8h}{}\section{K\+N\+X\+\_\+\+Lib/debug/\+Inc/debug.h File Reference}
+\label{debug_8h}\index{K\+N\+X\+\_\+\+Lib/debug/\+Inc/debug.\+h@{K\+N\+X\+\_\+\+Lib/debug/\+Inc/debug.\+h}}
 
 
 Debug tasks.  
@@ -29,7 +29,8 @@ enum \hyperlink{group___debug___exported___types_gabcec3ea567663bbefa0b9f7a88dd6
 \item 
 enum \hyperlink{group___debug___exported___types_gacb1775677105967978fae4d9155cca26}{D\+E\+B\+U\+G\+\_\+\+Type\+\_\+t} \{ \hyperlink{group___debug___exported___types_ggacb1775677105967978fae4d9155cca26a0cad8d390f2e4ac93049277fd291a95e}{S\+T\+A\+T\+E\+\_\+\+D\+E\+B\+UG} = 0x00U, 
 \hyperlink{group___debug___exported___types_ggacb1775677105967978fae4d9155cca26aa8996ee795e2d49fb83539a0ac88342e}{S\+E\+N\+D\+\_\+\+D\+E\+B\+UG} = 0x01U, 
-\hyperlink{group___debug___exported___types_ggacb1775677105967978fae4d9155cca26a6ae1781bce3c10f579294c10c005648b}{R\+E\+C\+E\+I\+V\+E\+\_\+\+D\+E\+B\+UG} = 0x02U
+\hyperlink{group___debug___exported___types_ggacb1775677105967978fae4d9155cca26a6ae1781bce3c10f579294c10c005648b}{R\+E\+C\+E\+I\+V\+E\+\_\+\+D\+E\+B\+UG} = 0x02U, 
+\hyperlink{group___debug___exported___types_ggacb1775677105967978fae4d9155cca26a819546f977ffd332fc136584e83a65fb}{E\+R\+R\+O\+R\+\_\+\+D\+E\+B\+UG} = 0x03U
  \}\begin{DoxyCompactList}\small\item\em RX Debug Message Type Enumeration definition. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -40,7 +41,7 @@ uint32\+\_\+t \hyperlink{group___debug___exported___functions___group1_gadd32629
 void \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task} (void $\ast$argument)
 \begin{DoxyCompactList}\small\item\em Debug task. Check whether new messages are stored in \hyperlink{group___k_n_x___p_h___sup___private___variables_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}. If yes, send the new message through U\+A\+RT. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___exported___functions___group2_ga8013ff117a9e96e630d30771cf9b0199}{Debug\+R\+X\+Task} (void $\ast$argument)
-\begin{DoxyCompactList}\small\item\em Debug RX task. Transmit what received from debug uart towards K\+NX uart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Debug RX task. Receive the buffer character by character. If the buffer fits in the format as \char`\"{}/\+X\+X/\char`\"{} (XX\+: two digits of hexadecimal), then transmit it to T\+P\+Uart. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 

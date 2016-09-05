@@ -63,10 +63,26 @@ static SemaphoreHandle_t semaforo_debug_isruart;
 /** \brief Used for yield the UART interrupt */
 static BaseType_t xHigherPriorityTaskWoken;
 
+/** \brief Handler of the ::DebugRXTask */
+static TaskHandle_t xDebugRXTaskHandle;
+/** \brief Semaphore to permit the new cycle of ::DebugRXTask */
+static SemaphoreHandle_t semaforo_debugrx_isruart;
+/** character received from UART */
+static unsigned char temp;
+
 /** \brief Sending Debug message sent in \ref Cola_Debug. */
-static unsigned char DEBUG_SEND_MSG[] = "Message sent: /XX/\r\n";
-/** \brief Error Debug message sent in \ref Cola_Debug. */
-static unsigned char DEBUG_ERROR_MSG[] = "Error!\r\n";
+static unsigned char Debug_Send_Msg[] = "[Debug]Message sent: /XX/\r\n";
+/** \brief ::Debug_Send_Msg digits indice. */
+#define DEBUG_SENT_INDICE ((uint8_t)22)
+/** \brief KNX TPUart Error message. */
+static unsigned char KNX_Ph_TPUART_Err_Msg[] = "[KNX TPUart]Error Code: 0xXX\r\n";
+/** \brief ::KNX_Ph_TPUART_Err_Msg digits indice. */
+#define KNX_PH_TPUART_ERROR_CODE_INDICE ((uint8_t)26)
+/** \brief Aux Error message. */
+static unsigned char Aux_Err_Msg[] = "[Aux]Error Code: 0xXX\r\n";
+/** \brief ::Aux_Err_Msg digits indice. */
+#define AUX_ERROR_MSG_INDICE ((uint8_t)19)
+
 /**
   * @}
   */
@@ -110,12 +126,15 @@ void debug_uart_isr_tx(void)
 }
 
 /**
-  * @brief      Receive the buffer character by character. If the buffer fits in
-  *             the format as "/XX/" (XX: two digits of hexadecimal), then transmit
-  *             it to TPUart.
+  * @brief      Everytime receive a character, give the ::semaforo_debugrx_isruart,
+  *             so that the ::DebugRXTask can treat with it.
   */
 void debug_uart_isr_rx(void)
 {
+  if(debug_uart_receive (&temp, 1) == Debug_Uart_OK)
+  {
+    xSemaphoreGiveFromISR(semaforo_debugrx_isruart, &xHigherPriorityTaskWoken);
+  }
 }
 /**
   * @}
@@ -141,6 +160,7 @@ uint32_t DebugInit(void)
   cola_init(&colaDebug);
   //inicializar semaforo compartido entre tarea debuj y la isr de la UART
   semaforo_debug_isruart = xSemaphoreCreateBinary();
+  semaforo_debugrx_isruart = xSemaphoreCreateBinary();
   //crear tarea de depuracion
   xTaskCreate(
                 DebugTask,       /* Function that implements the task. */
@@ -156,12 +176,14 @@ uint32_t DebugInit(void)
                 configMINIMAL_STACK_SIZE + 16, /* Stack size in words, not bytes. */
                 ( void * ) 0,    /* Parameter passed into the task. */
                 tskIDLE_PRIORITY,/* Priority at which the task is created. */
-                &xDebugTaskHandle );      /* Used to pass out the created task's handle. */
+                &xDebugRXTaskHandle );      /* Used to pass out the created task's handle. */
                 
   //inicializar la UART de depuracion
   if(debug_uart_init())
   {
     KNX_PH_STATE = RX_DEBUG_KNX;
+    cola_guardar(&colaDebug, "\r\n");
+
     return PH_Debug_ERROR_NONE;
   }
   else
@@ -189,7 +211,6 @@ void DebugTask(void * argument)
   int i, res_leer;
 
   /* Infinite loop */
-  cola_guardar(&colaDebug, "\r\n");
   //cola_guardar(&colaDebug, "Mensaje desde DebugTask ... inicializando\r\n");
   for(;;)
   {
@@ -198,7 +219,8 @@ void DebugTask(void * argument)
     vTaskDelay( 5 );
     res_leer = cola_leer(&colaDebug, buffer, BUFFER_SIZE);
     }
-    if (res_leer == -1){
+    if (res_leer == -1)
+    {
       //copiar en buffer mensaje de error
       for(i=0; msg_error[i] != '\n'; i++){
           buffer[i] = msg_error[i];
@@ -219,23 +241,18 @@ void DebugTask(void * argument)
 }
 
 /**
-  * @brief      Debug RX task. Transmit what received from debug uart towards
-  *             KNX uart.
+  * @brief      Debug RX task. Receive the buffer character by character. If the 
+  *             buffer fits in the format as "/XX/" (XX: two digits of
+  *             hexadecimal), then transmit it to TPUart.
   * @param      argument:  argument of the task.
   */
 void DebugRXTask(void * argument)
 {
-  uint8_t byte;
-  unsigned char temp;
+  uint8_t byte, res;
   
-  vTaskDelay( 200 );
-
   for(;;)
   {  
-    while(debug_uart_receive (&temp, 1) != Debug_Uart_OK)
-    {
-      vTaskDelay( 10 );
-    }
+    xSemaphoreTake(semaforo_debugrx_isruart, portMAX_DELAY);
     
     if(temp == '/')
     {
@@ -249,14 +266,27 @@ void DebugRXTask(void * argument)
       else
       {
         RX_buffer[RX_buffer_indice] = temp;
-        if(KNX_PH_TPUart_Send(&byte, 1) == TPUart_OK)
+        
+        res = text2int(&RX_buffer[1], &byte);
+        if(res != AUX_ERROR_NONE)
         {
-          int2text(byte, &DEBUG_SEND_MSG[15]);
-          cola_guardar(&colaDebug, DEBUG_SEND_MSG);
+          RX_buffer_indice=0;
+          int2text(res, &Aux_Err_Msg[AUX_ERROR_MSG_INDICE]);
+          cola_guardar(&colaDebug, Aux_Err_Msg);
+          
+          continue;
+        }
+
+        res = KNX_PH_TPUart_Send(&byte, 1);
+        if(res == TPUart_OK)
+        {
+          int2text(byte, &Debug_Send_Msg[DEBUG_SENT_INDICE]);
+          cola_guardar(&colaDebug, Debug_Send_Msg);
         }
         else
         {
-          cola_guardar(&colaDebug, DEBUG_ERROR_MSG);
+          int2text(res, &KNX_Ph_TPUART_Err_Msg[KNX_PH_TPUART_ERROR_CODE_INDICE]);
+          cola_guardar(&colaDebug, KNX_Ph_TPUART_Err_Msg);
         }
         RX_buffer_indice = 0;
       }
@@ -272,11 +302,10 @@ void DebugRXTask(void * argument)
       {
         RX_buffer[RX_buffer_indice] = temp;
         RX_buffer_indice++;
-        
-        if(text2int(&RX_buffer[1], &byte) == AUX_ERROR_MSG)
-        {
-          RX_buffer_indice=0;
-        }
+      }
+      else if(RX_buffer_indice == 3)
+      {
+        RX_buffer_indice=0;
       }
     }
   }

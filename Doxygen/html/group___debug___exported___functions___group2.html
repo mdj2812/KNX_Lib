@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -89,7 +89,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug task. Check whether new messages are stored in <a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola defined in Debug. ">colaDebug</a>. If yes, send the new message through UART.  <a href="#ga0e7fca846e34e06a1f62249fe8a30a44">More...</a><br /></td></tr>
 <tr class="separator:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8013ff117a9e96e630d30771cf9b0199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">DebugRXTask</a> (void *argument)</td></tr>
-<tr class="memdesc:ga8013ff117a9e96e630d30771cf9b0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug RX task. Transmit what received from debug uart towards KNX uart.  <a href="#ga8013ff117a9e96e630d30771cf9b0199">More...</a><br /></td></tr>
+<tr class="memdesc:ga8013ff117a9e96e630d30771cf9b0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug RX task. Receive the buffer character by character. If the buffer fits in the format as "/XX/" (XX: two digits of hexadecimal), then transmit it to TPUart.  <a href="#ga8013ff117a9e96e630d30771cf9b0199">More...</a><br /></td></tr>
 <tr class="separator:ga8013ff117a9e96e630d30771cf9b0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -108,7 +108,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Debug RX task. Transmit what received from debug uart towards KNX uart. </p>
+<p>Debug RX task. Receive the buffer character by character. If the buffer fits in the format as "/XX/" (XX: two digits of hexadecimal), then transmit it to TPUart. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argument</td><td>argument of the task. </td></tr>

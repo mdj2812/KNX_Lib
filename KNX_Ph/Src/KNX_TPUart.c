@@ -24,7 +24,7 @@
 /** @defgroup KNX_PH_TPUart KNX Physical Layer TPUart
   * @{
   */
-
+    
 /* Private variables --------------------------------------------------------*/
 /** @defgroup KNX_PH_TPUART_Private_Variables KNX TPUart Private Variables
   * @{
@@ -35,7 +35,6 @@ static UART_HandleTypeDef knx_huart;
   * @}
   */
 
-/* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
 /* Exported functions --------------------------------------------------------*/
 /** @defgroup KNX_PH_TPUart_Exported_Functions KNX Physical Layer TPUart Public Functions

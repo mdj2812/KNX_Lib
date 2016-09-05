@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Functions</h2></td></tr>
 <tr class="memitem:ga2e1878be0250daf30f0a286af6e683e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga2e1878be0250daf30f0a286af6e683e9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___u_a_r_t___external___functions.html#ga2e1878be0250daf30f0a286af6e683e9">debug_uart_isr_rx</a> (void)</td></tr>
-<tr class="memdesc:ga2e1878be0250daf30f0a286af6e683e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive the buffer character by character. If the buffer fits in the format as "/XX/" (XX: two digits of hexadecimal), then transmit it to TPUart. <br /></td></tr>
+<tr class="memdesc:ga2e1878be0250daf30f0a286af6e683e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Everytime receive a character, give the <a class="el" href="group___debug___private___variables.html#gaeefc3248920a99b9436147de4aeff800" title="Semaphore to permit the new cycle of DebugRXTask. ">semaforo_debugrx_isruart</a>, so that the <a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199" title="Debug RX task. Receive the buffer character by character. If the buffer fits in the format as &quot;/XX/&quot; ...">DebugRXTask</a> can treat with it. <br /></td></tr>
 <tr class="separator:ga2e1878be0250daf30f0a286af6e683e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaee765dd75f3414ade869071798ff33f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaee765dd75f3414ade869071798ff33f4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___u_a_r_t___external___functions.html#gaee765dd75f3414ade869071798ff33f4">debug_uart_isr_tx</a> (void)</td></tr>

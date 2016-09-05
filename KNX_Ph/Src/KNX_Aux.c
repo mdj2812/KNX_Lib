@@ -23,7 +23,7 @@
 /** @defgroup KNX_Aux KNX Physical Layer Auxiliary
   * @{
   */
-	
+
 /* Private constants ---------------------------------------------------------*/
 /** @defgroup KNX_Aux_Private_Consts Auxiliary Private constants
   * @{
@@ -31,6 +31,14 @@
 /** \brief Table of hexadecimal numbers */
 static const char hex_num[] = {'0', '1', '2', '3', '4', '5', '6', '7' , '8', '9',
                                 'A', 'B', 'C', 'D', 'E', 'F'};
+/**
+  * @}
+  */
+
+/* Private variables ---------------------------------------------------------*/
+/** @defgroup KNX_Aux_Private_Variables Auxiliary Private Variables
+  * @{
+  */
 /** \brief Status of the timer */
 volatile TIMER_Status_t timer_state;
 /** \brief Timeout duration of the timer */
@@ -86,7 +94,7 @@ uint8_t text2int(unsigned char *msg, uint8_t *value)
     
     if(i == 15)                 /* didn't found the corresponding digit */
     {
-      return AUX_ERROR_MSG;
+      return AUX_ERROR_BIN;
     }
   }
   
@@ -100,7 +108,7 @@ uint8_t text2int(unsigned char *msg, uint8_t *value)
     
     if(i == 15)                 /* didn't found the corresponding digit */
     {
-      return AUX_ERROR_MSG;
+      return AUX_ERROR_BIN;
     }
   }
   

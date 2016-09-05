@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>My Project: debug/Inc/debug.h File Reference</title>
+<title>My Project: KNX_Lib/debug/Inc/debug.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_84d4ec99856759213102e4209c09c524.html">debug</a></li><li class="navelem"><a class="el" href="dir_dd45cafab3c2f7f062dd60f8c50b8acb.html">Inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_72dd1fd74d3ad4032eb2123f7835a44d.html">KNX_Lib</a></li><li class="navelem"><a class="el" href="dir_1882a319aa83074f80b874722eaf0d0a.html">debug</a></li><li class="navelem"><a class="el" href="dir_abde4b73953ec491bdc7b4766d2ab13a.html">Inc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -129,7 +129,8 @@ Enumerations</h2></td></tr>
 <tr class="separator:gabcec3ea567663bbefa0b9f7a88dd68f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacb1775677105967978fae4d9155cca26"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___types.html#gacb1775677105967978fae4d9155cca26">DEBUG_Type_t</a> { <a class="el" href="group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26a0cad8d390f2e4ac93049277fd291a95e">STATE_DEBUG</a> = 0x00U, 
 <a class="el" href="group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26aa8996ee795e2d49fb83539a0ac88342e">SEND_DEBUG</a> = 0x01U, 
-<a class="el" href="group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26a6ae1781bce3c10f579294c10c005648b">RECEIVE_DEBUG</a> = 0x02U
+<a class="el" href="group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26a6ae1781bce3c10f579294c10c005648b">RECEIVE_DEBUG</a> = 0x02U, 
+<a class="el" href="group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26a819546f977ffd332fc136584e83a65fb">ERROR_DEBUG</a> = 0x03U
  }<tr class="memdesc:gacb1775677105967978fae4d9155cca26"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX Debug Message Type Enumeration definition.  <a href="group___debug___exported___types.html#gacb1775677105967978fae4d9155cca26">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:gacb1775677105967978fae4d9155cca26"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,7 +145,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memdesc:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug task. Check whether new messages are stored in <a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola defined in Debug. ">colaDebug</a>. If yes, send the new message through UART.  <a href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">More...</a><br /></td></tr>
 <tr class="separator:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8013ff117a9e96e630d30771cf9b0199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">DebugRXTask</a> (void *argument)</td></tr>
-<tr class="memdesc:ga8013ff117a9e96e630d30771cf9b0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug RX task. Transmit what received from debug uart towards KNX uart.  <a href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">More...</a><br /></td></tr>
+<tr class="memdesc:ga8013ff117a9e96e630d30771cf9b0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug RX task. Receive the buffer character by character. If the buffer fits in the format as "/XX/" (XX: two digits of hexadecimal), then transmit it to TPUart.  <a href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">More...</a><br /></td></tr>
 <tr class="separator:ga8013ff117a9e96e630d30771cf9b0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>

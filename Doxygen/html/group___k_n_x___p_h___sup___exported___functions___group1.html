@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -88,9 +88,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2139e336141090cdd97ecb0c5e55499f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group1.html#ga2139e336141090cdd97ecb0c5e55499f">KNX_Ph_Init</a> (void)</td></tr>
 <tr class="memdesc:ga2139e336141090cdd97ecb0c5e55499f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> module.  <a href="#ga2139e336141090cdd97ecb0c5e55499f">More...</a><br /></td></tr>
 <tr class="separator:ga2139e336141090cdd97ecb0c5e55499f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e5cc508d8f5528f85a275fa9dcb0b25"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group1.html#ga5e5cc508d8f5528f85a275fa9dcb0b25">KNX_Ph_Reset</a> (void)</td></tr>
-<tr class="memdesc:ga5e5cc508d8f5528f85a275fa9dcb0b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> module.  <a href="#ga5e5cc508d8f5528f85a275fa9dcb0b25">More...</a><br /></td></tr>
-<tr class="separator:ga5e5cc508d8f5528f85a275fa9dcb0b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
@@ -119,38 +116,6 @@ Functions</h2></td></tr>
 <p>Initialize the timer.</p>
 <p>Initialize TPUart.</p>
 <p><b>If</b> TPUart initialization failed, return <a class="el" href="group___p_h___error___code.html#ga15fbdf4edfc98283ef0f1b7c2fc0a47b">PH_ERROR_INIT</a> </p>
-
-</div>
-</div>
-<a class="anchor" id="ga5e5cc508d8f5528f85a275fa9dcb0b25"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t KNX_Ph_Reset </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reset the <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> module. </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Set state to <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a69a4299f68e66ea3fbe9477582ac02cd">PH_RESET</a>.</p>
-<p>Send <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga78f5bed722457f025cbc6786d5730d3eaf0efc940702df223316668e6712b5ba4">Ph_Reset</a> request.</p>
-<p><b>If</b> encounter a problem, return <a class="el" href="group___p_h___error___code.html#ga76393e5665e76130e95c73aab378c53d">PH_ERROR_REQUEST</a></p>
-<p>Waiting for the <a class="el" href="group___u_a_r_t___control___from.html#gade9c58399a01abdaa03bbecbf63879c3">Reset_indication</a>.</p>
-<p><b>If</b> receive the response, set state to <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a4be7dd56ae47b708c6f4751714efe930">PH_NORMAL</a>.</p>
-<p>Return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
-<p><b>If</b> times out, set state to <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a329f30393c5729b777643b93478de68c">PH_NOINIT</a>.</p>
-<p>Return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
 
 </div>
 </div>

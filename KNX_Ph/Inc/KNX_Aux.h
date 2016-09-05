@@ -56,7 +56,7 @@
 /**
   * @}
   */
-
+   
 /* Exported types ------------------------------------------------------------*/
 /** @defgroup KNX_Aux_Exported_Types Auxiliary Exported Types
   * @brief    Timer Status Enumeration

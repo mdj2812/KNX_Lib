@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -88,57 +88,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gad47b9ae30f2704001cf07d31da372fe2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#gad47b9ae30f2704001cf07d31da372fe2">KNX_Ph_Send</a> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a> request, uint32_t timeout)</td></tr>
 <tr class="memdesc:gad47b9ae30f2704001cf07d31da372fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a request.  <a href="#gad47b9ae30f2704001cf07d31da372fe2">More...</a><br /></td></tr>
 <tr class="separator:gad47b9ae30f2704001cf07d31da372fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#ga83fe8c9d421ec9c32662b66ec2dc1aeb">KNX_Ph_Receive</a> (uint8_t response, uint32_t timeout)</td></tr>
-<tr class="memdesc:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a response.  <a href="#ga83fe8c9d421ec9c32662b66ec2dc1aeb">More...</a><br /></td></tr>
-<tr class="separator:ga83fe8c9d421ec9c32662b66ec2dc1aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c5b1af8b0ba06771d5b16fee4547f87"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#ga5c5b1af8b0ba06771d5b16fee4547f87">KNX_Ph_WaitFor</a> (uint8_t res, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga5c5b1af8b0ba06771d5b16fee4547f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a response with timeout.  <a href="#ga5c5b1af8b0ba06771d5b16fee4547f87">More...</a><br /></td></tr>
+<tr class="separator:ga5c5b1af8b0ba06771d5b16fee4547f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4bede9df3610d29290973ac067ac93ae"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#ga4bede9df3610d29290973ac067ac93ae">KNX_Ph_WaitForWithMask</a> (uint8_t *res, uint8_t resMask, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga4bede9df3610d29290973ac067ac93ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a type of response with mask and timeout.  <a href="#ga4bede9df3610d29290973ac067ac93ae">More...</a><br /></td></tr>
+<tr class="separator:ga4bede9df3610d29290973ac067ac93ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga83fe8c9d421ec9c32662b66ec2dc1aeb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t KNX_Ph_Receive </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>response</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Receive a response. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">response</td><td>response expected. </td></tr>
-    <tr><td class="paramname">timeout</td><td>timeout duration. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Try to receive the data</p>
-<p><b>If</b> data received is the response expected.</p>
-<p>Return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
-<p><b>If</b> timeout, return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
-
-</div>
-</div>
 <a class="anchor" id="gad47b9ae30f2704001cf07d31da372fe2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -181,6 +139,103 @@ Functions</h2></td></tr>
 <p><b>If</b> the request is not valid, return <a class="el" href="group___p_h___error___code.html#ga76393e5665e76130e95c73aab378c53d">PH_ERROR_REQUEST</a>.</p>
 <p>Try to send the data</p>
 <p><b>If</b> succeeded, return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
+<p><b>If</b> timeout, return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga5c5b1af8b0ba06771d5b16fee4547f87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t KNX_Ph_WaitFor </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>res</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wait for a response with timeout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">res</td><td>response got. </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout duration. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Try to receive the data</p>
+<p><b>If</b> data received is the response expected.</p>
+<p>Return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
+<p><b>If</b> timeout, return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga4bede9df3610d29290973ac067ac93ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t KNX_Ph_WaitForWithMask </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>res</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>resMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wait for a type of response with mask and timeout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">res</td><td>response got. </td></tr>
+    <tr><td class="paramname">resMask</td><td>mask of the response expected. </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout duration. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Try to receive the data</p>
+<p><b>If</b> data received is the type of response expected.</p>
+<p>Return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
 <p><b>If</b> timeout, return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
 
 </div>

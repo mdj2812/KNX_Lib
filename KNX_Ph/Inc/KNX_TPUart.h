@@ -83,7 +83,7 @@
 /**
   * @}
   */
-
+    
 /* Exported types ------------------------------------------------------------*/
 /** @defgroup KNX_TPUart_Exported_Types KNX TPUart Exported Types
   * @brief    TPUart Status Enumeration

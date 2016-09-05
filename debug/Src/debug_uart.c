@@ -196,10 +196,7 @@ void debug_uart_isr(void)
   debug_uart_isr_begin ();
     
   /* UART in mode Receiver ---------------------------------------------------*/
-  if((HAL_UART_GetState(&debug_huart) & HAL_UART_STATE_BUSY_RX) == HAL_UART_STATE_BUSY_RX)
-  {
-    debug_uart_isr_rx();
-  }
+  debug_uart_isr_rx();
   
   /* UART in mode Transmitter ------------------------------------------------*/
   if((HAL_UART_GetState(&debug_huart) & HAL_UART_STATE_BUSY_TX) == HAL_UART_STATE_BUSY_TX)

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cabeza',['cabeza',['../structt__cola.html#a082fff65fd0192c1b1bb3bd952e47127',1,'t_cola']]],
-  ['cola',['cola',['../structt__cola.html#a8b818616f62d19293390150f6c05b0c4',1,'t_cola']]],
-  ['coladebug',['colaDebug',['../group___debug___external___variables.html#ga314fd637d927bd6a2551e119de623aa5',1,'colaDebug():&#160;KNX_Ph.c'],['../group___k_n_x___p_h___sup___private___variables.html#ga314fd637d927bd6a2551e119de623aa5',1,'colaDebug():&#160;KNX_Ph.c']]]
+  ['buffer',['buffer',['../group___debug___private___variables.html#gacab2203504e72e5e674d3174e0bd7d5e',1,'debug.c']]],
+  ['buffer_5findice',['buffer_indice',['../group___debug___private___variables.html#gacd3f15a092421e9fa47f50d4f95f212b',1,'debug.c']]],
+  ['buffer_5findice_5fmax',['buffer_indice_max',['../group___debug___private___variables.html#ga2dc364897dd645d7f940223559bcb511',1,'debug.c']]]
 ];

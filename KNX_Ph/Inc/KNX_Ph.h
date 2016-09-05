@@ -44,7 +44,8 @@
 #define PH_ERROR_INIT           ((uint8_t)0x01U)   /*!< Initialization error  */
 #define PH_ERROR_TIMEOUT        ((uint8_t)0x02U)   /*!< Timeout error         */
 #define PH_ERROR_REQUEST        ((uint8_t)0x03U)   /*!< Invalid request error */
-#define PH_ERROR_RESPONSE       ((uint8_t)0x03U)   /*!< No response error     */
+#define PH_ERROR_RESPONSE       ((uint8_t)0x04U)   /*!< No response error     */
+#define PH_ERROR_STATE          ((uint8_t)0x05U)   /*!< State error           */
 /**
   * @}
   */
@@ -103,7 +104,6 @@ typedef enum
 
 /* Initialization functions  **************************************************/
 uint8_t KNX_Ph_Init(void);
-uint8_t KNX_Ph_Reset(void);
 /**
   * @}
   */
@@ -114,12 +114,24 @@ uint8_t KNX_Ph_Reset(void);
 
 /* Send/Receive functions  ***************************************************/
 uint8_t KNX_Ph_Send(PH_Request_t request, uint32_t timeout);
-uint8_t KNX_Ph_Receive(uint8_t response, uint32_t timeout);
+uint8_t KNX_Ph_WaitFor(uint8_t res, uint32_t timeout);
+uint8_t KNX_Ph_WaitForWithMask(uint8_t *res, uint8_t resMask, uint32_t timeout);
 /**
   * @}
   */
 
 /** @addtogroup KNX_PH_Sup_Exported_Functions_Group3
+* @{
+*/
+
+/* Services functions  ********************************************************/
+uint8_t KNX_Ph_Reset_request(void);
+uint8_t KNX_Ph_State_request(void);
+/**
+  * @}
+  */
+
+/** @addtogroup KNX_PH_Sup_Exported_Functions_Group4
   * @{
   */
 

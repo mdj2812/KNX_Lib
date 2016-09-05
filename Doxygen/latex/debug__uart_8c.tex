@@ -1,5 +1,5 @@
-\hypertarget{debug__uart_8c}{}\section{debug/\+Src/debug\+\_\+uart.c File Reference}
-\label{debug__uart_8c}\index{debug/\+Src/debug\+\_\+uart.\+c@{debug/\+Src/debug\+\_\+uart.\+c}}
+\hypertarget{debug__uart_8c}{}\section{K\+N\+X\+\_\+\+Lib/debug/\+Src/debug\+\_\+uart.c File Reference}
+\label{debug__uart_8c}\index{K\+N\+X\+\_\+\+Lib/debug/\+Src/debug\+\_\+uart.\+c@{K\+N\+X\+\_\+\+Lib/debug/\+Src/debug\+\_\+uart.\+c}}
 
 
 Debug U\+A\+RT adaptation module This file provides functions to manage following functionalities\+:  
@@ -13,7 +13,7 @@ Debug U\+A\+RT adaptation module This file provides functions to manage followin
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{group___debug___u_a_r_t___external___functions_ga2e1878be0250daf30f0a286af6e683e9}{debug\+\_\+uart\+\_\+isr\+\_\+rx} (void)
-\begin{DoxyCompactList}\small\item\em Receive the buffer character by character. If the buffer fits in the format as \char`\"{}/\+X\+X/\char`\"{} (XX\+: two digits of hexadecimal), then transmit it to T\+P\+Uart. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Everytime receive a character, give the \hyperlink{group___debug___private___variables_gaeefc3248920a99b9436147de4aeff800}{semaforo\+\_\+debugrx\+\_\+isruart}, so that the \hyperlink{group___debug___exported___functions___group2_ga8013ff117a9e96e630d30771cf9b0199}{Debug\+R\+X\+Task} can treat with it. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___u_a_r_t___external___functions_gaee765dd75f3414ade869071798ff33f4}{debug\+\_\+uart\+\_\+isr\+\_\+tx} (void)
 \begin{DoxyCompactList}\small\item\em Send the buffer character by character. If all sent, give the semaphore in order to enter the next cycle of \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
 void \hyperlink{group___debug___u_a_r_t___external___functions_ga9d19c0e57b2d37c01bd781338322f682}{debug\+\_\+uart\+\_\+isr\+\_\+begin} (void)

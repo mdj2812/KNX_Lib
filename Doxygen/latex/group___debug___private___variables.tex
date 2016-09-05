@@ -1,5 +1,17 @@
 \hypertarget{group___debug___private___variables}{}\section{Debug Private Variables}
 \label{group___debug___private___variables}\index{Debug Private Variables@{Debug Private Variables}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___debug___private___variables_gad1fee91c32605ffbbb44ee4f8e6de6a4}{D\+E\+B\+U\+G\+\_\+\+S\+E\+N\+T\+\_\+\+I\+N\+D\+I\+CE}~((uint8\+\_\+t)22)\hypertarget{group___debug___private___variables_gad1fee91c32605ffbbb44ee4f8e6de6a4}{}\label{group___debug___private___variables_gad1fee91c32605ffbbb44ee4f8e6de6a4}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{group___debug___private___variables_ga8dc7f546fccea9be95d04715b6de6286}{Debug\+\_\+\+Send\+\_\+\+Msg} digits indice. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___debug___private___variables_ga046666f21030033a99a96f6a349b43e9}{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+U\+A\+R\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+I\+N\+D\+I\+CE}~((uint8\+\_\+t)26)\hypertarget{group___debug___private___variables_ga046666f21030033a99a96f6a349b43e9}{}\label{group___debug___private___variables_ga046666f21030033a99a96f6a349b43e9}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{group___debug___private___variables_gac42157f7c2b868252acf6b58cfa30aee}{K\+N\+X\+\_\+\+Ph\+\_\+\+T\+P\+U\+A\+R\+T\+\_\+\+Err\+\_\+\+Msg} digits indice. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___debug___private___variables_ga18ae1c752b89b0190c4adbff64c7e36e}{A\+U\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+S\+G\+\_\+\+I\+N\+D\+I\+CE}~((uint8\+\_\+t)19)\hypertarget{group___debug___private___variables_ga18ae1c752b89b0190c4adbff64c7e36e}{}\label{group___debug___private___variables_ga18ae1c752b89b0190c4adbff64c7e36e}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{group___debug___private___variables_gab56635544aea253fe5a75ded7dda1b2f}{Aux\+\_\+\+Err\+\_\+\+Msg} digits indice. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,12 +45,30 @@ static Semaphore\+Handle\+\_\+t \hyperlink{group___debug___private___variables_g
 static Base\+Type\+\_\+t \hyperlink{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{x\+Higher\+Priority\+Task\+Woken}\hypertarget{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}{}\label{group___debug___private___variables_ga9d9a749ad99ec3d4a6886d5277b9ba87}
 
 \begin{DoxyCompactList}\small\item\em Used for yield the U\+A\+RT interrupt. \end{DoxyCompactList}\item 
-static unsigned char \hyperlink{group___debug___private___variables_gab4dc10f75da531ef466aa8765f6d0648}{D\+E\+B\+U\+G\+\_\+\+S\+E\+N\+D\+\_\+\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}Message sent\+: /XX/\textbackslash{}r\textbackslash{}n\char`\"{}\hypertarget{group___debug___private___variables_gab4dc10f75da531ef466aa8765f6d0648}{}\label{group___debug___private___variables_gab4dc10f75da531ef466aa8765f6d0648}
+static Task\+Handle\+\_\+t \hyperlink{group___debug___private___variables_gaea04f335da7bc1dd47446f89a05d2c6d}{x\+Debug\+R\+X\+Task\+Handle}\hypertarget{group___debug___private___variables_gaea04f335da7bc1dd47446f89a05d2c6d}{}\label{group___debug___private___variables_gaea04f335da7bc1dd47446f89a05d2c6d}
+
+\begin{DoxyCompactList}\small\item\em Handler of the \hyperlink{group___debug___exported___functions___group2_ga8013ff117a9e96e630d30771cf9b0199}{Debug\+R\+X\+Task}. \end{DoxyCompactList}\item 
+static Semaphore\+Handle\+\_\+t \hyperlink{group___debug___private___variables_gaeefc3248920a99b9436147de4aeff800}{semaforo\+\_\+debugrx\+\_\+isruart}\hypertarget{group___debug___private___variables_gaeefc3248920a99b9436147de4aeff800}{}\label{group___debug___private___variables_gaeefc3248920a99b9436147de4aeff800}
+
+\begin{DoxyCompactList}\small\item\em Semaphore to permit the new cycle of \hyperlink{group___debug___exported___functions___group2_ga8013ff117a9e96e630d30771cf9b0199}{Debug\+R\+X\+Task}. \end{DoxyCompactList}\item 
+static unsigned char \hyperlink{group___debug___private___variables_gabe413cb96d839cbe31417aa52d920f21}{temp}
+\item 
+static unsigned char \hyperlink{group___debug___private___variables_ga8dc7f546fccea9be95d04715b6de6286}{Debug\+\_\+\+Send\+\_\+\+Msg} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}Debug\mbox{]}Message sent\+: /XX/\textbackslash{}r\textbackslash{}n\char`\"{}\hypertarget{group___debug___private___variables_ga8dc7f546fccea9be95d04715b6de6286}{}\label{group___debug___private___variables_ga8dc7f546fccea9be95d04715b6de6286}
 
 \begin{DoxyCompactList}\small\item\em Sending Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\item 
-static unsigned char \hyperlink{group___debug___private___variables_gace1b5e15e6bd4952d64ba900c84f517b}{D\+E\+B\+U\+G\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}Error!\textbackslash{}r\textbackslash{}n\char`\"{}\hypertarget{group___debug___private___variables_gace1b5e15e6bd4952d64ba900c84f517b}{}\label{group___debug___private___variables_gace1b5e15e6bd4952d64ba900c84f517b}
+static unsigned char \hyperlink{group___debug___private___variables_gac42157f7c2b868252acf6b58cfa30aee}{K\+N\+X\+\_\+\+Ph\+\_\+\+T\+P\+U\+A\+R\+T\+\_\+\+Err\+\_\+\+Msg} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}K\+NX T\+P\+Uart\mbox{]}Error Code\+: 0x\+X\+X\textbackslash{}r\textbackslash{}n\char`\"{}\hypertarget{group___debug___private___variables_gac42157f7c2b868252acf6b58cfa30aee}{}\label{group___debug___private___variables_gac42157f7c2b868252acf6b58cfa30aee}
 
-\begin{DoxyCompactList}\small\item\em Error Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em K\+NX T\+P\+Uart Error message. \end{DoxyCompactList}\item 
+static unsigned char \hyperlink{group___debug___private___variables_gab56635544aea253fe5a75ded7dda1b2f}{Aux\+\_\+\+Err\+\_\+\+Msg} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}Aux\mbox{]}Error Code\+: 0x\+X\+X\textbackslash{}r\textbackslash{}n\char`\"{}\hypertarget{group___debug___private___variables_gab56635544aea253fe5a75ded7dda1b2f}{}\label{group___debug___private___variables_gab56635544aea253fe5a75ded7dda1b2f}
+
+\begin{DoxyCompactList}\small\item\em Aux Error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+
+
+\subsection{Variable Documentation}
+\index{Debug Private Variables@{Debug Private Variables}!temp@{temp}}
+\index{temp@{temp}!Debug Private Variables@{Debug Private Variables}}
+\subsubsection[{\texorpdfstring{temp}{temp}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char temp\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___debug___private___variables_gabe413cb96d839cbe31417aa52d920f21}{}\label{group___debug___private___variables_gabe413cb96d839cbe31417aa52d920f21}
+character received from U\+A\+RT 

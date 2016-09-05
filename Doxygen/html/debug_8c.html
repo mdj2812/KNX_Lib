@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>My Project: debug/Src/debug.c File Reference</title>
+<title>My Project: KNX_Lib/debug/Src/debug.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,7 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -82,11 +82,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_84d4ec99856759213102e4209c09c524.html">debug</a></li><li class="navelem"><a class="el" href="dir_a31b94256ad2721b1a50c44fd0c6a4f0.html">Src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_72dd1fd74d3ad4032eb2123f7835a44d.html">KNX_Lib</a></li><li class="navelem"><a class="el" href="dir_1882a319aa83074f80b874722eaf0d0a.html">debug</a></li><li class="navelem"><a class="el" href="dir_195e698f205c823cc65318def7f147fa.html">Src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -104,10 +105,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="debug__uart_8h_source.html">debug_UART.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_k_n_x___t_p_uart_8h_source.html">KNX_TPUart.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_k_n_x___aux_8h_source.html">KNX_Aux.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_k_n_x___ph_8h_source.html">KNX_Ph.h</a>&quot;</code><br />
 <code>#include &quot;stm32f4xx_hal.h&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gad1fee91c32605ffbbb44ee4f8e6de6a4"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gad1fee91c32605ffbbb44ee4f8e6de6a4">DEBUG_SENT_INDICE</a>&#160;&#160;&#160;((uint8_t)22)</td></tr>
+<tr class="memdesc:gad1fee91c32605ffbbb44ee4f8e6de6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group___debug___private___variables.html#ga8dc7f546fccea9be95d04715b6de6286" title="Sending Debug message sent in Cola Debug. ">Debug_Send_Msg</a> digits indice. <br /></td></tr>
+<tr class="separator:gad1fee91c32605ffbbb44ee4f8e6de6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga046666f21030033a99a96f6a349b43e9"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga046666f21030033a99a96f6a349b43e9">KNX_PH_TPUART_ERROR_CODE_INDICE</a>&#160;&#160;&#160;((uint8_t)26)</td></tr>
+<tr class="memdesc:ga046666f21030033a99a96f6a349b43e9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group___debug___private___variables.html#gac42157f7c2b868252acf6b58cfa30aee" title="KNX TPUart Error message. ">KNX_Ph_TPUART_Err_Msg</a> digits indice. <br /></td></tr>
+<tr class="separator:ga046666f21030033a99a96f6a349b43e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18ae1c752b89b0190c4adbff64c7e36e"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga18ae1c752b89b0190c4adbff64c7e36e">AUX_ERROR_MSG_INDICE</a>&#160;&#160;&#160;((uint8_t)19)</td></tr>
+<tr class="memdesc:ga18ae1c752b89b0190c4adbff64c7e36e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group___debug___private___variables.html#gab56635544aea253fe5a75ded7dda1b2f" title="Aux Error message. ">Aux_Err_Msg</a> digits indice. <br /></td></tr>
+<tr class="separator:ga18ae1c752b89b0190c4adbff64c7e36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga9d19c0e57b2d37c01bd781338322f682"><td class="memItemLeft" align="right" valign="top">
@@ -124,7 +141,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="separator:gaee765dd75f3414ade869071798ff33f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2e1878be0250daf30f0a286af6e683e9"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___external___functions.html#ga2e1878be0250daf30f0a286af6e683e9">debug_uart_isr_rx</a> (void)</td></tr>
-<tr class="memdesc:ga2e1878be0250daf30f0a286af6e683e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive the buffer character by character. If the buffer fits in the format as "/XX/" (XX: two digits of hexadecimal), then transmit it to TPUart. <br /></td></tr>
+<tr class="memdesc:ga2e1878be0250daf30f0a286af6e683e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Everytime receive a character, give the <a class="el" href="group___debug___private___variables.html#gaeefc3248920a99b9436147de4aeff800" title="Semaphore to permit the new cycle of DebugRXTask. ">semaforo_debugrx_isruart</a>, so that the <a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199" title="Debug RX task. Receive the buffer character by character. If the buffer fits in the format as &quot;/XX/&quot; ...">DebugRXTask</a> can treat with it. <br /></td></tr>
 <tr class="separator:ga2e1878be0250daf30f0a286af6e683e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadd3262925f11ab443ccc41951f84f471"><td class="memItemLeft" align="right" valign="top">
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group1.html#gadd3262925f11ab443ccc41951f84f471">DebugInit</a> (void)</td></tr>
@@ -134,7 +151,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memdesc:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug task. Check whether new messages are stored in <a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga314fd637d927bd6a2551e119de623aa5" title="Cola defined in Debug. ">colaDebug</a>. If yes, send the new message through UART.  <a href="group___debug___exported___functions___group2.html#ga0e7fca846e34e06a1f62249fe8a30a44">More...</a><br /></td></tr>
 <tr class="separator:ga0e7fca846e34e06a1f62249fe8a30a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8013ff117a9e96e630d30771cf9b0199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">DebugRXTask</a> (void *argument)</td></tr>
-<tr class="memdesc:ga8013ff117a9e96e630d30771cf9b0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug RX task. Transmit what received from debug uart towards KNX uart.  <a href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">More...</a><br /></td></tr>
+<tr class="memdesc:ga8013ff117a9e96e630d30771cf9b0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug RX task. Receive the buffer character by character. If the buffer fits in the format as "/XX/" (XX: two digits of hexadecimal), then transmit it to TPUart.  <a href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199">More...</a><br /></td></tr>
 <tr class="separator:ga8013ff117a9e96e630d30771cf9b0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -179,14 +196,28 @@ static SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a c
 static BaseType_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga9d9a749ad99ec3d4a6886d5277b9ba87">xHigherPriorityTaskWoken</a></td></tr>
 <tr class="memdesc:ga9d9a749ad99ec3d4a6886d5277b9ba87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for yield the UART interrupt. <br /></td></tr>
 <tr class="separator:ga9d9a749ad99ec3d4a6886d5277b9ba87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab4dc10f75da531ef466aa8765f6d0648"><td class="memItemLeft" align="right" valign="top">
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gab4dc10f75da531ef466aa8765f6d0648">DEBUG_SEND_MSG</a> [] = &quot;Message sent: /XX/\r\n&quot;</td></tr>
-<tr class="memdesc:gab4dc10f75da531ef466aa8765f6d0648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sending Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
-<tr class="separator:gab4dc10f75da531ef466aa8765f6d0648"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gace1b5e15e6bd4952d64ba900c84f517b"><td class="memItemLeft" align="right" valign="top">
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gace1b5e15e6bd4952d64ba900c84f517b">DEBUG_ERROR_MSG</a> [] = &quot;Error!\r\n&quot;</td></tr>
-<tr class="memdesc:gace1b5e15e6bd4952d64ba900c84f517b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
-<tr class="separator:gace1b5e15e6bd4952d64ba900c84f517b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea04f335da7bc1dd47446f89a05d2c6d"><td class="memItemLeft" align="right" valign="top">
+static TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gaea04f335da7bc1dd47446f89a05d2c6d">xDebugRXTaskHandle</a></td></tr>
+<tr class="memdesc:gaea04f335da7bc1dd47446f89a05d2c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler of the <a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199" title="Debug RX task. Receive the buffer character by character. If the buffer fits in the format as &quot;/XX/&quot; ...">DebugRXTask</a>. <br /></td></tr>
+<tr class="separator:gaea04f335da7bc1dd47446f89a05d2c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeefc3248920a99b9436147de4aeff800"><td class="memItemLeft" align="right" valign="top">
+static SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gaeefc3248920a99b9436147de4aeff800">semaforo_debugrx_isruart</a></td></tr>
+<tr class="memdesc:gaeefc3248920a99b9436147de4aeff800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semaphore to permit the new cycle of <a class="el" href="group___debug___exported___functions___group2.html#ga8013ff117a9e96e630d30771cf9b0199" title="Debug RX task. Receive the buffer character by character. If the buffer fits in the format as &quot;/XX/&quot; ...">DebugRXTask</a>. <br /></td></tr>
+<tr class="separator:gaeefc3248920a99b9436147de4aeff800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe413cb96d839cbe31417aa52d920f21"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gabe413cb96d839cbe31417aa52d920f21">temp</a></td></tr>
+<tr class="separator:gabe413cb96d839cbe31417aa52d920f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8dc7f546fccea9be95d04715b6de6286"><td class="memItemLeft" align="right" valign="top">
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#ga8dc7f546fccea9be95d04715b6de6286">Debug_Send_Msg</a> [] = &quot;[Debug]Message sent: /XX/\r\n&quot;</td></tr>
+<tr class="memdesc:ga8dc7f546fccea9be95d04715b6de6286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sending Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
+<tr class="separator:ga8dc7f546fccea9be95d04715b6de6286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac42157f7c2b868252acf6b58cfa30aee"><td class="memItemLeft" align="right" valign="top">
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gac42157f7c2b868252acf6b58cfa30aee">KNX_Ph_TPUART_Err_Msg</a> [] = &quot;[KNX TPUart]Error Code: 0xXX\r\n&quot;</td></tr>
+<tr class="memdesc:gac42157f7c2b868252acf6b58cfa30aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">KNX TPUart Error message. <br /></td></tr>
+<tr class="separator:gac42157f7c2b868252acf6b58cfa30aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab56635544aea253fe5a75ded7dda1b2f"><td class="memItemLeft" align="right" valign="top">
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___private___variables.html#gab56635544aea253fe5a75ded7dda1b2f">Aux_Err_Msg</a> [] = &quot;[Aux]Error Code: 0xXX\r\n&quot;</td></tr>
+<tr class="memdesc:gab56635544aea253fe5a75ded7dda1b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aux Error message. <br /></td></tr>
+<tr class="separator:gab56635544aea253fe5a75ded7dda1b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Debug tasks. This file provides functions to manage following functionalities: </p>
