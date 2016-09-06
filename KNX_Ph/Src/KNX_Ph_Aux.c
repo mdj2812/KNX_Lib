@@ -1,9 +1,9 @@
 /**
   ******************************************************************************
-  * @file       KNX_Aux.c
+  * @file       KNX_PH_Aux.c
   * @author     MA Dingjie
-  * @version    V0.0.5
-  * @date       20-July-2016
+  * @version    V1.0.0
+  * @date       6-September-2016
   * @brief      Auxiliary functions for KNX Physical Layer.
   *             This file provides functions to manage following functionalities:
   *              + Conversion functions from int to text and from text to int
@@ -14,7 +14,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
 #include <string.h>
-#include "KNX_Aux.h"
+#include "KNX_Ph_Aux.h"
 
 /** @addtogroup KNX_PH KNX Physical Layer
   * @{

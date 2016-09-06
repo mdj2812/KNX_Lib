@@ -1,0 +1,65 @@
+\hypertarget{_k_n_x___ph___aux_8h}{}\section{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph\+\_\+\+Aux.h File Reference}
+\label{_k_n_x___ph___aux_8h}\index{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph\+\_\+\+Aux.\+h@{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph\+\_\+\+Aux.\+h}}
+
+
+This file contains auxiliary functions for the project.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___k_n_x___aux___error___code_ga1e08e2873ccb2fb0f45f8e02c05c5733}{A\+U\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}~((uint8\+\_\+t)0x00\+U)
+\item 
+\#define \hyperlink{group___k_n_x___aux___error___code_ga9197dfa3db0d3058a682575b0122e971}{A\+U\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+IN}~((uint8\+\_\+t)0x01\+U)
+\item 
+\#define \hyperlink{group___k_n_x___aux___error___code_ga8e01b81bddb576a48d989c7ba75b7cc7}{A\+U\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+SG}~((uint8\+\_\+t)0x02\+U)
+\item 
+\#define \hyperlink{group___k_n_x___timeout_ga2403c0399f3728bfe63f5d9cf631817d}{K\+N\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}~200
+\item 
+\#define \hyperlink{group___k_n_x___timeout_ga8e1f26f2f54559b80991272e3b5e13e8}{K\+N\+X\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY}~0x\+F\+F\+F\+F\+F\+F\+F\+FU
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \{ \hyperlink{group___k_n_x___aux___exported___types_gga6ed3d972c6c5995cb3fe41995f121b41a57568fa3e509d45656007614c72089ae}{T\+I\+M\+E\+R\+\_\+\+R\+E\+S\+ET} = 0x00U, 
+\hyperlink{group___k_n_x___aux___exported___types_gga6ed3d972c6c5995cb3fe41995f121b41abc4495967cdeae935ea31fa8c3992139}{T\+I\+M\+E\+R\+\_\+\+R\+U\+N\+N\+I\+NG} = 0x01U, 
+\hyperlink{group___k_n_x___aux___exported___types_gga6ed3d972c6c5995cb3fe41995f121b41a2fc9fdb3e346a94262fa0e143f8fcb79}{T\+I\+M\+E\+R\+\_\+\+P\+A\+U\+SE} = 0x02U, 
+\hyperlink{group___k_n_x___aux___exported___types_gga6ed3d972c6c5995cb3fe41995f121b41ac6e6a01a6b4fad4c8054e0065442bdf7}{T\+I\+M\+E\+R\+\_\+\+T\+I\+M\+E\+O\+UT} = 0x03U
+ \}\begin{DoxyCompactList}\small\item\em Timer Status Enumeration definition. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group1_gac8eb309aea5e19bf8a9f5e36313b7608}{int2text} (uint8\+\_\+t value, unsigned char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Convert an {\ttfamily uint8\+\_\+t} value into a {\ttfamily char} message. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group1_ga2e05f7ec0e47a6bab34c7567846490dd}{text2int} (unsigned char $\ast$msg, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Convert a {\ttfamily char} message into an {\ttfamily uint8\+\_\+t} value. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga21f8fee0433331a8a98b552d934d7fa9}{K\+N\+X\+\_\+\+Init\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Initilize the timer. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga2d2be4d767e87be2cfab3a33c051c9b8}{K\+N\+X\+\_\+\+Start\+Timer} (uint32\+\_\+t Timeout)
+\begin{DoxyCompactList}\small\item\em Start a timer of a timeout duration given. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_gab95ee459c86b8b8a0045ab24d45d617b}{K\+N\+X\+\_\+\+Get\+Time} (void)
+\begin{DoxyCompactList}\small\item\em Get the timer. \end{DoxyCompactList}\item 
+\hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___aux___exported___functions___group2_ga34d3da57b9d1757a9724693c9e6bbe45}{K\+N\+X\+\_\+\+Get\+Timer\+State} (void)
+\begin{DoxyCompactList}\small\item\em Get the timer\textquotesingle{}s status. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga44b5f88a0f2b0590924627b428107e97}{K\+N\+X\+\_\+\+Stop\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Stop the timer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga4a1fd53320eeed9eb08d09ec720f3d42}{K\+N\+X\+\_\+\+Reset\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Reset the timer. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___aux___exported___functions___group2_gad9635bb60f2ba98f58874ef46e65c36d}{K\+N\+X\+\_\+systick\+\_\+isr} (void)
+\begin{DoxyCompactList}\small\item\em Systick interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains auxiliary functions for the project. 
+
+\begin{DoxyAuthor}{Author}
+MA Dingjie 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6-\/\+September-\/2016 
+\end{DoxyDate}

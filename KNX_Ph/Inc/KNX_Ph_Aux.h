@@ -1,15 +1,15 @@
 /**
   ******************************************************************************
-  * @file       KNX_Aux.h
+  * @file       KNX_PH_Aux.h
   * @author     MA Dingjie
-  * @version    V0.0.5
-  * @date       20-July-2016
+  * @version    V1.0.0
+  * @date       6-September-2016
   * @brief      This file contains auxiliary functions for the project.
   ******************************************************************************
   */
 
-#ifndef __KNX_Aux
-#define __KNX_Aux
+#ifndef __KNX_Ph_Aux
+#define __KNX_Ph_Aux
 
 #ifdef __cplusplus
  extern "C" {
@@ -121,4 +121,4 @@ void     KNX_systick_isr(void);
 }
 #endif
 
-#endif /* __KNX_Aux */
+#endif /* __KNX_Ph_Aux */

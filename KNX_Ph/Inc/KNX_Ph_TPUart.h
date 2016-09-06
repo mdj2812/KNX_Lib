@@ -1,16 +1,16 @@
 /**
   ******************************************************************************
-  * @file       KNX_TPUart.h
+  * @file       KNX_PH_TPUart.h
   * @author     MA Dingjie
-  * @version    V0.0.5
-  * @date       20-July-2016
+  * @version    V1.0.0
+  * @date       6-September-2016
   * @brief      This file contains definitions and prototypes of functions for
   *             TP-UART.
   ******************************************************************************
   */
 
-#ifndef __KNX_TPUART
-#define __KNX_TPUART
+#ifndef __KNX_Ph_TPUART
+#define __KNX_Ph_TPUART
 
 #ifdef __cplusplus
  extern "C" {
@@ -154,4 +154,4 @@ void TPUart_isr(void);
 }
 #endif
 
-#endif /* __KNX_TPUART */
+#endif /* __KNX_Ph_TPUART */

@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file       KNX_Ph.h
   * @author     MA Dingjie
-  * @version    V0.0.5
-  * @date       20-July-2016
+  * @version    V1.0.0
+  * @date       6-September-2016
   * @brief      This file contains KNX physical layer common defines,
   *             enumerations, macros, structures definitions and all the
   *             functions prototypes.

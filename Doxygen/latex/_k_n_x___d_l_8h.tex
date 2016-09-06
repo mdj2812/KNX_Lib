@@ -1,0 +1,59 @@
+\hypertarget{_k_n_x___d_l_8h}{}\section{K\+N\+X\+\_\+\+D\+L/\+Inc/\+K\+N\+X\+\_\+\+DL.h File Reference}
+\label{_k_n_x___d_l_8h}\index{K\+N\+X\+\_\+\+D\+L/\+Inc/\+K\+N\+X\+\_\+\+D\+L.\+h@{K\+N\+X\+\_\+\+D\+L/\+Inc/\+K\+N\+X\+\_\+\+D\+L.\+h}}
+
+
+This file contains K\+NX data link layer common defines, enumerations, macros, structures definitions, extern variables and all the functions prototypes.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___d_l___error___code_ga0916a814c19b6fef4ca1a90731bf5d01}{D\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}~((uint8\+\_\+t)0x00\+U)
+\item 
+\#define \hyperlink{group___d_l___error___code_ga1cc60f560e52266c38bdd49e2748d498}{D\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}~((uint8\+\_\+t)0x01\+U)
+\item 
+\#define \hyperlink{group___d_l___error___code_gaa75de5faaf914c3a1217429c157c8be7}{D\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}~((uint8\+\_\+t)0x02\+U)
+\item 
+\#define \hyperlink{group___d_l___error___code_gabad6a7bb56b201b473c7dd9c5eeec0b8}{D\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+Q\+U\+E\+ST}~((uint8\+\_\+t)0x03\+U)
+\item 
+\#define \hyperlink{group___d_l___error___code_ga8e9c3a3595a98bbc1d3a46262a93303b}{D\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+S\+P\+O\+N\+SE}~((uint8\+\_\+t)0x04\+U)
+\item 
+\#define \hyperlink{group___d_l___exported___constants_gae7b01d80da6448f1b4eea77823660d3c}{D\+L\+\_\+\+T\+X\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}~4$\ast$1024
+\begin{DoxyCompactList}\small\item\em Max size of the Tx\+\_\+\+L\+P\+D\+U\+\_\+\+Datas. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_l___exported___constants_ga62005b13a5a83d93b632643dd622bcef}{D\+L\+\_\+\+R\+X\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}~4$\ast$1024
+\begin{DoxyCompactList}\small\item\em Max size of the Rx\+\_\+\+L\+P\+D\+U\+\_\+\+Datas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___k_n_x___d_l___exported___types_ga143539be3680d9b7f990a9dfe1df40fe}{D\+L\+\_\+\+Status\+\_\+t} \{ \\*
+\hyperlink{group___k_n_x___d_l___exported___types_gga143539be3680d9b7f990a9dfe1df40fea969d86c8adec3c545ea39159d7dedc7f}{D\+L\+\_\+\+N\+O\+I\+N\+IT} = 0x00U, 
+\hyperlink{group___k_n_x___d_l___exported___types_gga143539be3680d9b7f990a9dfe1df40fea80e6219a436df0a34c8533186c5e44c2}{D\+L\+\_\+\+R\+E\+S\+ET} = 0x01U, 
+\hyperlink{group___k_n_x___d_l___exported___types_gga143539be3680d9b7f990a9dfe1df40fea461c81727c49b6e32e3caf88887d53bd}{D\+L\+\_\+\+N\+O\+R\+M\+AL} = 0x02U, 
+\hyperlink{group___k_n_x___d_l___exported___types_gga143539be3680d9b7f990a9dfe1df40feab460a3cda55e265ecedd269d942e1ef0}{D\+L\+\_\+\+M\+O\+N\+I\+T\+OR} = 0x03U, 
+\\*
+\hyperlink{group___k_n_x___d_l___exported___types_gga143539be3680d9b7f990a9dfe1df40fea46083fdde5108543c09e29c2c2659cb6}{D\+L\+\_\+\+S\+T\+OP} = 0x04U
+ \}\begin{DoxyCompactList}\small\item\em DL Status Enumeration definition. State machine\+: \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___d_l___exported___functions___group1_gad0359b85377daee54340df3106c87017}{K\+N\+X\+\_\+\+D\+L\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___k_n_x___d_l}{K\+NX Data Link Layer} module. \end{DoxyCompactList}\item 
+\hyperlink{group___k_n_x___d_l___exported___types_ga143539be3680d9b7f990a9dfe1df40fe}{D\+L\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___d_l___exported___functions___group2_gabe22c5173dc290746ca2a1f33aefe759}{K\+N\+X\+\_\+\+D\+L\+\_\+\+Get\+State} (void)
+\begin{DoxyCompactList}\small\item\em Getter of the status of the Data Link Layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains K\+NX data link layer common defines, enumerations, macros, structures definitions, extern variables and all the functions prototypes. 
+
+\begin{DoxyAuthor}{Author}
+MA Dingjie 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6-\/\+September-\/2016 
+\end{DoxyDate}

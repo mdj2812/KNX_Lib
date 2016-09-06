@@ -2,12 +2,13 @@
   ******************************************************************************
   * @file       KNX_Ph.c
   * @author     MA Dingjie
-  * @version    V0.0.5
-  * @date       20-July-2016
+  * @version    V1.0.0
+  * @date       6-September-2016
   * @brief      KNX Physical Layer supervisor.
   *             This file provides functions to manage following functionalities:
   *              + Initialization functions
   *              + Send and Receive messages functions
+  *              + Several basic services
   *              + State functions
   ******************************************************************************
   */
@@ -15,8 +16,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stdio.h>
 #include "KNX_Ph.h"
-#include "KNX_Aux.h"
-#include "KNX_TPUart.h"
+#include "KNX_Ph_Aux.h"
+#include "KNX_Ph_TPUart.h"
 #include "cola.h"
 #include "debug.h"
 
