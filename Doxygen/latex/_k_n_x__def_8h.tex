@@ -1,0 +1,94 @@
+\hypertarget{_k_n_x__def_8h}{}\section{Inc/\+K\+N\+X\+\_\+def.h File Reference}
+\label{_k_n_x__def_8h}\index{Inc/\+K\+N\+X\+\_\+def.\+h@{Inc/\+K\+N\+X\+\_\+def.\+h}}
+
+
+This file contains K\+NX common defines, enumerations, macros, structures definitions, extern variables.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group_____bits___masks_gad4d43f8748b542bce39e18790f845ecc}{B\+I\+T0}~((uint8\+\_\+t)0x01\+U)
+\item 
+\#define \hyperlink{group_____bits___masks_ga601923eba46784638244c1ebf2622a2a}{B\+I\+T1}~((uint8\+\_\+t)0x02\+U)
+\item 
+\#define \hyperlink{group_____bits___masks_ga9c9560bccccb00174801c728f1ed1399}{B\+I\+T2}~((uint8\+\_\+t)0x04\+U)
+\item 
+\#define \hyperlink{group_____bits___masks_ga8e44574a8a8becc885b05f3bc367ef6a}{B\+I\+T3}~((uint8\+\_\+t)0x08\+U)
+\item 
+\#define \hyperlink{group_____bits___masks_gaa731e0b6cf75f4e637ee88959315f5e4}{B\+I\+T4}~((uint8\+\_\+t)0x10\+U)
+\item 
+\#define \hyperlink{group_____bits___masks_gae692bc3df48028ceb1ddc2534a993bb8}{B\+I\+T5}~((uint8\+\_\+t)0x20\+U)
+\item 
+\#define \hyperlink{group_____bits___masks_gacc2d074401e2b6322ee8f03476c24677}{B\+I\+T6}~((uint8\+\_\+t)0x40\+U)
+\item 
+\#define \hyperlink{group_____bits___masks_gaa6b8f3261ae9e2e1043380c192f7b5f0}{B\+I\+T7}~((uint8\+\_\+t)0x80\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga30eddf5dc99c172d71df52a3a9c466bc}{U\+\_\+\+None}~((uint8\+\_\+t)0x00\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gab4e4e9acfc0b14566dee580c784d43c5}{U\+\_\+\+Reset\+\_\+request}~((uint8\+\_\+t)0x01\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga8dda3117e8869a900e5c5fe6f1b3a768}{U\+\_\+\+State\+\_\+request}~((uint8\+\_\+t)0x02\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga08302041c8622699abb02954c7942d33}{U\+\_\+\+Activate\+Busmon}~((uint8\+\_\+t)0x05\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gadbcf1715439a76db9d5a416c772b7d6a}{U\+\_\+\+Ack\+Information\+\_\+\+Addressed}~((uint8\+\_\+t)0x11\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gaa58e8b87e2c7afa233dc9143f9ed3000}{U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed}~((uint8\+\_\+t)0x11\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga0fd706c07225b8d94a9e61178e9f1de2}{U\+\_\+\+Product\+I\+D\+\_\+request}~((uint8\+\_\+t)0x20\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga570dbcb6f3b58812795897e653cf6bcd}{U\+\_\+\+Activate\+Busy\+Mode}~((uint8\+\_\+t)0x21\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gadddb4434f9a2e47ed320bc3bd39eec0c}{U\+\_\+\+Reset\+Busy\+Mode}~((uint8\+\_\+t)0x22\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga8898cd82315a21d0365c60b05a9450f9}{U\+\_\+\+Mx\+Rst\+Cnt}~((uint8\+\_\+t)0x24\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gaa8801c2c6b23ad1b63c85b6f04b08c6d}{U\+\_\+\+Activate\+C\+RC}~((uint8\+\_\+t)0x25\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga1b727950a6079fa1f299e08204ad8923}{U\+\_\+\+Set\+Address}~((uint8\+\_\+t)0x28\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga5a6fadacef419bffab0a2ad00d4a4a3a}{U\+\_\+\+L\+\_\+\+Data\+Start}~((uint8\+\_\+t)0x80\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___from_gade9c58399a01abdaa03bbecbf63879c3}{Reset\+\_\+indication}~((uint8\+\_\+t)0x03\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___from_ga736e177182335771d7948dd74a7a1a5f}{State\+\_\+indication}~((uint8\+\_\+t)0x07\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___from_gac1dc46273764bf13be2f30fcc60806a4}{State\+\_\+indication\+\_\+mask}~((uint8\+\_\+t)0x07\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___from_ga5bef931d5b249bb5d33e68f5262d8ec7}{L\+\_\+\+Data\+\_\+confirm\+\_\+success}~((uint8\+\_\+t)0x8\+B\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___from_ga6c0c4d47e20c528c12b4cb786930530a}{L\+\_\+\+Data\+\_\+confirm\+\_\+failed}~((uint8\+\_\+t)0x0\+B\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___from_ga6c0cc536486a2ac5898f3d5b94327ecc}{L\+\_\+\+Data\+\_\+confirm\+\_\+mask}~((uint8\+\_\+t)0x0\+B\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___mask_gaa3b1b3fcea0f2c6958b8c2ad18b2ff44}{T\+P\+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+D\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+L\+A\+V\+E\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+M\+A\+SK}~0x80
+\item 
+\#define \hyperlink{group___u_a_r_t___control___mask_ga9c802952604ff15912e64b3c05d60931}{T\+P\+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+D\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+SK}~0x40
+\item 
+\#define \hyperlink{group___u_a_r_t___control___mask_ga3f256ea6d3f1ad0cb867c19fc5a9171c}{T\+P\+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+D\+I\+C\+A\+T\+I\+O\+N\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+SK}~0x20
+\item 
+\#define \hyperlink{group___u_a_r_t___control___mask_ga68aff090513ca8e64a9686c71d232913}{T\+P\+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+D\+I\+C\+A\+T\+I\+O\+N\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+SK}~0x10
+\item 
+\#define \hyperlink{group___u_a_r_t___control___mask_ga08fadbb4584563c93631852bd718f1e2}{T\+P\+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+D\+I\+C\+A\+T\+I\+O\+N\+\_\+\+T\+E\+M\+P\+\_\+\+W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+A\+SK}~0x08
+\item 
+\#define \hyperlink{group___k_n_x___timeout_ga2403c0399f3728bfe63f5d9cf631817d}{K\+N\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}~500
+\item 
+\#define \hyperlink{group___k_n_x___timeout_ga8e1f26f2f54559b80991272e3b5e13e8}{K\+N\+X\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY}~0x\+F\+F\+F\+F\+F\+F\+F\+FU
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains K\+NX common defines, enumerations, macros, structures definitions, extern variables. 
+
+\begin{DoxyAuthor}{Author}
+MA Dingjie 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6-\/\+September-\/2016 
+\end{DoxyDate}

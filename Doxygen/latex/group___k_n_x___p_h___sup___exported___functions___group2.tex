@@ -3,7 +3,9 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_gad47b9ae30f2704001cf07d31da372fe2}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} request, uint32\+\_\+t timeout)
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga99d547995ed3a2a7331d1f074197ab4b}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Data} (uint8\+\_\+t data, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Send a data. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_gaa5ea5dc9e0a18257244faa3c2d29f1b8}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Request} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} request, uint32\+\_\+t timeout)
 \begin{DoxyCompactList}\small\item\em Send a request. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga5c5b1af8b0ba06771d5b16fee4547f87}{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For} (uint8\+\_\+t res, uint32\+\_\+t timeout)
 \begin{DoxyCompactList}\small\item\em Wait for a response with timeout. \end{DoxyCompactList}\item 
@@ -15,14 +17,42 @@ uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group
 
 
 \subsection{Function Documentation}
-\index{Send/\+Receive Functions@{Send/\+Receive Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Send@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send}}
-\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Send@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send}!Send/\+Receive Functions@{Send/\+Receive Functions}}
-\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Send(\+P\+H\+\_\+\+Request\+\_\+t request, uint32\+\_\+t timeout)}{KNX_Ph_Send(PH_Request_t request, uint32_t timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Send (
+\index{Send/\+Receive Functions@{Send/\+Receive Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Data@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Data}}
+\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Data@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Data}!Send/\+Receive Functions@{Send/\+Receive Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Data(uint8\+\_\+t data, uint32\+\_\+t timeout)}{KNX_Ph_SendData(uint8_t data, uint32_t timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Data (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{data, }
+\item[{uint32\+\_\+t}]{timeout}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group2_ga99d547995ed3a2a7331d1f074197ab4b}{}\label{group___k_n_x___p_h___sup___exported___functions___group2_ga99d547995ed3a2a7331d1f074197ab4b}
+
+
+Send a data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & a {\ttfamily uint8\+\_\+t} data. \\
+\hline
+{\em timeout} & timeout duration. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & code, See \hyperlink{group___p_h___error___code}{Physical Layer Error Code}. \\
+\hline
+\end{DoxyRetVals}
+Try to send the data
+
+{\bfseries If} succeeded, return \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}.
+
+{\bfseries If} timeout, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}. \index{Send/\+Receive Functions@{Send/\+Receive Functions}!K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Request@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Request}}
+\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Request@{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Request}!Send/\+Receive Functions@{Send/\+Receive Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Request(\+P\+H\+\_\+\+Request\+\_\+t request, uint32\+\_\+t timeout)}{KNX_Ph_SendRequest(PH_Request_t request, uint32_t timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Request (
 \begin{DoxyParamCaption}
 \item[{{\bf P\+H\+\_\+\+Request\+\_\+t}}]{request, }
 \item[{uint32\+\_\+t}]{timeout}
 \end{DoxyParamCaption}
-)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group2_gad47b9ae30f2704001cf07d31da372fe2}{}\label{group___k_n_x___p_h___sup___exported___functions___group2_gad47b9ae30f2704001cf07d31da372fe2}
+)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group2_gaa5ea5dc9e0a18257244faa3c2d29f1b8}{}\label{group___k_n_x___p_h___sup___exported___functions___group2_gaa5ea5dc9e0a18257244faa3c2d29f1b8}
 
 
 Send a request. 

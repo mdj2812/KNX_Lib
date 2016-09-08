@@ -1,13 +1,19 @@
-\hypertarget{_k_n_x___aux_8c}{}\section{K\+N\+X\+\_\+\+Lib/\+K\+N\+X\+\_\+\+Ph/\+Src/\+K\+N\+X\+\_\+\+Aux.c File Reference}
-\label{_k_n_x___aux_8c}\index{K\+N\+X\+\_\+\+Lib/\+K\+N\+X\+\_\+\+Ph/\+Src/\+K\+N\+X\+\_\+\+Aux.\+c@{K\+N\+X\+\_\+\+Lib/\+K\+N\+X\+\_\+\+Ph/\+Src/\+K\+N\+X\+\_\+\+Aux.\+c}}
+\hypertarget{_k_n_x___aux_8c}{}\section{Src/\+K\+N\+X\+\_\+\+Aux.c File Reference}
+\label{_k_n_x___aux_8c}\index{Src/\+K\+N\+X\+\_\+\+Aux.\+c@{Src/\+K\+N\+X\+\_\+\+Aux.\+c}}
 
 
-Auxiliary functions for K\+NX Physical Layer. This file provides functions to manage following functionalities\+:  
+Auxiliary functions for K\+NX Library. This file provides functions to manage following functionalities\+:  
 
 
 {\ttfamily \#include $<$stdint.\+h$>$}\\*
 {\ttfamily \#include $<$string.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Aux.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___k_n_x___aux___private___variables_ga18ae1c752b89b0190c4adbff64c7e36e}{A\+U\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+S\+G\+\_\+\+I\+N\+D\+I\+CE}~((uint8\+\_\+t)19)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group___k_n_x___aux___private___variables_gab56635544aea253fe5a75ded7dda1b2f}{Aux\+\_\+\+Err\+\_\+\+Msg} digits indice. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,7 +34,9 @@ uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga4
 uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga4a1fd53320eeed9eb08d09ec720f3d42}{K\+N\+X\+\_\+\+Reset\+Timer} (void)
 \begin{DoxyCompactList}\small\item\em Reset the timer. \end{DoxyCompactList}\item 
 void \hyperlink{group___k_n_x___aux___exported___functions___group2_gad9635bb60f2ba98f58874ef46e65c36d}{K\+N\+X\+\_\+systick\+\_\+isr} (void)
-\begin{DoxyCompactList}\small\item\em Systick interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Systick interrupt routines. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group3_gaea93e12f866be1d8ab744f070182ef2b}{K\+N\+X\+\_\+\+Vertical\+Parity} (uint8\+\_\+t $\ast$datas, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Vertical parity checker. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,20 +47,22 @@ volatile \hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3f
 static uint32\+\_\+t \hyperlink{group___k_n_x___aux___private___variables_ga9425be3f8a3c77c3e1f30e8759fc65e8}{timer\+\_\+timeout}
 \begin{DoxyCompactList}\small\item\em Timeout duration of the timer. \end{DoxyCompactList}\item 
 volatile uint32\+\_\+t \hyperlink{group___k_n_x___aux___private___variables_ga8c702713be164664bf7d3c5f9cc9002d}{timer\+\_\+tick}
-\begin{DoxyCompactList}\small\item\em Counter of the timer, the unit is ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Counter of the timer, the unit is ms. \end{DoxyCompactList}\item 
+static unsigned char \hyperlink{group___k_n_x___aux___private___variables_gab56635544aea253fe5a75ded7dda1b2f}{Aux\+\_\+\+Err\+\_\+\+Msg} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}Aux\mbox{]}Error Code\+: 0x\+X\+X\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Aux Error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Auxiliary functions for K\+NX Physical Layer. This file provides functions to manage following functionalities\+: 
+Auxiliary functions for K\+NX Library. This file provides functions to manage following functionalities\+: 
 
 \begin{DoxyAuthor}{Author}
 MA Dingjie 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-V0.\+0.\+5 
+V1.\+0.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-20-\/\+July-\/2016
+6-\/\+September-\/2016
 \begin{DoxyItemize}
 \item Conversion functions from int to text and from text to int
 \item A basic timer 

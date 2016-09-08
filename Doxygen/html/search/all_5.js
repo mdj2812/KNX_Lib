@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['field_20of_20services_20from_20uart',['Field of Services from UART',['../group___u_a_r_t___control___from.html',1,'']]],
-  ['field_20of_20services_20to_20uart',['Field of Services to UART',['../group___u_a_r_t___control___to.html',1,'']]]
+  ['error_5fdebug',['ERROR_DEBUG',['../group___debug___exported___types.html#ggacb1775677105967978fae4d9155cca26a819546f977ffd332fc136584e83a65fb',1,'debug.h']]]
 ];

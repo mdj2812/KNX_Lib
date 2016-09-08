@@ -79,15 +79,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Send/Receive Functions<div class="ingroups"><a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup.html">KNX Physical Layer Supervisor</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup___exported___functions.html">KNX Physical Layer Supervisor Exported Functions</a></div></div>  </div>
+<div class="title">Send/Receive Functions<div class="ingroups"><a class="el" href="group___k_n_x___lib.html">KNX_Lib</a> &raquo; <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup.html">KNX Physical Layer Supervisor</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup___exported___functions.html">KNX Physical Layer Supervisor Exported Functions</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad47b9ae30f2704001cf07d31da372fe2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#gad47b9ae30f2704001cf07d31da372fe2">KNX_Ph_Send</a> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a> request, uint32_t timeout)</td></tr>
-<tr class="memdesc:gad47b9ae30f2704001cf07d31da372fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a request.  <a href="#gad47b9ae30f2704001cf07d31da372fe2">More...</a><br /></td></tr>
-<tr class="separator:gad47b9ae30f2704001cf07d31da372fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99d547995ed3a2a7331d1f074197ab4b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#ga99d547995ed3a2a7331d1f074197ab4b">KNX_Ph_SendData</a> (uint8_t data, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga99d547995ed3a2a7331d1f074197ab4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a data.  <a href="#ga99d547995ed3a2a7331d1f074197ab4b">More...</a><br /></td></tr>
+<tr class="separator:ga99d547995ed3a2a7331d1f074197ab4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa5ea5dc9e0a18257244faa3c2d29f1b8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#gaa5ea5dc9e0a18257244faa3c2d29f1b8">KNX_Ph_SendRequest</a> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a> request, uint32_t timeout)</td></tr>
+<tr class="memdesc:gaa5ea5dc9e0a18257244faa3c2d29f1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a request.  <a href="#gaa5ea5dc9e0a18257244faa3c2d29f1b8">More...</a><br /></td></tr>
+<tr class="separator:gaa5ea5dc9e0a18257244faa3c2d29f1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5c5b1af8b0ba06771d5b16fee4547f87"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group2.html#ga5c5b1af8b0ba06771d5b16fee4547f87">KNX_Ph_WaitFor</a> (uint8_t res, uint32_t timeout)</td></tr>
 <tr class="memdesc:ga5c5b1af8b0ba06771d5b16fee4547f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a response with timeout.  <a href="#ga5c5b1af8b0ba06771d5b16fee4547f87">More...</a><br /></td></tr>
 <tr class="separator:ga5c5b1af8b0ba06771d5b16fee4547f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,12 +100,56 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gad47b9ae30f2704001cf07d31da372fe2"></a>
+<a class="anchor" id="ga99d547995ed3a2a7331d1f074197ab4b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t KNX_Ph_Send </td>
+          <td class="memname">uint8_t KNX_Ph_SendData </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send a data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>a <code>uint8_t</code> data. </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout duration. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Try to send the data</p>
+<p><b>If</b> succeeded, return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
+<p><b>If</b> timeout, return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="gaa5ea5dc9e0a18257244faa3c2d29f1b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t KNX_Ph_SendRequest </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga78f5bed722457f025cbc6786d5730d3e">PH_Request_t</a>&#160;</td>
           <td class="paramname"><em>request</em>, </td>

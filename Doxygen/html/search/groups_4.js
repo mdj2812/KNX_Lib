@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['initialization_20functions',['Initialization Functions',['../group___k_n_x___d_l___exported___functions___group1.html',1,'']]],
-  ['initialization_20functions',['Initialization Functions',['../group___k_n_x___p_h___sup___exported___functions___group1.html',1,'']]]
+  ['field_20of_20services_20from_20uart',['Field of Services from UART',['../group___u_a_r_t___control___from.html',1,'']]],
+  ['field_20of_20services_20to_20uart',['Field of Services to UART',['../group___u_a_r_t___control___to.html',1,'']]]
 ];

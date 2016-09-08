@@ -1,5 +1,5 @@
-\hypertarget{_k_n_x___aux_8h}{}\section{K\+N\+X\+\_\+\+Lib/\+K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Aux.h File Reference}
-\label{_k_n_x___aux_8h}\index{K\+N\+X\+\_\+\+Lib/\+K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Aux.\+h@{K\+N\+X\+\_\+\+Lib/\+K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Aux.\+h}}
+\hypertarget{_k_n_x___aux_8h}{}\section{Inc/\+K\+N\+X\+\_\+\+Aux.h File Reference}
+\label{_k_n_x___aux_8h}\index{Inc/\+K\+N\+X\+\_\+\+Aux.\+h@{Inc/\+K\+N\+X\+\_\+\+Aux.\+h}}
 
 
 This file contains auxiliary functions for the project.  
@@ -14,10 +14,6 @@ This file contains auxiliary functions for the project.
 \#define \hyperlink{group___k_n_x___aux___error___code_ga9197dfa3db0d3058a682575b0122e971}{A\+U\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+IN}~((uint8\+\_\+t)0x01\+U)
 \item 
 \#define \hyperlink{group___k_n_x___aux___error___code_ga8e01b81bddb576a48d989c7ba75b7cc7}{A\+U\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+SG}~((uint8\+\_\+t)0x02\+U)
-\item 
-\#define \hyperlink{group___k_n_x___timeout_ga2403c0399f3728bfe63f5d9cf631817d}{K\+N\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}~200
-\item 
-\#define \hyperlink{group___k_n_x___timeout_ga8e1f26f2f54559b80991272e3b5e13e8}{K\+N\+X\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY}~0x\+F\+F\+F\+F\+F\+F\+F\+FU
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -48,7 +44,9 @@ uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga4
 uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga4a1fd53320eeed9eb08d09ec720f3d42}{K\+N\+X\+\_\+\+Reset\+Timer} (void)
 \begin{DoxyCompactList}\small\item\em Reset the timer. \end{DoxyCompactList}\item 
 void \hyperlink{group___k_n_x___aux___exported___functions___group2_gad9635bb60f2ba98f58874ef46e65c36d}{K\+N\+X\+\_\+systick\+\_\+isr} (void)
-\begin{DoxyCompactList}\small\item\em Systick interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Systick interrupt routines. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group3_gaea93e12f866be1d8ab744f070182ef2b}{K\+N\+X\+\_\+\+Vertical\+Parity} (uint8\+\_\+t $\ast$datas, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Vertical parity checker. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -58,8 +56,8 @@ This file contains auxiliary functions for the project.
 MA Dingjie 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-V0.\+0.\+5 
+V1.\+0.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-20-\/\+July-\/2016 
+6-\/\+September-\/2016 
 \end{DoxyDate}

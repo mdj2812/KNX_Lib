@@ -1,5 +1,5 @@
-\hypertarget{_k_n_x___ph_8h}{}\section{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph.h File Reference}
-\label{_k_n_x___ph_8h}\index{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph.\+h@{K\+N\+X\+\_\+\+Ph/\+Inc/\+K\+N\+X\+\_\+\+Ph.\+h}}
+\hypertarget{_k_n_x___ph_8h}{}\section{Inc/\+K\+N\+X\+\_\+\+Ph.h File Reference}
+\label{_k_n_x___ph_8h}\index{Inc/\+K\+N\+X\+\_\+\+Ph.\+h@{Inc/\+K\+N\+X\+\_\+\+Ph.\+h}}
 
 
 This file contains K\+NX physical layer common defines, enumerations, macros, structures definitions and all the functions prototypes.  
@@ -54,16 +54,20 @@ enum \hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025
 \item 
 uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group1_ga2139e336141090cdd97ecb0c5e55499f}{K\+N\+X\+\_\+\+Ph\+\_\+\+Init} (void)
 \begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_gad47b9ae30f2704001cf07d31da372fe2}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} request, uint32\+\_\+t timeout)
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga99d547995ed3a2a7331d1f074197ab4b}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Data} (uint8\+\_\+t data, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Send a data. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_gaa5ea5dc9e0a18257244faa3c2d29f1b8}{K\+N\+X\+\_\+\+Ph\+\_\+\+Send\+Request} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga78f5bed722457f025cbc6786d5730d3e}{P\+H\+\_\+\+Request\+\_\+t} request, uint32\+\_\+t timeout)
 \begin{DoxyCompactList}\small\item\em Send a request. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga5c5b1af8b0ba06771d5b16fee4547f87}{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For} (uint8\+\_\+t res, uint32\+\_\+t timeout)
 \begin{DoxyCompactList}\small\item\em Wait for a response with timeout. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group2_ga4bede9df3610d29290973ac067ac93ae}{K\+N\+X\+\_\+\+Ph\+\_\+\+Wait\+For\+With\+Mask} (uint8\+\_\+t $\ast$res, uint8\+\_\+t res\+Mask, uint32\+\_\+t timeout)
 \begin{DoxyCompactList}\small\item\em Wait for a type of response with mask and timeout. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_ga5f33d05301997e2288af4c4e50391548}{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset\+\_\+request} (void)
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_ga5e5cc508d8f5528f85a275fa9dcb0b25}{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset} (void)
 \begin{DoxyCompactList}\small\item\em Request to reset the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module and waiting for the \hyperlink{group___u_a_r_t___control___from_gade9c58399a01abdaa03bbecbf63879c3}{Reset\+\_\+indication}. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_ga54c0cf8cfcfc3366ec286ad92a336be0}{K\+N\+X\+\_\+\+Ph\+\_\+\+State\+\_\+request} (void)
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_ga1032115e95decbb83116f74eeed1f3d0}{K\+N\+X\+\_\+\+Ph\+\_\+\+State} (uint8\+\_\+t $\ast$res)
 \begin{DoxyCompactList}\small\item\em Requests the internal communication state from the T\+P-\/\+U\+A\+R\+T-\/\+IC and waiting for the \hyperlink{group___u_a_r_t___control___from_ga736e177182335771d7948dd74a7a1a5f}{State\+\_\+indication}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_gacda7a6cf1a296488212387344561568a}{K\+N\+X\+\_\+\+Ph\+\_\+\+Data} (uint8\+\_\+t $\ast$frame, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Send datas. \end{DoxyCompactList}\item 
 \hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___p_h___sup___exported___functions___group4_ga8f380db7e1c156190263c4860f2d3ded}{K\+N\+X\+\_\+\+Ph\+\_\+\+Get\+State} (void)
 \begin{DoxyCompactList}\small\item\em Getter of the status of the physical layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 

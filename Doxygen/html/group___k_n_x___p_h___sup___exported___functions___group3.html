@@ -79,27 +79,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">KNX PH Services<div class="ingroups"><a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup.html">KNX Physical Layer Supervisor</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup___exported___functions.html">KNX Physical Layer Supervisor Exported Functions</a></div></div>  </div>
+<div class="title">KNX PH Services<div class="ingroups"><a class="el" href="group___k_n_x___lib.html">KNX_Lib</a> &raquo; <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup.html">KNX Physical Layer Supervisor</a> &raquo; <a class="el" href="group___k_n_x___p_h___sup___exported___functions.html">KNX Physical Layer Supervisor Exported Functions</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga5f33d05301997e2288af4c4e50391548"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group3.html#ga5f33d05301997e2288af4c4e50391548">KNX_Ph_Reset_request</a> (void)</td></tr>
-<tr class="memdesc:ga5f33d05301997e2288af4c4e50391548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request to reset the <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> module and waiting for the <a class="el" href="group___u_a_r_t___control___from.html#gade9c58399a01abdaa03bbecbf63879c3">Reset_indication</a>.  <a href="#ga5f33d05301997e2288af4c4e50391548">More...</a><br /></td></tr>
-<tr class="separator:ga5f33d05301997e2288af4c4e50391548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga54c0cf8cfcfc3366ec286ad92a336be0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group3.html#ga54c0cf8cfcfc3366ec286ad92a336be0">KNX_Ph_State_request</a> (void)</td></tr>
-<tr class="memdesc:ga54c0cf8cfcfc3366ec286ad92a336be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the internal communication state from the TP-UART-IC and waiting for the <a class="el" href="group___u_a_r_t___control___from.html#ga736e177182335771d7948dd74a7a1a5f">State_indication</a>.  <a href="#ga54c0cf8cfcfc3366ec286ad92a336be0">More...</a><br /></td></tr>
-<tr class="separator:ga54c0cf8cfcfc3366ec286ad92a336be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e5cc508d8f5528f85a275fa9dcb0b25"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group3.html#ga5e5cc508d8f5528f85a275fa9dcb0b25">KNX_Ph_Reset</a> (void)</td></tr>
+<tr class="memdesc:ga5e5cc508d8f5528f85a275fa9dcb0b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request to reset the <a class="el" href="group___k_n_x___p_h.html">KNX Physical Layer</a> module and waiting for the <a class="el" href="group___u_a_r_t___control___from.html#gade9c58399a01abdaa03bbecbf63879c3">Reset_indication</a>.  <a href="#ga5e5cc508d8f5528f85a275fa9dcb0b25">More...</a><br /></td></tr>
+<tr class="separator:ga5e5cc508d8f5528f85a275fa9dcb0b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1032115e95decbb83116f74eeed1f3d0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group3.html#ga1032115e95decbb83116f74eeed1f3d0">KNX_Ph_State</a> (uint8_t *res)</td></tr>
+<tr class="memdesc:ga1032115e95decbb83116f74eeed1f3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the internal communication state from the TP-UART-IC and waiting for the <a class="el" href="group___u_a_r_t___control___from.html#ga736e177182335771d7948dd74a7a1a5f">State_indication</a>.  <a href="#ga1032115e95decbb83116f74eeed1f3d0">More...</a><br /></td></tr>
+<tr class="separator:ga1032115e95decbb83116f74eeed1f3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacda7a6cf1a296488212387344561568a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___exported___functions___group3.html#gacda7a6cf1a296488212387344561568a">KNX_Ph_Data</a> (uint8_t *frame, uint16_t length)</td></tr>
+<tr class="memdesc:gacda7a6cf1a296488212387344561568a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send datas.  <a href="#gacda7a6cf1a296488212387344561568a">More...</a><br /></td></tr>
+<tr class="separator:gacda7a6cf1a296488212387344561568a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga5f33d05301997e2288af4c4e50391548"></a>
+<a class="anchor" id="gacda7a6cf1a296488212387344561568a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t KNX_Ph_Reset_request </td>
+          <td class="memname">uint8_t KNX_Ph_Data </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send datas. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>frame to be sent. </td></tr>
+    <tr><td class="paramname">length</td><td>number of octets in frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Send frame.</p>
+<p><b>If</b> encounter a problem, return <a class="el" href="group___p_h___error___code.html#ga76393e5665e76130e95c73aab378c53d">PH_ERROR_REQUEST</a></p>
+<p>Waiting for the <a class="el" href="group___u_a_r_t___control___from.html#ga5bef931d5b249bb5d33e68f5262d8ec7">L_Data_confirm_success</a>.</p>
+<p>Return <a class="el" href="group___p_h___error___code.html#ga495ce5ac265432fc88f35462ea1515f8">PH_ERROR_STATE</a>.</p>
+<p>Else return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga5e5cc508d8f5528f85a275fa9dcb0b25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t KNX_Ph_Reset </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -124,21 +173,27 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga54c0cf8cfcfc3366ec286ad92a336be0"></a>
+<a class="anchor" id="ga1032115e95decbb83116f74eeed1f3d0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t KNX_Ph_State_request </td>
+          <td class="memname">uint8_t KNX_Ph_State </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>res</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Requests the internal communication state from the TP-UART-IC and waiting for the <a class="el" href="group___u_a_r_t___control___from.html#ga736e177182335771d7948dd74a7a1a5f">State_indication</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">res</td><td>response received. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___p_h___error___code.html">Physical Layer Error Code</a>. </td></tr>
@@ -148,10 +203,8 @@ Functions</h2></td></tr>
 <p>Send <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga78f5bed722457f025cbc6786d5730d3eaf0efc940702df223316668e6712b5ba4">Ph_Reset</a> request.</p>
 <p><b>If</b> encounter a problem, return <a class="el" href="group___p_h___error___code.html#ga76393e5665e76130e95c73aab378c53d">PH_ERROR_REQUEST</a></p>
 <p>Waiting for the <a class="el" href="group___u_a_r_t___control___from.html#ga736e177182335771d7948dd74a7a1a5f">State_indication</a>.</p>
-<p><b>If</b> receive the response, set state to <a class="el" href="group___k_n_x___p_h___sup___exported___types.html#gga5b665a94bef912fbfbea7cc949ed0e49a4be7dd56ae47b708c6f4751714efe930">PH_NORMAL</a>.</p>
-<p>Return <a class="el" href="group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a">PH_ERROR_NONE</a>.</p>
-<p>Else return <a class="el" href="group___p_h___error___code.html#ga495ce5ac265432fc88f35462ea1515f8">PH_ERROR_STATE</a>.</p>
-<p>Else return <a class="el" href="group___p_h___error___code.html#ga104872de885107db19b579c81a62f563">PH_ERROR_RESPONSE</a>. </p>
+<p>Return <a class="el" href="group___p_h___error___code.html#ga495ce5ac265432fc88f35462ea1515f8">PH_ERROR_STATE</a>.</p>
+<p>Else return <a class="el" href="group___p_h___error___code.html#gaae8d2172a18fdde6957c77af378c2574">PH_ERROR_TIMEOUT</a>. </p>
 
 </div>
 </div>

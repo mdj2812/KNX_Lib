@@ -1,5 +1,5 @@
-\hypertarget{debug_8c}{}\section{debug/\+Src/debug.c File Reference}
-\label{debug_8c}\index{debug/\+Src/debug.\+c@{debug/\+Src/debug.\+c}}
+\hypertarget{debug_8c}{}\section{Src/debug.c File Reference}
+\label{debug_8c}\index{Src/debug.\+c@{Src/debug.\+c}}
 
 
 Debug tasks. This file provides functions to manage following functionalities\+:  
@@ -12,20 +12,12 @@ Debug tasks. This file provides functions to manage following functionalities\+:
 {\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}debug\+\_\+\+U\+A\+R\+T.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Ph\+\_\+\+T\+P\+Uart.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Ph\+\_\+\+Aux.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Aux.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Ph.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}K\+N\+X\+\_\+def.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$string.\+h$>$}\\*
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{group___debug___private___variables_gad1fee91c32605ffbbb44ee4f8e6de6a4}{D\+E\+B\+U\+G\+\_\+\+S\+E\+N\+T\+\_\+\+I\+N\+D\+I\+CE}~((uint8\+\_\+t)22)
-\begin{DoxyCompactList}\small\item\em \hyperlink{group___debug___private___variables_ga8dc7f546fccea9be95d04715b6de6286}{Debug\+\_\+\+Send\+\_\+\+Msg} digits indice. \end{DoxyCompactList}\item 
-\#define \hyperlink{group___debug___private___variables_ga046666f21030033a99a96f6a349b43e9}{K\+N\+X\+\_\+\+P\+H\+\_\+\+T\+P\+U\+A\+R\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+I\+N\+D\+I\+CE}~((uint8\+\_\+t)26)
-\begin{DoxyCompactList}\small\item\em \hyperlink{group___debug___private___variables_gac42157f7c2b868252acf6b58cfa30aee}{K\+N\+X\+\_\+\+Ph\+\_\+\+T\+P\+U\+A\+R\+T\+\_\+\+Err\+\_\+\+Msg} digits indice. \end{DoxyCompactList}\item 
-\#define \hyperlink{group___debug___private___variables_ga18ae1c752b89b0190c4adbff64c7e36e}{A\+U\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+S\+G\+\_\+\+I\+N\+D\+I\+CE}~((uint8\+\_\+t)19)
-\begin{DoxyCompactList}\small\item\em \hyperlink{group___debug___private___variables_gab56635544aea253fe5a75ded7dda1b2f}{Aux\+\_\+\+Err\+\_\+\+Msg} digits indice. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,10 +38,8 @@ void \hyperlink{group___debug___exported___functions___group2_ga8013ff117a9e96e6
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{group___debug___exported___types_gabcec3ea567663bbefa0b9f7a88dd68f2}{R\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+Status\+\_\+t} \hyperlink{group___debug___private___variables_ga65a0aa461c7b3901566170f888d0004c}{K\+N\+X\+\_\+\+P\+H\+\_\+\+S\+T\+A\+TE}
-\begin{DoxyCompactList}\small\item\em Current state of debug RX. \end{DoxyCompactList}\item 
 static const char $\ast$ \hyperlink{group___debug___private___variables_ga57ad017acd4535fe089f54ed903b3e9e}{msg\+\_\+error} = \char`\"{}$\ast$$\ast$$\ast$E\+R\+R\+OR$\ast$$\ast$$\ast$ \hyperlink{group___cola___exported___functions___group2_ga12fe948f259d8c9d7a390a76c416b55c}{cola\+\_\+leer}() = -\/1 ????? \textbackslash{}r\textbackslash{}n\char`\"{}
-\begin{DoxyCompactList}\small\item\em Error message put in \hyperlink{group___debug___exported___functions___group2_ga0e7fca846e34e06a1f62249fe8a30a44}{Debug\+Task}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Current state of debug RX. \end{DoxyCompactList}\item 
 static unsigned char \hyperlink{group___debug___private___variables_gacab2203504e72e5e674d3174e0bd7d5e}{buffer} \mbox{[}\hyperlink{group___debug___private___define_ga6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}\mbox{]}
 \begin{DoxyCompactList}\small\item\em The buffer to store the message. \end{DoxyCompactList}\item 
 \+\_\+\+\_\+\+IO uint16\+\_\+t \hyperlink{group___debug___private___variables_gacd3f15a092421e9fa47f50d4f95f212b}{buffer\+\_\+indice}
@@ -71,13 +61,7 @@ static Task\+Handle\+\_\+t \hyperlink{group___debug___private___variables_gaea04
 static Semaphore\+Handle\+\_\+t \hyperlink{group___debug___private___variables_gaeefc3248920a99b9436147de4aeff800}{semaforo\+\_\+debugrx\+\_\+isruart}
 \begin{DoxyCompactList}\small\item\em Semaphore to permit the new cycle of \hyperlink{group___debug___exported___functions___group2_ga8013ff117a9e96e630d30771cf9b0199}{Debug\+R\+X\+Task}. \end{DoxyCompactList}\item 
 static unsigned char \hyperlink{group___debug___private___variables_gabe413cb96d839cbe31417aa52d920f21}{temp}
-\item 
-static unsigned char \hyperlink{group___debug___private___variables_ga8dc7f546fccea9be95d04715b6de6286}{Debug\+\_\+\+Send\+\_\+\+Msg} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}Debug\mbox{]}Message sent\+: /XX/\textbackslash{}r\textbackslash{}n\char`\"{}
-\begin{DoxyCompactList}\small\item\em Sending Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\item 
-static unsigned char \hyperlink{group___debug___private___variables_gac42157f7c2b868252acf6b58cfa30aee}{K\+N\+X\+\_\+\+Ph\+\_\+\+T\+P\+U\+A\+R\+T\+\_\+\+Err\+\_\+\+Msg} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}K\+NX T\+P\+Uart\mbox{]}Error Code\+: 0x\+X\+X\textbackslash{}r\textbackslash{}n\char`\"{}
-\begin{DoxyCompactList}\small\item\em K\+NX T\+P\+Uart Error message. \end{DoxyCompactList}\item 
-static unsigned char \hyperlink{group___debug___private___variables_gab56635544aea253fe5a75ded7dda1b2f}{Aux\+\_\+\+Err\+\_\+\+Msg} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}Aux\mbox{]}Error Code\+: 0x\+X\+X\textbackslash{}r\textbackslash{}n\char`\"{}
-\begin{DoxyCompactList}\small\item\em Aux Error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

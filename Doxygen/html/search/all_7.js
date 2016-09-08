@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['int2text',['int2text',['../group___k_n_x___aux___exported___functions___group1.html#gac8eb309aea5e19bf8a9f5e36313b7608',1,'KNX_Ph_Aux.c']]],
-  ['items',['items',['../structt__cola.html#a3691abaa51fe86a073eaabdd1c39b74c',1,'t_cola']]],
-  ['initialization_20functions',['Initialization Functions',['../group___k_n_x___d_l___exported___functions___group1.html',1,'']]],
-  ['initialization_20functions',['Initialization Functions',['../group___k_n_x___p_h___sup___exported___functions___group1.html',1,'']]]
+  ['hex_5fnum',['hex_num',['../group___k_n_x___aux___private___consts.html#ga938e545954f0ddfa9a048c6fc3f30776',1,'KNX_Aux.c']]],
+  ['huecos',['huecos',['../structt__cola.html#a326c5b8fc3633ed405339faf05e5a552',1,'t_cola']]]
 ];

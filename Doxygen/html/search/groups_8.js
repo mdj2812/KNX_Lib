@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['save_20and_20read_20cola_20functions',['Save and Read Cola Functions',['../group___cola___exported___functions___group2.html',1,'']]],
-  ['send_2freceive_20functions',['Send/Receive Functions',['../group___k_n_x___p_h___sup___exported___functions___group2.html',1,'']]]
+  ['physical_20layer_20debug_20error_20code',['Physical Layer Debug Error Code',['../group___p_h___debug___error___code.html',1,'']]],
+  ['physical_20layer_20error_20code',['Physical Layer Error Code',['../group___p_h___error___code.html',1,'']]],
+  ['physical_20layer_20exported_20constants',['Physical Layer Exported Constants',['../group___p_h___exported___constants.html',1,'']]]
 ];
