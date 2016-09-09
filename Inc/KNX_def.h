@@ -53,8 +53,10 @@
 #define U_Reset_request                 ((uint8_t)0x01U)    /*!< Reset request  */
 #define U_State_request                 ((uint8_t)0x02U)    /*!< State request  */
 #define U_ActivateBusmon                ((uint8_t)0x05U)    /*!< Activate monitor mode  */
-#define U_AckInformation_Addressed      ((uint8_t)0x11U)    /*!< Acknowledgment addressed  */
-#define U_AckInformation_NotAddressed   ((uint8_t)0x11U)    /*!< Acknowledgment not addressed  */
+    
+#define U_AckInformation_ACK            ((uint8_t)0x11U)    /*!< Acknowledgment addressed  */
+#define U_AckInformation_Busy           ((uint8_t)0x12U)    /*!< Acknowledgment busy  */
+#define U_AckInformation_Nack           ((uint8_t)0x14U)    /*!< Acknowledgment NACK  */
 
 #define U_ProductID_request             ((uint8_t)0x20U)    /*!< Product ID request  */
 #define U_ActivateBusyMode              ((uint8_t)0x21U)    /*!< Activate busy mode  */
@@ -63,7 +65,9 @@
 #define U_ActivateCRC                   ((uint8_t)0x25U)    /*!< Activate CRC  */
 #define U_SetAddress                    ((uint8_t)0x28U)    /*!< Set address  */
 
-#define U_L_DataStart                   ((uint8_t)0x80U)    /*!< Activate CRC  */
+#define U_L_DataStart                   ((uint8_t)0x80U)    /*!< Data Start Byte  */
+#define U_L_DataContinue                ((uint8_t)0x80U)    /*!< Data Continue Byte  */
+#define U_L_DataEnd                     ((uint8_t)0x80U)    /*!< Data End Byte  */
 /**
   * @}
   */
@@ -98,12 +102,22 @@
   * @brief    Timeout Definition
   * @{
   */
-#define KNX_DEFAULT_TIMEOUT     500                /*!< Default Timeout 500 ms*/
-#define KNX_MAX_DELAY           0xFFFFFFFFU        /*!< Max Delay: Infinity   */
+#define KNX_DEFAULT_TIMEOUT     ((TickType_t)2000)               /*!< Default Timeout 500 ms*/
+#define KNX_MAX_DELAY           ((TickType_t)0xFFFFFFFFU)       /*!< Max Delay: Infinity   */
 /**
   * @}
   */
-
+    
+/** @defgroup KNX_Frame KNX Frame Definition
+  * @brief    KNX Frame Definition
+  * @{
+  */
+/** \brief Max size of the frame */
+#define FRAME_SIZE 22
+/**
+  * @}
+  */
+    
 /**
   * @}
   */

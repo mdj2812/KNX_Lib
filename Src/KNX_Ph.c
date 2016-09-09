@@ -43,7 +43,7 @@ static PH_Status_t KNX_PH_STATE;
 /** \brief State Debug message sent in \ref Cola_Debug. */
 static unsigned char KNX_PH_STATE_DEBUGMSG[] = "[KNX PH]KNX_PH_STATE changed to XX.\r\n";
 /** \brief ::KNX_PH_STATE_DEBUGMSG digits indice. */
-#define KNX_PH_STATE_DEBUGMSG_INDICE ((uint8_t)31)
+#define KNX_PH_STATE_DEBUGMSG_INDICE ((uint8_t)32)
 /** \brief Sending Debug message sent in \ref Cola_Debug. */
 static unsigned char KNX_PH_SEND_DEBUGMSG[] = "[KNX PH]Data sent: XX\r\n";
 /** \brief ::KNX_PH_SEND_DEBUGMSG digits indice. */
@@ -57,6 +57,9 @@ static unsigned char KNX_PH_ERROR_DEBUGMSG[] = "[KNX PH]Error code: XX\r\n";
 /** \brief ::KNX_PH_ERROR_DEBUGMSG digits indice. */
 #define KNX_PH_ERROR_DEBUGMSG_INDICE ((uint8_t)20)
 
+/** \brief The current tick of timer. */
+TickType_t currentTick;
+
 /** \brief Cola defined in \ref Debug */
 t_cola colaDebug;
 /**
@@ -67,7 +70,6 @@ t_cola colaDebug;
 /** @defgroup KNX_PH_Sup_Private_Functions KNX_Ph_Sup Private Functions
   * @{
   */
-static uint8_t  request2data(PH_Request_t request);
 static void     KNX_Ph_SetState(PH_Status_t state);
 static void     KNX_Ph_DebugMessage(uint8_t data, DEBUG_Type_t type);
 /**
@@ -94,6 +96,8 @@ uint8_t KNX_Ph_Init(void)
   
   /** Initialize the timer. */
   KNX_InitTimer();
+  KNX_StartTimer();
+
   /** Initialize TPUart. */
   if(KNX_PH_TPUart_init() == TPUart_ERROR)
   {
@@ -121,22 +125,20 @@ uint8_t KNX_Ph_Init(void)
   * @retval     Error code, See \ref PH_Error_Code.
   */
 uint8_t KNX_Ph_SendData(uint8_t data, uint32_t timeout)
-{      
-  KNX_StartTimer(timeout);
+{  
   /** Try to send the data */
-  while(KNX_GetTimerState() != TIMER_TIMEOUT)
+  currentTick = KNX_GetTick();
+  while(!KNX_CheckForTimeOut(&currentTick, &timeout))
   {
     if(KNX_PH_TPUart_Send(&data, 1) == TPUart_OK)
     {
       KNX_Ph_DebugMessage(data, SEND_DEBUG);
       
-      KNX_ResetTimer();
       /** \b If succeeded, return ::PH_ERROR_NONE. */
       return PH_ERROR_NONE;
     }
   }
   
-  KNX_ResetTimer();
   KNX_Ph_DebugMessage(PH_ERROR_TIMEOUT, ERROR_DEBUG);
 
   /** \b If timeout, return ::PH_ERROR_TIMEOUT. */
@@ -144,39 +146,26 @@ uint8_t KNX_Ph_SendData(uint8_t data, uint32_t timeout)
 }
 
 /**
-  * @brief      Send a request.
-  * @param      request: a request, see ::PH_Request_t.
+  * @brief      Receive a data.
+  * @param      data: a \c uint8_t data.
   * @param      timeout: timeout duration.
   * @retval     Error code, See \ref PH_Error_Code.
   */
-uint8_t KNX_Ph_SendRequest(PH_Request_t request, uint32_t timeout)
-{
-  uint8_t data;
-  
-  /** Convert the request to \c uint8_t data. */
-  data = request2data(request);
-  
-  /** \b If the request is not valid, return ::PH_ERROR_REQUEST. */
-  if(data == U_None)
+uint8_t KNX_Ph_RecData(uint8_t *data, uint32_t timeout)
+{        
+  /** Try to receive the data */
+  currentTick = KNX_GetTick();
+  while(!KNX_CheckForTimeOut(&currentTick, &timeout))
   {
-    return PH_ERROR_REQUEST;
-  }
-    
-  KNX_StartTimer(timeout);
-  /** Try to send the data */
-  while(KNX_GetTimerState() != TIMER_TIMEOUT)
-  {
-    if(KNX_PH_TPUart_Send(&data, 1) == TPUart_OK)
-    {
-      KNX_Ph_DebugMessage(data, SEND_DEBUG);
-      
-      KNX_ResetTimer();
-      /** \b If succeeded, return ::PH_ERROR_NONE. */
+    if(KNX_PH_TPUart_Receive(data, 1) == TPUart_OK)
+    {      
+      KNX_Ph_DebugMessage(*data, RECEIVE_DEBUG);
+
+      /** \b If data received is the response expected. Return ::PH_ERROR_NONE. */
       return PH_ERROR_NONE;
     }
   }
   
-  KNX_ResetTimer();
   KNX_Ph_DebugMessage(PH_ERROR_TIMEOUT, ERROR_DEBUG);
 
   /** \b If timeout, return ::PH_ERROR_TIMEOUT. */
@@ -193,25 +182,23 @@ uint8_t KNX_Ph_WaitFor(uint8_t res, uint32_t timeout)
 {
   uint8_t data;
   
-  KNX_StartTimer(timeout);
-  /** Try to receive the data */
-  while(KNX_GetTimerState() != TIMER_TIMEOUT)
+  /** Try to send the data */
+  currentTick = KNX_GetTick();
+  while(!KNX_CheckForTimeOut(&currentTick, &timeout))
   {
     if(KNX_PH_TPUart_Receive(&data, 1) == TPUart_OK)
     {      
+      KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
+
       /** \b If data received is the response expected. */
       if(data == res)
       {
-        KNX_ResetTimer();
-        KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
-
         /** Return ::PH_ERROR_NONE. */
         return PH_ERROR_NONE;
       }
     }
   }
   
-  KNX_ResetTimer();
   KNX_Ph_DebugMessage(PH_ERROR_TIMEOUT, ERROR_DEBUG);
 
   /** \b If timeout, return ::PH_ERROR_TIMEOUT. */
@@ -229,26 +216,24 @@ uint8_t KNX_Ph_WaitForWithMask(uint8_t *res, uint8_t resMask, uint32_t timeout)
 {
   uint8_t data;
   
-  KNX_StartTimer(timeout);
-  /** Try to receive the data */
-  while(KNX_GetTimerState() != TIMER_TIMEOUT)
+  /** Try to send the data */
+  currentTick = KNX_GetTick();
+  while(!KNX_CheckForTimeOut(&currentTick, &timeout))
   {
     if(KNX_PH_TPUart_Receive(&data, 1) == TPUart_OK)
     {      
+      KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
+
       /** \b If data received is the type of response expected. */
       if((data & resMask) == resMask)
       {
-        KNX_ResetTimer();
         *res = data;
-        KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
-
         /** Return ::PH_ERROR_NONE. */
         return PH_ERROR_NONE;
       }
     }
   }
   
-  KNX_ResetTimer();
   KNX_Ph_DebugMessage(PH_ERROR_TIMEOUT, ERROR_DEBUG);
 
   /** \b If timeout, return ::PH_ERROR_TIMEOUT. */
@@ -272,7 +257,12 @@ uint8_t KNX_Ph_Reset(void)
   uint8_t ret;
   
   /** Send ::Ph_Reset request. */
-  ret = KNX_Ph_SendRequest(Ph_Reset, KNX_DEFAULT_TIMEOUT);
+  if(KNX_Ph_GetState() != PH_RESET)
+  {
+    KNX_Ph_SetState(PH_RESET);
+  }
+  
+  ret = KNX_Ph_SendData(U_Reset_request, KNX_DEFAULT_TIMEOUT);
   if(ret != PH_ERROR_NONE)
   {
     /** \b If encounter a problem, return ::PH_ERROR_REQUEST  */
@@ -283,8 +273,8 @@ uint8_t KNX_Ph_Reset(void)
   ret = KNX_Ph_WaitFor(Reset_indication, KNX_DEFAULT_TIMEOUT);
   if(ret == PH_ERROR_NONE)
   {
-    /** \b If receive the response, set state to ::PH_RESET. */
-    KNX_Ph_SetState(PH_RESET);
+    /** \b If receive the response, set state to ::PH_NORMAL. */
+    KNX_Ph_SetState(PH_NORMAL);
 
     /** Return ::PH_ERROR_NONE. */
     return PH_ERROR_NONE;
@@ -307,7 +297,7 @@ uint8_t KNX_Ph_State(uint8_t *res)
   uint8_t ret;
   
   /** Send ::Ph_Reset request. */
-  ret = KNX_Ph_SendRequest(Ph_State, KNX_DEFAULT_TIMEOUT);
+  ret = KNX_Ph_SendData(U_State_request, KNX_DEFAULT_TIMEOUT);
   if(ret != PH_ERROR_NONE)
   {
     /** \b If encounter a problem, return ::PH_ERROR_REQUEST  */
@@ -336,28 +326,67 @@ uint8_t KNX_Ph_State(uint8_t *res)
   * @param      length: number of octets in frame.
   * @retval     Error code, See \ref PH_Error_Code.
   */
-uint8_t KNX_Ph_Data(uint8_t *frame, uint16_t length)
+uint8_t KNX_Ph_Data_req(uint8_t *frame, uint16_t length)
 {
-  uint8_t ret, res;
+  uint8_t res;
   uint16_t i;
   
-  /** Send frame. */
-  for(i=0; i<length; i++)
+  /** Send U_L_DataStart byte and CTRL byte. */
+  if(KNX_Ph_SendData(U_L_DataStart, KNX_DEFAULT_TIMEOUT) != PH_ERROR_NONE)
   {
-    ret = KNX_Ph_SendData(frame[i], KNX_MAX_DELAY);
-    if(ret != PH_ERROR_NONE)
+    /** \b If encounter a problem, return ::PH_ERROR_REQUEST  */
+    return PH_ERROR_REQUEST;
+  }
+  
+  if(KNX_Ph_SendData(frame[0], KNX_DEFAULT_TIMEOUT) != PH_ERROR_NONE)
+  {
+    /** \b If encounter a problem, return ::PH_ERROR_TIMEOUT  */
+    return PH_ERROR_TIMEOUT;
+  }
+  
+  /** Send frame. */
+  for(i=1; i<length-1; i++)
+  {
+    /** Send U_L_DataContinue byte and the frame. */
+    if(KNX_Ph_SendData((U_L_DataContinue | i), KNX_DEFAULT_TIMEOUT) != PH_ERROR_NONE)
     {
-      /** \b If encounter a problem, return ::PH_ERROR_REQUEST  */
-      return PH_ERROR_REQUEST;
+      /** \b If encounter a problem, return ::PH_ERROR_TIMEOUT  */
+      return PH_ERROR_TIMEOUT;
+    }
+    
+    if(KNX_Ph_SendData(frame[i], KNX_DEFAULT_TIMEOUT) != PH_ERROR_NONE)
+    {
+      /** \b If encounter a problem, return ::PH_ERROR_TIMEOUT  */
+      return PH_ERROR_TIMEOUT;
     }
   }
-    
-  /** Waiting for the ::L_Data_confirm_success. */
-  ret = KNX_Ph_WaitForWithMask(&res, L_Data_confirm_mask, KNX_DEFAULT_TIMEOUT);
-  if(ret == PH_ERROR_NONE)
+  
+  /** Send U_L_DataEnd byte and CheckSum. */
+  if(KNX_Ph_SendData((U_L_DataEnd | (uint8_t)length), KNX_DEFAULT_TIMEOUT) != PH_ERROR_NONE)
   {
-    /** Return ::PH_ERROR_STATE. */
-    return PH_ERROR_NONE;
+    /** \b If encounter a problem, return ::PH_ERROR_TIMEOUT  */
+    return PH_ERROR_TIMEOUT;
+  }
+  
+  if(KNX_Ph_SendData(frame[length-1], KNX_DEFAULT_TIMEOUT) != PH_ERROR_NONE)
+  {
+    /** \b If encounter a problem, return ::PH_ERROR_TIMEOUT  */
+    return PH_ERROR_TIMEOUT;
+  }
+  
+  /** Waiting for the ::L_Data_confirm_success. */
+  if(KNX_Ph_WaitForWithMask(&res, L_Data_confirm_mask, KNX_DEFAULT_TIMEOUT) == PH_ERROR_NONE)
+  {
+    if(res == L_Data_confirm_success)
+    {
+      /** Return ::PH_ERROR_NONE. */
+      return PH_ERROR_NONE;
+    }
+    else
+    {      
+      /** Return ::PH_ERROR_DATA_CON_FAIL. */
+      return PH_ERROR_DATA_CON_FAIL;
+    }
   }
   else
   {
@@ -366,6 +395,28 @@ uint8_t KNX_Ph_Data(uint8_t *frame, uint16_t length)
   }
 }
 
+/**
+  * @brief      Receive datas.
+  * @param      frame: frame received.
+  * @param      length: number of octets in frame.
+  * @retval     Error code, See \ref PH_Error_Code.
+  */
+uint8_t KNX_Ph_Data_rec(uint8_t *frame, uint16_t *length)
+{
+  uint8_t ret;
+  
+  /** Receive frame. */
+  for(*length=0; *length<FRAME_SIZE; *length++)
+  {
+    ret = KNX_Ph_RecData(&frame[*length], KNX_DEFAULT_TIMEOUT);
+    if(ret != PH_ERROR_NONE)
+    {
+      return PH_ERROR_TIMEOUT;
+    }
+  }
+  
+  return PH_ERROR_NONE;
+}
 /**
   * @}
   */
@@ -394,34 +445,6 @@ PH_Status_t KNX_Ph_GetState(void)
 /** @addtogroup KNX_PH_Sup_Private_Functions
   * @{
   */
-
-/**
- *  @brief      Convert a request to a data. 
- *  @param      request: the request in ::PH_Request_t.
- *  @retval     The 8 bits data.
- */
-static uint8_t  request2data(PH_Request_t request)
-{
-  switch(request)
-  {
-    case Ph_Reset:
-      return 0x01U;
-    case Ph_State:
-      return 0x02U;
-    case Ph_ActivateBusmon:
-      return 0x05U;
-    case Ph_ProductID:
-      return 0x20U;
-    case Ph_ActivateBusyMode:
-      return 0x21U;
-    case Ph_ResetBusyMode:
-      return 0x22U;
-    case Ph_SetAddress:
-      return 0x28U;
-    default:
-      return 0x00U;
-  }
-}
 
 /**
  *  @brief      Set the status of Physical layer. 

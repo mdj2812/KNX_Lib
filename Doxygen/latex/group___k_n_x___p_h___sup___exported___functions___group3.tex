@@ -7,22 +7,48 @@ uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group
 \begin{DoxyCompactList}\small\item\em Request to reset the \hyperlink{group___k_n_x___p_h}{K\+NX Physical Layer} module and waiting for the \hyperlink{group___u_a_r_t___control___from_gade9c58399a01abdaa03bbecbf63879c3}{Reset\+\_\+indication}. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_ga1032115e95decbb83116f74eeed1f3d0}{K\+N\+X\+\_\+\+Ph\+\_\+\+State} (uint8\+\_\+t $\ast$res)
 \begin{DoxyCompactList}\small\item\em Requests the internal communication state from the T\+P-\/\+U\+A\+R\+T-\/\+IC and waiting for the \hyperlink{group___u_a_r_t___control___from_ga736e177182335771d7948dd74a7a1a5f}{State\+\_\+indication}. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_gacda7a6cf1a296488212387344561568a}{K\+N\+X\+\_\+\+Ph\+\_\+\+Data} (uint8\+\_\+t $\ast$frame, uint16\+\_\+t length)
-\begin{DoxyCompactList}\small\item\em Send datas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_gaa5513442e626a23391b18be925ae7e65}{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+req} (uint8\+\_\+t $\ast$frame, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Send datas. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___exported___functions___group3_gac47024c84e321d2a4c81085dba1e918e}{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+rec} (uint8\+\_\+t $\ast$frame, uint16\+\_\+t $\ast$length)
+\begin{DoxyCompactList}\small\item\em Receive datas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
 \subsection{Function Documentation}
-\index{K\+N\+X P\+H Services@{K\+N\+X P\+H Services}!K\+N\+X\+\_\+\+Ph\+\_\+\+Data@{K\+N\+X\+\_\+\+Ph\+\_\+\+Data}}
-\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Data@{K\+N\+X\+\_\+\+Ph\+\_\+\+Data}!K\+N\+X P\+H Services@{K\+N\+X P\+H Services}}
-\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Data(uint8\+\_\+t $\ast$frame, uint16\+\_\+t length)}{KNX_Ph_Data(uint8_t *frame, uint16_t length)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Data (
+\index{K\+N\+X P\+H Services@{K\+N\+X P\+H Services}!K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+rec@{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+rec}}
+\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+rec@{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+rec}!K\+N\+X P\+H Services@{K\+N\+X P\+H Services}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+rec(uint8\+\_\+t $\ast$frame, uint16\+\_\+t $\ast$length)}{KNX_Ph_Data_rec(uint8_t *frame, uint16_t *length)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+rec (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{frame, }
+\item[{uint16\+\_\+t $\ast$}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group3_gac47024c84e321d2a4c81085dba1e918e}{}\label{group___k_n_x___p_h___sup___exported___functions___group3_gac47024c84e321d2a4c81085dba1e918e}
+
+
+Receive datas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & frame received. \\
+\hline
+{\em length} & number of octets in frame. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & code, See \hyperlink{group___p_h___error___code}{Physical Layer Error Code}. \\
+\hline
+\end{DoxyRetVals}
+Receive frame. \index{K\+N\+X P\+H Services@{K\+N\+X P\+H Services}!K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+req@{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+req}}
+\index{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+req@{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+req}!K\+N\+X P\+H Services@{K\+N\+X P\+H Services}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+req(uint8\+\_\+t $\ast$frame, uint16\+\_\+t length)}{KNX_Ph_Data_req(uint8_t *frame, uint16_t length)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Ph\+\_\+\+Data\+\_\+req (
 \begin{DoxyParamCaption}
 \item[{uint8\+\_\+t $\ast$}]{frame, }
 \item[{uint16\+\_\+t}]{length}
 \end{DoxyParamCaption}
-)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group3_gacda7a6cf1a296488212387344561568a}{}\label{group___k_n_x___p_h___sup___exported___functions___group3_gacda7a6cf1a296488212387344561568a}
+)}\hypertarget{group___k_n_x___p_h___sup___exported___functions___group3_gaa5513442e626a23391b18be925ae7e65}{}\label{group___k_n_x___p_h___sup___exported___functions___group3_gaa5513442e626a23391b18be925ae7e65}
 
 
 Send datas. 
@@ -39,13 +65,31 @@ Send datas.
 {\em Error} & code, See \hyperlink{group___p_h___error___code}{Physical Layer Error Code}. \\
 \hline
 \end{DoxyRetVals}
-Send frame.
+Send U\+\_\+\+L\+\_\+\+Data\+Start byte and C\+T\+RL byte.
 
 {\bfseries If} encounter a problem, return \hyperlink{group___p_h___error___code_ga76393e5665e76130e95c73aab378c53d}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+Q\+U\+E\+ST}
 
+{\bfseries If} encounter a problem, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}
+
+Send frame.
+
+Send U\+\_\+\+L\+\_\+\+Data\+Continue byte and the frame.
+
+{\bfseries If} encounter a problem, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}
+
+{\bfseries If} encounter a problem, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}
+
+Send U\+\_\+\+L\+\_\+\+Data\+End byte and Check\+Sum.
+
+{\bfseries If} encounter a problem, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}
+
+{\bfseries If} encounter a problem, return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}
+
 Waiting for the \hyperlink{group___u_a_r_t___control___from_ga5bef931d5b249bb5d33e68f5262d8ec7}{L\+\_\+\+Data\+\_\+confirm\+\_\+success}.
 
-Return \hyperlink{group___p_h___error___code_ga495ce5ac265432fc88f35462ea1515f8}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}.
+Return \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}.
+
+Return \hyperlink{group___p_h___error___code_gaddc21322438e03e6789aacba1aeb75c2}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+A\+T\+A\+\_\+\+C\+O\+N\+\_\+\+F\+A\+IL}.
 
 Else return \hyperlink{group___p_h___error___code_gaae8d2172a18fdde6957c77af378c2574}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}. \index{K\+N\+X P\+H Services@{K\+N\+X P\+H Services}!K\+N\+X\+\_\+\+Ph\+\_\+\+Reset@{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset}}
 \index{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset@{K\+N\+X\+\_\+\+Ph\+\_\+\+Reset}!K\+N\+X P\+H Services@{K\+N\+X P\+H Services}}
@@ -69,7 +113,7 @@ Send \hyperlink{group___k_n_x___p_h___sup___exported___types_gga78f5bed722457f02
 
 Waiting for the \hyperlink{group___u_a_r_t___control___from_gade9c58399a01abdaa03bbecbf63879c3}{Reset\+\_\+indication}.
 
-{\bfseries If} receive the response, set state to \hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a69a4299f68e66ea3fbe9477582ac02cd}{P\+H\+\_\+\+R\+E\+S\+ET}.
+{\bfseries If} receive the response, set state to \hyperlink{group___k_n_x___p_h___sup___exported___types_gga5b665a94bef912fbfbea7cc949ed0e49a4be7dd56ae47b708c6f4751714efe930}{P\+H\+\_\+\+N\+O\+R\+M\+AL}.
 
 Return \hyperlink{group___p_h___error___code_ga67055c114ec03135c28e1cb6a3d68f5a}{P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+NE}.
 

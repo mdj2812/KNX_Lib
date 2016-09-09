@@ -21,6 +21,8 @@ uint8\+\_\+t \hyperlink{group___k_n_x___d_l___exported___functions___group1_gad0
 \begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{group___k_n_x___d_l}{K\+NX Data Link Layer} module. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{group___k_n_x___d_l___exported___functions___group2_ga92e01d8fd06b0e629413b1b2316d88df}{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req} (uint8\+\_\+t Tx\+\_\+\+FT, uint8\+\_\+t Tx\+\_\+\+AT, uint16\+\_\+t Tx\+\_\+\+DA, uint8\+\_\+t Tx\+\_\+\+Pri, uint8\+\_\+t $\ast$Tx\+\_\+\+L\+S\+DU, uint8\+\_\+t Tx\+\_\+\+LG)
 \begin{DoxyCompactList}\small\item\em Send a frame to the K\+NX bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___d_l___exported___functions___group2_ga0c46f3170607b4b8c5026154d678c18e}{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+rec} (uint8\+\_\+t $\ast$Rx\+\_\+\+FT, uint8\+\_\+t $\ast$Rx\+\_\+\+AT, uint16\+\_\+t $\ast$Rx\+\_\+\+SA, uint8\+\_\+t $\ast$Rx\+\_\+\+Pri, uint8\+\_\+t $\ast$Rx\+\_\+\+L\+S\+DU, uint8\+\_\+t $\ast$Rx\+\_\+\+LG)
+\begin{DoxyCompactList}\small\item\em Receive a frame from the K\+NX bus. \end{DoxyCompactList}\item 
 \hyperlink{group___k_n_x___d_l___exported___types_ga143539be3680d9b7f990a9dfe1df40fe}{D\+L\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___d_l___exported___functions___group3_gabe22c5173dc290746ca2a1f33aefe759}{K\+N\+X\+\_\+\+D\+L\+\_\+\+Get\+State} (void)
 \begin{DoxyCompactList}\small\item\em Getter of the status of the Data Link Layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
@@ -28,7 +30,15 @@ uint8\+\_\+t \hyperlink{group___k_n_x___d_l___exported___functions___group2_ga92
 \item 
 static const uint16\+\_\+t \hyperlink{group___k_n_x___d_l___private___consts_gac60d0cbde03099cfdf926cb87ad37206}{retry\+Times} = 10
 \begin{DoxyCompactList}\small\item\em Maximal times to retry the request in case of failure. \end{DoxyCompactList}\item 
-static const uint16\+\_\+t \hyperlink{group___k_n_x___d_l___private___consts_ga2b7e3f895f199cee7da6f73056ad3645}{K\+N\+X\+\_\+\+D\+L\+\_\+\+SA} = 0x00
+uint8\+\_\+t \hyperlink{group___k_n_x___d_l___private___consts_ga82b0e0c613d6742e36e1b84d816bae53}{Tx\+\_\+\+L\+P\+D\+U\+\_\+\+Datas} \mbox{[}\hyperlink{group___k_n_x___frame_gaf9b1b2ba12857a4bf11289dac8c5462d}{F\+R\+A\+M\+E\+\_\+\+S\+I\+ZE}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The buffer to store the data before transmitted. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___k_n_x___d_l___private___consts_ga16be76eb705adbb96d8b8b402326c8de}{Tx\+\_\+\+L\+P\+D\+U\+\_\+\+Datas\+\_\+length}
+\begin{DoxyCompactList}\small\item\em The length of the \hyperlink{group___k_n_x___d_l___private___consts_ga82b0e0c613d6742e36e1b84d816bae53}{Tx\+\_\+\+L\+P\+D\+U\+\_\+\+Datas}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___d_l___private___consts_gacbfe30d397d569ba00fc3e27f4f3d782}{Rx\+\_\+\+L\+P\+D\+U\+\_\+\+Datas} \mbox{[}\hyperlink{group___k_n_x___frame_gaf9b1b2ba12857a4bf11289dac8c5462d}{F\+R\+A\+M\+E\+\_\+\+S\+I\+ZE}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The buffer to store the data received. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___k_n_x___d_l___private___consts_ga4b450ebeedfcc1afdf128fe600be3f73}{Rx\+\_\+\+L\+P\+D\+U\+\_\+\+Datas\+\_\+length}
+\begin{DoxyCompactList}\small\item\em The length of the \hyperlink{group___k_n_x___d_l___private___consts_gacbfe30d397d569ba00fc3e27f4f3d782}{Rx\+\_\+\+L\+P\+D\+U\+\_\+\+Datas}. \end{DoxyCompactList}\item 
+static const uint16\+\_\+t \hyperlink{group___k_n_x___d_l___private___consts_ga2b7e3f895f199cee7da6f73056ad3645}{K\+N\+X\+\_\+\+D\+L\+\_\+\+SA} = 0x0000
 \begin{DoxyCompactList}\small\item\em Current address of the device. \end{DoxyCompactList}\item 
 static \hyperlink{group___k_n_x___d_l___exported___types_ga143539be3680d9b7f990a9dfe1df40fe}{D\+L\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___d_l___private___variables_gacea80ec8cf0e99ebe15e3205b7d273a9}{K\+N\+X\+\_\+\+D\+L\+\_\+\+S\+T\+A\+TE}
 \begin{DoxyCompactList}\small\item\em Current state of K\+NX Data Link Layer. \end{DoxyCompactList}\end{DoxyCompactItemize}

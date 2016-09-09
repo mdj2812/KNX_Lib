@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>My Project: KNX Data Link Layer Services functions</title>
+<title>KNX_Lib: KNX Data Link Layer Services functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">KNX_Lib
    </div>
   </td>
  </tr>
@@ -88,9 +88,78 @@ Functions</h2></td></tr>
 <tr class="memitem:ga92e01d8fd06b0e629413b1b2316d88df"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___d_l___exported___functions___group2.html#ga92e01d8fd06b0e629413b1b2316d88df">KNX_DL_Data_req</a> (uint8_t Tx_FT, uint8_t Tx_AT, uint16_t Tx_DA, uint8_t Tx_Pri, uint8_t *Tx_LSDU, uint8_t Tx_LG)</td></tr>
 <tr class="memdesc:ga92e01d8fd06b0e629413b1b2316d88df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a frame to the KNX bus.  <a href="#ga92e01d8fd06b0e629413b1b2316d88df">More...</a><br /></td></tr>
 <tr class="separator:ga92e01d8fd06b0e629413b1b2316d88df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c46f3170607b4b8c5026154d678c18e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___d_l___exported___functions___group2.html#ga0c46f3170607b4b8c5026154d678c18e">KNX_DL_Data_rec</a> (uint8_t *Rx_FT, uint8_t *Rx_AT, uint16_t *Rx_SA, uint8_t *Rx_Pri, uint8_t *Rx_LSDU, uint8_t *Rx_LG)</td></tr>
+<tr class="memdesc:ga0c46f3170607b4b8c5026154d678c18e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a frame from the KNX bus.  <a href="#ga0c46f3170607b4b8c5026154d678c18e">More...</a><br /></td></tr>
+<tr class="separator:ga0c46f3170607b4b8c5026154d678c18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga0c46f3170607b4b8c5026154d678c18e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t KNX_DL_Data_rec </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>Rx_FT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>Rx_AT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>Rx_SA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>Rx_Pri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>Rx_LSDU</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>Rx_LG</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive a frame from the KNX bus. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td>code, See <a class="el" href="group___d_l___error___code.html">Data Link Layer Error Code</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If Data Fomat is standard</p>
+<p>If Checksum is incorrect</p>
+<p>Send NACK</p>
+<p>If length is incorrect</p>
+<p>Send NACK</p>
+<p>If in busy mode</p>
+<p>Send BUSY</p>
+<p>Send ACK </p>
+
+</div>
+</div>
 <a class="anchor" id="ga92e01d8fd06b0e629413b1b2316d88df"></a>
 <div class="memitem">
 <div class="memproto">

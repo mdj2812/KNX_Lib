@@ -8,6 +8,7 @@ Auxiliary functions for K\+NX Library. This file provides functions to manage fo
 {\ttfamily \#include $<$stdint.\+h$>$}\\*
 {\ttfamily \#include $<$string.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}K\+N\+X\+\_\+\+Aux.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}K\+N\+X\+\_\+def.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\\*
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
@@ -23,16 +24,18 @@ uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group1_ga2e
 \begin{DoxyCompactList}\small\item\em Convert a {\ttfamily char} message into an {\ttfamily uint8\+\_\+t} value. \end{DoxyCompactList}\item 
 void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga21f8fee0433331a8a98b552d934d7fa9}{K\+N\+X\+\_\+\+Init\+Timer} (void)
 \begin{DoxyCompactList}\small\item\em Initilize the timer. \end{DoxyCompactList}\item 
-void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga2d2be4d767e87be2cfab3a33c051c9b8}{K\+N\+X\+\_\+\+Start\+Timer} (uint32\+\_\+t Timeout)
-\begin{DoxyCompactList}\small\item\em Start a timer of a timeout duration given. \end{DoxyCompactList}\item 
-uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_gab95ee459c86b8b8a0045ab24d45d617b}{K\+N\+X\+\_\+\+Get\+Time} (void)
+void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga60ec3366b45d424dc5e5eabe1dbee506}{K\+N\+X\+\_\+\+Start\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Start the timer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga51c9a1ad6a587a04465a0c26b685e571}{K\+N\+X\+\_\+\+Get\+Tick} (void)
 \begin{DoxyCompactList}\small\item\em Get the timer. \end{DoxyCompactList}\item 
-\hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___aux___exported___functions___group2_ga34d3da57b9d1757a9724693c9e6bbe45}{K\+N\+X\+\_\+\+Get\+Timer\+State} (void)
-\begin{DoxyCompactList}\small\item\em Get the timer\textquotesingle{}s status. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga44b5f88a0f2b0590924627b428107e97}{K\+N\+X\+\_\+\+Stop\+Timer} (void)
 \begin{DoxyCompactList}\small\item\em Stop the timer. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga4a1fd53320eeed9eb08d09ec720f3d42}{K\+N\+X\+\_\+\+Reset\+Timer} (void)
 \begin{DoxyCompactList}\small\item\em Reset the timer. \end{DoxyCompactList}\item 
+\hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___aux___exported___functions___group2_ga34d3da57b9d1757a9724693c9e6bbe45}{K\+N\+X\+\_\+\+Get\+Timer\+State} (void)
+\begin{DoxyCompactList}\small\item\em Get the timer\textquotesingle{}s status. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga0b0455e3fb72a46c630878d1d68d0a6b}{K\+N\+X\+\_\+\+Check\+For\+Time\+Out} (uint32\+\_\+t $\ast$const time\+On\+Entering, uint32\+\_\+t $\ast$const ticks\+To\+Wait)
+\begin{DoxyCompactList}\small\item\em Check for time out or not. \end{DoxyCompactList}\item 
 void \hyperlink{group___k_n_x___aux___exported___functions___group2_gad9635bb60f2ba98f58874ef46e65c36d}{K\+N\+X\+\_\+systick\+\_\+isr} (void)
 \begin{DoxyCompactList}\small\item\em Systick interrupt routines. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group3_gaea93e12f866be1d8ab744f070182ef2b}{K\+N\+X\+\_\+\+Vertical\+Parity} (uint8\+\_\+t $\ast$datas, uint16\+\_\+t length)
@@ -44,8 +47,6 @@ static const char \hyperlink{group___k_n_x___aux___private___consts_ga938e545954
 \begin{DoxyCompactList}\small\item\em Table of hexadecimal numbers. \end{DoxyCompactList}\item 
 volatile \hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___aux___private___variables_ga23c914a3038b7651aeb6bc1f444fe805}{timer\+\_\+state}
 \begin{DoxyCompactList}\small\item\em Status of the timer. \end{DoxyCompactList}\item 
-static uint32\+\_\+t \hyperlink{group___k_n_x___aux___private___variables_ga9425be3f8a3c77c3e1f30e8759fc65e8}{timer\+\_\+timeout}
-\begin{DoxyCompactList}\small\item\em Timeout duration of the timer. \end{DoxyCompactList}\item 
 volatile uint32\+\_\+t \hyperlink{group___k_n_x___aux___private___variables_ga8c702713be164664bf7d3c5f9cc9002d}{timer\+\_\+tick}
 \begin{DoxyCompactList}\small\item\em Counter of the timer, the unit is ms. \end{DoxyCompactList}\item 
 static unsigned char \hyperlink{group___k_n_x___aux___private___variables_gab56635544aea253fe5a75ded7dda1b2f}{Aux\+\_\+\+Err\+\_\+\+Msg} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}Aux\mbox{]}Error Code\+: 0x\+X\+X\textbackslash{}r\textbackslash{}n\char`\"{}

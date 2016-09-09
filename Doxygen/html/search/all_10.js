@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['u_5fackinformation_5faddressed',['U_AckInformation_Addressed',['../group___u_a_r_t___control___to.html#gadbcf1715439a76db9d5a416c772b7d6a',1,'KNX_def.h']]],
-  ['u_5fackinformation_5fnotaddressed',['U_AckInformation_NotAddressed',['../group___u_a_r_t___control___to.html#gaa58e8b87e2c7afa233dc9143f9ed3000',1,'KNX_def.h']]],
+  ['u_5fackinformation_5fack',['U_AckInformation_ACK',['../group___u_a_r_t___control___to.html#gae8d1e40bf2415207f384e3fdd134c844',1,'KNX_def.h']]],
+  ['u_5fackinformation_5fbusy',['U_AckInformation_Busy',['../group___u_a_r_t___control___to.html#gacd4e123da098779b9de44bbc97c85f18',1,'KNX_def.h']]],
+  ['u_5fackinformation_5fnack',['U_AckInformation_Nack',['../group___u_a_r_t___control___to.html#gad838fe8a0601483afcb0e90edd03c277',1,'KNX_def.h']]],
   ['u_5factivatebusmon',['U_ActivateBusmon',['../group___u_a_r_t___control___to.html#ga08302041c8622699abb02954c7942d33',1,'KNX_def.h']]],
   ['u_5factivatebusymode',['U_ActivateBusyMode',['../group___u_a_r_t___control___to.html#ga570dbcb6f3b58812795897e653cf6bcd',1,'KNX_def.h']]],
   ['u_5factivatecrc',['U_ActivateCRC',['../group___u_a_r_t___control___to.html#gaa8801c2c6b23ad1b63c85b6f04b08c6d',1,'KNX_def.h']]],
+  ['u_5fl_5fdatacontinue',['U_L_DataContinue',['../group___u_a_r_t___control___to.html#ga2e3fb33682715cbda34c2a576259b955',1,'KNX_def.h']]],
+  ['u_5fl_5fdataend',['U_L_DataEnd',['../group___u_a_r_t___control___to.html#gaf314a3afc396db4fa556d4246907814e',1,'KNX_def.h']]],
   ['u_5fl_5fdatastart',['U_L_DataStart',['../group___u_a_r_t___control___to.html#ga5a6fadacef419bffab0a2ad00d4a4a3a',1,'KNX_def.h']]],
   ['u_5fmxrstcnt',['U_MxRstCnt',['../group___u_a_r_t___control___to.html#ga8898cd82315a21d0365c60b05a9450f9',1,'KNX_def.h']]],
   ['u_5fnone',['U_None',['../group___u_a_r_t___control___to.html#ga30eddf5dc99c172d71df52a3a9c466bc',1,'KNX_def.h']]],

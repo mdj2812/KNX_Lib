@@ -8,6 +8,7 @@ var searchData=
   ['ph_5fdebug_5ferror_5fnone',['PH_Debug_ERROR_NONE',['../group___p_h___debug___error___code.html#ga25e714b84859b15002f51ca15a810102',1,'debug.h']]],
   ['ph_5fdebug_5ferror_5ftimeout',['PH_Debug_ERROR_TIMEOUT',['../group___p_h___debug___error___code.html#ga2404c547f870b71cff749676950a322f',1,'debug.h']]],
   ['physical_20layer_20error_20code',['Physical Layer Error Code',['../group___p_h___error___code.html',1,'']]],
+  ['ph_5ferror_5fdata_5fcon_5ffail',['PH_ERROR_DATA_CON_FAIL',['../group___p_h___error___code.html#gaddc21322438e03e6789aacba1aeb75c2',1,'KNX_Ph.h']]],
   ['ph_5ferror_5finit',['PH_ERROR_INIT',['../group___p_h___error___code.html#ga15fbdf4edfc98283ef0f1b7c2fc0a47b',1,'KNX_Ph.h']]],
   ['ph_5ferror_5fnone',['PH_ERROR_NONE',['../group___p_h___error___code.html#ga67055c114ec03135c28e1cb6a3d68f5a',1,'KNX_Ph.h']]],
   ['ph_5ferror_5frequest',['PH_ERROR_REQUEST',['../group___p_h___error___code.html#ga76393e5665e76130e95c73aab378c53d',1,'KNX_Ph.h']]],

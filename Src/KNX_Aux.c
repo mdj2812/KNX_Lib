@@ -15,6 +15,7 @@
 #include <stdint.h>
 #include <string.h>
 #include "KNX_Aux.h"
+#include "KNX_def.h"
 #include "debug.h"
 
 /** @addtogroup KNX_Lib
@@ -42,8 +43,6 @@ static const char hex_num[] = {'0', '1', '2', '3', '4', '5', '6', '7' , '8', '9'
   */
 /** \brief Status of the timer */
 volatile TIMER_Status_t timer_state;
-/** \brief Timeout duration of the timer */
-static uint32_t timer_timeout;
 /** \brief Counter of the timer, the unit is ms */
 volatile uint32_t timer_tick;
 
@@ -149,37 +148,24 @@ void KNX_InitTimer(void)
 }
 
 /**
- *  @brief      Start a timer of a timeout duration given 
- *  @param      Timeout: timeout duration of the timer.
+ *  @brief      Start the timer.
  */
-void KNX_StartTimer(uint32_t Timeout)
+void KNX_StartTimer(void)
 {
   /** Set timer state to running. */
   timer_state = TIMER_RUNNING;
   
   /** Set timer counter to 0. */
   timer_tick = 0;
-  
-  /** Set timeout duration. */
-  timer_timeout = Timeout;
 }
 
 /**
  *  @brief      Get the timer. 
  *  @retval     Value of the timer.
  */
-uint32_t KNX_GetTime(void)
+uint32_t KNX_GetTick(void)
 {
   return timer_tick;
-}
-
-/**
- *  @brief      Get the timer's status. 
- *  @retval     Timer's status: ::TIMER_Status_t.
- */
-TIMER_Status_t KNX_GetTimerState(void)
-{
-  return timer_state;
 }
 
 /**
@@ -214,6 +200,43 @@ uint32_t KNX_ResetTimer(void)
 }
 
 /**
+ *  @brief      Get the timer's status. 
+ *  @retval     Timer's status: ::TIMER_Status_t.
+ */
+TIMER_Status_t KNX_GetTimerState(void)
+{
+  return timer_state;
+}
+
+/**
+ *  @brief      Check for time out or not. 
+ *  @param      timeOnEntering: Time on entering this function
+ *  @param      ticksToWait: ticks to wait before time out
+ *  @retval     0 for false, 1 for true.
+ */
+uint8_t KNX_CheckForTimeOut(uint32_t * const timeOnEntering, uint32_t * const ticksToWait)
+{
+    /* Minor optimisation.  The tick count cannot change in this block. */
+    const uint32_t xConstTickCount = KNX_GetTick();
+
+    if( *ticksToWait == KNX_MAX_DELAY )
+    {
+      return 0;
+    }
+    else if(xConstTickCount - *timeOnEntering < *ticksToWait )
+    {
+      /* Not a genuine timeout. Adjust parameters for time remaining. */
+      *ticksToWait -= (xConstTickCount - *timeOnEntering );
+      *timeOnEntering = KNX_GetTick();
+      return 0;
+    }
+    else
+    {
+      return 1;
+    }
+}
+
+/**
  *  @brief      Systick interrupt routines. 
  */
 void KNX_systick_isr(void)
@@ -221,11 +244,6 @@ void KNX_systick_isr(void)
   if(timer_state == TIMER_RUNNING)
   {
     timer_tick++;
-    
-    if(timer_tick >= timer_timeout)
-    {
-      timer_state = TIMER_TIMEOUT;
-    }
   }
 }
 

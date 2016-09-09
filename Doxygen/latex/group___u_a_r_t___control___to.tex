@@ -16,9 +16,11 @@ Services to U\+A\+RT.
 \item 
 \#define \hyperlink{group___u_a_r_t___control___to_ga08302041c8622699abb02954c7942d33}{U\+\_\+\+Activate\+Busmon}~((uint8\+\_\+t)0x05\+U)
 \item 
-\#define \hyperlink{group___u_a_r_t___control___to_gadbcf1715439a76db9d5a416c772b7d6a}{U\+\_\+\+Ack\+Information\+\_\+\+Addressed}~((uint8\+\_\+t)0x11\+U)
+\#define \hyperlink{group___u_a_r_t___control___to_gae8d1e40bf2415207f384e3fdd134c844}{U\+\_\+\+Ack\+Information\+\_\+\+A\+CK}~((uint8\+\_\+t)0x11\+U)
 \item 
-\#define \hyperlink{group___u_a_r_t___control___to_gaa58e8b87e2c7afa233dc9143f9ed3000}{U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed}~((uint8\+\_\+t)0x11\+U)
+\#define \hyperlink{group___u_a_r_t___control___to_gacd4e123da098779b9de44bbc97c85f18}{U\+\_\+\+Ack\+Information\+\_\+\+Busy}~((uint8\+\_\+t)0x12\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gad838fe8a0601483afcb0e90edd03c277}{U\+\_\+\+Ack\+Information\+\_\+\+Nack}~((uint8\+\_\+t)0x14\+U)
 \item 
 \#define \hyperlink{group___u_a_r_t___control___to_ga0fd706c07225b8d94a9e61178e9f1de2}{U\+\_\+\+Product\+I\+D\+\_\+request}~((uint8\+\_\+t)0x20\+U)
 \item 
@@ -33,6 +35,10 @@ Services to U\+A\+RT.
 \#define \hyperlink{group___u_a_r_t___control___to_ga1b727950a6079fa1f299e08204ad8923}{U\+\_\+\+Set\+Address}~((uint8\+\_\+t)0x28\+U)
 \item 
 \#define \hyperlink{group___u_a_r_t___control___to_ga5a6fadacef419bffab0a2ad00d4a4a3a}{U\+\_\+\+L\+\_\+\+Data\+Start}~((uint8\+\_\+t)0x80\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga2e3fb33682715cbda34c2a576259b955}{U\+\_\+\+L\+\_\+\+Data\+Continue}~((uint8\+\_\+t)0x80\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gaf314a3afc396db4fa556d4246907814e}{U\+\_\+\+L\+\_\+\+Data\+End}~((uint8\+\_\+t)0x80\+U)
 \end{DoxyCompactItemize}
 
 
@@ -42,13 +48,16 @@ Services to U\+A\+RT.
 
 
 \subsection{Macro Definition Documentation}
-\index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Ack\+Information\+\_\+\+Addressed@{U\+\_\+\+Ack\+Information\+\_\+\+Addressed}}
-\index{U\+\_\+\+Ack\+Information\+\_\+\+Addressed@{U\+\_\+\+Ack\+Information\+\_\+\+Addressed}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
-\subsubsection[{\texorpdfstring{U\+\_\+\+Ack\+Information\+\_\+\+Addressed}{U_AckInformation_Addressed}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+Ack\+Information\+\_\+\+Addressed~((uint8\+\_\+t)0x11\+U)}\hypertarget{group___u_a_r_t___control___to_gadbcf1715439a76db9d5a416c772b7d6a}{}\label{group___u_a_r_t___control___to_gadbcf1715439a76db9d5a416c772b7d6a}
-Acknowledgment addressed \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed@{U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed}}
-\index{U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed@{U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
-\subsubsection[{\texorpdfstring{U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed}{U_AckInformation_NotAddressed}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed~((uint8\+\_\+t)0x11\+U)}\hypertarget{group___u_a_r_t___control___to_gaa58e8b87e2c7afa233dc9143f9ed3000}{}\label{group___u_a_r_t___control___to_gaa58e8b87e2c7afa233dc9143f9ed3000}
-Acknowledgment not addressed \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Activate\+Busmon@{U\+\_\+\+Activate\+Busmon}}
+\index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Ack\+Information\+\_\+\+A\+CK@{U\+\_\+\+Ack\+Information\+\_\+\+A\+CK}}
+\index{U\+\_\+\+Ack\+Information\+\_\+\+A\+CK@{U\+\_\+\+Ack\+Information\+\_\+\+A\+CK}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
+\subsubsection[{\texorpdfstring{U\+\_\+\+Ack\+Information\+\_\+\+A\+CK}{U_AckInformation_ACK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+Ack\+Information\+\_\+\+A\+CK~((uint8\+\_\+t)0x11\+U)}\hypertarget{group___u_a_r_t___control___to_gae8d1e40bf2415207f384e3fdd134c844}{}\label{group___u_a_r_t___control___to_gae8d1e40bf2415207f384e3fdd134c844}
+Acknowledgment addressed \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Ack\+Information\+\_\+\+Busy@{U\+\_\+\+Ack\+Information\+\_\+\+Busy}}
+\index{U\+\_\+\+Ack\+Information\+\_\+\+Busy@{U\+\_\+\+Ack\+Information\+\_\+\+Busy}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
+\subsubsection[{\texorpdfstring{U\+\_\+\+Ack\+Information\+\_\+\+Busy}{U_AckInformation_Busy}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+Ack\+Information\+\_\+\+Busy~((uint8\+\_\+t)0x12\+U)}\hypertarget{group___u_a_r_t___control___to_gacd4e123da098779b9de44bbc97c85f18}{}\label{group___u_a_r_t___control___to_gacd4e123da098779b9de44bbc97c85f18}
+Acknowledgment busy \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Ack\+Information\+\_\+\+Nack@{U\+\_\+\+Ack\+Information\+\_\+\+Nack}}
+\index{U\+\_\+\+Ack\+Information\+\_\+\+Nack@{U\+\_\+\+Ack\+Information\+\_\+\+Nack}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
+\subsubsection[{\texorpdfstring{U\+\_\+\+Ack\+Information\+\_\+\+Nack}{U_AckInformation_Nack}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+Ack\+Information\+\_\+\+Nack~((uint8\+\_\+t)0x14\+U)}\hypertarget{group___u_a_r_t___control___to_gad838fe8a0601483afcb0e90edd03c277}{}\label{group___u_a_r_t___control___to_gad838fe8a0601483afcb0e90edd03c277}
+Acknowledgment N\+A\+CK \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Activate\+Busmon@{U\+\_\+\+Activate\+Busmon}}
 \index{U\+\_\+\+Activate\+Busmon@{U\+\_\+\+Activate\+Busmon}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
 \subsubsection[{\texorpdfstring{U\+\_\+\+Activate\+Busmon}{U_ActivateBusmon}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+Activate\+Busmon~((uint8\+\_\+t)0x05\+U)}\hypertarget{group___u_a_r_t___control___to_ga08302041c8622699abb02954c7942d33}{}\label{group___u_a_r_t___control___to_ga08302041c8622699abb02954c7942d33}
 Activate monitor mode \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Activate\+Busy\+Mode@{U\+\_\+\+Activate\+Busy\+Mode}}
@@ -57,10 +66,16 @@ Activate monitor mode \index{Field of Services to U\+A\+RT@{Field of Services to
 Activate busy mode \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Activate\+C\+RC@{U\+\_\+\+Activate\+C\+RC}}
 \index{U\+\_\+\+Activate\+C\+RC@{U\+\_\+\+Activate\+C\+RC}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
 \subsubsection[{\texorpdfstring{U\+\_\+\+Activate\+C\+RC}{U_ActivateCRC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+Activate\+C\+RC~((uint8\+\_\+t)0x25\+U)}\hypertarget{group___u_a_r_t___control___to_gaa8801c2c6b23ad1b63c85b6f04b08c6d}{}\label{group___u_a_r_t___control___to_gaa8801c2c6b23ad1b63c85b6f04b08c6d}
-Activate C\+RC \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+L\+\_\+\+Data\+Start@{U\+\_\+\+L\+\_\+\+Data\+Start}}
+Activate C\+RC \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+L\+\_\+\+Data\+Continue@{U\+\_\+\+L\+\_\+\+Data\+Continue}}
+\index{U\+\_\+\+L\+\_\+\+Data\+Continue@{U\+\_\+\+L\+\_\+\+Data\+Continue}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
+\subsubsection[{\texorpdfstring{U\+\_\+\+L\+\_\+\+Data\+Continue}{U_L_DataContinue}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+L\+\_\+\+Data\+Continue~((uint8\+\_\+t)0x80\+U)}\hypertarget{group___u_a_r_t___control___to_ga2e3fb33682715cbda34c2a576259b955}{}\label{group___u_a_r_t___control___to_ga2e3fb33682715cbda34c2a576259b955}
+Data Continue Byte \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+L\+\_\+\+Data\+End@{U\+\_\+\+L\+\_\+\+Data\+End}}
+\index{U\+\_\+\+L\+\_\+\+Data\+End@{U\+\_\+\+L\+\_\+\+Data\+End}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
+\subsubsection[{\texorpdfstring{U\+\_\+\+L\+\_\+\+Data\+End}{U_L_DataEnd}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+L\+\_\+\+Data\+End~((uint8\+\_\+t)0x80\+U)}\hypertarget{group___u_a_r_t___control___to_gaf314a3afc396db4fa556d4246907814e}{}\label{group___u_a_r_t___control___to_gaf314a3afc396db4fa556d4246907814e}
+Data End Byte \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+L\+\_\+\+Data\+Start@{U\+\_\+\+L\+\_\+\+Data\+Start}}
 \index{U\+\_\+\+L\+\_\+\+Data\+Start@{U\+\_\+\+L\+\_\+\+Data\+Start}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
 \subsubsection[{\texorpdfstring{U\+\_\+\+L\+\_\+\+Data\+Start}{U_L_DataStart}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+L\+\_\+\+Data\+Start~((uint8\+\_\+t)0x80\+U)}\hypertarget{group___u_a_r_t___control___to_ga5a6fadacef419bffab0a2ad00d4a4a3a}{}\label{group___u_a_r_t___control___to_ga5a6fadacef419bffab0a2ad00d4a4a3a}
-Activate C\+RC \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Mx\+Rst\+Cnt@{U\+\_\+\+Mx\+Rst\+Cnt}}
+Data Start Byte \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+Mx\+Rst\+Cnt@{U\+\_\+\+Mx\+Rst\+Cnt}}
 \index{U\+\_\+\+Mx\+Rst\+Cnt@{U\+\_\+\+Mx\+Rst\+Cnt}!Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}}
 \subsubsection[{\texorpdfstring{U\+\_\+\+Mx\+Rst\+Cnt}{U_MxRstCnt}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+\_\+\+Mx\+Rst\+Cnt~((uint8\+\_\+t)0x24\+U)}\hypertarget{group___u_a_r_t___control___to_ga8898cd82315a21d0365c60b05a9450f9}{}\label{group___u_a_r_t___control___to_ga8898cd82315a21d0365c60b05a9450f9}
 Adjust the max number of repetition \index{Field of Services to U\+A\+RT@{Field of Services to U\+A\+RT}!U\+\_\+\+None@{U\+\_\+\+None}}

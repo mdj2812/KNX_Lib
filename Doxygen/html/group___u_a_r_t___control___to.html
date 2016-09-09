@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>My Project: Field of Services to UART</title>
+<title>KNX_Lib: Field of Services to UART</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">KNX_Lib
    </div>
   </td>
  </tr>
@@ -96,10 +96,12 @@ Macros</h2></td></tr>
 <tr class="separator:ga8dda3117e8869a900e5c5fe6f1b3a768"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga08302041c8622699abb02954c7942d33"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#ga08302041c8622699abb02954c7942d33">U_ActivateBusmon</a>&#160;&#160;&#160;((uint8_t)0x05U)</td></tr>
 <tr class="separator:ga08302041c8622699abb02954c7942d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadbcf1715439a76db9d5a416c772b7d6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#gadbcf1715439a76db9d5a416c772b7d6a">U_AckInformation_Addressed</a>&#160;&#160;&#160;((uint8_t)0x11U)</td></tr>
-<tr class="separator:gadbcf1715439a76db9d5a416c772b7d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa58e8b87e2c7afa233dc9143f9ed3000"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#gaa58e8b87e2c7afa233dc9143f9ed3000">U_AckInformation_NotAddressed</a>&#160;&#160;&#160;((uint8_t)0x11U)</td></tr>
-<tr class="separator:gaa58e8b87e2c7afa233dc9143f9ed3000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8d1e40bf2415207f384e3fdd134c844"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#gae8d1e40bf2415207f384e3fdd134c844">U_AckInformation_ACK</a>&#160;&#160;&#160;((uint8_t)0x11U)</td></tr>
+<tr class="separator:gae8d1e40bf2415207f384e3fdd134c844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd4e123da098779b9de44bbc97c85f18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#gacd4e123da098779b9de44bbc97c85f18">U_AckInformation_Busy</a>&#160;&#160;&#160;((uint8_t)0x12U)</td></tr>
+<tr class="separator:gacd4e123da098779b9de44bbc97c85f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad838fe8a0601483afcb0e90edd03c277"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#gad838fe8a0601483afcb0e90edd03c277">U_AckInformation_Nack</a>&#160;&#160;&#160;((uint8_t)0x14U)</td></tr>
+<tr class="separator:gad838fe8a0601483afcb0e90edd03c277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0fd706c07225b8d94a9e61178e9f1de2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#ga0fd706c07225b8d94a9e61178e9f1de2">U_ProductID_request</a>&#160;&#160;&#160;((uint8_t)0x20U)</td></tr>
 <tr class="separator:ga0fd706c07225b8d94a9e61178e9f1de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga570dbcb6f3b58812795897e653cf6bcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#ga570dbcb6f3b58812795897e653cf6bcd">U_ActivateBusyMode</a>&#160;&#160;&#160;((uint8_t)0x21U)</td></tr>
@@ -114,16 +116,20 @@ Macros</h2></td></tr>
 <tr class="separator:ga1b727950a6079fa1f299e08204ad8923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a6fadacef419bffab0a2ad00d4a4a3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#ga5a6fadacef419bffab0a2ad00d4a4a3a">U_L_DataStart</a>&#160;&#160;&#160;((uint8_t)0x80U)</td></tr>
 <tr class="separator:ga5a6fadacef419bffab0a2ad00d4a4a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e3fb33682715cbda34c2a576259b955"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#ga2e3fb33682715cbda34c2a576259b955">U_L_DataContinue</a>&#160;&#160;&#160;((uint8_t)0x80U)</td></tr>
+<tr class="separator:ga2e3fb33682715cbda34c2a576259b955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf314a3afc396db4fa556d4246907814e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___control___to.html#gaf314a3afc396db4fa556d4246907814e">U_L_DataEnd</a>&#160;&#160;&#160;((uint8_t)0x80U)</td></tr>
+<tr class="separator:gaf314a3afc396db4fa556d4246907814e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Services to UART. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="gadbcf1715439a76db9d5a416c772b7d6a"></a>
+<a class="anchor" id="gae8d1e40bf2415207f384e3fdd134c844"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define U_AckInformation_Addressed&#160;&#160;&#160;((uint8_t)0x11U)</td>
+          <td class="memname">#define U_AckInformation_ACK&#160;&#160;&#160;((uint8_t)0x11U)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -131,16 +137,29 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gaa58e8b87e2c7afa233dc9143f9ed3000"></a>
+<a class="anchor" id="gacd4e123da098779b9de44bbc97c85f18"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define U_AckInformation_NotAddressed&#160;&#160;&#160;((uint8_t)0x11U)</td>
+          <td class="memname">#define U_AckInformation_Busy&#160;&#160;&#160;((uint8_t)0x12U)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Acknowledgment not addressed </p>
+<p>Acknowledgment busy </p>
+
+</div>
+</div>
+<a class="anchor" id="gad838fe8a0601483afcb0e90edd03c277"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define U_AckInformation_Nack&#160;&#160;&#160;((uint8_t)0x14U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Acknowledgment NACK </p>
 
 </div>
 </div>
@@ -183,6 +202,32 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga2e3fb33682715cbda34c2a576259b955"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define U_L_DataContinue&#160;&#160;&#160;((uint8_t)0x80U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Data Continue Byte </p>
+
+</div>
+</div>
+<a class="anchor" id="gaf314a3afc396db4fa556d4246907814e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define U_L_DataEnd&#160;&#160;&#160;((uint8_t)0x80U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Data End Byte </p>
+
+</div>
+</div>
 <a class="anchor" id="ga5a6fadacef419bffab0a2ad00d4a4a3a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +237,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Activate CRC </p>
+<p>Data Start Byte </p>
 
 </div>
 </div>

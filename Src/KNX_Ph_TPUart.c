@@ -60,7 +60,7 @@ uint8_t KNX_PH_TPUart_init(void)
   knx_huart.Init.BaudRate = 9600;
   knx_huart.Init.WordLength = UART_WORDLENGTH_8B;
   knx_huart.Init.StopBits = UART_STOPBITS_1;
-  knx_huart.Init.Parity = UART_PARITY_NONE;
+  knx_huart.Init.Parity = UART_PARITY_EVEN;
   knx_huart.Init.Mode = UART_MODE_TX_RX;
   knx_huart.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   knx_huart.Init.OverSampling = UART_OVERSAMPLING_16;

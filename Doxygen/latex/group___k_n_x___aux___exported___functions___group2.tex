@@ -6,16 +6,18 @@
 void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga21f8fee0433331a8a98b552d934d7fa9}{K\+N\+X\+\_\+\+Init\+Timer} (void)\hypertarget{group___k_n_x___aux___exported___functions___group2_ga21f8fee0433331a8a98b552d934d7fa9}{}\label{group___k_n_x___aux___exported___functions___group2_ga21f8fee0433331a8a98b552d934d7fa9}
 
 \begin{DoxyCompactList}\small\item\em Initilize the timer. \end{DoxyCompactList}\item 
-void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga2d2be4d767e87be2cfab3a33c051c9b8}{K\+N\+X\+\_\+\+Start\+Timer} (uint32\+\_\+t Timeout)
-\begin{DoxyCompactList}\small\item\em Start a timer of a timeout duration given. \end{DoxyCompactList}\item 
-uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_gab95ee459c86b8b8a0045ab24d45d617b}{K\+N\+X\+\_\+\+Get\+Time} (void)
+void \hyperlink{group___k_n_x___aux___exported___functions___group2_ga60ec3366b45d424dc5e5eabe1dbee506}{K\+N\+X\+\_\+\+Start\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Start the timer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga51c9a1ad6a587a04465a0c26b685e571}{K\+N\+X\+\_\+\+Get\+Tick} (void)
 \begin{DoxyCompactList}\small\item\em Get the timer. \end{DoxyCompactList}\item 
-\hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___aux___exported___functions___group2_ga34d3da57b9d1757a9724693c9e6bbe45}{K\+N\+X\+\_\+\+Get\+Timer\+State} (void)
-\begin{DoxyCompactList}\small\item\em Get the timer\textquotesingle{}s status. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga44b5f88a0f2b0590924627b428107e97}{K\+N\+X\+\_\+\+Stop\+Timer} (void)
 \begin{DoxyCompactList}\small\item\em Stop the timer. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga4a1fd53320eeed9eb08d09ec720f3d42}{K\+N\+X\+\_\+\+Reset\+Timer} (void)
 \begin{DoxyCompactList}\small\item\em Reset the timer. \end{DoxyCompactList}\item 
+\hyperlink{group___k_n_x___aux___exported___types_ga6ed3d972c6c5995cb3fe41995f121b41}{T\+I\+M\+E\+R\+\_\+\+Status\+\_\+t} \hyperlink{group___k_n_x___aux___exported___functions___group2_ga34d3da57b9d1757a9724693c9e6bbe45}{K\+N\+X\+\_\+\+Get\+Timer\+State} (void)
+\begin{DoxyCompactList}\small\item\em Get the timer\textquotesingle{}s status. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___aux___exported___functions___group2_ga0b0455e3fb72a46c630878d1d68d0a6b}{K\+N\+X\+\_\+\+Check\+For\+Time\+Out} (uint32\+\_\+t $\ast$const time\+On\+Entering, uint32\+\_\+t $\ast$const ticks\+To\+Wait)
+\begin{DoxyCompactList}\small\item\em Check for time out or not. \end{DoxyCompactList}\item 
 void \hyperlink{group___k_n_x___aux___exported___functions___group2_gad9635bb60f2ba98f58874ef46e65c36d}{K\+N\+X\+\_\+systick\+\_\+isr} (void)\hypertarget{group___k_n_x___aux___exported___functions___group2_gad9635bb60f2ba98f58874ef46e65c36d}{}\label{group___k_n_x___aux___exported___functions___group2_gad9635bb60f2ba98f58874ef46e65c36d}
 
 \begin{DoxyCompactList}\small\item\em Systick interrupt routines. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -25,13 +27,37 @@ void \hyperlink{group___k_n_x___aux___exported___functions___group2_gad9635bb60f
 
 
 \subsection{Function Documentation}
-\index{K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}!K\+N\+X\+\_\+\+Get\+Time@{K\+N\+X\+\_\+\+Get\+Time}}
-\index{K\+N\+X\+\_\+\+Get\+Time@{K\+N\+X\+\_\+\+Get\+Time}!K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}}
-\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Get\+Time(void)}{KNX_GetTime(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t K\+N\+X\+\_\+\+Get\+Time (
+\index{K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}!K\+N\+X\+\_\+\+Check\+For\+Time\+Out@{K\+N\+X\+\_\+\+Check\+For\+Time\+Out}}
+\index{K\+N\+X\+\_\+\+Check\+For\+Time\+Out@{K\+N\+X\+\_\+\+Check\+For\+Time\+Out}!K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Check\+For\+Time\+Out(uint32\+\_\+t $\ast$const time\+On\+Entering, uint32\+\_\+t $\ast$const ticks\+To\+Wait)}{KNX_CheckForTimeOut(uint32_t *const timeOnEntering, uint32_t *const ticksToWait)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+Check\+For\+Time\+Out (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$const}]{time\+On\+Entering, }
+\item[{uint32\+\_\+t $\ast$const}]{ticks\+To\+Wait}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___aux___exported___functions___group2_ga0b0455e3fb72a46c630878d1d68d0a6b}{}\label{group___k_n_x___aux___exported___functions___group2_ga0b0455e3fb72a46c630878d1d68d0a6b}
+
+
+Check for time out or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+On\+Entering} & Time on entering this function \\
+\hline
+{\em ticks\+To\+Wait} & ticks to wait before time out \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & for false, 1 for true. \\
+\hline
+\end{DoxyRetVals}
+\index{K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}!K\+N\+X\+\_\+\+Get\+Tick@{K\+N\+X\+\_\+\+Get\+Tick}}
+\index{K\+N\+X\+\_\+\+Get\+Tick@{K\+N\+X\+\_\+\+Get\+Tick}!K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Get\+Tick(void)}{KNX_GetTick(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t K\+N\+X\+\_\+\+Get\+Tick (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{group___k_n_x___aux___exported___functions___group2_gab95ee459c86b8b8a0045ab24d45d617b}{}\label{group___k_n_x___aux___exported___functions___group2_gab95ee459c86b8b8a0045ab24d45d617b}
+)}\hypertarget{group___k_n_x___aux___exported___functions___group2_ga51c9a1ad6a587a04465a0c26b685e571}{}\label{group___k_n_x___aux___exported___functions___group2_ga51c9a1ad6a587a04465a0c26b685e571}
 
 
 Get the timer. 
@@ -77,25 +103,18 @@ Set timer state to reset.
 
 return \hyperlink{group___k_n_x___aux___private___variables_ga8c702713be164664bf7d3c5f9cc9002d}{timer\+\_\+tick} and set it back to 0. \index{K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}!K\+N\+X\+\_\+\+Start\+Timer@{K\+N\+X\+\_\+\+Start\+Timer}}
 \index{K\+N\+X\+\_\+\+Start\+Timer@{K\+N\+X\+\_\+\+Start\+Timer}!K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}}
-\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Start\+Timer(uint32\+\_\+t Timeout)}{KNX_StartTimer(uint32_t Timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}void K\+N\+X\+\_\+\+Start\+Timer (
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Start\+Timer(void)}{KNX_StartTimer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void K\+N\+X\+\_\+\+Start\+Timer (
 \begin{DoxyParamCaption}
-\item[{uint32\+\_\+t}]{Timeout}
+\item[{void}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{group___k_n_x___aux___exported___functions___group2_ga2d2be4d767e87be2cfab3a33c051c9b8}{}\label{group___k_n_x___aux___exported___functions___group2_ga2d2be4d767e87be2cfab3a33c051c9b8}
+)}\hypertarget{group___k_n_x___aux___exported___functions___group2_ga60ec3366b45d424dc5e5eabe1dbee506}{}\label{group___k_n_x___aux___exported___functions___group2_ga60ec3366b45d424dc5e5eabe1dbee506}
 
 
-Start a timer of a timeout duration given. 
+Start the timer. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em Timeout} & timeout duration of the timer. \\
-\hline
-\end{DoxyParams}
 Set timer state to running.
 
-Set timer counter to 0.
-
-Set timeout duration. \index{K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}!K\+N\+X\+\_\+\+Stop\+Timer@{K\+N\+X\+\_\+\+Stop\+Timer}}
+Set timer counter to 0. \index{K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}!K\+N\+X\+\_\+\+Stop\+Timer@{K\+N\+X\+\_\+\+Stop\+Timer}}
 \index{K\+N\+X\+\_\+\+Stop\+Timer@{K\+N\+X\+\_\+\+Stop\+Timer}!K\+N\+X Auxiliary Timer Functions@{K\+N\+X Auxiliary Timer Functions}}
 \subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+Stop\+Timer(void)}{KNX_StopTimer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t K\+N\+X\+\_\+\+Stop\+Timer (
 \begin{DoxyParamCaption}

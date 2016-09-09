@@ -43,14 +43,14 @@
 #define DL_ERROR_INIT           ((uint8_t)0x01U)   /*!< Initialization error  */
 #define DL_ERROR_TIMEOUT        ((uint8_t)0x02U)   /*!< Timeout error         */
 #define DL_ERROR_REQUEST        ((uint8_t)0x03U)   /*!< Invalid request error */
-#define DL_ERROR_RESPONSE       ((uint8_t)0x04U)   /*!< No response error     */
+#define DL_ERROR_RESPONSE       ((uint8_t)0x04U)   /*!< Response error        */
+#define DL_ERROR_DATA_CON_FAIL  ((uint8_t)0x05U)   /*!< Transmission failed   */
+#define DL_ERROR_FRAME          ((uint8_t)0x06U)   /*!< Frame error           */
+#define DL_ERROR_ADDRESS        ((uint8_t)0x06U)   /*!< Address error         */
+#define DL_ERROR_BUSY           ((uint8_t)0x06U)   /*!< Busy                  */
 /**
   * @}
   */
-  
-/** \brief Max size of the frame */
-#define DL_FRAME_SIZE 22
-
 /**
   * @}
   */
@@ -71,7 +71,8 @@ typedef enum
   DL_RESET      = 0x01U,        /*!< Reset State                              */
   DL_NORMAL     = 0x02U,        /*!< Normal Mode                              */
   DL_MONITOR    = 0x03U,        /*!< Monitor Mode                             */
-  DL_STOP       = 0x04U         /*!< Stop Mode                                */
+  DL_STOP       = 0x04U,        /*!< Stop Mode                                */
+  DL_BUSY       = 0x05U         /*!< Busy Mode                                */
 } DL_Status_t;
 /**
   * @}
@@ -97,7 +98,8 @@ uint8_t KNX_DL_Init(void);
   */
 
 /* Services functions  ********************************************************/
-uint8_t KNX_DL_Data_req(uint8_t Tx_FT, uint8_t Tx_DA, uint16_t Tx_AT, uint8_t Tx_Pri, uint8_t *Tx_LSDU, uint8_t Tx_LG);
+uint8_t KNX_DL_Data_req(uint8_t Tx_FT, uint8_t Tx_AT, uint16_t Tx_DA, uint8_t Tx_Pri, uint8_t *Tx_LSDU, uint8_t Tx_LG);
+uint8_t KNX_DL_Data_rec(uint8_t *Rx_FT, uint8_t *Rx_AT, uint16_t *Rx_SA, uint8_t *Rx_Pri, uint8_t *Rx_LSDU, uint8_t *Rx_LG);
 /**
   * @}
   */

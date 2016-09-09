@@ -49,7 +49,6 @@
    
 /* Exported types ------------------------------------------------------------*/
 /** @defgroup KNX_Aux_Exported_Types Auxiliary Exported Types
-  * @brief    Timer Status Enumeration
   * @{
   */
 
@@ -60,8 +59,7 @@ typedef enum
 {
   TIMER_RESET           = 0x00U,        /*!< Reset State                      */
   TIMER_RUNNING         = 0x01U,        /*!< Timer is running                 */
-  TIMER_PAUSE           = 0x02U,        /*!< Timer is paused                  */
-  TIMER_TIMEOUT         = 0x03U         /*!< Timeout                          */
+  TIMER_PAUSE           = 0x02U         /*!< Timer is paused                  */
 } TIMER_Status_t;
 /**
   * @}
@@ -84,13 +82,16 @@ uint8_t text2int(unsigned char *msg, uint8_t *value);
 /** @addtogroup KNX_Aux_Exported_Functions_Group2
   * @{
   */
-void     KNX_InitTimer(void);
-void     KNX_StartTimer(uint32_t Timeout);
-uint32_t KNX_GetTime(void);
-TIMER_Status_t KNX_GetTimerState(void);
+void KNX_InitTimer(void);
+void KNX_StartTimer(void);
+uint32_t KNX_GetTick(void);
 uint32_t KNX_StopTimer(void);
 uint32_t KNX_ResetTimer(void);
-void     KNX_systick_isr(void);
+TIMER_Status_t KNX_GetTimerState(void);
+
+uint8_t KNX_CheckForTimeOut(uint32_t * const timeOnEntering, uint32_t * const pxTicksToWait);
+
+void KNX_systick_isr(void);
 /**
   * @}
   */

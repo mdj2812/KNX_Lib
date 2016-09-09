@@ -34,9 +34,11 @@ This file contains K\+NX common defines, enumerations, macros, structures defini
 \item 
 \#define \hyperlink{group___u_a_r_t___control___to_ga08302041c8622699abb02954c7942d33}{U\+\_\+\+Activate\+Busmon}~((uint8\+\_\+t)0x05\+U)
 \item 
-\#define \hyperlink{group___u_a_r_t___control___to_gadbcf1715439a76db9d5a416c772b7d6a}{U\+\_\+\+Ack\+Information\+\_\+\+Addressed}~((uint8\+\_\+t)0x11\+U)
+\#define \hyperlink{group___u_a_r_t___control___to_gae8d1e40bf2415207f384e3fdd134c844}{U\+\_\+\+Ack\+Information\+\_\+\+A\+CK}~((uint8\+\_\+t)0x11\+U)
 \item 
-\#define \hyperlink{group___u_a_r_t___control___to_gaa58e8b87e2c7afa233dc9143f9ed3000}{U\+\_\+\+Ack\+Information\+\_\+\+Not\+Addressed}~((uint8\+\_\+t)0x11\+U)
+\#define \hyperlink{group___u_a_r_t___control___to_gacd4e123da098779b9de44bbc97c85f18}{U\+\_\+\+Ack\+Information\+\_\+\+Busy}~((uint8\+\_\+t)0x12\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gad838fe8a0601483afcb0e90edd03c277}{U\+\_\+\+Ack\+Information\+\_\+\+Nack}~((uint8\+\_\+t)0x14\+U)
 \item 
 \#define \hyperlink{group___u_a_r_t___control___to_ga0fd706c07225b8d94a9e61178e9f1de2}{U\+\_\+\+Product\+I\+D\+\_\+request}~((uint8\+\_\+t)0x20\+U)
 \item 
@@ -51,6 +53,10 @@ This file contains K\+NX common defines, enumerations, macros, structures defini
 \#define \hyperlink{group___u_a_r_t___control___to_ga1b727950a6079fa1f299e08204ad8923}{U\+\_\+\+Set\+Address}~((uint8\+\_\+t)0x28\+U)
 \item 
 \#define \hyperlink{group___u_a_r_t___control___to_ga5a6fadacef419bffab0a2ad00d4a4a3a}{U\+\_\+\+L\+\_\+\+Data\+Start}~((uint8\+\_\+t)0x80\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_ga2e3fb33682715cbda34c2a576259b955}{U\+\_\+\+L\+\_\+\+Data\+Continue}~((uint8\+\_\+t)0x80\+U)
+\item 
+\#define \hyperlink{group___u_a_r_t___control___to_gaf314a3afc396db4fa556d4246907814e}{U\+\_\+\+L\+\_\+\+Data\+End}~((uint8\+\_\+t)0x80\+U)
 \item 
 \#define \hyperlink{group___u_a_r_t___control___from_gade9c58399a01abdaa03bbecbf63879c3}{Reset\+\_\+indication}~((uint8\+\_\+t)0x03\+U)
 \item 
@@ -74,10 +80,12 @@ This file contains K\+NX common defines, enumerations, macros, structures defini
 \item 
 \#define \hyperlink{group___u_a_r_t___control___mask_ga08fadbb4584563c93631852bd718f1e2}{T\+P\+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+N\+D\+I\+C\+A\+T\+I\+O\+N\+\_\+\+T\+E\+M\+P\+\_\+\+W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+A\+SK}~0x08
 \item 
-\#define \hyperlink{group___k_n_x___timeout_ga2403c0399f3728bfe63f5d9cf631817d}{K\+N\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}~500
+\#define \hyperlink{group___k_n_x___timeout_ga2403c0399f3728bfe63f5d9cf631817d}{K\+N\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}~((Tick\+Type\+\_\+t)2000)
 \item 
-\#define \hyperlink{group___k_n_x___timeout_ga8e1f26f2f54559b80991272e3b5e13e8}{K\+N\+X\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY}~0x\+F\+F\+F\+F\+F\+F\+F\+FU
-\end{DoxyCompactItemize}
+\#define \hyperlink{group___k_n_x___timeout_ga8e1f26f2f54559b80991272e3b5e13e8}{K\+N\+X\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY}~((Tick\+Type\+\_\+t)0x\+F\+F\+F\+F\+F\+F\+F\+F\+U)
+\item 
+\#define \hyperlink{group___k_n_x___frame_gaf9b1b2ba12857a4bf11289dac8c5462d}{F\+R\+A\+M\+E\+\_\+\+S\+I\+ZE}~22
+\begin{DoxyCompactList}\small\item\em Max size of the frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

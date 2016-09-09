@@ -4,14 +4,51 @@
 \begin{DoxyCompactItemize}
 \item 
 uint8\+\_\+t \hyperlink{group___k_n_x___d_l___exported___functions___group2_ga92e01d8fd06b0e629413b1b2316d88df}{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req} (uint8\+\_\+t Tx\+\_\+\+FT, uint8\+\_\+t Tx\+\_\+\+AT, uint16\+\_\+t Tx\+\_\+\+DA, uint8\+\_\+t Tx\+\_\+\+Pri, uint8\+\_\+t $\ast$Tx\+\_\+\+L\+S\+DU, uint8\+\_\+t Tx\+\_\+\+LG)
-\begin{DoxyCompactList}\small\item\em Send a frame to the K\+NX bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Send a frame to the K\+NX bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___k_n_x___d_l___exported___functions___group2_ga0c46f3170607b4b8c5026154d678c18e}{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+rec} (uint8\+\_\+t $\ast$Rx\+\_\+\+FT, uint8\+\_\+t $\ast$Rx\+\_\+\+AT, uint16\+\_\+t $\ast$Rx\+\_\+\+SA, uint8\+\_\+t $\ast$Rx\+\_\+\+Pri, uint8\+\_\+t $\ast$Rx\+\_\+\+L\+S\+DU, uint8\+\_\+t $\ast$Rx\+\_\+\+LG)
+\begin{DoxyCompactList}\small\item\em Receive a frame from the K\+NX bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
 \subsection{Function Documentation}
-\index{K\+N\+X Data Link Layer Services functions@{K\+N\+X Data Link Layer Services functions}!K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req@{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req}}
+\index{K\+N\+X Data Link Layer Services functions@{K\+N\+X Data Link Layer Services functions}!K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+rec@{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+rec}}
+\index{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+rec@{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+rec}!K\+N\+X Data Link Layer Services functions@{K\+N\+X Data Link Layer Services functions}}
+\subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+rec(uint8\+\_\+t $\ast$\+Rx\+\_\+\+F\+T, uint8\+\_\+t $\ast$\+Rx\+\_\+\+A\+T, uint16\+\_\+t $\ast$\+Rx\+\_\+\+S\+A, uint8\+\_\+t $\ast$\+Rx\+\_\+\+Pri, uint8\+\_\+t $\ast$\+Rx\+\_\+\+L\+S\+D\+U, uint8\+\_\+t $\ast$\+Rx\+\_\+\+L\+G)}{KNX_DL_Data_rec(uint8_t *Rx_FT, uint8_t *Rx_AT, uint16_t *Rx_SA, uint8_t *Rx_Pri, uint8_t *Rx_LSDU, uint8_t *Rx_LG)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+rec (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{Rx\+\_\+\+FT, }
+\item[{uint8\+\_\+t $\ast$}]{Rx\+\_\+\+AT, }
+\item[{uint16\+\_\+t $\ast$}]{Rx\+\_\+\+SA, }
+\item[{uint8\+\_\+t $\ast$}]{Rx\+\_\+\+Pri, }
+\item[{uint8\+\_\+t $\ast$}]{Rx\+\_\+\+L\+S\+DU, }
+\item[{uint8\+\_\+t $\ast$}]{Rx\+\_\+\+LG}
+\end{DoxyParamCaption}
+)}\hypertarget{group___k_n_x___d_l___exported___functions___group2_ga0c46f3170607b4b8c5026154d678c18e}{}\label{group___k_n_x___d_l___exported___functions___group2_ga0c46f3170607b4b8c5026154d678c18e}
+
+
+Receive a frame from the K\+NX bus. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & code, See \hyperlink{group___d_l___error___code}{Data Link Layer Error Code}. \\
+\hline
+\end{DoxyRetVals}
+If Data Fomat is standard
+
+If Checksum is incorrect
+
+Send N\+A\+CK
+
+If length is incorrect
+
+Send N\+A\+CK
+
+If in busy mode
+
+Send B\+U\+SY
+
+Send A\+CK \index{K\+N\+X Data Link Layer Services functions@{K\+N\+X Data Link Layer Services functions}!K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req@{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req}}
 \index{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req@{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req}!K\+N\+X Data Link Layer Services functions@{K\+N\+X Data Link Layer Services functions}}
 \subsubsection[{\texorpdfstring{K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req(uint8\+\_\+t Tx\+\_\+\+F\+T, uint8\+\_\+t Tx\+\_\+\+A\+T, uint16\+\_\+t Tx\+\_\+\+D\+A, uint8\+\_\+t Tx\+\_\+\+Pri, uint8\+\_\+t $\ast$\+Tx\+\_\+\+L\+S\+D\+U, uint8\+\_\+t Tx\+\_\+\+L\+G)}{KNX_DL_Data_req(uint8_t Tx_FT, uint8_t Tx_AT, uint16_t Tx_DA, uint8_t Tx_Pri, uint8_t *Tx_LSDU, uint8_t Tx_LG)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t K\+N\+X\+\_\+\+D\+L\+\_\+\+Data\+\_\+req (
 \begin{DoxyParamCaption}
