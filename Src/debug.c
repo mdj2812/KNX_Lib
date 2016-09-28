@@ -61,6 +61,9 @@ static unsigned char RX_buffer[RX_BUFFER_SIZE];
 /** \brief The indice of the ::RX_buffer */
 __IO uint16_t   RX_buffer_indice = 0;
 
+/** \brief flag for DEBUG TX. */
+static uint8_t DEBUG_TX_FLAG;
+
 /** \brief Handler of the ::DebugTask */
 static TaskHandle_t xDebugTaskHandle;
 /** \brief Semaphore to permit the new cycle of ::DebugTask */
@@ -105,14 +108,18 @@ void debug_uart_isr_end (void)
   */
 void debug_uart_isr_tx(void)
 {
-  buffer_indice++;
-  if(buffer_indice > buffer_indice_max)
+  if(DEBUG_TX_FLAG == TRUE)
   {
-    xSemaphoreGiveFromISR( semaforo_debug_isruart, &xHigherPriorityTaskWoken );
-  }
-  else
-  {
-    debug_uart_send(&buffer[buffer_indice], 1);
+    buffer_indice++;
+    if(buffer_indice > buffer_indice_max)
+    {
+      DEBUG_TX_FLAG = FALSE;
+      xSemaphoreGiveFromISR( semaforo_debug_isruart, &xHigherPriorityTaskWoken );
+    }
+    else
+    {
+      debug_uart_send(&buffer[buffer_indice], 1);
+    }
   }
 }
 
@@ -149,6 +156,8 @@ uint32_t DebugInit(void)
   
   //inicializar cola+mutex para almacenar mensajes
   cola_init(&colaDebug);
+  DEBUG_TX_FLAG = FALSE;
+  
   //inicializar semaforo compartido entre tarea debuj y la isr de la UART
   semaforo_debug_isruart = xSemaphoreCreateBinary();
   semaforo_debugrx_isruart = xSemaphoreCreateBinary();
@@ -222,7 +231,8 @@ void DebugTask(void * argument)
     //Activar transmisión de la UART para transmitir el mensaje
     //almacenado en buffer que es de res_leer caracteres
     buffer_indice=0;
-    buffer_indice_max = res_leer-1;
+    buffer_indice_max = res_leer - 1;
+    DEBUG_TX_FLAG = TRUE;
     debug_uart_send(&buffer[buffer_indice], 1);
 
     //Esperar a que la UART nos de permiso para continuar ..
@@ -284,7 +294,11 @@ void DebugRXTask(void * argument)
       }
       else if(RX_buffer_indice == 3)
       {
-        RX_buffer_indice=0;
+        RX_buffer_indice=2;
+        RX_buffer[1] = RX_buffer[2];
+        
+        RX_buffer[RX_buffer_indice] = temp;
+        RX_buffer_indice++;
       }
     }
   }

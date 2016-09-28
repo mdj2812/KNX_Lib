@@ -13,6 +13,7 @@ var searchData=
   ['debug_5fhuart',['debug_huart',['../group___debug___u_a_r_t___external___variables.html#gaa020232170a049fcc321246bd778a49f',1,'debug_uart.c']]],
   ['debug_20private_20define',['Debug Private Define',['../group___debug___private___define.html',1,'']]],
   ['debug_20private_20variables',['Debug Private Variables',['../group___debug___private___variables.html',1,'']]],
+  ['debug_5ftx_5fflag',['DEBUG_TX_FLAG',['../group___debug___private___variables.html#gad3b938eaef294bd82e16d8e7adcc677a',1,'debug.c']]],
   ['debug_5ftype_5ft',['DEBUG_Type_t',['../group___debug___exported___types.html#gacb1775677105967978fae4d9155cca26',1,'debug.h']]],
   ['debug_20uart',['Debug UART',['../group___debug___uart.html',1,'']]],
   ['debug_5fuart_2ec',['debug_uart.c',['../debug__uart_8c.html',1,'']]],

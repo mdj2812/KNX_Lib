@@ -60,6 +60,7 @@ var searchData=
   ['knx_20ph_20services',['KNX PH Services',['../group___k_n_x___p_h___sup___exported___functions___group3.html',1,'']]],
   ['knx_20ph_20supervisor_20state_20function',['KNX PH Supervisor State Function',['../group___k_n_x___p_h___sup___exported___functions___group4.html',1,'']]],
   ['knx_5fph_5fsup_20exported_20types',['KNX_PH_Sup Exported Types',['../group___k_n_x___p_h___sup___exported___types.html',1,'']]],
+  ['knx_20ph_20external_20uart_20isr_20functions',['KNX PH External UART ISR Functions',['../group___k_n_x___p_h___sup___external___functions.html',1,'']]],
   ['knx_5fph_5fsup_20private_20functions',['KNX_Ph_Sup Private Functions',['../group___k_n_x___p_h___sup___private___functions.html',1,'']]],
   ['knx_5fph_5fsup_20private_20variables',['KNX_Ph_Sup Private Variables',['../group___k_n_x___p_h___sup___private___variables.html',1,'']]],
   ['knx_20physical_20layer_20tpuart',['KNX Physical Layer TPUart',['../group___k_n_x___p_h___t_p_uart.html',1,'']]],
@@ -68,6 +69,7 @@ var searchData=
   ['knx_20physical_20layer_20tpuart_20public_20functions',['KNX Physical Layer TPUart Public Functions',['../group___k_n_x___p_h___t_p_uart___exported___functions.html',1,'']]],
   ['knx_20tpuart_20initialization_20functions',['KNX TPUart Initialization Functions',['../group___k_n_x___p_h___t_p_uart___exported___functions___group1.html',1,'']]],
   ['knx_20tpuart_20send_2freceive_20functions',['KNX TPUart Send/Receive Functions',['../group___k_n_x___p_h___t_p_uart___exported___functions___group2.html',1,'']]],
+  ['knx_20ph_20tpuart_20external_20functions',['KNX PH TPUART External Functions',['../group___k_n_x___p_h___t_p_uart___external___functions.html',1,'']]],
   ['knx_5fph_5ftpuart_5finit',['KNX_PH_TPUart_init',['../group___k_n_x___p_h___t_p_uart___exported___functions___group1.html#ga4e0a0b154e929046769fa7df80f5c6ce',1,'KNX_Ph_TPUart.c']]],
   ['knx_20tpuart_20private_20variables',['KNX TPUart Private Variables',['../group___k_n_x___p_h___t_p_u_a_r_t___private___variables.html',1,'']]],
   ['knx_5fph_5ftpuart_5freceive',['KNX_PH_TPUart_Receive',['../group___k_n_x___p_h___t_p_uart___exported___functions___group2.html#gaa5e10cfbb87008f0375132601fbbfa87',1,'KNX_Ph_TPUart.c']]],
@@ -79,6 +81,10 @@ var searchData=
   ['knx_5fstoptimer',['KNX_StopTimer',['../group___k_n_x___aux___exported___functions___group2.html#ga44b5f88a0f2b0590924627b428107e97',1,'KNX_Aux.c']]],
   ['knx_5fsystick_5fisr',['KNX_systick_isr',['../group___k_n_x___aux___exported___functions___group2.html#gad9635bb60f2ba98f58874ef46e65c36d',1,'KNX_Aux.c']]],
   ['knx_20tpuart_20exported_20types',['KNX TPUart Exported Types',['../group___k_n_x___t_p_uart___exported___types.html',1,'']]],
+  ['knx_5fuart_5fisr_5fbegin',['knx_uart_isr_begin',['../group___k_n_x___p_h___sup___external___functions.html#gafa12b387b549bde1cd74e212853555cd',1,'knx_uart_isr_begin(void):&#160;KNX_Ph.c'],['../group___k_n_x___p_h___t_p_uart___external___functions.html#gafa12b387b549bde1cd74e212853555cd',1,'knx_uart_isr_begin(void):&#160;KNX_Ph.c']]],
+  ['knx_5fuart_5fisr_5fend',['knx_uart_isr_end',['../group___k_n_x___p_h___sup___external___functions.html#ga64023e4e19c0ab94045d590c0730e758',1,'knx_uart_isr_end(void):&#160;KNX_Ph.c'],['../group___k_n_x___p_h___t_p_uart___external___functions.html#ga64023e4e19c0ab94045d590c0730e758',1,'knx_uart_isr_end(void):&#160;KNX_Ph.c']]],
+  ['knx_5fuart_5fisr_5frx',['knx_uart_isr_rx',['../group___k_n_x___p_h___sup___external___functions.html#ga551e6416873aec386f6bbb391edad6d5',1,'knx_uart_isr_rx(void):&#160;KNX_Ph.c'],['../group___k_n_x___p_h___t_p_uart___external___functions.html#ga551e6416873aec386f6bbb391edad6d5',1,'knx_uart_isr_rx(void):&#160;KNX_Ph.c']]],
+  ['knx_5fuart_5fisr_5ftx',['knx_uart_isr_tx',['../group___k_n_x___p_h___sup___external___functions.html#ga25d5c961e17de3ba8faff2175f245947',1,'knx_uart_isr_tx(void):&#160;KNX_Ph.c'],['../group___k_n_x___p_h___t_p_uart___external___functions.html#ga25d5c961e17de3ba8faff2175f245947',1,'knx_uart_isr_tx(void):&#160;KNX_Ph.c']]],
   ['knx_5fverticalparity',['KNX_VerticalParity',['../group___k_n_x___aux___exported___functions___group3.html#gaea93e12f866be1d8ab744f070182ef2b',1,'KNX_Aux.c']]],
   ['knx_5flib',['KNX_Lib',['../md_README.html',1,'']]]
 ];

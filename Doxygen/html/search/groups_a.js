@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tpuart_20interrupt_20function',['TPUART Interrupt function',['../group___k_n_x___p_h___t_p_uart___exported___functions___group3.html',1,'']]],
-  ['timeout_20definition',['Timeout Definition',['../group___k_n_x___timeout.html',1,'']]]
+  ['save_20and_20read_20cola_20functions',['Save and Read Cola Functions',['../group___cola___exported___functions___group2.html',1,'']]],
+  ['send_2freceive_20functions',['Send/Receive Functions',['../group___k_n_x___p_h___sup___exported___functions___group2.html',1,'']]]
 ];

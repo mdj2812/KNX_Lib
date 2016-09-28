@@ -13,6 +13,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
+#include "stm32f4xx_hal.h"
 #include "KNX_Aux.h"
 #include "KNX_Ph_TPUart.h"
 #include "stm32f4xx_hal.h"
@@ -28,13 +29,26 @@
 /** @defgroup KNX_PH_TPUart KNX Physical Layer TPUart
   * @{
   */
-    
+
+/* External functions --------------------------------------------------------*/
+/** @defgroup   KNX_PH_TPUart_External_Functions KNX PH TPUART External Functions
+  * @brief      External functions to be used in \ref KNX_PH_Sup module
+  * @{
+  */
+extern void knx_uart_isr_begin (void);
+extern void knx_uart_isr_end (void);
+extern void knx_uart_isr_rx (void);
+extern void knx_uart_isr_tx (void);
+/**
+  * @}
+  */
+
 /* Private variables --------------------------------------------------------*/
 /** @defgroup KNX_PH_TPUART_Private_Variables KNX TPUart Private Variables
   * @{
   */
 /** \brief UART Handler */
-static UART_HandleTypeDef knx_huart;
+UART_HandleTypeDef knx_huart;
 /**
   * @}
   */
@@ -58,7 +72,7 @@ uint8_t KNX_PH_TPUart_init(void)
 {
   knx_huart.Instance = USART3;
   knx_huart.Init.BaudRate = 9600;
-  knx_huart.Init.WordLength = UART_WORDLENGTH_8B;
+  knx_huart.Init.WordLength = UART_WORDLENGTH_9B;
   knx_huart.Init.StopBits = UART_STOPBITS_1;
   knx_huart.Init.Parity = UART_PARITY_EVEN;
   knx_huart.Init.Mode = UART_MODE_TX_RX;
@@ -72,6 +86,9 @@ uint8_t KNX_PH_TPUart_init(void)
   
   __HAL_UART_ENABLE_IT(&knx_huart, UART_IT_RXNE);  /** Activate Flag Receptie */
   __HAL_UART_ENABLE_IT(&knx_huart, UART_IT_TC);    /** Activate Flag TX       */
+  
+  /* Set the PD7 to 1 to make the baud rate of TP-UART2 to 9600 */
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_7, GPIO_PIN_SET);
 
   return TPUart_OK;
 }
@@ -194,9 +211,16 @@ uint8_t KNX_PH_TPUart_Receive(uint8_t *data, uint16_t size)
   * @brief      UART interrupt routines.
   */
 void TPUart_isr(void)
-{
-  /* UART IRQ Handler function provided by driver. */
-  HAL_UART_IRQHandler(&knx_huart);
+{  
+  knx_uart_isr_begin();
+    
+  /* UART in mode Receiver ---------------------------------------------------*/
+  knx_uart_isr_rx();
+  
+  /* UART in mode Transmitter ------------------------------------------------*/
+  knx_uart_isr_tx();
+  
+  knx_uart_isr_end();
 }
 /**
   * @}

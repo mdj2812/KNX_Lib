@@ -12,6 +12,7 @@ K\+NX Physical Layer supervisor. This file provides functions to manage followin
 {\ttfamily \#include \char`\"{}K\+N\+X\+\_\+def.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}cola.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}debug\+\_\+uart.\+h\char`\"{}}\\*
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,6 +27,14 @@ K\+NX Physical Layer supervisor. This file provides functions to manage followin
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{group___k_n_x___p_h___sup___external___functions_gafa12b387b549bde1cd74e212853555cd}{knx\+\_\+uart\+\_\+isr\+\_\+begin} (void)
+\begin{DoxyCompactList}\small\item\em At the begin of interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___p_h___sup___external___functions_ga64023e4e19c0ab94045d590c0730e758}{knx\+\_\+uart\+\_\+isr\+\_\+end} (void)
+\begin{DoxyCompactList}\small\item\em At the end of interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___p_h___sup___external___functions_ga25d5c961e17de3ba8faff2175f245947}{knx\+\_\+uart\+\_\+isr\+\_\+tx} (void)
+\begin{DoxyCompactList}\small\item\em TX mode. \end{DoxyCompactList}\item 
+void \hyperlink{group___k_n_x___p_h___sup___external___functions_ga551e6416873aec386f6bbb391edad6d5}{knx\+\_\+uart\+\_\+isr\+\_\+rx} (void)
+\begin{DoxyCompactList}\small\item\em RX mode. \end{DoxyCompactList}\item 
 static void \hyperlink{group___k_n_x___p_h___sup___private___functions_ga8253bed4aa2e3d7bfa9c1de3604668e0}{K\+N\+X\+\_\+\+Ph\+\_\+\+Set\+State} (\hyperlink{group___k_n_x___p_h___sup___exported___types_ga5b665a94bef912fbfbea7cc949ed0e49}{P\+H\+\_\+\+Status\+\_\+t} state)
 \begin{DoxyCompactList}\small\item\em Set the status of Physical layer. \end{DoxyCompactList}\item 
 static void \hyperlink{group___k_n_x___p_h___sup___private___functions_gaad432d8797e22b886ab169401decc3dd}{K\+N\+X\+\_\+\+Ph\+\_\+\+Debug\+Message} (uint8\+\_\+t data, \hyperlink{group___debug___exported___types_gacb1775677105967978fae4d9155cca26}{D\+E\+B\+U\+G\+\_\+\+Type\+\_\+t} type)
@@ -63,6 +72,12 @@ static unsigned char \hyperlink{group___k_n_x___p_h___sup___private___variables_
 \begin{DoxyCompactList}\small\item\em Receiving Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\item 
 static unsigned char \hyperlink{group___k_n_x___p_h___sup___private___variables_ga598da98824813e3e2781a39bb3f90bfd}{K\+N\+X\+\_\+\+P\+H\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+B\+U\+G\+M\+SG} \mbox{[}$\,$\mbox{]} = \char`\"{}\mbox{[}K\+NX PH\mbox{]}Error code\+: X\+X\textbackslash{}r\textbackslash{}n\char`\"{}
 \begin{DoxyCompactList}\small\item\em Error Debug message sent in \hyperlink{group___cola___debug}{Cola Debug}. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___private___variables_gae5dbf66e18b65778c038cb06fcfaa990}{T\+P\+U\+A\+R\+T\+\_\+\+T\+X\+\_\+\+F\+L\+AG}
+\begin{DoxyCompactList}\small\item\em flag for T\+P\+U\+A\+RT TX. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{group___k_n_x___p_h___sup___private___variables_ga56ae842ff9e457dcc93263a437c9f3ca}{T\+P\+U\+A\+R\+T\+\_\+\+R\+X\+\_\+\+F\+L\+AG}
+\begin{DoxyCompactList}\small\item\em flag for T\+P\+U\+A\+RT RX. \end{DoxyCompactList}\item 
+static unsigned char \hyperlink{group___k_n_x___p_h___sup___private___variables_gabe413cb96d839cbe31417aa52d920f21}{temp}
+\item 
 Tick\+Type\+\_\+t \hyperlink{group___k_n_x___p_h___sup___private___variables_gae5c3d180a41e0a10e05863aa365a5596}{current\+Tick}
 \begin{DoxyCompactList}\small\item\em The current tick of timer. \end{DoxyCompactList}\item 
 \hyperlink{structt__cola}{t\+\_\+cola} \hyperlink{group___k_n_x___p_h___sup___private___variables_ga314fd637d927bd6a2551e119de623aa5}{cola\+Debug}

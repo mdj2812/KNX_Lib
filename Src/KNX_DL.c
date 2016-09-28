@@ -262,7 +262,13 @@ uint8_t KNX_DL_Data_rec(uint8_t *Rx_FT, uint8_t *Rx_AT, uint16_t *Rx_SA, uint8_t
       KNX_Ph_SendData(U_AckInformation_ACK, KNX_DEFAULT_TIMEOUT);
       return DL_ERROR_NONE;        
     }
+    else
+    {
+      return DL_ERROR_NONE;
+    }
   }
+  
+  return DL_ERROR_TIMEOUT;
 }
 /**
   * @}

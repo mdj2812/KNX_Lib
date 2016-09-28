@@ -31,14 +31,14 @@
   */
 
 /* External functions --------------------------------------------------------*/
-/** @defgroup Debug_UART_External_Functions Debug UART External Functions
+/** @defgroup   Debug_UART_External_Functions Debug UART External Functions
   * @brief      External functions to be used in \ref Debug module
   * @{
   */
-extern void debug_uart_isr_rx (void);
-extern void debug_uart_isr_tx (void);
 extern void debug_uart_isr_begin (void);
 extern void debug_uart_isr_end (void);
+extern void debug_uart_isr_rx (void);
+extern void debug_uart_isr_tx (void);
 /**
   * @}
   */
@@ -48,7 +48,7 @@ extern void debug_uart_isr_end (void);
   * @{
   */
 /** \brief UART Handler */
-static UART_HandleTypeDef debug_huart;
+UART_HandleTypeDef debug_huart;
 /**
   * @}
   */
@@ -104,7 +104,7 @@ uint8_t debug_uart_init(void)
   * @param      data:  pointer to the data buffer.
   * @param      size:  lenghth of the buffer.
   */
-Debug_Uart_Status_t debug_uart_send (uint8_t *data, uint16_t size)
+Debug_Uart_Status_t debug_uart_send(uint8_t *data, uint16_t size)
 {
   if((data == NULL ) || (size == 0U)) 
   {
@@ -193,20 +193,14 @@ Debug_Uart_Status_t debug_uart_receive (uint8_t *data, uint16_t size)
   * @brief      UART interrupt routines.
   */
 void debug_uart_isr(void)
-{  
-  /* UART IRQ Handler function provided by driver. */
-  HAL_UART_IRQHandler(&debug_huart);
-  
+{    
   debug_uart_isr_begin ();
     
   /* UART in mode Receiver ---------------------------------------------------*/
   debug_uart_isr_rx();
   
   /* UART in mode Transmitter ------------------------------------------------*/
-  if((HAL_UART_GetState(&debug_huart) & HAL_UART_STATE_BUSY_TX) == HAL_UART_STATE_BUSY_TX)
-  {
-    debug_uart_isr_tx();
-  }
+  debug_uart_isr_tx();
   
   debug_uart_isr_end();
 }

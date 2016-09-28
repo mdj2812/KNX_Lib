@@ -17,6 +17,7 @@
 #include "KNX_Aux.h"
 #include "KNX_def.h"
 #include "debug.h"
+#include "stm32f4xx_hal.h"
 
 /** @addtogroup KNX_Lib
   * @{
@@ -47,9 +48,9 @@ volatile TIMER_Status_t timer_state;
 volatile uint32_t timer_tick;
 
 /** \brief Aux Error message. */
-static unsigned char Aux_Err_Msg[] = "[Aux]Error Code: 0xXX\r\n";
+static unsigned char Aux_Err_Msg[] = "[Aux]Error Code: XX\r\n";
 /** \brief ::Aux_Err_Msg digits indice. */
-#define AUX_ERROR_MSG_INDICE ((uint8_t)19)
+#define AUX_ERROR_MSG_INDICE ((uint8_t)17)
 /**
   * @}
   */

@@ -12,7 +12,7 @@
   *              + State functions
   ******************************************************************************
   */
-
+    
 /* Includes ------------------------------------------------------------------*/
 #include <stdio.h>
 #include "KNX_Ph.h"
@@ -21,6 +21,7 @@
 #include "KNX_def.h"
 #include "cola.h"
 #include "debug.h"
+#include "debug_uart.h"
 
 /** @addtogroup KNX_Lib
   * @{
@@ -57,11 +58,63 @@ static unsigned char KNX_PH_ERROR_DEBUGMSG[] = "[KNX PH]Error code: XX\r\n";
 /** \brief ::KNX_PH_ERROR_DEBUGMSG digits indice. */
 #define KNX_PH_ERROR_DEBUGMSG_INDICE ((uint8_t)20)
 
+/** \brief flag for TPUART TX. */
+static uint8_t TPUART_TX_FLAG;
+/** \brief flag for TPUART RX. */
+static uint8_t TPUART_RX_FLAG;
+/** character received from UART */
+static unsigned char temp;
+
 /** \brief The current tick of timer. */
 TickType_t currentTick;
 
 /** \brief Cola defined in \ref Debug */
 t_cola colaDebug;
+/**
+  * @}
+  */
+
+/* External functions --------------------------------------------------------*/
+/** @defgroup   KNX_PH_Sup_External_Functions KNX PH External UART ISR Functions
+  * @brief      External functions from \ref KNX_PH_TPUart module
+  * @{
+  */
+
+/**
+  * @brief      At the begin of interrupt.
+  */
+void knx_uart_isr_begin (void)
+{
+}
+
+/**
+  * @brief      At the end of interrupt.
+  */
+void knx_uart_isr_end (void)
+{
+}
+
+/**
+* @brief      TX mode.
+  */
+void knx_uart_isr_tx(void)
+{
+  if(TPUART_TX_FLAG == TRUE)
+  {
+    
+  }
+}
+
+/**
+  * @brief      RX mode
+  */
+void knx_uart_isr_rx(void)
+{
+  if(KNX_PH_TPUart_Receive(&temp, 1) == TPUart_OK)
+  {      
+    TPUART_RX_FLAG = TRUE;
+  }
+}
 /**
   * @}
   */
@@ -89,8 +142,9 @@ static void     KNX_Ph_DebugMessage(uint8_t data, DEBUG_Type_t type);
   * @brief      Initialize the \ref KNX_PH module.
   * @retval     Error code, See \ref PH_Error_Code.
   */
+
 uint8_t KNX_Ph_Init(void)
-{  
+{    
   /** Set state to ::PH_NOINIT */
   KNX_Ph_SetState(PH_NOINIT);
   
@@ -106,7 +160,9 @@ uint8_t KNX_Ph_Init(void)
     /** \b If TPUart initialization failed, return ::PH_ERROR_INIT */
     return PH_ERROR_INIT;
   }
-      
+  TPUART_RX_FLAG = FALSE;
+  TPUART_TX_FLAG = FALSE;
+  
   return PH_ERROR_NONE;
 }
 
@@ -157,9 +213,12 @@ uint8_t KNX_Ph_RecData(uint8_t *data, uint32_t timeout)
   currentTick = KNX_GetTick();
   while(!KNX_CheckForTimeOut(&currentTick, &timeout))
   {
-    if(KNX_PH_TPUart_Receive(data, 1) == TPUart_OK)
-    {      
+    if(TPUART_RX_FLAG == TRUE)
+    {
+      *data = temp;
       KNX_Ph_DebugMessage(*data, RECEIVE_DEBUG);
+      
+      TPUART_RX_FLAG = FALSE;
 
       /** \b If data received is the response expected. Return ::PH_ERROR_NONE. */
       return PH_ERROR_NONE;
@@ -179,19 +238,18 @@ uint8_t KNX_Ph_RecData(uint8_t *data, uint32_t timeout)
   * @retval     Error code, See \ref PH_Error_Code.
   */
 uint8_t KNX_Ph_WaitFor(uint8_t res, uint32_t timeout)
-{
-  uint8_t data;
-  
+{  
   /** Try to send the data */
   currentTick = KNX_GetTick();
   while(!KNX_CheckForTimeOut(&currentTick, &timeout))
   {
-    if(KNX_PH_TPUart_Receive(&data, 1) == TPUart_OK)
-    {      
-      KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
-
+    if(TPUART_RX_FLAG == TRUE)
+    {
+      KNX_Ph_DebugMessage(temp, RECEIVE_DEBUG);
+      TPUART_RX_FLAG = FALSE;
+      
       /** \b If data received is the response expected. */
-      if(data == res)
+      if(temp == res)
       {
         /** Return ::PH_ERROR_NONE. */
         return PH_ERROR_NONE;
@@ -213,21 +271,20 @@ uint8_t KNX_Ph_WaitFor(uint8_t res, uint32_t timeout)
   * @retval     Error code, See \ref PH_Error_Code.
   */
 uint8_t KNX_Ph_WaitForWithMask(uint8_t *res, uint8_t resMask, uint32_t timeout)
-{
-  uint8_t data;
-  
+{  
   /** Try to send the data */
   currentTick = KNX_GetTick();
   while(!KNX_CheckForTimeOut(&currentTick, &timeout))
   {
-    if(KNX_PH_TPUart_Receive(&data, 1) == TPUart_OK)
-    {      
-      KNX_Ph_DebugMessage(data, RECEIVE_DEBUG);
-
+    if(TPUART_RX_FLAG == TRUE)
+    {
+      KNX_Ph_DebugMessage(temp, RECEIVE_DEBUG);
+      TPUART_RX_FLAG = FALSE;
+      
       /** \b If data received is the type of response expected. */
-      if((data & resMask) == resMask)
+      if((temp & resMask) == resMask)
       {
-        *res = data;
+        *res = temp;
         /** Return ::PH_ERROR_NONE. */
         return PH_ERROR_NONE;
       }
@@ -255,6 +312,7 @@ uint8_t KNX_Ph_WaitForWithMask(uint8_t *res, uint8_t resMask, uint32_t timeout)
 uint8_t KNX_Ph_Reset(void)
 {
   uint8_t ret;
+  uint32_t timeout = 6;
   
   /** Send ::Ph_Reset request. */
   if(KNX_Ph_GetState() != PH_RESET)
@@ -268,7 +326,7 @@ uint8_t KNX_Ph_Reset(void)
     /** \b If encounter a problem, return ::PH_ERROR_REQUEST  */
     return PH_ERROR_REQUEST;
   }
-    
+  
   /** Waiting for the ::Reset_indication. */
   ret = KNX_Ph_WaitFor(Reset_indication, KNX_DEFAULT_TIMEOUT);
   if(ret == PH_ERROR_NONE)

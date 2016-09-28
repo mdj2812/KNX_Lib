@@ -104,6 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="_k_n_x__def_8h_source.html">KNX_def.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cola_8h_source.html">cola.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="debug_8h_source.html">debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="debug__uart_8h_source.html">debug_uart.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -126,6 +127,22 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gafa12b387b549bde1cd74e212853555cd"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___external___functions.html#gafa12b387b549bde1cd74e212853555cd">knx_uart_isr_begin</a> (void)</td></tr>
+<tr class="memdesc:gafa12b387b549bde1cd74e212853555cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">At the begin of interrupt. <br /></td></tr>
+<tr class="separator:gafa12b387b549bde1cd74e212853555cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64023e4e19c0ab94045d590c0730e758"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___external___functions.html#ga64023e4e19c0ab94045d590c0730e758">knx_uart_isr_end</a> (void)</td></tr>
+<tr class="memdesc:ga64023e4e19c0ab94045d590c0730e758"><td class="mdescLeft">&#160;</td><td class="mdescRight">At the end of interrupt. <br /></td></tr>
+<tr class="separator:ga64023e4e19c0ab94045d590c0730e758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25d5c961e17de3ba8faff2175f245947"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___external___functions.html#ga25d5c961e17de3ba8faff2175f245947">knx_uart_isr_tx</a> (void)</td></tr>
+<tr class="memdesc:ga25d5c961e17de3ba8faff2175f245947"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX mode. <br /></td></tr>
+<tr class="separator:ga25d5c961e17de3ba8faff2175f245947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga551e6416873aec386f6bbb391edad6d5"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___external___functions.html#ga551e6416873aec386f6bbb391edad6d5">knx_uart_isr_rx</a> (void)</td></tr>
+<tr class="memdesc:ga551e6416873aec386f6bbb391edad6d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX mode. <br /></td></tr>
+<tr class="separator:ga551e6416873aec386f6bbb391edad6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8253bed4aa2e3d7bfa9c1de3604668e0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___functions.html#ga8253bed4aa2e3d7bfa9c1de3604668e0">KNX_Ph_SetState</a> (<a class="el" href="group___k_n_x___p_h___sup___exported___types.html#ga5b665a94bef912fbfbea7cc949ed0e49">PH_Status_t</a> state)</td></tr>
 <tr class="memdesc:ga8253bed4aa2e3d7bfa9c1de3604668e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the status of Physical layer.  <a href="group___k_n_x___p_h___sup___private___functions.html#ga8253bed4aa2e3d7bfa9c1de3604668e0">More...</a><br /></td></tr>
 <tr class="separator:ga8253bed4aa2e3d7bfa9c1de3604668e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,6 +202,16 @@ static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class
 static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga598da98824813e3e2781a39bb3f90bfd">KNX_PH_ERROR_DEBUGMSG</a> [] = &quot;[KNX PH]Error code: XX\r\n&quot;</td></tr>
 <tr class="memdesc:ga598da98824813e3e2781a39bb3f90bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Debug message sent in <a class="el" href="group___cola___debug.html">Cola Debug</a>. <br /></td></tr>
 <tr class="separator:ga598da98824813e3e2781a39bb3f90bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5dbf66e18b65778c038cb06fcfaa990"><td class="memItemLeft" align="right" valign="top">
+static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#gae5dbf66e18b65778c038cb06fcfaa990">TPUART_TX_FLAG</a></td></tr>
+<tr class="memdesc:gae5dbf66e18b65778c038cb06fcfaa990"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag for TPUART TX. <br /></td></tr>
+<tr class="separator:gae5dbf66e18b65778c038cb06fcfaa990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56ae842ff9e457dcc93263a437c9f3ca"><td class="memItemLeft" align="right" valign="top">
+static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#ga56ae842ff9e457dcc93263a437c9f3ca">TPUART_RX_FLAG</a></td></tr>
+<tr class="memdesc:ga56ae842ff9e457dcc93263a437c9f3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag for TPUART RX. <br /></td></tr>
+<tr class="separator:ga56ae842ff9e457dcc93263a437c9f3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe413cb96d839cbe31417aa52d920f21"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#gabe413cb96d839cbe31417aa52d920f21">temp</a></td></tr>
+<tr class="separator:gabe413cb96d839cbe31417aa52d920f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae5c3d180a41e0a10e05863aa365a5596"><td class="memItemLeft" align="right" valign="top">
 TickType_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___k_n_x___p_h___sup___private___variables.html#gae5c3d180a41e0a10e05863aa365a5596">currentTick</a></td></tr>
 <tr class="memdesc:gae5c3d180a41e0a10e05863aa365a5596"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current tick of timer. <br /></td></tr>
